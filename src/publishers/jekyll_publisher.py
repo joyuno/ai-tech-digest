@@ -11,9 +11,10 @@ from datetime import datetime
 class JekyllPublisher:
     """GitHub API를 통한 Jekyll 블로그 포스트 발행"""
 
-    def __init__(self, gh_token: str, repo: str):
+    def __init__(self, gh_token: str, repo: str, branch: str = "gh-pages"):
         self.gh_token = gh_token
         self.repo = repo  # "owner/repo" 형식
+        self.branch = branch
         self.api_base = f"https://api.github.com/repos/{repo}/contents"
 
     def publish(self, summary: Dict[str, Any]) -> bool:
@@ -96,7 +97,7 @@ class JekyllPublisher:
         # 기존 파일 확인 (SHA 필요)
         sha = None
         try:
-            response = requests.get(url, headers=headers)
+            response = requests.get(url, headers=headers, params={"ref": self.branch})
             if response.status_code == 200:
                 sha = response.json().get("sha")
         except Exception:
@@ -106,7 +107,7 @@ class JekyllPublisher:
         data = {
             "message": f"📝 AI Tech Digest - {datetime.now().strftime('%Y-%m-%d')}",
             "content": base64.b64encode(content.encode("utf-8")).decode("utf-8"),
-            "branch": "main",
+            "branch": self.branch,
         }
         if sha:
             data["sha"] = sha

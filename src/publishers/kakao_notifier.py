@@ -56,8 +56,8 @@ class KakaoNotifier:
             "object_type": "text",
             "text": message[:1000],  # 최대 1000자
             "link": {
-                "web_url": f"https://joyuno.github.io/ai/tech/{summary['date']}-ai-tech-digest",
-                "mobile_web_url": f"https://joyuno.github.io/ai/tech/{summary['date']}-ai-tech-digest",
+                "web_url": f"https://joyuno.github.io/ai-tech-digest/{summary['date'].replace('-', '/')}/ai-tech-digest",
+                "mobile_web_url": f"https://joyuno.github.io/ai-tech-digest/{summary['date'].replace('-', '/')}/ai-tech-digest",
             },
         }
 
@@ -83,7 +83,7 @@ class KakaoNotifier:
             return template.render(
                 date=summary["date"],
                 sources=summary.get("sources", []),
-                blog_url=f"https://joyuno.github.io/{summary['date']}-ai-tech-digest",
+                blog_url="https://joyuno.github.io/ai-tech-digest/",
             )
 
         # 기본 메시지
@@ -95,6 +95,6 @@ class KakaoNotifier:
                 title = item.get("title", "")[:40]
                 lines.append(f"• {title}...")
 
-        lines.append(f"\n👉 https://joyuno.github.io")
+        lines.append(f"\n👉 https://joyuno.github.io/ai-tech-digest/")
 
         return "\n".join(lines)

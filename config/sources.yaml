@@ -62,8 +62,8 @@ sources:
 # 출력 설정
 output:
   jekyll:
-    repo: "joyuno/joyuno.github.io"
-    branch: "main"
+    repo: "joyuno/ai-tech-digest"
+    branch: "gh-pages"
     posts_dir: "_posts"
     filename_format: "{date}-ai-tech-digest.md"
     language: "ko"

@@ -188,7 +188,8 @@ def main():
             jekyll_config = sources_config.get("output", {}).get("jekyll", {})
             jekyll = JekyllPublisher(
                 gh_token=gh_token,
-                repo=jekyll_config.get("repo", "joyuno/joyuno.github.io")
+                repo=jekyll_config.get("repo", "joyuno/ai-tech-digest"),
+                branch=jekyll_config.get("branch", "gh-pages")
             )
             if jekyll.publish(summary):
                 print("   ✓ Jekyll 포스팅 성공")
