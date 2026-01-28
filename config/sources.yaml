@@ -20,7 +20,7 @@ sources:
     max_results: 3
 
   twitter:
-    enabled: true
+    enabled: false  # Nitter 서비스 불안정으로 비활성화
     name: "X (Twitter)"
     emoji: "🐦"
     accounts:

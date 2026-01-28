@@ -14,26 +14,40 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 ## {{ source.emoji }} {{ source.name }}
 
 {% for item in source["items"] %}
+<div class="digest-item">
+
 ### [{{ item.title }}]({{ item.url }})
+
 {% if item.categories %}
-- **카테고리**: {{ item.categories | join(", ") }}
-{% endif %}
-- **요약**: {{ item.summary }}
-{% if item.author %}
-- **저자**: {{ item.author }}
+<div class="categories">
+{% for cat in item.categories %}
+<span class="category-tag">{{ cat.emoji }} {{ cat.name }}</span>
+{% endfor %}
+</div>
 {% endif %}
 
+{{ item.summary }}
+
+{% if item.author %}
+<small>👤 {{ item.author }}</small>
+{% endif %}
+
+</div>
+
 {% endfor %}
+
 ---
 
 {% endfor %}
 
 ## 📊 오늘의 키워드
 
+<div class="keywords">
 {% for keyword in top_keywords %}
-`{{ keyword }}`{% if not loop.last %} · {% endif %}
+<code>{{ keyword }}</code>{% if not loop.last %} {% endif %}
 {% endfor %}
+</div>
 
 ---
 
-*이 포스트는 [AI Tech Digest](https://github.com/joyuno/ai-tech-digest)에 의해 자동 생성되었습니다.*
+<small>🤖 이 포스트는 [AI Tech Digest](https://github.com/joyuno/ai-tech-digest)에 의해 자동 생성되었습니다.</small>
