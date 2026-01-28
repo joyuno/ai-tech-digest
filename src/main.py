@@ -97,7 +97,8 @@ def main():
     print("\n📱 카카오톡 알림 발송...")
     kakao = KakaoNotifier(
         rest_api_key=os.environ.get("KAKAO_REST_API_KEY"),
-        refresh_token=os.environ.get("KAKAO_REFRESH_TOKEN")
+        refresh_token=os.environ.get("KAKAO_REFRESH_TOKEN"),
+        client_secret=os.environ.get("KAKAO_CLIENT_SECRET")
     )
     kakao.send(summary)
 

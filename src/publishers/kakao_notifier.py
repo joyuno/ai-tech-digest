@@ -13,9 +13,10 @@ class KakaoNotifier:
     TOKEN_URL = "https://kauth.kakao.com/oauth/token"
     SEND_URL = "https://kapi.kakao.com/v2/api/talk/memo/default/send"
 
-    def __init__(self, rest_api_key: str, refresh_token: str):
+    def __init__(self, rest_api_key: str, refresh_token: str, client_secret: str = None):
         self.rest_api_key = rest_api_key
         self.refresh_token = refresh_token
+        self.client_secret = client_secret
         self.access_token = None
 
     def _refresh_access_token(self) -> bool:
@@ -29,6 +30,8 @@ class KakaoNotifier:
             "client_id": self.rest_api_key,
             "refresh_token": self.refresh_token,
         }
+        if self.client_secret:
+            data["client_secret"] = self.client_secret
 
         try:
             response = requests.post(self.TOKEN_URL, data=data)
