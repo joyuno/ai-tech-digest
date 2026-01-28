@@ -20,9 +20,10 @@ ENV/
 .env.local
 *.env
 
-# Output
+# Output (로컬에서만 사용, GitHub Actions에서는 artifact로 저장)
 output/
 *.log
+logs/
 
 # OS
 .DS_Store

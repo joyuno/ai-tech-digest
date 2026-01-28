@@ -2,16 +2,24 @@ name: Daily AI Tech Digest
 
 on:
   schedule:
-    # UTC 00:00 = KST 09:00 매일 실행
-    - cron: '0 0 * * *'
+    # KST 오전 8시 = UTC 23시 (전날)
+    - cron: '0 23 * * *'
   workflow_dispatch:  # 수동 실행 가능
+    inputs:
+      debug_enabled:
+        type: boolean
+        description: 'Enable debug mode'
+        required: false
+        default: false
 
 env:
   PYTHON_VERSION: '3.11'
+  TZ: 'Asia/Seoul'
 
 jobs:
   generate-digest:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
 
     steps:
       - name: Checkout repository
@@ -29,6 +37,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run digest generator
+        id: digest
         env:
           KAKAO_REST_API_KEY: ${{ secrets.KAKAO_REST_API_KEY }}
           KAKAO_REFRESH_TOKEN: ${{ secrets.KAKAO_REFRESH_TOKEN }}
@@ -36,12 +45,75 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GH_PAT: ${{ secrets.GH_PAT }}
           TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
-        run: python src/main.py
+        run: |
+          cd ${{ github.workspace }}
+          python src/main.py
+        continue-on-error: true
+
+      - name: Check result
+        if: steps.digest.outcome == 'failure'
+        run: |
+          echo "::warning::Digest generation failed, but continuing..."
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: digest-output
+          name: digest-output-${{ github.run_number }}
           path: output/
-          retention-days: 7
+          retention-days: 30
+          if-no-files-found: warn
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## 🤖 AI Tech Digest 실행 결과" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- **실행 시간**: $(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M:%S KST')" >> $GITHUB_STEP_SUMMARY
+          echo "- **상태**: ${{ steps.digest.outcome }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ -d "output" ]; then
+            echo "### 📁 출력 파일" >> $GITHUB_STEP_SUMMARY
+            find output -type f -name "*.json" | while read f; do
+              echo "- \`$f\`" >> $GITHUB_STEP_SUMMARY
+            done
+          fi
+
+  # 실패 시 알림 (선택적)
+  notify-on-failure:
+    needs: generate-digest
+    if: failure()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create issue on failure
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = `🚨 AI Tech Digest 실행 실패 - ${new Date().toISOString().split('T')[0]}`;
+            const body = `
+            ## 워크플로우 실패 알림
+
+            - **Run ID**: ${{ github.run_id }}
+            - **Run Number**: ${{ github.run_number }}
+            - **시간**: ${new Date().toISOString()}
+
+            [워크플로우 로그 확인](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
+            `;
+
+            // 기존 이슈 확인
+            const issues = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'workflow-failure'
+            });
+
+            if (issues.data.length === 0) {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: title,
+                body: body,
+                labels: ['workflow-failure', 'automated']
+              });
+            }
