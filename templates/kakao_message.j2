@@ -1,10 +1,9 @@
 🤖 AI 기술 다이제스트 ({{ date }})
 
-{% for source in sources[:4] %}
+{% for source in sources %}{% if loop.index <= 4 %}
 {{ source.emoji }} {{ source.name }}
-{% for item in source.items[:1] %}
-• {{ item.title[:50] }}{% if item.title|length > 50 %}...{% endif %}
-{% endfor %}
-{% endfor %}
-
+{% for item in source.items %}{% if loop.index <= 1 %}
+• {{ item.title | truncate(50, True, '...') }}
+{% endif %}{% endfor %}
+{% endif %}{% endfor %}
 👉 전체 보기: {{ blog_url }}
