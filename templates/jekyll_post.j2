@@ -13,7 +13,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 {% for source in sources %}
 ## {{ source.emoji }} {{ source.name }}
 
-{% for item in source.items %}
+{% for item in source["items"] %}
 ### [{{ item.title }}]({{ item.url }})
 {% if item.categories %}
 - **카테고리**: {{ item.categories | join(", ") }}
