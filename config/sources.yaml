@@ -37,6 +37,13 @@ sources:
     rss_url: "https://toss.tech/rss.xml"
     max_results: 2
 
+  musinsa:
+    enabled: true
+    name: "무신사 기술블로그"
+    emoji: "👕"
+    rss_url: "https://medium.com/feed/musinsa-tech"
+    max_results: 2
+
   github_trending:
     enabled: true
     name: "GitHub Trending"

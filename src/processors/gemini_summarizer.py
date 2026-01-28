@@ -87,6 +87,7 @@ class GeminiSummarizer:
             "huggingface": "🤗",
             "twitter": "🐦",
             "toss": "💳",
+            "musinsa": "👕",
             "github_trending": "⭐",
             "aiweekly": "📰",
         }
@@ -96,6 +97,7 @@ class GeminiSummarizer:
             "huggingface": "Hugging Face Blog",
             "twitter": "X (Twitter)",
             "toss": "토스 기술블로그",
+            "musinsa": "무신사 기술블로그",
             "github_trending": "GitHub Trending",
             "aiweekly": "AI Weekly",
         }

@@ -20,6 +20,7 @@ from collectors.arxiv_collector import ArxivCollector
 from collectors.huggingface_collector import HuggingFaceCollector
 from collectors.twitter_collector import TwitterCollector
 from collectors.toss_collector import TossCollector
+from collectors.musinsa_collector import MusinsaCollector
 from collectors.github_trending_collector import GitHubTrendingCollector
 from collectors.aiweekly_collector import AIWeeklyCollector
 
@@ -52,6 +53,7 @@ def collect_all_sources(sources_config: dict) -> dict:
         "huggingface": HuggingFaceCollector,
         "twitter": TwitterCollector,
         "toss": TossCollector,
+        "musinsa": MusinsaCollector,
         "github_trending": GitHubTrendingCollector,
         "aiweekly": AIWeeklyCollector,
     }
