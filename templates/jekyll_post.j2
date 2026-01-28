@@ -14,23 +14,19 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 ## {{ source.emoji }} {{ source.name }}
 
 {% for item in source["items"] %}
-<div class="digest-item">
+<div class="digest-item" markdown="1">
 
-### [{{ item.title }}]({{ item.url }})
+<h3><a href="{{ item.url }}" target="_blank">{{ item.title }}</a></h3>
 
 {% if item.categories %}
 <div class="categories">
-{% for cat in item.categories %}
-<span class="category-tag">{{ cat.emoji }} {{ cat.name }}</span>
-{% endfor %}
+{% for cat in item.categories %}<span class="category-tag">{{ cat.emoji }} {{ cat.name }}</span> {% endfor %}
 </div>
 {% endif %}
 
 {{ item.summary }}
 
-{% if item.author %}
-<small>👤 {{ item.author }}</small>
-{% endif %}
+{% if item.author %}<small>👤 {{ item.author }}</small>{% endif %}
 
 </div>
 
@@ -43,11 +39,9 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 ## 📊 오늘의 키워드
 
 <div class="keywords">
-{% for keyword in top_keywords %}
-<code>{{ keyword }}</code>{% if not loop.last %} {% endif %}
-{% endfor %}
+{% for keyword in top_keywords %}<code>{{ keyword }}</code> {% endfor %}
 </div>
 
 ---
 
-<small>🤖 이 포스트는 [AI Tech Digest](https://github.com/joyuno/ai-tech-digest)에 의해 자동 생성되었습니다.</small>
+<small>🤖 이 포스트는 <a href="https://github.com/joyuno/ai-tech-digest">AI Tech Digest</a>에 의해 자동 생성되었습니다.</small>
