@@ -1,0 +1,105 @@
+# AI 기술 온톨로지 정의
+
+ontology:
+  모델_아키텍처:
+    name: "모델/아키텍처"
+    emoji: "🧠"
+    keywords:
+      - LLM
+      - GPT
+      - Claude
+      - Llama
+      - DeepSeek
+      - Gemini
+      - Multimodal
+      - Vision
+      - Audio
+      - SLM
+      - Small Language Model
+      - MoE
+      - Mixture of Experts
+      - Reasoning
+      - o1
+      - DeepSeek-R1
+      - Transformer
+
+  학습_최적화:
+    name: "학습/최적화"
+    emoji: "🔧"
+    keywords:
+      - Fine-tuning
+      - LoRA
+      - QLoRA
+      - PEFT
+      - RLHF
+      - DPO
+      - Constitutional AI
+      - Quantization
+      - INT8
+      - INT4
+      - Synthetic Data
+      - Model Merging
+      - Mergekit
+      - Distillation
+
+  신뢰성_안전:
+    name: "신뢰성/안전"
+    emoji: "🎯"
+    keywords:
+      - Hallucination
+      - 환각
+      - Alignment
+      - Jailbreak
+      - Red-team
+      - Red team
+      - Factuality
+      - Grounding
+      - Safety
+      - Guardrails
+
+  추론_검색:
+    name: "추론/검색"
+    emoji: "🔍"
+    keywords:
+      - RAG
+      - Retrieval
+      - Chain-of-Thought
+      - CoT
+      - Tool Use
+      - Function Calling
+      - Knowledge Graph
+      - Long Context
+      - 1M tokens
+      - Test-Time Compute
+      - Inference
+
+  에이전트:
+    name: "에이전트"
+    emoji: "🤖"
+    keywords:
+      - AI Agent
+      - Agent
+      - Multi-Agent
+      - Computer Use
+      - Browser Use
+      - Agentic
+      - Workflow
+      - Orchestration
+      - MCP
+      - Model Context Protocol
+
+  개발_도구:
+    name: "개발 도구"
+    emoji: "💻"
+    keywords:
+      - AI Coding
+      - Cursor
+      - Claude Code
+      - Copilot
+      - Prompt Engineering
+      - Prompt
+      - Eval
+      - Evaluation
+      - Benchmark
+      - MMLU
+      - HumanEval

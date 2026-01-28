@@ -1,0 +1,79 @@
+# 데이터 소스 설정
+
+sources:
+  arxiv:
+    enabled: true
+    name: "arXiv"
+    emoji: "📚"
+    categories:
+      - cs.AI
+      - cs.LG
+      - cs.CL
+    max_results: 5
+    sort_by: "submittedDate"
+
+  huggingface:
+    enabled: true
+    name: "Hugging Face Blog"
+    emoji: "🤗"
+    rss_url: "https://huggingface.co/blog/feed.xml"
+    max_results: 3
+
+  twitter:
+    enabled: true
+    name: "X (Twitter)"
+    emoji: "🐦"
+    accounts:
+      - username: "_akhaliq"
+        description: "AI 논문/뉴스 속보"
+      - username: "bindureddy"
+        description: "AI 트렌드 분석"
+    max_tweets_per_account: 5
+
+  toss:
+    enabled: true
+    name: "토스 기술블로그"
+    emoji: "💳"
+    rss_url: "https://toss.tech/rss.xml"
+    max_results: 2
+
+  github_trending:
+    enabled: true
+    name: "GitHub Trending"
+    emoji: "⭐"
+    url: "https://github.com/trending"
+    languages:
+      - ""  # All languages
+      - python
+    topics:
+      - ai
+      - machine-learning
+      - llm
+      - deep-learning
+    max_results: 5
+
+  aiweekly:
+    enabled: true
+    name: "AI Weekly"
+    emoji: "📰"
+    rss_url: "https://aiweekly.co/issues.rss"
+    max_results: 1
+
+# 출력 설정
+output:
+  jekyll:
+    repo: "joyuno/joyuno.github.io"
+    branch: "main"
+    posts_dir: "_posts"
+    filename_format: "{date}-ai-tech-digest.md"
+    language: "ko"
+
+  kakao:
+    max_length: 1000
+    include_link: true
+
+# Gemini 설정
+gemini:
+  model: "gemini-3-pro-preview"
+  temperature: 0.7
+  max_output_tokens: 4096

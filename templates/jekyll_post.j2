@@ -1,0 +1,39 @@
+---
+layout: post
+title: "AI 기술 다이제스트 - {{ date }}"
+date: {{ date }}
+categories: [AI, Tech]
+tags: [AI, LLM, 트렌드, 기술블로그]
+---
+
+> 🤖 AI 기술 트렌드를 자동으로 수집하고 요약한 다이제스트입니다.
+
+---
+
+{% for source in sources %}
+## {{ source.emoji }} {{ source.name }}
+
+{% for item in source.items %}
+### [{{ item.title }}]({{ item.url }})
+{% if item.categories %}
+- **카테고리**: {{ item.categories | join(", ") }}
+{% endif %}
+- **요약**: {{ item.summary }}
+{% if item.author %}
+- **저자**: {{ item.author }}
+{% endif %}
+
+{% endfor %}
+---
+
+{% endfor %}
+
+## 📊 오늘의 키워드
+
+{% for keyword in top_keywords %}
+`{{ keyword }}`{% if not loop.last %} · {% endif %}
+{% endfor %}
+
+---
+
+*이 포스트는 [AI Tech Digest](https://github.com/joyuno/ai-tech-digest)에 의해 자동 생성되었습니다.*

@@ -1,0 +1,24 @@
+# AI Tech Digest - Dependencies
+
+# HTTP & Parsing
+requests>=2.31.0
+feedparser>=6.0.10
+beautifulsoup4>=4.12.0
+lxml>=5.1.0
+
+# Twitter/X API
+tweepy>=4.14.0
+
+# Google Gemini
+google-generativeai>=0.8.0
+
+# Configuration & Templates
+PyYAML>=6.0.1
+Jinja2>=3.1.2
+python-dotenv>=1.0.0
+
+# Date handling
+python-dateutil>=2.8.2
+
+# arXiv API
+arxiv>=2.1.0
