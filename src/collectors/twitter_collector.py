@@ -59,12 +59,19 @@ class TwitterCollector:
         """
         Args:
             config (dict): 설정 딕셔너리
-                - accounts (list): Twitter 계정 목록 (기본값: ["_akhaliq", "bindureddy"])
+                - accounts (list): Twitter 계정 목록 (문자열 또는 딕셔너리)
                 - max_tweets_per_account (int): 계정당 최대 트윗 수 (기본값: 5)
                 - timeout (int): HTTP 요청 타임아웃 초 (기본값: 15)
                 - use_mock_data (bool): 테스트용 모의 데이터 사용 여부 (기본값: False)
         """
-        self.accounts = config.get("accounts", ["_akhaliq", "bindureddy"])
+        raw_accounts = config.get("accounts", ["_akhaliq", "bindureddy"])
+        # 딕셔너리 형태도 지원 ({"username": "xxx"} 또는 문자열)
+        self.accounts = []
+        for acc in raw_accounts:
+            if isinstance(acc, dict):
+                self.accounts.append(acc.get("username", ""))
+            else:
+                self.accounts.append(str(acc))
         self.max_tweets = config.get("max_tweets_per_account", 5)
         self.timeout = config.get("timeout", 15)
         self.use_mock_data = config.get("use_mock_data", False)
@@ -204,12 +211,12 @@ class TwitterCollector:
         print(f"   대상 계정: {', '.join(['@' + a.lstrip('@') for a in self.accounts])}")
         print(f"   계정당 최대: {self.max_tweets}개 트윗\n")
 
-        for account in self.accounts:
-            username = account if isinstance(account, str) else account.get("username", "")
+        for username in self.accounts:
             if not username:
                 continue
 
-            print(f"📥 @{username.lstrip('@')} 수집 중...")
+            username = str(username).lstrip('@')
+            print(f"📥 @{username} 수집 중...")
 
             if self.use_mock_data:
                 tweets = self._get_mock_data(username)
