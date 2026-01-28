@@ -2,7 +2,7 @@
 
 {% for source in sources %}{% if loop.index <= 4 %}
 {{ source.emoji }} {{ source.name }}
-{% for item in source.items %}{% if loop.index <= 1 %}
+{% for item in source["items"] %}{% if loop.index <= 1 %}
 • {{ item.title | truncate(50, True, '...') }}
 {% endif %}{% endfor %}
 {% endif %}{% endfor %}
