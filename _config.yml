@@ -1,0 +1,25 @@
+title: AI Tech Digest
+description: AI 기술 트렌드를 자동으로 수집하고 요약한 다이제스트
+baseurl: "/ai-tech-digest"
+url: "https://joyuno.github.io"
+
+# Build settings
+markdown: kramdown
+theme: minima
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+# Pagination
+paginate: 10
+paginate_path: "/page:num/"
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
