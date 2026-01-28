@@ -32,7 +32,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 </div>
 
 
-Multidisciplinary tumour boards (MDTBs) play a central role in oncology decision-making but require manual processes and structuring large volumes of heterogeneous clinical information, resulting in a substantial documentation burden. In this work, we present ONCOTIMIA, a modular and secure clinical tool designed to integrate generative artificial intelligence (GenAI) into oncology workflows and evaluate its application to the automatic completion of lung cancer tumour board forms using large...
+이 논문은 종양 위원회의 문서 작업 부담을 줄이기 위해 GenAI 기반의 ONCOTIMIA라는 도구를 제안합니다. 폐암 관련 임상 정보를 자동으로 구조화하고 서식을 완성하여 의료진의 의사결정을 효율적으로 지원한다고 해요.
 
 
 
@@ -51,7 +51,7 @@ Multidisciplinary tumour boards (MDTBs) play a central role in oncology decision
 </div>
 
 
-Continual learning, enabling models to acquire new skills and knowledge without degrading existing capabilities, remains a fundamental challenge for foundation models. While on-policy reinforcement learning can reduce forgetting, it requires explicit reward functions that are often unavailable. Learning from expert demonstrations, the primary alternative, is dominated by supervised fine-tuning (SFT), which is inherently off-policy. We introduce Self-Distillation Fine-Tuning (SDFT), a simple m...
+파운데이션 모델이 기존 지식을 잊지 않으면서 새로운 기술을 배우는 '지속적 학습'을 위해 Self-Distillation Fine-Tuning (SDFT) 기법을 소개합니다. 복잡한 보상 함수 없이도 모델을 효율적으로 미세 조정할 수 있는 간결한 방법입니다.
 
 
 
@@ -70,7 +70,7 @@ Continual learning, enabling models to acquire new skills and knowledge without 
 </div>
 
 
-Large language model (LLM) scaling is hitting a wall. Widening models yields diminishing returns, and extending context length does not improve fundamental expressivity. In contrast, depth scaling offers theoretically superior expressivity, yet current Transformer architectures struggle to train reliably at extreme depths. We revisit the Post-LayerNorm (Post-LN) formulation, whose instability at scale caused its replacement by Pre-LN in modern LLMs. We show that the central failure mode of Po...
+LLM의 성능 확장이 한계에 부딪힌 상황에서, 모델의 깊이를 늘려 표현력을 높이는 Post-LayerNorm 방식을 다시 조명합니다. 기존의 불안정성 문제를 해결하여 깊은 Transformer 아키텍처에서도 안정적인 학습이 가능함을 보여줍니다.
 
 
 
@@ -83,7 +83,7 @@ Large language model (LLM) scaling is hitting a wall. Widening models yields dim
 
 
 
-The first law of geography is a cornerstone of spatial analysis, emphasizing that nearby and related locations tend to be more similar, however, defining what constitutes "near" and "related" remains challenging, as different phenomena exhibit distinct spatial patterns. Traditional local regression models, such as Geographically Weighted Regression (GWR) and Multiscale GWR (MGWR), quantify spatial relationships solely through geographic proximity. In an era of globalization and digital connec...
+물리적 거리에만 의존하던 기존 공간 분석 방식에서 벗어나, 디지털 연결성까지 고려한 M-SGWR 모델을 제안합니다. 다양한 규모의 유사성을 반영하여 현대 사회의 복잡한 공간 패턴을 더 정확하게 분석할 수 있습니다.
 
 
 
@@ -96,7 +96,7 @@ The first law of geography is a cornerstone of spatial analysis, emphasizing tha
 
 
 
-The race for artificial intelligence (AI) dominance often prioritizes scale over efficiency. Hyper-scaling is the common industry approach: larger models, more data, and as many computational resources as possible. Using more resources is a simpler path to improved AI performance. Thus, efficiency has been de-emphasized. Consequently, the need for costly computational resources has marginalized academics and smaller companies. Simultaneously, increased energy expenditure, due to growing AI us...
+현재 AI 업계가 효율성보다 거대화에만 치중하면서 발생하는 접근성 저하와 환경 문제를 지적하는 논문입니다. 이를 해결하기 위해 'AI 배출권 거래제(Cap-and-Trade)'와 유사한 개념을 도입하여 효율적이고 지속 가능한 개발을 장려해야 한다고 주장합니다.
 
 
 
@@ -116,7 +116,7 @@ The race for artificial intelligence (AI) dominance often prioritizes scale over
 
 
 
-
+브라질의 문화적 맥락을 반영한 '소버린 AI(Sovereign AI)' 구축을 위해 공동 설계된 데이터셋입니다. 특정 국가나 지역의 특성에 맞는 맞춤형 페르소나를 AI 모델에 적용할 때 유용하게 쓰일 수 있습니다.
 
 
 <small>👤 Hugging Face</small>
@@ -137,7 +137,7 @@ The race for artificial intelligence (AI) dominance often prioritizes scale over
 </div>
 
 
-
+DeepSeek 이후 중국 오픈소스 AI 생태계가 어떤 아키텍처를 선택하고 발전해 나가는지 분석한 콘텐츠입니다. 중국 내 다양한 모델들의 기술적 특징과 구조적 변화를 살펴볼 수 있습니다.
 
 
 <small>👤 Hugging Face</small>
@@ -160,7 +160,7 @@ The race for artificial intelligence (AI) dominance often prioritizes scale over
 </div>
 
 
-
+아랍어 LLM이 에미리트 방언을 얼마나 잘 이해하는지 평가하기 위한 'Alyah' 벤치마크를 소개합니다. 표준 아랍어뿐만 아니라 지역 방언에 대한 모델의 성능을 검증하여 포용성을 높이려는 시도입니다.
 
 
 <small>👤 Hugging Face</small>
@@ -190,7 +190,7 @@ The race for artificial intelligence (AI) dominance often prioritizes scale over
 </div>
 
 
-레이어드 아키텍처에 익숙한 개발자가 Claude Code를 바라보는 방법
+'소프트웨어 3.0' 시대를 맞아, 기존 레이어드 아키텍처에 익숙한 개발자가 Claude Code 같은 AI 도구를 어떻게 바라봐야 할지 다룹니다. 변화하는 개발 패러다임 속에서 개발자의 역할과 도구 활용법에 대한 인사이트를 제공합니다.
 
 
 <small>👤 토스</small>
@@ -205,7 +205,7 @@ The race for artificial intelligence (AI) dominance often prioritizes scale over
 
 
 
-AI가 전문성의 종말을 초래할까요? 끝없이 토론되고 있는 이 질문에 대한 개발자의 개인적인 시각을 공유합니다.
+AI가 개발자의 전문성을 대체할 것이라는 우려와 '전문성의 종말'에 대한 논의를 다룹니다. 끊임없이 제기되는 이 질문에 대해 현직 개발자가 느끼는 솔직한 개인적 견해와 미래 전망을 공유합니다.
 
 
 <small>👤 토스</small>
@@ -227,7 +227,7 @@ AI가 전문성의 종말을 초래할까요? 끝없이 토론되고 있는 이 
 
 
 
-“이번 달도 밤샘 정산입니다.” — 정산 시스템은 어떻게 만들었을까 (실전편)들어가며앞선 글에서는 정산 시스템이 왜 본질적으로 어려운 문제인지, 그리고 MASS가 멱등성과 결정적 계산이라는 설계 원칙을 선택한 이유를 살펴보았습니다. 이번 글에서는 그 설계가 실제로 어떤 기술 선택과 구조를 통해 구현되었는지, MASS 정산 시스템의 실전 구축 과정을 이야기합니다.멱등성을 전제로 한 이벤트 처리정산에 사용되는 원천 데이터는 이벤트 형태로 유입됩니다.이벤트 기반 시스템에서 중복 수신이나 재처리는 피할 수 없는 상황이기 때문에, MASS에서는 이를 전제 조건으로 두었습니다.이벤트 재시도(Retry)와 격리(DLT)를 분리해 처리트랜잭션 식별자를 기준으로 서비스 레벨에서 멱등 갱신동일 이벤트가 여러 번 처리되어도 결과는 항상 동일이를 통해 장애 상황에서도 안전하게 재처리할 수 있는 기반을 마련했습니다.(⬆️ 1편 내용)DLT 메시지 모니터링과 처리 방식DLT로 전달된 이벤트는 정산 흐름에서 
+무신사의 정산 시스템(MASS) 구축 과정을 다룬 실전편으로, 멱등성과 결정적 계산을 어떻게 구현했는지 설명합니다. 이벤트 기반 처리와 DLT를 활용해 장애 상황에서도 데이터 정합성을 유지하는 기술적 노하우를 담고 있습니다.
 
 
 <small>👤 박성민(Seongmin)</small>
@@ -242,7 +242,7 @@ AI가 전문성의 종말을 초래할까요? 끝없이 토론되고 있는 이 
 
 
 
-29CM QE팀은 연말에 팀 자체적으로 Conference를 진행하였습니다.2024년까지는 연 2회 워크샵을 진행해서 각자 레슨런을 공유하는 자리를 가졌는데 2025년에는 상반기 워크샵을 진행하지 못하여 하반기에만 진행하게 되었고 이렇게 된 김에 연 행사처럼 고유의 컨퍼런스를 개최해 보자는 생각에 29QA Con을 계획하였습니다.나중에는 점점 규모가 커져서 다른 회사의 QA 분들도 모시고 싶다고 생각해서 처음부터 어느 정도 형식을 갖추자는 판단을 했습니다. 그래서 굿즈도 만들고 홍보 배너도 만들었는데 만들고 나니 정말 컨퍼런스 분위기가 물씬 풍겨 진행하기를 잘했다는 생각이 들었습니다.한 달가량의 촉박한 일정이었지만 4명의 팀원이 3개 이상씩의 세션을 준비해서 총 13개의 세션이 진행되었습니다. 짧은 기간 동안 열심히 양질의 자료를 만들어서 공유해 준 팀원분들 덕분에 훌륭한 하나의 Conference가 진행될 수 있었습니다.컨퍼런스 느낌이 나도록 X배너도 제작해서 걸어두었습니다.팀 마
+29CM QA팀이 자체적으로 주최한 내부 컨퍼런스 '29QA Con'의 생생한 진행 후기입니다. 팀원들이 주도하여 레슨런을 공유하고 굿즈까지 제작하며 함께 성장하는 조직 문화를 엿볼 수 있습니다.
 
 
 <small>👤 박현준</small>
@@ -272,7 +272,7 @@ AI가 전문성의 종말을 초래할까요? 끝없이 토론되고 있는 이 
 </div>
 
 
-AI agent toolkit: coding agent CLI, unified LLM API, TUI & web UI libraries, Slack bot, vLLM pods
+코딩 에이전트 CLI부터 통합 LLM API, 웹 UI 라이브러리까지 제공하는 올인원 AI 에이전트 툴킷입니다. Slack 봇 연동이나 vLLM 파드 관리 등 다양한 기능을 하나의 저장소에서 지원합니다.
 
 
 
@@ -285,7 +285,7 @@ AI agent toolkit: coding agent CLI, unified LLM API, TUI & web UI libraries, Sla
 
 
 
-Memory engine and app that is extremely fast, scalable. The Memory API for the AI era.
+AI 시대를 위한 초고속 확장형 메모리 엔진이자 애플리케이션입니다. 사용자의 데이터를 효율적으로 저장하고 관리하는 'Memory API'를 통해 나만의 지식 저장소를 구축할 수 있게 돕습니다.
 
 
 
@@ -304,7 +304,7 @@ Memory engine and app that is extremely fast, scalable. The Memory API for the A
 </div>
 
 
-A text-to-speech (TTS), speech-to-text (STT) and speech-to-speech (STS) library built on Apple's MLX framework, providing efficient speech analysis on Apple Silicon.
+애플 실리콘(Apple Silicon)에 최적화된 MLX 프레임워크 기반의 오디오 처리 라이브러리입니다. TTS(음성 합성), STT(음성 인식) 등을 효율적으로 수행하며 맥 환경에서 강력한 성능을 발휘합니다.
 
 
 
@@ -327,7 +327,7 @@ A text-to-speech (TTS), speech-to-text (STT) and speech-to-speech (STS) library 
 </div>
 
 
-Collection of awesome LLM apps with AI Agents and RAG using OpenAI, Anthropic, Gemini and opensource models.
+OpenAI, Anthropic 등 다양한 모델과 RAG 기술을 활용한 훌륭한 LLM 애플리케이션들을 모아놓은 컬렉션입니다. 최신 AI 에이전트와 응용 프로그램 개발에 참고할 수 있는 다채로운 예시들이 담겨 있습니다.
 
 
 
@@ -346,7 +346,7 @@ Collection of awesome LLM apps with AI Agents and RAG using OpenAI, Anthropic, G
 </div>
 
 
-A text-to-speech (TTS), speech-to-text (STT) and speech-to-speech (STS) library built on Apple's MLX framework, providing efficient speech analysis on Apple Silicon.
+애플의 MLX 프레임워크를 사용하여 TTS, STT 같은 음성 작업을 처리하는 라이브러리입니다. 애플 실리콘 칩의 성능을 최대한 활용하여 효율적인 음성 분석 기능을 제공합니다.
 
 
 
@@ -366,7 +366,7 @@ A text-to-speech (TTS), speech-to-text (STT) and speech-to-speech (STS) library 
 
 
 
-Welcome AI is Hype : Highlights from Davos Check out this interesting video of Ken Griffith talking about how no one has any idea yet on how these massive investments in infrastructure are going to turn a profit Artificial Intelligence Weekly In the News The "Titans of Davos" split the room this week Microsoft’s Satya Nadella warned of an "AI Bubble" if the tech doesn't exit the data center to help the Global South, while Palantir’s Alex Karp argued AI will make "mass immigration obsolete" by tu
+다보스 포럼에서 논의된 AI 거품론과 인프라 투자 수익성에 대한 엇갈린 시각을 다룹니다. 마이크로소프트와 팰런티어 CEO의 대립되는 의견을 통해 현재 AI 산업의 현주소를 조명합니다.
 
 
 
