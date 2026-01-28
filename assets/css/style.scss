@@ -1,0 +1,212 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+/* AI Tech Digest 커스텀 스타일 */
+
+:root {
+  --primary-color: #2563eb;
+  --secondary-color: #64748b;
+  --accent-color: #3b82f6;
+  --bg-light: #f8fafc;
+  --border-color: #e2e8f0;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans KR', sans-serif;
+  color: var(--text-primary);
+  line-height: 1.7;
+}
+
+/* 헤더 */
+.site-header {
+  border-bottom: 1px solid var(--border-color);
+  background: white;
+}
+
+.site-title {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* 메인 콘텐츠 */
+.page-content {
+  padding: 40px 0;
+}
+
+/* 포스트 스타일 */
+.post-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.5px;
+}
+
+.post-meta {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+/* 다이제스트 아이템 */
+.digest-item {
+  background: var(--bg-light);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin: 16px 0;
+  border: 1px solid var(--border-color);
+  transition: box-shadow 0.2s ease;
+}
+
+.digest-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.digest-item h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+  line-height: 1.4;
+}
+
+.digest-item h3 a {
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.digest-item h3 a:hover {
+  color: var(--primary-color);
+}
+
+/* 카테고리 태그 */
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.category-tag {
+  display: inline-flex;
+  align-items: center;
+  background: white;
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+/* 키워드 섹션 */
+.keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.keywords code {
+  background: var(--primary-color);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* 인용문 (소개) */
+blockquote {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin: 24px 0;
+  font-size: 1rem;
+}
+
+blockquote p {
+  margin: 0;
+}
+
+/* 섹션 제목 (h2) */
+h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 40px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--border-color);
+}
+
+/* 구분선 */
+hr {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: 32px 0;
+}
+
+/* 포스트 리스트 */
+.post-list {
+  list-style: none;
+  padding: 0;
+}
+
+.post-list li {
+  background: var(--bg-light);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 16px;
+  border: 1px solid var(--border-color);
+}
+
+.post-list h3 {
+  margin: 8px 0 0 0;
+  font-size: 1.1rem;
+}
+
+.post-list .post-meta {
+  font-size: 0.85rem;
+}
+
+.post-link {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.post-link:hover {
+  color: var(--primary-color);
+}
+
+/* 푸터 */
+.site-footer {
+  border-top: 1px solid var(--border-color);
+  padding: 30px 0;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+/* 모바일 반응형 */
+@media (max-width: 600px) {
+  .digest-item {
+    padding: 16px;
+    margin: 12px 0;
+  }
+
+  .post-title {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  .category-tag {
+    font-size: 0.75rem;
+    padding: 3px 10px;
+  }
+}

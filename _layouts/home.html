@@ -6,9 +6,9 @@ layout: default
   {{ content }}
 
   <ul class="post-list">
-    {% for post in site.posts limit:10 %}
+    {% for post in site.posts limit:20 %}
       <li>
-        <span class="post-meta">{{ post.date | date: "%Y-%m-%d" }}</span>
+        <span class="post-meta">{{ post.date | date: "%Y년 %m월 %d일" }}</span>
         <h3>
           <a class="post-link" href="{{ post.url | relative_url }}">
             {{ post.title | escape }}
@@ -17,4 +17,10 @@ layout: default
       </li>
     {% endfor %}
   </ul>
+
+  {% if site.posts.size == 0 %}
+  <p style="color: #64748b; text-align: center; padding: 40px 0;">
+    아직 포스트가 없습니다. 곧 AI 기술 다이제스트가 시작됩니다!
+  </p>
+  {% endif %}
 </div>
