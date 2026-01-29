@@ -32,6 +32,12 @@ from processors.gemini_summarizer import GeminiSummarizer
 from publishers.kakao_notifier import KakaoNotifier
 from publishers.jekyll_publisher import JekyllPublisher
 
+# Utils
+from utils.dedup_tracker import DedupTracker
+
+# 중복 방지 대상 소스 (최신순 정렬 소스들)
+DEDUP_SOURCES = ["toss", "musinsa", "aiweekly"]
+
 
 def load_config():
     """설정 파일 로드"""
@@ -46,7 +52,7 @@ def load_config():
     return sources_config, ontology_config
 
 
-def collect_all_sources(sources_config: dict) -> dict:
+def collect_all_sources(sources_config: dict, dedup_tracker: DedupTracker = None) -> dict:
     """모든 소스에서 데이터 수집"""
     collectors = {
         "arxiv": ArxivCollector,
@@ -68,6 +74,19 @@ def collect_all_sources(sources_config: dict) -> dict:
             try:
                 collector = collector_class(source_cfg)
                 items = collector.collect()
+
+                # 중복 방지 대상 소스는 필터링
+                if dedup_tracker and source_name in DEDUP_SOURCES:
+                    original_count = len(items)
+                    items = dedup_tracker.filter_new_items(source_name, items)
+                    if original_count > len(items):
+                        print(f"   🔄 중복 제거: {original_count - len(items)}개 스킵")
+
+                    # 새 항목 기록
+                    if items:
+                        urls = [item.get("url", "") for item in items if item.get("url")]
+                        dedup_tracker.mark_collected(source_name, urls)
+
                 collected_data[source_name] = items
                 total_items += len(items)
                 print(f"   ✓ {len(items)}개 수집 완료")
@@ -116,7 +135,24 @@ def main():
         print("\n" + "=" * 60)
         print("📥 데이터 수집")
         print("=" * 60)
-        collected_data = collect_all_sources(sources_config)
+
+        # 중복 방지 트래커 초기화
+        gh_token = os.environ.get("GH_PAT")
+        dedup_tracker = None
+        if gh_token:
+            jekyll_config = sources_config.get("output", {}).get("jekyll", {})
+            dedup_tracker = DedupTracker(
+                gh_token=gh_token,
+                repo=jekyll_config.get("repo", "joyuno/ai-tech-digest"),
+                branch=jekyll_config.get("branch", "gh-pages")
+            )
+            print("  🔄 중복 방지 트래커 활성화")
+
+        collected_data = collect_all_sources(sources_config, dedup_tracker)
+
+        # 중복 방지 이력 저장
+        if dedup_tracker:
+            dedup_tracker.save()
 
         # 수집 결과 저장
         save_output(collected_data, output_dir, "collected_data.json")
