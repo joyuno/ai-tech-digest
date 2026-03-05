@@ -35,9 +35,14 @@ class KakaoNotifier:
 
         try:
             response = requests.post(self.TOKEN_URL, data=data)
-            response.raise_for_status()
+            if response.status_code != 200:
+                print(f"⚠️ 토큰 갱신 실패 (HTTP {response.status_code}): {response.text}")
+                return False
             tokens = response.json()
             self.access_token = tokens.get("access_token")
+            # 새 refresh_token이 발급되면 표시
+            if tokens.get("refresh_token"):
+                print(f"🔄 새 refresh_token 발급됨 (갱신 필요)")
             return True
         except Exception as e:
             print(f"⚠️ 토큰 갱신 실패: {e}")
