@@ -24,7 +24,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 </div>
 
 
-We present LLaDA2.0-Uni, a unified discrete diffusion large language model (dLLM) that supports multimodal understanding and generation within a natively integrated framework. Its architecture combine
+LLaDA2.0-Uni는 텍스트와 이미지를 동시에 이해하고 생성할 수 있는 통합 멀티모달 모델입니다. 확산(diffusion) 모델과 MoE 기반 LLM을 결합하여, 시각 정보를 텍스트처럼 처리함으로써 이미지 생성과 이해를 하나의 프레임워크 안에서 해결합니다.
 
 
 
@@ -41,24 +41,7 @@ We present LLaDA2.0-Uni, a unified discrete diffusion large language model (dLLM
 </div>
 
 
-Reinforcement learning with verifiable rewards (RLVR) has become a core post-training recipe. Introducing suitable off-policy trajectories into on-policy exploration accelerates RLVR convergence and r
-
-
-
-</div>
-
-
-<div class="digest-item" markdown="1">
-
-<h3><a href="https://arxiv.org/abs/2604.19587" target="_blank">SmartPhotoCrafter: Unified Reasoning, Generation and Optimization for Automatic Photographic Image Editing</a></h3>
-
-
-<div class="categories">
-<span class="category-tag">🧠 모델/아키텍처</span> 
-</div>
-
-
-Traditional photographic image editing typically requires users to possess sufficient aesthetic understanding to provide appropriate instructions for adjusting image quality and camera parameters. How
+강화학습의 성능을 높이기 위한 새로운 정책 최적화 기법을 제안하는 논문입니다. 기존 학습 데이터와 외부 전문가 데이터의 장점을 결합하여, 더 효율적으로 최적의 정책을 찾아내는 방법을 연구합니다.
 
 
 
@@ -75,7 +58,7 @@ Traditional photographic image editing typically requires users to possess suffi
 </div>
 
 
-Edge-scale deep research agents based on small language models are attractive for real-world deployment due to their advantages in cost, latency, and privacy. In this work, we study how to train a str
+적은 양의 공개 데이터만으로 엣지 디바이스에서 동작하는 강력한 소형 연구 에이전트 DR-Venus를 소개합니다. 데이터 품질과 활용도를 높이는 훈련 방식을 통해, 비용과 지연시간이 적은 고성능 AI 에이전트를 구현했습니다.
 
 
 
@@ -88,7 +71,24 @@ Edge-scale deep research agents based on small language models are attractive fo
 
 
 
-Sparse-view 3D reconstruction is essential for modeling scenes from casual captures, but remain challenging for non-generative reconstruction. Existing diffusion-based approaches mitigates this issues
+적은 수의 이미지로도 고품질 3D 모델을 만드는 새로운 기술 AnyRecon을 제안합니다. 비디오 확산(diffusion) 모델을 활용하여 순서에 상관없이 여러 장의 이미지를 입력받아, 기하학적으로 일관된 3D 장면을 효과적으로 재구성합니다.
+
+
+
+</div>
+
+
+<div class="digest-item" markdown="1">
+
+<h3><a href="https://arxiv.org/abs/2604.19254" target="_blank">ShadowPEFT: Shadow Network for Parameter-Efficient Fine-Tuning</a></h3>
+
+
+<div class="categories">
+<span class="category-tag">🧠 모델/아키텍처</span> <span class="category-tag">🔧 학습/최적화</span> 
+</div>
+
+
+대규모 언어 모델(LLM)을 효율적으로 미세조정(fine-tuning)하는 새로운 PEFT 기법인 ShadowPEFT를 소개합니다. 기존 LoRA 방식과 달리, '그림자 네트워크'라는 중앙화된 구조를 통해 파라미터를 더 효과적으로 조정하여 성능을 높입니다.
 
 
 
@@ -108,26 +108,9 @@ Sparse-view 3D reconstruction is essential for modeling scenes from casual captu
 
 
 
-Recent advances in video generative models enable the synthesis of realistic human-object interaction videos across a wide range of scenarios and object categories, including complex dexterous manipul
+AI가 생성한 가상 비디오를 이용해 로봇에게 정교한 손동작을 가르치는 새로운 기술 DeVI를 소개합니다. 물리적으로 정확하지 않은 2D 영상 속 사람의 손 움직임을 학습하여, 로봇이 실제 환경에서 물체를 다루는 능력을 향상시킵니다.
 
 <small>👤 Hyeonwoo Kim, Jeonghwan Kim, Kyungwon Cho</small>
-
-</div>
-
-
-<div class="digest-item" markdown="1">
-
-<h3><a href="https://huggingface.co/papers/2604.20817" target="_blank">Convergent Evolution: How Different Language Models Learn Similar Number Representations</a></h3>
-
-
-<div class="categories">
-<span class="category-tag">🧠 모델/아키텍처</span> 
-</div>
-
-
-Language models trained on natural text learn to represent numbers using periodic features with dominant periods at T=2, 5, 10. In this paper, we identify a two-tiered hierarchy of these features: whi
-
-<small>👤 Deqing Fu, Tianyi Zhou, Mikhail Belkin</small>
 
 </div>
 
@@ -138,62 +121,26 @@ Language models trained on natural text learn to represent numbers using periodi
 
 
 
-Graph-based techniques and spectral graph theory have enriched the field of machine learning with a variety of critical advances. A central object in the analysis is the graph Laplacian L, which encod
+대규모 그래프 데이터를 실시간으로 분산 처리하며 학습하는 효율적인 방법을 제안합니다. 'Ridge spectral sparsification' 기법을 활용하여, 네트워크에 계속 추가되는 데이터를 빠르게 분석하고 학습할 수 있습니다.
 
 <small>👤 Daniele Calandriello, Ioannis Koutis, Alessandro Lazaric</small>
 
 </div>
 
 
-
----
-
-
-## 💳 토스 기술블로그
-
-
 <div class="digest-item" markdown="1">
 
-<h3><a href="https://toss.tech/article/operating-starrocks-1" target="_blank">StarRocks 운영기: Resource Group으로 멀티테넌트 워크로드 격리하기</a></h3>
+<h3><a href="https://huggingface.co/papers/2604.20077" target="_blank">Analysis of Nystrom method with sequential ridge leverage scores</a></h3>
 
 
-
-서비스 쿼리가 밀리기 시작했을 때, 우리가 선택한 격리 전략
-
-<small>👤 토스</small>
-
+<div class="categories">
+<span class="category-tag">🔍 추론/검색</span> 
 </div>
 
 
-<div class="digest-item" markdown="1">
+대용량 데이터에 사용되는 커널 회귀(KRR) 분석의 성능을 개선하는 Nystrom 방법을 분석합니다. 순차적으로 들어오는 데이터에 맞춰 효과적으로 샘플링하는 기법을 통해 계산 효율과 통계적 정확도를 높이는 방법을 제시합니다.
 
-<h3><a href="https://toss.tech/article/da-assistant-panda" target="_blank">토스플레이스 데이터봇 ‘판다(PANDA)’를 소개합니다 : 모든 팀원이 데이터 전문가처럼 일하는 방법</a></h3>
-
-
-
-질문 하나로 시작하는 데이터 문화 혁신
-
-<small>👤 토스</small>
-
-</div>
-
-
-
----
-
-
-## 👕 무신사 기술블로그
-
-
-<div class="digest-item" markdown="1">
-
-<h3><a href="https://techblog.musinsa.com/the-human-%EC%A0%90%EC%88%98-%EB%84%88%EB%A8%B8%EC%9D%98-%ED%8C%90%EB%8B%A8-bccc190c9c93?source=rss----f107b03c406e---4" target="_blank">The Human: 점수 너머의 판단</a></h3>
-
-
-
-AI 네이티브 채용 시리즈 3부작 중 Part 3입니다.Part 1: “The Philosophy”Part 2: “The Machine”Part 3: “The Human”Part 2의 머신이 400여 명을 분류하고, 각자에게 맞춤 면접 가이드까지 준비해뒀습니다. 이제 그 가이드를 손에 쥔 20명 이상의 면접관이, 5일 동안 100명 넘는 후보자와 마주 앉습
-
-<small>👤 Tao Kim</small>
+<small>👤 Daniele Calandriello, Alessandro Lazaric, Michal Valko</small>
 
 </div>
 
@@ -211,7 +158,7 @@ AI 네이티브 채용 시리즈 3부작 중 Part 3입니다.Part 1: “The Phil
 
 
 
-🤗 ml-intern: an open-source ML engineer that reads papers, trains models, and ships ML models
+논문을 읽고 모델을 훈련시켜 실제 서비스에 배포까지 하는 오픈소스 ML 엔지니어 AI 프로젝트입니다. 복잡한 머신러닝 파이프라인을 자동화하여 개발 과정을 돕는 것을 목표로 합니다.
 
 
 
@@ -228,7 +175,7 @@ AI 네이티브 채용 시리즈 3부작 중 Part 3입니다.Part 1: “The Phil
 </div>
 
 
-Code search MCP for Claude Code. Make entire codebase the context for any coding agent.
+AI 코딩 에이전트가 전체 코드베이스를 한 번에 파악하고 작업할 수 있도록 돕는 도구입니다. 코드 전체를 컨텍스트로 제공하여, AI가 더 정확하고 맥락에 맞는 코드를 생성하도록 지원합니다.
 
 
 
@@ -245,7 +192,7 @@ Code search MCP for Claude Code. Make entire codebase the context for any coding
 </div>
 
 
-"RAG-Anything: All-in-One RAG Framework"
+어떤 종류의 데이터든지 활용하여 LLM의 답변 품질을 높일 수 있는 올인원 RAG 프레임워크입니다. 텍스트, 이미지 등 다양한 형태의 정보를 기반으로 더 정확하고 풍부한 답변을 생성하도록 돕습니다.
 
 
 
@@ -258,7 +205,7 @@ Code search MCP for Claude Code. Make entire codebase the context for any coding
 
 
 
-Uncensored, open-source alternative to Higgsfield AI, Freepik, Krea, Openart AI — Free, unrestricted AI image & video generation studio with 200+ models (Flux, Midjourney, Kling, Sora, Veo). No conten
+검열 없는 오픈소스 생성 AI 스튜디오로, Midjourney나 Sora 같은 상용 서비스의 대안을 표방합니다. 200개 이상의 다양한 모델을 필터링 없이 무료로 사용하며, 직접 서버에 설치할 수도 있습니다.
 
 
 
@@ -275,7 +222,7 @@ Uncensored, open-source alternative to Higgsfield AI, Freepik, Krea, Openart AI 
 </div>
 
 
-Use claude-code for free in the terminal, VSCode extension or via discord like openclaw
+강력한 코딩 모델인 `claude-code`를 무료로 사용할 수 있게 해주는 도구입니다. 터미널, VS Code 확장 프로그램, 디스코드 등 다양한 환경에서 편리하게 AI 코딩 지원을 받을 수 있습니다.
 
 
 
@@ -290,7 +237,7 @@ Use claude-code for free in the terminal, VSCode extension or via discord like o
 ## 📊 오늘의 키워드
 
 <div class="keywords">
-<code>LLM</code> <code>LoRA</code> <code>Reasoning</code> <code>Small Language Model</code> <code>Agent</code> <code>Transformer</code> <code>Claude</code> <code>Claude Code</code> <code>RAG</code> 
+<code>LLM</code> <code>LoRA</code> <code>Small Language Model</code> <code>Agent</code> <code>Fine-tuning</code> <code>RAG</code> <code>Claude</code> <code>Claude Code</code> 
 </div>
 
 ---
