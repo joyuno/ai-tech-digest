@@ -1,12 +1,11 @@
 ---
 layout: post
-title: "AI Tech - 2026-04-27"
+title: "LLaDA2.0-Uni 확산 LLM 멀티모달 통합"
 date: 2026-04-27
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
 ---
 
-> 🤖 AI 기술 트렌드를 자동으로 수집하고 요약한 다이제스트입니다.
 
 ---
 
@@ -274,4 +273,3 @@ AI 기술이 완전히 자리 잡은 100년 후의 미래를 상상하는 주간
 
 ---
 
-<small>🤖 이 포스트는 <a href="https://github.com/joyuno/ai-tech-digest">AI Tech Digest</a>에 의해 자동 생성되었습니다.</small>

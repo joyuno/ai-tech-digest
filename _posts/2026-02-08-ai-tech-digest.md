@@ -1,12 +1,11 @@
 ---
 layout: post
-title: "AI Tech - 2026-02-08"
+title: "CAR-bench LLM 에이전트 실세계 불확실성 평가"
 date: 2026-02-08
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
 ---
 
-> 🤖 AI 기술 트렌드를 자동으로 수집하고 요약한 다이제스트입니다.
 
 ---
 
@@ -246,4 +245,3 @@ OpenAI Codex 모델을 효과적으로 활용하기 위한 기술(Skills)과 예
 
 ---
 
-<small>🤖 이 포스트는 <a href="https://github.com/joyuno/ai-tech-digest">AI Tech Digest</a>에 의해 자동 생성되었습니다.</small>

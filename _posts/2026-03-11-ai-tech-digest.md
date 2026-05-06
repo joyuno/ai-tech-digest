@@ -1,12 +1,11 @@
 ---
 layout: post
-title: "AI Tech - 2026-03-11"
+title: "LLM 장편 스토리 생성 일관성 버그"
 date: 2026-03-11
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
 ---
 
-> 🤖 AI 기술 트렌드를 자동으로 수집하고 요약한 다이제스트입니다.
 
 ---
 
@@ -250,4 +249,3 @@ Google Cloud 환경에서 생성형 AI를 활용할 수 있는 다양한 샘플 
 
 ---
 
-<small>🤖 이 포스트는 <a href="https://github.com/joyuno/ai-tech-digest">AI Tech Digest</a>에 의해 자동 생성되었습니다.</small>

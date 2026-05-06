@@ -1,12 +1,11 @@
 ---
 layout: post
-title: "AI Tech - 2026-01-31"
+title: "Idea2Story 연구 개념 과학 서사 자동화"
 date: 2026-01-31
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
 ---
 
-> 🤖 AI 기술 트렌드를 자동으로 수집하고 요약한 다이제스트입니다.
 
 ---
 
@@ -270,4 +269,3 @@ AI 챗봇에 임베드된 UI를 위한 표준 프로토콜인 MCP Apps의 공식
 
 ---
 
-<small>🤖 이 포스트는 <a href="https://github.com/joyuno/ai-tech-digest">AI Tech Digest</a>에 의해 자동 생성되었습니다.</small>

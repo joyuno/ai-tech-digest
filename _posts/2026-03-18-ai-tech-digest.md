@@ -1,12 +1,11 @@
 ---
 layout: post
-title: "AI Tech - 2026-03-18"
+title: "AI 과학 안목 학습 RLCF OpenSeeker"
 date: 2026-03-18
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
 ---
 
-> 🤖 AI 기술 트렌드를 자동으로 수집하고 요약한 다이제스트입니다.
 
 ---
 
@@ -298,4 +297,3 @@ AI의 선구자 얀 르쿤이 메타를 떠나 10억 달러 규모의 투자를 
 
 ---
 
-<small>🤖 이 포스트는 <a href="https://github.com/joyuno/ai-tech-digest">AI Tech Digest</a>에 의해 자동 생성되었습니다.</small>

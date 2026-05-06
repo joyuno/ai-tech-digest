@@ -1,12 +1,11 @@
 ---
 layout: post
-title: "AI Tech - 2026-03-10"
+title: "MOOSE-Star 과학 발견 훈련 복잡성 장벽 돌파"
 date: 2026-03-10
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
 ---
 
-> 🤖 AI 기술 트렌드를 자동으로 수집하고 요약한 다이제스트입니다.
 
 ---
 
@@ -262,4 +261,3 @@ AI가 더 나은 UI/UX 디자인을 생성하고 이해할 수 있도록 돕는 
 
 ---
 
-<small>🤖 이 포스트는 <a href="https://github.com/joyuno/ai-tech-digest">AI Tech Digest</a>에 의해 자동 생성되었습니다.</small>

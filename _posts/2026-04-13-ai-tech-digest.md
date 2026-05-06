@@ -1,12 +1,11 @@
 ---
 layout: post
-title: "AI Tech - 2026-04-13"
+title: "Reasoning SFT 일반화 최적화 데이터 분석"
 date: 2026-04-13
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
 ---
 
-> 🤖 AI 기술 트렌드를 자동으로 수집하고 요약한 다이제스트입니다.
 
 ---
 
@@ -258,4 +257,3 @@ Claude를 코딩에 활용할 때 최상의 결과물을 얻기 위한 베스트
 
 ---
 
-<small>🤖 이 포스트는 <a href="https://github.com/joyuno/ai-tech-digest">AI Tech Digest</a>에 의해 자동 생성되었습니다.</small>

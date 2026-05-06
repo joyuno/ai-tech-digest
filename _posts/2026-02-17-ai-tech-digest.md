@@ -1,12 +1,11 @@
 ---
 layout: post
-title: "AI Tech - 2026-02-17"
+title: "LLM Feature Space 다양한 데이터 합성"
 date: 2026-02-17
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
 ---
 
-> 🤖 AI 기술 트렌드를 자동으로 수집하고 요약한 다이제스트입니다.
 
 ---
 
@@ -242,4 +241,3 @@ Gmail, 캘린더, 드라이브 등 구글의 주요 서비스들을 터미널에
 
 ---
 
-<small>🤖 이 포스트는 <a href="https://github.com/joyuno/ai-tech-digest">AI Tech Digest</a>에 의해 자동 생성되었습니다.</small>

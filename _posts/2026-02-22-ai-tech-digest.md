@@ -1,12 +1,11 @@
 ---
 layout: post
-title: "AI Tech - 2026-02-22"
+title: "SLA2 학습 라우팅 Sparse Attention 혁신"
 date: 2026-02-22
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
 ---
 
-> 🤖 AI 기술 트렌드를 자동으로 수집하고 요약한 다이제스트입니다.
 
 ---
 
@@ -246,4 +245,3 @@ AI 모델 학습 속도를 획기적으로 높여주는 Unsloth를 이제 Huggin
 
 ---
 
-<small>🤖 이 포스트는 <a href="https://github.com/joyuno/ai-tech-digest">AI Tech Digest</a>에 의해 자동 생성되었습니다.</small>

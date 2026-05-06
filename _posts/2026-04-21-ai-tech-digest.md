@@ -1,12 +1,11 @@
 ---
 layout: post
-title: "AI Tech - 2026-04-21"
+title: "Diffusion 모델 SNR-t 바이어스 규명"
 date: 2026-04-21
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
 ---
 
-> 🤖 AI 기술 트렌드를 자동으로 수집하고 요약한 다이제스트입니다.
 
 ---
 
@@ -262,4 +261,3 @@ AI 기반의 비디오 편집 및 시각 효과 시스템들을 종합적으로 
 
 ---
 
-<small>🤖 이 포스트는 <a href="https://github.com/joyuno/ai-tech-digest">AI Tech Digest</a>에 의해 자동 생성되었습니다.</small>

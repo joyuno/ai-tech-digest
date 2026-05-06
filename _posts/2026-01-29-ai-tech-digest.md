@@ -1,12 +1,11 @@
 ---
 layout: post
-title: "AI Tech - 2026-01-29"
+title: "daVinci-Dev 에이전트 미드트레이닝 소프트웨어 엔지니어링"
 date: 2026-01-29
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
 ---
 
-> 🤖 AI 기술 트렌드를 자동으로 수집하고 요약한 다이제스트입니다.
 
 ---
 
@@ -348,4 +347,3 @@ MoonshotAI에서 개발한 새로운 CLI 기반 AI 에이전트 도구입니다.
 
 ---
 
-<small>🤖 이 포스트는 <a href="https://github.com/joyuno/ai-tech-digest">AI Tech Digest</a>에 의해 자동 생성되었습니다.</small>

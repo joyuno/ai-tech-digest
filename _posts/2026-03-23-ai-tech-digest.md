@@ -1,12 +1,11 @@
 ---
 layout: post
-title: "AI Tech - 2026-03-23"
+title: "Balanced Thinking 효율 추론"
 date: 2026-03-23
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
 ---
 
-> 🤖 AI 기술 트렌드를 자동으로 수집하고 요약한 다이제스트입니다.
 
 ---
 
@@ -258,4 +257,3 @@ Claude Code의 작업 상태를 화면에서 한눈에 볼 수 있게 해주는 
 
 ---
 
-<small>🤖 이 포스트는 <a href="https://github.com/joyuno/ai-tech-digest">AI Tech Digest</a>에 의해 자동 생성되었습니다.</small>

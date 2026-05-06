@@ -1,12 +1,11 @@
 ---
 layout: post
-title: "AI Tech - 2026-02-15"
+title: "Moltbook Devil 자가진화 AI 안전 붕괴"
 date: 2026-02-15
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
 ---
 
-> 🤖 AI 기술 트렌드를 자동으로 수집하고 요약한 다이제스트입니다.
 
 ---
 
@@ -246,4 +245,3 @@ React 환경에서 AI가 실시간으로 생성하는 'Generative UI'를 쉽게 
 
 ---
 
-<small>🤖 이 포스트는 <a href="https://github.com/joyuno/ai-tech-digest">AI Tech Digest</a>에 의해 자동 생성되었습니다.</small>

@@ -1,12 +1,11 @@
 ---
 layout: post
-title: "AI Tech - 2026-02-02"
+title: "ASTRA 에이전트 궤적 강화아레나 자동합성"
 date: 2026-02-02
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
 ---
 
-> 🤖 AI 기술 트렌드를 자동으로 수집하고 요약한 다이제스트입니다.
 
 ---
 
@@ -266,4 +265,3 @@ LLM 기반의 멀티 에이전트 협업을 통해 소프트웨어 개발 전체
 
 ---
 
-<small>🤖 이 포스트는 <a href="https://github.com/joyuno/ai-tech-digest">AI Tech Digest</a>에 의해 자동 생성되었습니다.</small>
