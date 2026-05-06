@@ -16,6 +16,8 @@ import urllib.error
 from typing import Dict, List, Any
 from datetime import datetime
 
+from .scoring import select_representative
+
 
 FALLBACK_MODEL_CHAIN = [
     "x-ai/grok-4.1-fast",
@@ -77,21 +79,33 @@ class OpenRouterSummarizer:
 
         summarized_data = self._summarize_per_source(classified_data)
         sources = self._format_sources(summarized_data)
-        headline = self._generate_headline(sources)
+
+        # 점수화 → 그날의 대표 항목 (헤드라인 angle)
+        representative = select_representative(classified_data, seen_titles=set())
+        if representative:
+            print(
+                f"  🏆 대표 소스={representative['source_id']} "
+                f"점수={representative['score']} "
+                f"항목={representative['item'].get('title', '')[:40]!r}"
+            )
+
+        headline = self._generate_headline(sources, representative)
 
         return {
             "date": datetime.now().strftime("%Y-%m-%d"),
             "headline": headline,
+            "representative": representative,
             "sources": sources,
             "raw_data": classified_data,
         }
 
     # ---------- 큐레이션 헤드라인 ----------
 
-    def _generate_headline(self, sources: List[Dict]) -> str:
-        """그날의 항목 전체를 보고 한국어 한 줄 헤드라인 생성.
+    def _generate_headline(self, sources: List[Dict], representative: Dict[str, Any] = None) -> str:
+        """그날의 항목 전체 + 점수화 결과를 보고 한국어 한 줄 헤드라인 생성.
 
-        실패하면 빈 문자열 반환 — 템플릿이 기본 폴백(`AI Tech - YYYY-MM-DD`) 사용.
+        representative 가 주어지면 그 항목을 헤드라인 angle 로 강조. 실패 시
+        빈 문자열 반환 → 템플릿이 기본 폴백(`AI Tech - YYYY-MM-DD`) 사용.
         """
         items = []
         cats = []
@@ -112,18 +126,31 @@ class OpenRouterSummarizer:
         if not items:
             return ""
 
+        # 대표 항목 라인 — 점수화 결과를 prompt 에 명시
+        rep_line = ""
+        if representative and representative.get("item"):
+            rep_item = representative["item"]
+            rep_line = (
+                f"\n\n[그날의 대표 — 점수 {representative['score']}점, "
+                f"소스 {representative['source_id']}]\n"
+                f"제목: {rep_item.get('title', '')[:160]}\n"
+                f"요약: {(rep_item.get('summary') or '')[:200]}"
+            )
+
         prompt = (
             "당신은 매일의 AI 기술 트렌드를 한국어 헤드라인으로 정제하는 에디터입니다.\n\n"
-            "오늘의 항목들을 보고 그날의 핵심 흐름을 **한국어 15~35자 한 줄 제목**으로 요약해주세요.\n"
-            "- 첫 항목이 보통 가장 핵심이니 그쪽 비중 ↑\n"
+            "오늘의 항목들과 점수화된 대표 항목을 보고 그날의 핵심 흐름을 "
+            "**한국어 15~35자 한 줄 제목**으로 요약해주세요.\n"
+            "- 대표 항목이 헤드라인의 중심 — 그 키워드를 헤드라인에 포함\n"
             "- 영어 고유명사(LLM, RAG, Transformer 등)는 그대로 OK\n"
             "- 따옴표·이모지·말꼬리 종결(~다, ~음) 모두 금지\n"
             "- 명사형 또는 키워드 조합 헤드라인\n"
             "- 출력은 제목 한 줄만\n\n"
             f"카테고리: {', '.join(cats) if cats else '—'}\n"
-            "항목:\n"
+            "전체 항목:\n"
             + "\n".join(f"- {t}" for t in items)
             + (f"\n\n첫 항목 요약: {first_snippet}" if first_snippet else "")
+            + rep_line
             + "\n\n한국어 헤드라인:"
         )
 

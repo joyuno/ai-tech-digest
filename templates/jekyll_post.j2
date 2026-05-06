@@ -6,8 +6,26 @@ categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
 ---
 
+{% set src_icon = {
+  '📚': 'book-open',
+  '🤗': 'cpu',
+  '⭐': 'star',
+  '💳': 'credit-card',
+  '👕': 'shirt',
+  '📰': 'newspaper',
+  '🐦': 'at-sign'
+} %}
+{% set cat_icon = {
+  '🧠': 'brain',
+  '🔧': 'wrench',
+  '🎯': 'target',
+  '🔍': 'search',
+  '🤖': 'bot',
+  '💻': 'code-2'
+} %}
+
 {% for source in sources %}
-## {{ source.emoji }} {{ source.name }}
+## <i data-lucide="{{ src_icon[source.emoji] | default('hash') }}"></i> {{ source.name }}
 
 {% for item in source["items"] %}
 <div class="digest-item" markdown="1">
@@ -16,13 +34,13 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 
 {% if item.categories %}
 <div class="categories">
-{% for cat in item.categories %}<span class="category-tag">{{ cat.emoji }} {{ cat.name }}</span> {% endfor %}
+{% for cat in item.categories %}<span class="category-tag"><i data-lucide="{{ cat_icon[cat.emoji] | default('hash') }}"></i> {{ cat.name }}</span> {% endfor %}
 </div>
 {% endif %}
 
 {{ item.summary }}
 
-{% if item.author %}<small>👤 {{ item.author }}</small>{% endif %}
+{% if item.author %}<small><i data-lucide="user"></i> {{ item.author }}</small>{% endif %}
 
 </div>
 
@@ -32,7 +50,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 
 {% endfor %}
 
-## 📊 오늘의 키워드
+## <i data-lucide="bar-chart-3"></i> 오늘의 키워드
 
 <div class="keywords">
 {% for keyword in top_keywords %}<code>{{ keyword }}</code> {% endfor %}
