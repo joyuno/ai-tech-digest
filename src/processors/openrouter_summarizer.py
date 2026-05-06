@@ -76,12 +76,86 @@ class OpenRouterSummarizer:
             return self._fallback(classified_data)
 
         summarized_data = self._summarize_per_source(classified_data)
+        sources = self._format_sources(summarized_data)
+        headline = self._generate_headline(sources)
 
         return {
             "date": datetime.now().strftime("%Y-%m-%d"),
-            "sources": self._format_sources(summarized_data),
+            "headline": headline,
+            "sources": sources,
             "raw_data": classified_data,
         }
+
+    # ---------- 큐레이션 헤드라인 ----------
+
+    def _generate_headline(self, sources: List[Dict]) -> str:
+        """그날의 항목 전체를 보고 한국어 한 줄 헤드라인 생성.
+
+        실패하면 빈 문자열 반환 — 템플릿이 기본 폴백(`AI Tech - YYYY-MM-DD`) 사용.
+        """
+        items = []
+        cats = []
+        first_snippet = ""
+        for src in sources:
+            for it in src.get("items", []):
+                if it.get("title"):
+                    items.append(it["title"])
+                for c in (it.get("categories") or []):
+                    name = c.get("name") if isinstance(c, dict) else str(c)
+                    if name:
+                        cats.append(name)
+                if not first_snippet and it.get("summary"):
+                    first_snippet = str(it["summary"])[:280]
+
+        items = items[:7]
+        cats = list(dict.fromkeys(cats))[:6]
+        if not items:
+            return ""
+
+        prompt = (
+            "당신은 매일의 AI 기술 트렌드를 한국어 헤드라인으로 정제하는 에디터입니다.\n\n"
+            "오늘의 항목들을 보고 그날의 핵심 흐름을 **한국어 15~35자 한 줄 제목**으로 요약해주세요.\n"
+            "- 첫 항목이 보통 가장 핵심이니 그쪽 비중 ↑\n"
+            "- 영어 고유명사(LLM, RAG, Transformer 등)는 그대로 OK\n"
+            "- 따옴표·이모지·말꼬리 종결(~다, ~음) 모두 금지\n"
+            "- 명사형 또는 키워드 조합 헤드라인\n"
+            "- 출력은 제목 한 줄만\n\n"
+            f"카테고리: {', '.join(cats) if cats else '—'}\n"
+            "항목:\n"
+            + "\n".join(f"- {t}" for t in items)
+            + (f"\n\n첫 항목 요약: {first_snippet}" if first_snippet else "")
+            + "\n\n한국어 헤드라인:"
+        )
+
+        for model in self.model_chain[:2]:  # primary + 첫 fallback 만 시도 (속도)
+            try:
+                payload = json.dumps({
+                    "model": model,
+                    "messages": [{"role": "user", "content": prompt}],
+                    "max_tokens": 120,
+                    "temperature": 0.5,
+                }).encode("utf-8")
+                req = urllib.request.Request(
+                    "https://openrouter.ai/api/v1/chat/completions",
+                    data=payload,
+                    headers={
+                        "Authorization": f"Bearer {self.api_key}",
+                        "Content-Type": "application/json",
+                    },
+                    method="POST",
+                )
+                with urllib.request.urlopen(req, timeout=HTTP_TIMEOUT) as resp:
+                    body = json.loads(resp.read().decode("utf-8"))
+                text = (body["choices"][0]["message"]["content"] or "").strip()
+                if not text:
+                    continue
+                line = text.splitlines()[0].strip().strip('"\'').rstrip(".· ")
+                if 5 <= len(line) <= 80 and korean_ratio(line) >= 0.2:
+                    print(f"  📰 헤드라인: {line}")
+                    return line
+            except Exception as e:
+                print(f"  ⚠️ 헤드라인 생성 실패 ({model}): {e}")
+        return ""
 
     # ---------- 내부 ----------
 

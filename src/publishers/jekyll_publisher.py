@@ -50,6 +50,7 @@ class JekyllPublisher:
 
             return template.render(
                 date=summary["date"],
+                headline=summary.get("headline", "").strip(),
                 sources=summary.get("sources", []),
                 top_keywords=top_keywords[:10],
             )
