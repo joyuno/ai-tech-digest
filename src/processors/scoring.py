@@ -30,8 +30,8 @@
 from typing import Any, Dict, List, Optional
 
 SOURCE_BASE = {
-    "toss": 80,
-    "musinsa": 80,
+    "toss": 60,
+    "musinsa": 60,
     "github_trending": 60,
     "arxiv": 50,
     "huggingface": 45,
