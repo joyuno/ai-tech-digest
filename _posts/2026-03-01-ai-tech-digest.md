@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Airi 셀프호스팅 AI 컴패니언 게임 플레이"
+title: "moeru-ai/airi — 셀프호스팅 AI companion + 게임 플레이"
 date: 2026-03-01
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "무신사 AI 후기 요약 — 후기 10만 개 정리"
+title: "후기 10만 개를 한 줄로 — 무신사 AI 후기 요약 도입기"
 date: 2026-03-31
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

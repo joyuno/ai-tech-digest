@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "토스 LLM 보안 취약점 자동 분석 #2"
+title: "토스의 LLM 기반 서비스 취약점 자동 분석 #2"
 date: 2026-03-21
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

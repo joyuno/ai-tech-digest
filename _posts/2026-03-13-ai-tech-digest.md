@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "LLM2Vec-Gen 잠재 응답 표현 임베딩"
+title: "LLM2Vec-Gen — 잠재 응답으로 만드는 generative embedding"
 date: 2026-03-13
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

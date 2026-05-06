@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Neovim 인-에디터 AI 에이전트 ThePrimeagen/99"
+title: "ThePrimeagen/99, Neovim 안에서 굴러가는 AI 에이전트"
 date: 2026-02-01
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

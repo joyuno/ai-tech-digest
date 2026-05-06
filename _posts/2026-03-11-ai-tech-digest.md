@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "ConStor 벤치마크 LLM 장편 일관성 결함"
+title: "Lost in Stories — LLM 장편 생성의 일관성 결함"
 date: 2026-03-11
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

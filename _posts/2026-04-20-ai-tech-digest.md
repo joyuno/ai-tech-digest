@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Thunderbolt 트렌드 지속 — Vendor lock-in 회피"
+title: "thunderbolt 트렌드 지속 — bring-your-own AI 흐름"
 date: 2026-04-20
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

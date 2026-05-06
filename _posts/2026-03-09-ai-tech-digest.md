@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "무신사 모노레포 i18next 다국어 시스템"
+title: "무신사 모노레포에 i18next 다국어 시스템 깔기"
 date: 2026-03-09
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

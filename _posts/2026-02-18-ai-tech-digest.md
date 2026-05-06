@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "heretic LLM 검열·안전장치 자동 제거"
+title: "heretic, LLM 검열·안전장치를 자동으로 풀어주는 도구"
 date: 2026-02-18
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "토스 외국인 사용자 인증 UX 리서치"
+title: "토스의 외국인 사용자 인증 실패 사례 리서치"
 date: 2026-03-07
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

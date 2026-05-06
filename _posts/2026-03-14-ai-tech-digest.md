@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "무신사 AI 네이티브 자동 채용 파이프라인"
+title: "무신사의 AI Native Hiring 채용 파이프라인 철학"
 date: 2026-03-14
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

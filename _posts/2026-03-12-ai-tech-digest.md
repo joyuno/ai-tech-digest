@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Claude Code Agent Teams 명절 장애 반나절 해결"
+title: "무신사가 명절에 Claude Code Agent Teams로 결제 장애 잡기"
 date: 2026-03-12
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

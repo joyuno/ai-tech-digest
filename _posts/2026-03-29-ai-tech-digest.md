@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "AI-Scientist-v2 워크샵급 자동 과학 발견"
+title: "AI-Scientist-v2 — tree-search agent로 과학 발견 자동화"
 date: 2026-03-29
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

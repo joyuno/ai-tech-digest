@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "huggingface ml-intern 오픈소스 ML 엔지니어 AI"
+title: "huggingface ml-intern — 논문 읽고 모델 배포까지 하는 ML 인턴 AI"
 date: 2026-04-24
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

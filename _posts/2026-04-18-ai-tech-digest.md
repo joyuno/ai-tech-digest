@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "evolver GEP 기반 AI 에이전트 자가진화"
+title: "evolver — GEP 유전자 진화 프로토콜 기반 자가 진화 엔진"
 date: 2026-04-18
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

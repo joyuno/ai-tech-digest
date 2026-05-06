@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Thunderbolt 오픈소스 AI 데이터 주권 프레임워크"
+title: "thunderbolt — vendor lock-in 없는 오픈소스 AI 데이터 주권"
 date: 2026-04-19
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

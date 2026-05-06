@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The Machine — AI가 지원자 AI 코드 채점"
+title: "The Machine — AI agent가 지원자의 AI 코드를 채점하다"
 date: 2026-04-21
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

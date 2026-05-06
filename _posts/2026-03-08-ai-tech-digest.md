@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "HACRL 이종 에이전트 협력 강화학습"
+title: "HACRL — heterogeneous agent들의 협력 강화학습"
 date: 2026-03-08
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

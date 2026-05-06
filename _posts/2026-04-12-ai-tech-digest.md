@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Archon AI 코딩 일관성 하네스 빌더"
+title: "Archon — AI coding을 일관·반복 가능하게 만드는 harness"
 date: 2026-04-12
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

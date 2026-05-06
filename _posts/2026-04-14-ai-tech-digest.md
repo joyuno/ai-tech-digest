@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "VisionFoundry VLM 합성 이미지 시각 학습"
+title: "VisionFoundry — 합성 이미지로 VLM 시각 인식 가르치기"
 date: 2026-04-14
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

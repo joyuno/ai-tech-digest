@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "임베디드 로보틱스 — VLA 파인튜닝 + 온디바이스"
+title: "임베디드 로보틱스 — 데이터셋·VLA fine-tune·on-device 최적화"
 date: 2026-03-06
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

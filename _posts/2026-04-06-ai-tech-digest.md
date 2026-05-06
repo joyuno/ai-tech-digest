@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "무신사 iOS 테스트 커버리지 9 → 79% AI 활용"
+title: "AI에게 테스트 코드를 맡겨 무신사 iOS 커버리지 9 → 79%"
 date: 2026-04-06
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

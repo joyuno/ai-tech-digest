@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Airi 트렌드 지속 — Waifu AI 멀티플랫폼"
+title: "airi 트렌드 지속 — Waifu AI를 내 OS에서 굴리는 흐름"
 date: 2026-03-02
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "CAR-bench 차량 음성비서 LLM 일관성 평가"
+title: "CAR-bench — 차량 음성 비서로 보는 LLM 일관성·한계 인식"
 date: 2026-02-07
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

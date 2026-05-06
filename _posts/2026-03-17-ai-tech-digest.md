@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "LMEB 에이전트 장기 메모리 평가 벤치마크"
+title: "LMEB — long-horizon memory를 평가하는 새 벤치마크"
 date: 2026-03-17
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

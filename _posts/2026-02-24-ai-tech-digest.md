@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "VESPO LLM 강화학습 Off-Policy 안정화"
+title: "VESPO — Off-Policy LLM RL 안정화하는 variational soft PO"
 date: 2026-02-24
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

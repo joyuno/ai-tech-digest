@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Utonia 포인트 클라우드 통합 인코더"
+title: "Utonia, 모든 point cloud를 위한 단일 인코더 시도"
 date: 2026-03-05
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

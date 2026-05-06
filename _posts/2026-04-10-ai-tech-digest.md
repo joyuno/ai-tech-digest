@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "토스 프론트 2 폰트 디자인·사용성 제작기"
+title: "하마터면 못생겨질 뻔했다 — 토스 프론트 2 폰트 제작기"
 date: 2026-04-10
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

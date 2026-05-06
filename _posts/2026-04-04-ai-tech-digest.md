@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "토스 디자인 직무 6개에서 2개로 통합"
+title: "토스가 디자인 직무를 6개에서 2개로 줄인 이유"
 date: 2026-04-04
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

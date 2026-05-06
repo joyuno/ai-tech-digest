@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "무신사 Gemini 기반 QA 테스트 자동화"
+title: "Gemini 기반 무신사 QA 테스트 케이스 자동화 시행착오"
 date: 2026-04-16
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

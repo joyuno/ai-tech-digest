@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "토스 근속 굿즈 — 8개월 기획 여정"
+title: "Layers of your time — 토스 근속 굿즈 8개월 기획기"
 date: 2026-04-08
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

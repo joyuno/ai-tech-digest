@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Step 3.5 Flash 11B-active MoE 에이전트"
+title: "Step 3.5 Flash, 11B-active MoE로 frontier급 추론"
 date: 2026-02-13
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "TradingAgents 다중 LLM 자동 트레이딩"
+title: "TradingAgents — 멀티 LLM 협업 자동 트레이딩 프레임워크"
 date: 2026-03-23
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

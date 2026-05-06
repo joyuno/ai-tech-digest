@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Kronos 금융 시장 특화 Foundation Model"
+title: "Kronos — 금융 시장 전용 foundation model"
 date: 2026-04-13
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

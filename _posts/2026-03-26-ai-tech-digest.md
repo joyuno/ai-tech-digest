@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "토스플레이스 Metric Review 실행 가이드"
+title: "Metric Review — 지표 분석을 실행으로 잇는 토스플레이스"
 date: 2026-03-26
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

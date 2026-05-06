@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "무신사 풀필먼트 — Jenkins에서 Temporal로"
+title: "무신사 풀필먼트, Jenkins에서 Temporal로 갈아탄 이유"
 date: 2026-02-06
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "무신사 핏 데이터 자산 — AI 만드는 회사로"
+title: "AI를 쓰는 회사 vs 만드는 회사 — 무신사의 핏 데이터 전략"
 date: 2026-03-20
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

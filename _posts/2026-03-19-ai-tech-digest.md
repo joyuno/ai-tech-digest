@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "InCoder-32B 산업용 코드 파운데이션 모델"
+title: "InCoder-32B — 산업 시나리오용 32B 코드 foundation 모델"
 date: 2026-03-19
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "claude-code-telegram 텔레그램 원격 봇"
+title: "claude-code-telegram — 텔레그램으로 원격 Claude Code"
 date: 2026-02-20
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

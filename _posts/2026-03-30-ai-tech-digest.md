@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "무신사 루키즈 1기 AI 네이티브 신입 합격"
+title: "claude-howto, Claude Code를 시각 가이드로 익히는 법"
 date: 2026-03-30
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "셀프호스팅 AI 캐릭터 흐름 Airi 안착"
+title: "셀프호스팅 AI 캐릭터의 정착, airi 3일째 1위"
 date: 2026-03-03
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

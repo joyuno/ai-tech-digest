@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "소프트웨어 3.0 시대 — 토스의 Claude Code 시각"
+title: "Software 3.0 시대를 받아들이는 토스의 시각"
 date: 2026-01-29
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

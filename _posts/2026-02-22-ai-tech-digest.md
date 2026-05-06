@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "pentagi 자율 AI 모의해킹 에이전트"
+title: "pentagi, 모의해킹을 끝까지 수행하는 자율 AI 에이전트"
 date: 2026-02-22
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

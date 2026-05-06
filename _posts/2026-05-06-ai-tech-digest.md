@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "DeepSeek-TUI 터미널 코딩 에이전트"
+title: "DeepSeek-TUI — DeepSeek 코딩 에이전트를 터미널에서"
 date: 2026-05-06
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

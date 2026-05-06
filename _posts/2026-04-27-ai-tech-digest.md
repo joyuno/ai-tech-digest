@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "mattpocock/skills 실무 Claude 에이전트 모음"
+title: "mattpocock/skills — 실무 엔지니어가 만든 Claude agent skill 모음"
 date: 2026-04-27
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

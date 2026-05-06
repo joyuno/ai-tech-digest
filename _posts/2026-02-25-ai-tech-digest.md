@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "무신사 사용자 경험 기준 비즈니스 심각도"
+title: "무신사가 다시 정의한 사용자 경험 기준 비즈니스 심각도"
 date: 2026-02-25
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

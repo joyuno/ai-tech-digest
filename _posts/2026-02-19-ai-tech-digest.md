@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Sparse Autoencoder 무작위 베이스라인 검증"
+title: "Sparse Autoencoder, 정말 random baseline을 이기는가"
 date: 2026-02-19
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

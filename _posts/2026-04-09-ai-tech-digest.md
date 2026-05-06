@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "무신사 Self-POS 오프라인 고객경험 설계"
+title: "Self-POS — 무신사다운 오프라인 고객경험 만들기"
 date: 2026-04-09
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

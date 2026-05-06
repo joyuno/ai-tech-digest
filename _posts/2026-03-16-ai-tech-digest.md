@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "TranslateGemma 무신사 On-Premise 번역 실험"
+title: "TranslateGemma로 GPT-4o-mini를 대체한 무신사 번역 실험"
 date: 2026-03-16
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

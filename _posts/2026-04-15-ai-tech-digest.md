@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "QuanBench+ 양자 코드 생성 통합 벤치마크"
+title: "QuanBench+ — multi-framework quantum code 생성 벤치마크"
 date: 2026-04-15
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

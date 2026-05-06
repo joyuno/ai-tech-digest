@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "무신사 Self-POS Zero-to-One 경험 설계"
+title: "무신사 Self-POS Zero-to-One — 직원 없는 계산대 경험 설계"
 date: 2026-04-03
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

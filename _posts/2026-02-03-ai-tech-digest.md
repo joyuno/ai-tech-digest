@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "claude-mem 코딩 세션 자동 컨텍스트 보존"
+title: "claude-mem 트렌드 지속 + 코딩 메모리 압축 흐름"
 date: 2026-02-03
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "free-claude-code 무료 Claude 멀티 플랫폼"
+title: "free-claude-code — Claude를 터미널·VSCode·Discord에서 무료로"
 date: 2026-04-26
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Self-Distilled RLVR LLM 자기증류 강화학습"
+title: "Self-Distilled RLVR — teacher 없이 LLM RL 자기증류"
 date: 2026-04-07
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Granite 4.0 1B Speech 엣지 다국어 음성"
+title: "Granite 4.0 1B Speech — 엣지용 다국어 음성 모델"
 date: 2026-03-10
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

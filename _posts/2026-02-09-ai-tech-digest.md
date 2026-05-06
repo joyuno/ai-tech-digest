@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "LLM 에이전트 실세계 불확실성 한계 인식"
+title: "CAR-bench가 짚은 실세계 불확실성 속 LLM 한계"
 date: 2026-02-09
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

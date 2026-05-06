@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "OpenViking 에이전트 컨텍스트 데이터베이스"
+title: "OpenViking — AI agent용 파일시스템형 컨텍스트 DB"
 date: 2026-03-15
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

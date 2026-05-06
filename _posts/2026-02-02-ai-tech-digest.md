@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "무신사 정산 시스템 단계적 오픈 운영기"
+title: "claude-mem — Claude 세션 컨텍스트 자동 보존"
 date: 2026-02-02
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

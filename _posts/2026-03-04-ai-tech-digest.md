@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Image-CoT 이미지 편집 적응형 Test-Time Scaling"
+title: "Image-CoT — 이미지 편집을 위한 adaptive test-time scaling"
 date: 2026-03-04
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

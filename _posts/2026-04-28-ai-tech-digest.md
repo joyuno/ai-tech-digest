@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "토스 양자내성암호 — 10년 선제 도입"
+title: "Post-Quantum Cryptography — 토스가 10년 일찍 도입한 이유"
 date: 2026-04-28
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

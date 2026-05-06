@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Reasoning SFT 일반화 가능 — 통념 반박"
+title: "Reasoning SFT도 일반화한다 — RL only 통념을 반박"
 date: 2026-04-11
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

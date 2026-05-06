@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Omni-WorldBench 4D World Model 평가"
+title: "Omni-WorldBench — 상호작용 중심 4D World Model 평가"
 date: 2026-03-25
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

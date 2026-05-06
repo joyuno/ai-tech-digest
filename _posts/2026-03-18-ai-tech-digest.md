@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Software 3.0 영문판 — Claude Code 패러다임"
+title: "Embracing the Software 3.0 Era (English edition)"
 date: 2026-03-18
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

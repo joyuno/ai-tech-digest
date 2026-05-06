@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "비디오 빠르기·느림 — 시간 흐름 학습 모델"
+title: "Seeing Fast and Slow — 비디오 속 시간 흐름을 학습하는 모델"
 date: 2026-04-25
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

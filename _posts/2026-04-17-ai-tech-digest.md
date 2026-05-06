@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "토스 Flink+RocksDB 광고 7일 실시간 집계"
+title: "Apache Flink + RocksDB로 토스 광고 frequency capping 7일 확장"
 date: 2026-04-17
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

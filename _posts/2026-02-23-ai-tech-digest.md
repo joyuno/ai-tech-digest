@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "무신사 3서비스 27 SLO 데이터 운영 안정화"
+title: "무신사 3개 서비스 27 SLO·54 모니터·배포 자동화 2주"
 date: 2026-02-23
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

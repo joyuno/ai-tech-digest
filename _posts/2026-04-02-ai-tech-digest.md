@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "es-toolkit 97% 작고 2배 빠른 lodash 대체"
+title: "es-toolkit — 97% 작고 2배 빠른 lodash 후속, 주간 1000만 다운로드"
 date: 2026-04-02
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

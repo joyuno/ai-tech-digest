@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "자기진화 멀티에이전트 안전 약화 실증"
+title: "self-evolving multi-agent에서 사라지는 안전성 실증"
 date: 2026-02-15
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

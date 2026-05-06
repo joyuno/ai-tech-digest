@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Green-VLA 휴머노이드 5단계 커리큘럼 VLA"
+title: "Green-VLA, 휴머노이드용 5-stage curriculum VLA"
 date: 2026-02-04
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

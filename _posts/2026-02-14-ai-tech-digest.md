@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Moltbook 자기진화 AI 사회 안전성 트릴레마"
+title: "Moltbook 논문 — 자기진화 AI 사회의 안전성 trilemma"
 date: 2026-02-14
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

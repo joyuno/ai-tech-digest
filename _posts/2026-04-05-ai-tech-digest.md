@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "mlx-vlm Apple MLX VLM 파인튜닝 패키지"
+title: "mlx-vlm — Apple MLX로 Mac에서 굴리는 VLM 패키지"
 date: 2026-04-05
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Feature Activation Coverage LLM 데이터 다양성"
+title: "Less is Enough — feature space로 측정하는 데이터 다양성"
 date: 2026-02-17
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "무신사 LLM AI 코드 리뷰 인프라 구축기"
+title: "무신사가 LLM 코드 리뷰를 운영 가능한 인프라로 만든 법"
 date: 2026-02-10
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

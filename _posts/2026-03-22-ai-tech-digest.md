@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Trivy 컨테이너·클라우드 SBOM 취약점 스캐너"
+title: "Trivy — 컨테이너·클라우드 SBOM 보안 스캐너"
 date: 2026-03-22
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

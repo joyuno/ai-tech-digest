@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Nemotron ColEmbed V2 멀티모달 검색 SOTA"
+title: "Nemotron ColEmbed V2, ViDoRe V3 1위 멀티모달 검색"
 date: 2026-02-05
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

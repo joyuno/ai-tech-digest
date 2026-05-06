@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "토스 마케팅 문구 클릭률 6원칙"
+title: "토스가 공개한 마케팅 문구 클릭률 6원칙"
 date: 2026-01-31
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

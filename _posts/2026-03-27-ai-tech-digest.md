@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "UI-Voyager 실패 학습 자가진화 GUI 에이전트"
+title: "UI-Voyager — 실패 경험으로 진화하는 GUI 에이전트"
 date: 2026-03-27
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "무신사 모바일 앱 로그 데이터 품질 자동화"
+title: "HopChain — 일반화 가능한 VLM 추론용 multi-hop 데이터 합성"
 date: 2026-03-24
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

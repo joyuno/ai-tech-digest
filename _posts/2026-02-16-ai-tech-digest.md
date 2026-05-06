@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "gogcli 구글 워크스페이스 터미널 CLI"
+title: "gogcli, Google Workspace를 터미널에서 굴리는 CLI"
 date: 2026-02-16
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

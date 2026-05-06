@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "shannon 자율 AI 해커 보안 96% 성공"
+title: "shannon, XBOW 96% 성공률의 자율 AI 해커"
 date: 2026-02-08
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

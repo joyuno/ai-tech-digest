@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "LLM 터미널 명령 데이터 엔지니어링"
+title: "Terminal-Task-Gen — LLM 터미널 능력을 키우는 데이터 엔지니어링"
 date: 2026-02-26
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

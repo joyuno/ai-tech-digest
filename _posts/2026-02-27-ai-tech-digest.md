@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Toss Front SDK 퍼사드 패턴 설계"
+title: "쓰기 쉬운 Toss Front SDK — Facade 패턴 적용기"
 date: 2026-02-27
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "주니어 디자이너 비회원 퍼널 실험 설계"
+title: "주니어 디자이너를 위한 비회원 퍼널 실험 설계 팁"
 date: 2026-02-28
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "무신사 O4O 매장 파트타임 체험 운영기"
+title: "무신사 O4O팀이 슬랙 대신 무전기를 든 매장 체험기"
 date: 2026-02-21
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

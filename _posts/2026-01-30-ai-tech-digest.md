@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "AI 코딩 시대 적응 — 레이어드 개발자 관점"
+title: "moltbot — OS·플랫폼 가리지 않는 개인용 AI 비서"
 date: 2026-01-30
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

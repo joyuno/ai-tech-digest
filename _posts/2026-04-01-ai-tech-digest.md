@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "claude-howto Claude Code 시각 가이드"
+title: "claude-howto 트렌드 유지 + Claude Code 가이드 확산"
 date: 2026-04-01
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
