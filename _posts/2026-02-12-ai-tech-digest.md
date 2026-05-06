@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "AI 기술 다이제스트 - 2026-02-12"
+title: "AI Tech - 2026-02-12"
 date: 2026-02-12
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]

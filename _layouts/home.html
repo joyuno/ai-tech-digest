@@ -1,26 +1,27 @@
 ---
 layout: default
 ---
+<header class="page-hero">
+  <h1>{{ site.title }}</h1>
+  <p>{{ site.description }}</p>
+</header>
 
-<div class="home">
-  {{ content }}
+{{ content }}
 
-  <ul class="post-list">
-    {% for post in site.posts limit:20 %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%Y년 %m월 %d일" }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-      </li>
-    {% endfor %}
-  </ul>
-
+<section style="margin-top:2rem;">
   {% if site.posts.size == 0 %}
-  <p style="color: #64748b; text-align: center; padding: 40px 0;">
-    아직 포스트가 없습니다. 곧 AI 기술 다이제스트가 시작됩니다!
+  <p style="color:var(--text-muted);text-align:center;padding:3rem 0;">
+    아직 포스트가 없습니다. 매일 KST 8시 자동 생성됩니다.
   </p>
+  {% else %}
+  <div class="post-grid">
+    {% for post in site.posts %}
+    <article class="post-card">
+      <span class="date">{{ post.date | date: "%Y.%m.%d" }}</span>
+      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+      <p class="excerpt">{{ post.excerpt | strip_html | truncate: 140 }}</p>
+    </article>
+    {% endfor %}
+  </div>
   {% endif %}
-</div>
+</section>

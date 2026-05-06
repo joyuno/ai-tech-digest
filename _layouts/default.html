@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  {% feed_meta %}
+  {% seo %}
+  <style>
+    /* ─── Theme variables (OKLCH) ─── */
+    :root {
+      --sidebar-width: 240px;
+      --right-width: 240px;
+      --topbar-h: 3rem;
+
+      --grad-start: oklch(0.62 0.20 252);
+      --grad-end:   oklch(0.74 0.13 195);
+      --grad: linear-gradient(135deg in oklch, var(--grad-start), var(--grad-end));
+    }
+
+    [data-theme="light"] {
+      --bg:       oklch(0.98 0.005 240);
+      --surface:  oklch(1 0 0);
+      --surface-2:oklch(0.97 0.005 240);
+      --text:     oklch(0.25 0.02 250);
+      --text-muted:oklch(0.50 0.015 250);
+      --heading: oklch(0.18 0.02 250);
+      --border:  oklch(0.92 0.008 240);
+      --code-bg: oklch(0.96 0.005 240);
+      --tag-bg:  oklch(0.95 0.01 240);
+      --accent:  oklch(0.62 0.20 252);
+      --accent-hover: oklch(0.54 0.22 252);
+      --shadow-sm: 0 1px 2px oklch(0.5 0.05 250 / 0.06);
+      --shadow-md: 0 4px 12px oklch(0.5 0.05 250 / 0.08);
+    }
+
+    [data-theme="dark"] {
+      --bg:       oklch(0.18 0.015 250);
+      --surface:  oklch(0.22 0.018 250);
+      --surface-2:oklch(0.25 0.02 250);
+      --text:     oklch(0.88 0.01 240);
+      --text-muted:oklch(0.62 0.015 245);
+      --heading: oklch(0.96 0.005 240);
+      --border:  oklch(0.30 0.02 250);
+      --code-bg: oklch(0.24 0.018 250);
+      --tag-bg:  oklch(0.28 0.02 250);
+      --accent:  oklch(0.74 0.16 252);
+      --accent-hover: oklch(0.82 0.14 252);
+      --shadow-sm: 0 1px 3px oklch(0 0 0 / 0.3);
+      --shadow-md: 0 8px 24px oklch(0 0 0 / 0.4);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    code, pre, .mono { font-family: 'JetBrains Mono', SFMono-Regular, Menlo, monospace; }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+
+    /* lucide icons */
+    .icon {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 1em; height: 1em; vertical-align: -0.125em;
+    }
+    .icon svg { width: 100%; height: 100%; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+    /* ─── Sidebar ─── */
+    #sidebar {
+      position: fixed; top: 0; left: 0;
+      width: var(--sidebar-width); height: 100vh;
+      background: var(--surface);
+      border-right: 1px solid var(--border);
+      padding: 1.6rem 1rem;
+      display: flex; flex-direction: column;
+      z-index: 100;
+      overflow-y: auto;
+      transition: transform 0.25s ease;
+    }
+    .brand {
+      display: flex; align-items: center; gap: 0.55rem;
+      padding: 0.4rem 0.6rem 0.8rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .brand-mark {
+      width: 30px; height: 30px;
+      border-radius: 8px;
+      background: var(--grad);
+      display: flex; align-items: center; justify-content: center;
+      color: white; font-size: 0.95rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .brand-name { font-weight: 700; font-size: 1.05rem; color: var(--heading); letter-spacing: -0.01em; }
+    .brand-tagline { font-size: 0.7rem; color: var(--text-muted); margin-top: 0.05rem; }
+
+    .nav { display: flex; flex-direction: column; gap: 0.15rem; }
+    .nav a {
+      display: flex; align-items: center; gap: 0.6rem;
+      padding: 0.55rem 0.7rem;
+      color: var(--text);
+      border-radius: 0.55rem;
+      font-size: 0.9rem;
+      transition: background 0.15s, color 0.15s;
+    }
+    .nav a:hover { background: var(--surface-2); color: var(--accent); }
+    .nav a.active {
+      background: var(--grad);
+      color: white;
+    }
+    .nav a.active:hover { color: white; opacity: 0.95; }
+
+    .nav-section-label {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      padding: 1rem 0.7rem 0.4rem;
+    }
+
+    .sidebar-footer {
+      margin-top: auto; padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+    .theme-toggle {
+      width: 100%;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.55rem;
+      cursor: pointer;
+      font-size: 0.82rem;
+      display: flex; align-items: center; gap: 0.5rem;
+      transition: border-color 0.15s, color 0.15s;
+      font-family: inherit;
+    }
+    .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+
+    .source-link {
+      display: flex; align-items: center; gap: 0.5rem;
+      padding: 0.45rem 0.7rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      border-radius: 0.5rem;
+    }
+    .source-link:hover { color: var(--accent); }
+
+    /* ─── Main ─── */
+    #main-wrapper {
+      margin-left: var(--sidebar-width);
+      margin-right: var(--right-width);
+      min-height: 100vh;
+    }
+    .main-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem 4rem;
+    }
+
+    /* ─── Page hero ─── */
+    .page-hero {
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-hero h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--heading);
+      margin-bottom: 0.4rem;
+      background: var(--grad);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+    }
+    .page-hero p { color: var(--text-muted); font-size: 0.95rem; }
+
+    /* ─── Right sidebar ─── */
+    #right-sidebar {
+      position: fixed; top: 0; right: 0;
+      width: var(--right-width); height: 100vh;
+      padding: 2rem 1.25rem;
+      overflow-y: auto;
+      z-index: 90;
+    }
+    .widget { margin-bottom: 1.8rem; }
+    .widget-title {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.7rem;
+      display: flex; align-items: center; gap: 0.4rem;
+    }
+    .recent-list { display: flex; flex-direction: column; gap: 0.45rem; }
+    .recent-list a {
+      display: block;
+      font-size: 0.83rem;
+      color: var(--text);
+      line-height: 1.4;
+      padding: 0.3rem 0.4rem;
+      border-radius: 0.4rem;
+    }
+    .recent-list a:hover { background: var(--surface-2); color: var(--accent); }
+    .recent-date { font-size: 0.7rem; color: var(--text-muted); margin-top: 0.1rem; display: block; }
+
+    .tag-cloud { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+    .tag-pill {
+      padding: 0.2rem 0.6rem;
+      font-size: 0.72rem;
+      background: var(--tag-bg);
+      color: var(--text-muted);
+      border-radius: 999px;
+      border: 1px solid var(--border);
+    }
+    .tag-pill:hover { color: var(--accent); border-color: var(--accent); }
+
+    /* ─── Post content (also styles digest cards in scraped posts) ─── */
+    .post-content h1, .post-content h2, .post-content h3 {
+      color: var(--heading);
+      letter-spacing: -0.01em;
+    }
+    .post-content h1 { font-size: 1.75rem; margin: 0 0 1rem; padding-bottom: 0.7rem; border-bottom: 1px solid var(--border); }
+    .post-content h2 { font-size: 1.3rem; margin: 2.2rem 0 1rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--border); }
+    .post-content h3 { font-size: 1.05rem; margin: 1.5rem 0 0.6rem; }
+    .post-content p { margin-bottom: 1rem; }
+    .post-content ul, .post-content ol { margin: 0 0 1rem 1.4rem; }
+    .post-content li { margin-bottom: 0.3rem; }
+    .post-content code {
+      background: var(--code-bg);
+      padding: 0.12rem 0.4rem;
+      border-radius: 0.3rem;
+      font-size: 0.86em;
+    }
+    .post-content pre {
+      background: var(--code-bg);
+      padding: 1rem;
+      border-radius: 0.6rem;
+      overflow-x: auto;
+      margin-bottom: 1rem;
+      border: 1px solid var(--border);
+    }
+    .post-content pre code { background: none; padding: 0; }
+    .post-content blockquote {
+      margin: 1.2rem 0;
+      padding: 0.7rem 1rem;
+      border-left: 3px solid var(--accent);
+      background: var(--code-bg);
+      color: var(--text-muted);
+      border-radius: 0 0.5rem 0.5rem 0;
+    }
+    .post-content table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+    .post-content th, .post-content td { padding: 0.55rem 0.8rem; border: 1px solid var(--border); text-align: left; }
+    .post-content th { background: var(--code-bg); }
+
+    /* digest-item card (existing posts use this class) */
+    .post-content .digest-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 0.85rem;
+      padding: 1.15rem 1.25rem;
+      margin: 1rem 0;
+      box-shadow: var(--shadow-sm);
+      transition: border-color 0.15s, box-shadow 0.2s, transform 0.2s;
+    }
+    .post-content .digest-item:hover {
+      border-color: var(--accent);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-1px);
+    }
+    .post-content .digest-item h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1rem;
+      line-height: 1.45;
+    }
+    .post-content .digest-item h3 a { color: var(--heading); }
+    .post-content .digest-item h3 a:hover { color: var(--accent); }
+
+    .post-content .categories {
+      display: flex; flex-wrap: wrap; gap: 0.3rem;
+      margin-bottom: 0.6rem;
+    }
+    .post-content .category-tag {
+      display: inline-block;
+      padding: 0.15rem 0.55rem;
+      font-size: 0.7rem;
+      font-weight: 500;
+      background: var(--tag-bg);
+      color: var(--text-muted);
+      border-radius: 999px;
+      border: 1px solid var(--border);
+    }
+
+    .post-content .keywords {
+      display: flex; flex-wrap: wrap; gap: 0.4rem;
+      margin: 0.5rem 0;
+    }
+    .post-content .keywords code {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 0.2rem 0.65rem;
+      border-radius: 999px;
+      color: var(--text);
+    }
+
+    /* ─── Index card grid ─── */
+    .post-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+    .post-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 0.9rem;
+      padding: 1.1rem 1.2rem;
+      transition: border-color 0.15s, box-shadow 0.2s, transform 0.2s;
+      box-shadow: var(--shadow-sm);
+      display: flex; flex-direction: column; gap: 0.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .post-card::before {
+      content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+      background: var(--grad);
+      opacity: 0; transition: opacity 0.2s;
+    }
+    .post-card:hover {
+      border-color: var(--accent);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+    .post-card:hover::before { opacity: 1; }
+    .post-card .date {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .post-card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.4;
+      color: var(--heading);
+      margin: 0;
+    }
+    .post-card h3 a { color: inherit; }
+    .post-card h3 a:hover { color: var(--accent); }
+    .post-card .excerpt {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* ─── Footer ─── */
+    .footer {
+      margin-top: 3rem; padding: 1.5rem 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.78rem;
+    }
+    .footer .footer-grad {
+      background: var(--grad);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 600;
+    }
+
+    /* ─── Mobile ─── */
+    .mobile-header {
+      display: none;
+      position: fixed; top: 0; left: 0; right: 0;
+      height: var(--topbar-h);
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      align-items: center; padding: 0 1rem;
+      z-index: 99;
+    }
+    .menu-btn { background: none; border: 0; color: var(--text); font-size: 1.3rem; padding: 0.4rem; cursor: pointer; }
+    .mobile-title { flex: 1; text-align: center; font-weight: 600; color: var(--heading); }
+
+    @media (max-width: 1100px) {
+      :root { --right-width: 0; }
+      #right-sidebar { display: none; }
+    }
+    @media (max-width: 768px) {
+      #sidebar { transform: translateX(-100%); }
+      #sidebar.open { transform: translateX(0); }
+      #main-wrapper { margin-left: 0; }
+      .mobile-header { display: flex; }
+      .main-content { padding: calc(var(--topbar-h) + 1.25rem) 1rem 2.5rem; }
+      .page-hero h1 { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Mobile header -->
+  <header class="mobile-header">
+    <button class="menu-btn" onclick="document.getElementById('sidebar').classList.toggle('open')" aria-label="메뉴"><i data-lucide="menu" class="icon"></i></button>
+    <span class="mobile-title">{{ site.title }}</span>
+    <button class="menu-btn" onclick="toggleTheme()" aria-label="테마"><i data-lucide="sun-moon" class="icon"></i></button>
+  </header>
+
+  <!-- Sidebar -->
+  <aside id="sidebar">
+    <a href="{{ '/' | relative_url }}" class="brand" style="text-decoration:none;">
+      <div class="brand-mark"><i data-lucide="sparkles" class="icon"></i></div>
+      <div>
+        <div class="brand-name">AI Tech</div>
+        <div class="brand-tagline">매일 아침의 트렌드</div>
+      </div>
+    </a>
+
+    <nav class="nav">
+      <a href="{{ '/' | relative_url }}" {% if page.url == "/" %}class="active"{% endif %}>
+        <i data-lucide="house" class="icon"></i><span>최신</span>
+      </a>
+      <a href="{{ '/archive/' | relative_url }}" {% if page.url contains "archive" %}class="active"{% endif %}>
+        <i data-lucide="layers" class="icon"></i><span>전체 보기</span>
+      </a>
+    </nav>
+
+    <div class="nav-section-label">Sources</div>
+    <div style="display:flex;flex-direction:column;">
+      <a class="source-link" href="https://arxiv.org" target="_blank" rel="noopener"><i data-lucide="book-open" class="icon"></i>arXiv</a>
+      <a class="source-link" href="https://huggingface.co" target="_blank" rel="noopener"><i data-lucide="cpu" class="icon"></i>Hugging Face</a>
+      <a class="source-link" href="https://github.com/trending" target="_blank" rel="noopener"><i data-lucide="github" class="icon"></i>GitHub Trending</a>
+      <a class="source-link" href="https://aiweekly.co" target="_blank" rel="noopener"><i data-lucide="newspaper" class="icon"></i>AI Weekly</a>
+    </div>
+
+    <div class="sidebar-footer">
+      <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn">
+        <i data-lucide="sun" class="icon" id="theme-icon"></i>
+        <span id="theme-label">라이트</span>
+      </button>
+      <a class="source-link" href="https://github.com/joyuno/ai-tech-digest" target="_blank" rel="noopener" style="margin-top:0.5rem;">
+        <i data-lucide="github" class="icon"></i>소스
+      </a>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <div id="main-wrapper">
+    <main class="main-content">
+      {{ content }}
+      <footer class="footer">
+        <p>© {{ site.time | date: '%Y' }} <span class="footer-grad">AI Tech</span> · {{ site.author.name }} · auto-curated by grok-4.1-fast</p>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Right sidebar -->
+  <aside id="right-sidebar">
+    <div class="widget">
+      <div class="widget-title"><i data-lucide="clock" class="icon"></i> 최근</div>
+      <div class="recent-list">
+        {% for post in site.posts limit:6 %}
+        <a href="{{ post.url | relative_url }}">
+          {{ post.title | truncate: 38 }}
+          <span class="recent-date">{{ post.date | date: "%Y.%m.%d" }}</span>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="widget">
+      <div class="widget-title"><i data-lucide="tag" class="icon"></i> 태그</div>
+      <div class="tag-cloud">
+        {% assign all_tags = site.tags | sort %}
+        {% for tag in all_tags limit:14 %}
+        <span class="tag-pill">{{ tag[0] }}</span>
+        {% endfor %}
+      </div>
+    </div>
+  </aside>
+
+  <script>
+    // Theme toggle
+    function toggleTheme() {
+      const cur = document.documentElement.getAttribute('data-theme');
+      const next = cur === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('aitech-theme', next);
+      updateThemeUi(next);
+    }
+    function updateThemeUi(t) {
+      const isDark = t === 'dark';
+      const icon = document.getElementById('theme-icon');
+      const label = document.getElementById('theme-label');
+      if (icon) icon.innerHTML = `<i data-lucide="${isDark ? 'moon' : 'sun'}" class="icon"></i>`;
+      if (label) label.textContent = isDark ? '다크' : '라이트';
+      if (typeof lucide !== 'undefined') lucide.createIcons();
+    }
+    (function init() {
+      const saved = localStorage.getItem('aitech-theme') || 'light';
+      document.documentElement.setAttribute('data-theme', saved);
+      updateThemeUi(saved);
+    })();
+    if (typeof lucide !== 'undefined') lucide.createIcons();
+  </script>
+</body>
+</html>

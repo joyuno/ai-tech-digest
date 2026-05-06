@@ -1,29 +1,18 @@
-title: AI Tech Digest
-description: AI 기술 트렌드를 자동으로 수집하고 요약한 다이제스트
+title: AI Tech
+description: 매일 아침의 AI 기술 트렌드 — 자동 수집, 한국어 요약
 baseurl: "/ai-tech-digest"
 url: "https://joyuno.github.io"
 lang: ko
+timezone: Asia/Seoul
 
-# Build settings
 markdown: kramdown
-theme: minima
+highlighter: rouge
 
-# 테마 설정
-minima:
-  skin: classic
-
-# Author
 author:
-  name: AI Tech Digest Bot
-  email: ""
+  name: joyuno
 
-# 헤더 페이지
-header_pages: []
-
-# 소셜 링크
 github_username: joyuno
 
-# Defaults
 defaults:
   - scope:
       path: ""
@@ -31,12 +20,10 @@ defaults:
     values:
       layout: "post"
 
-# 플러그인
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
-# 제외 파일
 exclude:
   - README.md
   - Gemfile
