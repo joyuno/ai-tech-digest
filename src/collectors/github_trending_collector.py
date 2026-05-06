@@ -1,9 +1,118 @@
-"""GitHub Trending 수집기"""
+"""GitHub Trending 수집기 + README 대표 이미지 추출."""
+
+import os
+import re
+from typing import List, Dict, Optional
 
 import requests
 from bs4 import BeautifulSoup
-from typing import List, Dict
-import re
+
+
+# README 안의 첫 이미지 — markdown ![alt](url) / <img src="..."> 둘 다 매칭
+_MD_IMG_RE = re.compile(r"!\[[^\]]*\]\(\s*([^)\s]+)", re.MULTILINE)
+_HTML_IMG_RE = re.compile(r'<img[^>]+src=["\']([^"\']+)["\']', re.IGNORECASE)
+
+# badge / shield 이미지는 보통 대표 이미지가 아님 — 거름
+_SKIP_HOSTS = (
+    "shields.io", "img.shields.io", "badge.fury.io", "badgen.net",
+    "travis-ci", "circleci.com", "codecov.io", "coveralls.io",
+    "github.com/.+?/workflows", "github-readme-stats",
+)
+
+
+def _is_badge(url: str) -> bool:
+    u = url.lower()
+    return any(h in u for h in (
+        "shields.io", "badge.fury.io", "badgen.net",
+        "travis-ci", "circleci", "codecov", "coveralls",
+        "github-readme-stats", "actions/workflows", "/badge.svg",
+    ))
+
+
+def _resolve_relative(url: str, owner: str, repo: str, branch: str) -> str:
+    """상대 경로 README 이미지를 raw.githubusercontent.com 절대 URL 로 변환."""
+    if url.startswith(("http://", "https://", "//")):
+        return url if not url.startswith("//") else "https:" + url
+    # ./foo.png, /foo.png, foo.png
+    rel = url.lstrip("./").lstrip("/")
+    return f"https://raw.githubusercontent.com/{owner}/{repo}/{branch}/{rel}"
+
+
+def _fetch_readme_image(repo_full_name: str, token: Optional[str], timeout: int = 8) -> Optional[str]:
+    """repo 의 README 첫 의미있는 이미지 URL 반환. 없으면 None."""
+    if not repo_full_name or "/" not in repo_full_name:
+        return None
+    owner, repo = repo_full_name.split("/", 1)
+    headers = {"Accept": "application/vnd.github.v3.raw"}
+    if token:
+        headers["Authorization"] = f"token {token}"
+
+    # 1) GitHub API 의 default branch README — 자동으로 main / master 처리
+    api_url = f"https://api.github.com/repos/{owner}/{repo}/readme"
+    try:
+        r = requests.get(api_url, headers=headers, timeout=timeout)
+        if r.status_code != 200:
+            return None
+        text = r.text
+    except requests.RequestException:
+        return None
+
+    # default branch 알아내기 (raw URL resolution 위해)
+    branch = "main"
+    try:
+        meta = requests.get(
+            f"https://api.github.com/repos/{owner}/{repo}",
+            headers={"Accept": "application/vnd.github.v3+json", **({"Authorization": f"token {token}"} if token else {})},
+            timeout=timeout,
+        )
+        if meta.status_code == 200:
+            branch = meta.json().get("default_branch", "main") or "main"
+    except requests.RequestException:
+        pass
+
+    # markdown 먼저, 그다음 HTML
+    candidates: List[str] = []
+    candidates.extend(_MD_IMG_RE.findall(text))
+    candidates.extend(_HTML_IMG_RE.findall(text))
+
+    for url in candidates:
+        url = url.strip().split(" ")[0]   # `(url "title")` 형식 분리
+        if not url or url.startswith("#"):
+            continue
+        if _is_badge(url):
+            continue
+        return _resolve_relative(url, owner, repo, branch)
+    return None
+
+
+def _extract_owner_repo(url: str) -> Optional[str]:
+    m = re.search(r"github\.com/([\w.-]+/[\w.-]+)", url)
+    if not m:
+        return None
+    return m.group(1).rstrip(".").rstrip("/")
+
+
+class GitHubTrendingCollector:
+    """GitHub Trending + README 첫 이미지 추출."""
+
+    AI_KEYWORDS = {
+        "ai", "llm", "machine-learning", "deep-learning", "gpt", "transformer",
+        "neural", "ml", "bert", "diffusion", "stable-diffusion", "chatgpt",
+        "langchain", "pytorch", "tensorflow", "keras", "scikit-learn",
+        "openai", "anthropic", "claude", "gemini", "mistral", "llama",
+        "embedding", "vector", "rag", "fine-tuning", "training", "model",
+        "nlp", "computer-vision", "cv", "reinforcement-learning", "rl",
+    }
+
+    def __init__(self, config: dict):
+        self.base_url = "https://github.com/trending"
+        self.languages = config.get("languages", ["", "python"])
+        self.max_results = config.get("max_results", 5)
+        self.enable_image = config.get("enable_image", True)
+        self.gh_token = os.environ.get("GH_PAT") or os.environ.get("GITHUB_TOKEN")
+        self.headers = {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+        }
 
 
 class GitHubTrendingCollector:
@@ -28,7 +137,7 @@ class GitHubTrendingCollector:
         }
 
     def collect(self) -> List[Dict]:
-        """Trending 페이지 스크래핑 및 AI/ML 관련 레포 필터링"""
+        """Trending 페이지 스크래핑 + AI/ML 필터링 + README 첫 이미지 enrichment."""
         results = []
 
         for lang in self.languages:
@@ -44,9 +153,9 @@ class GitHubTrendingCollector:
                 for repo in repos:
                     parsed = self._parse_repo(repo)
                     if parsed and self._is_ai_related(parsed):
+                        if self.enable_image:
+                            self._enrich_image(parsed)
                         results.append(parsed)
-
-                        # max_results에 도달하면 중단
                         if len(results) >= self.max_results:
                             return results
 
@@ -56,6 +165,15 @@ class GitHubTrendingCollector:
                 print(f"예상치 못한 오류 ({lang}): {e}")
 
         return results[:self.max_results]
+
+    def _enrich_image(self, item: Dict) -> None:
+        repo_full = _extract_owner_repo(item.get("url", ""))
+        if not repo_full:
+            return
+        img = _fetch_readme_image(repo_full, token=self.gh_token)
+        if img:
+            item["image_url"] = img
+            item["image_source"] = "readme"
 
     def _parse_repo(self, repo_element):
         """레포지토리 정보 파싱"""

@@ -33,7 +33,13 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 ## <i data-lucide="{{ src_icon[source.emoji] | default('hash') }}"></i> {{ source.name }}
 
 {% for item in source["items"] %}
-<div class="digest-item" markdown="1">
+<div class="digest-item{% if item.image_url %} has-thumb{% endif %}" markdown="1">
+
+{% if item.image_url %}
+<div class="digest-thumb">
+  <img src="{{ item.image_url }}" alt="{{ item.title | replace('"', '') }}" loading="lazy" referrerpolicy="no-referrer">
+</div>
+{% endif %}
 
 <h3><a href="{{ item.url }}" target="_blank">{{ item.title }}</a></h3>
 
