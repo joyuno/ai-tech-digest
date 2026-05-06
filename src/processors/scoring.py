@@ -71,8 +71,10 @@ def _stars_bonus(item: Dict[str, Any]) -> int:
 # ---------- arXiv ----------
 
 def _hf_upvote_bonus(item: Dict[str, Any]) -> int:
-    """HF Daily Papers upvotes (collector enrichment 후 활성, max +20)."""
+    """HF Daily Papers upvotes (max +20). arxiv collector 의 raw `upvotes` 필드도 fallback 으로 인식."""
     raw = item.get("hf_upvotes")
+    if raw is None:
+        raw = item.get("upvotes")  # arxiv collector 호환
     if raw is None:
         return 0
     try:

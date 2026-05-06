@@ -23,6 +23,11 @@ tags: [AI, LLM, 트렌드, 기술블로그]
   '🤖': 'bot',
   '💻': 'code-2'
 } %}
+{% set venue_label = {
+  'tier1': '🅰 venue',
+  'tier2': '🅱 venue',
+  'submitted': '🅢 submitted'
+} %}
 
 {% for source in sources %}
 ## <i data-lucide="{{ src_icon[source.emoji] | default('hash') }}"></i> {{ source.name }}
@@ -38,9 +43,25 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 </div>
 {% endif %}
 
+{% set subs = [] %}
+{% for cat in item.categories %}
+  {% for s in cat.sub_tags %}{% if s not in subs %}{% set _ = subs.append(s) %}{% endif %}{% endfor %}
+{% endfor %}
+{% if subs %}
+<div class="sub-tags">
+{% for s in subs %}<span class="sub-tag">#{{ s }}</span> {% endfor %}
+</div>
+{% endif %}
+
 {{ item.summary }}
 
-{% if item.author %}<small><i data-lucide="user"></i> {{ item.author }}</small>{% endif %}
+<div class="item-meta">
+{% if item.venue_tier %}<span class="meta-pill meta-venue meta-{{ item.venue_tier }}">{{ venue_label[item.venue_tier] | default('venue') }}</span> {% endif %}
+{% if item.github_repo %}<span class="meta-pill meta-repo"><i data-lucide="github"></i> {{ item.github_repo }}{% if item.github_stars is defined %} · ★ {{ item.github_stars }}{% endif %}</span> {% endif %}
+{% if item.hf_upvotes and item.hf_upvotes > 0 %}<span class="meta-pill meta-hf"><i data-lucide="thumbs-up"></i> {{ item.hf_upvotes }}</span> {% endif %}
+{% if item.stars_today and item.stars_today != "0" %}<span class="meta-pill meta-stars"><i data-lucide="star"></i> {{ item.stars_today }} today</span> {% endif %}
+{% if item.author %}<span class="meta-pill meta-author"><i data-lucide="user"></i> {{ item.author }}</span>{% endif %}
+</div>
 
 </div>
 

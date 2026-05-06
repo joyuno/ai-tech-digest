@@ -1,4 +1,5 @@
 # AI 기술 온톨로지 정의
+# 메인 카테고리 6개 + 카테고리별 sub_tags (세분화 라벨)
 
 ontology:
   모델_아키텍처:
@@ -22,6 +23,16 @@ ontology:
       - o1
       - DeepSeek-R1
       - Transformer
+    sub_tags:
+      - { name: "Transformer", keywords: [Transformer, Attention, BERT] }
+      - { name: "MoE", keywords: [MoE, Mixture of Experts, Mixtral] }
+      - { name: "Diffusion", keywords: [Diffusion, DDPM, DDIM, Stable Diffusion, Latent Diffusion] }
+      - { name: "VLM", keywords: [VLM, Vision-Language, Visual Question Answering] }
+      - { name: "VLA", keywords: [VLA, Vision-Language-Action] }
+      - { name: "World Model", keywords: [World Model, World Models] }
+      - { name: "SSM", keywords: [SSM, Mamba, State Space] }
+      - { name: "Reasoning Model", keywords: [Reasoning Model, o1, R1, Reasoning LLM] }
+      - { name: "SLM", keywords: [SLM, Small Language Model] }
 
   학습_최적화:
     name: "학습/최적화"
@@ -41,6 +52,16 @@ ontology:
       - Model Merging
       - Mergekit
       - Distillation
+    sub_tags:
+      - { name: "SFT", keywords: [SFT, Supervised Fine-tuning] }
+      - { name: "RLHF", keywords: [RLHF, Reinforcement Learning Human Feedback] }
+      - { name: "DPO", keywords: [DPO, Direct Preference Optimization] }
+      - { name: "RLVR", keywords: [RLVR, Verifiable Rewards] }
+      - { name: "LoRA", keywords: [LoRA, QLoRA, PEFT] }
+      - { name: "Quantization", keywords: [Quantization, INT8, INT4, FP8, FP4] }
+      - { name: "Distillation", keywords: [Distillation, Knowledge Distillation] }
+      - { name: "Synthetic Data", keywords: [Synthetic Data, Data Synthesis] }
+      - { name: "Model Merging", keywords: [Model Merging, Mergekit] }
 
   신뢰성_안전:
     name: "신뢰성/안전"
@@ -56,6 +77,13 @@ ontology:
       - Grounding
       - Safety
       - Guardrails
+    sub_tags:
+      - { name: "Hallucination", keywords: [Hallucination, 환각, Factuality] }
+      - { name: "Alignment", keywords: [Alignment, Constitutional AI] }
+      - { name: "Jailbreak", keywords: [Jailbreak, Red-team, Red team] }
+      - { name: "Watermark", keywords: [Watermark] }
+      - { name: "Guardrails", keywords: [Guardrails, Safety Filter] }
+      - { name: "Eval/Safety", keywords: [HarmBench, ToxiGen, BoolQ Safety] }
 
   추론_검색:
     name: "추론/검색"
@@ -72,6 +100,14 @@ ontology:
       - 1M tokens
       - Test-Time Compute
       - Inference
+    sub_tags:
+      - { name: "RAG", keywords: [RAG, Retrieval-Augmented] }
+      - { name: "CoT", keywords: [Chain-of-Thought, CoT] }
+      - { name: "Tool Use", keywords: [Tool Use, Function Calling] }
+      - { name: "Long Context", keywords: [Long Context, 1M tokens, 128k tokens] }
+      - { name: "Embedding", keywords: [Embedding, Vector Search, Dense Retrieval] }
+      - { name: "Reranking", keywords: [Reranking, Cross-Encoder] }
+      - { name: "Test-Time Compute", keywords: [Test-Time Compute, Test-Time Scaling] }
 
   에이전트:
     name: "에이전트"
@@ -87,6 +123,14 @@ ontology:
       - Orchestration
       - MCP
       - Model Context Protocol
+    sub_tags:
+      - { name: "Multi-Agent", keywords: [Multi-Agent, Multi Agent] }
+      - { name: "GUI Agent", keywords: [GUI Agent, Computer Use, Browser Use] }
+      - { name: "Coding Agent", keywords: [Coding Agent, SWE Agent, Software Engineer Agent] }
+      - { name: "Web Agent", keywords: [Web Agent, Browser Agent] }
+      - { name: "MCP", keywords: [MCP, Model Context Protocol] }
+      - { name: "Self-Evolving", keywords: [Self-Evolving, Self Evolve, Auto-Evolve] }
+      - { name: "Orchestration", keywords: [Orchestration, Workflow Engine] }
 
   개발_도구:
     name: "개발 도구"
@@ -103,3 +147,10 @@ ontology:
       - Benchmark
       - MMLU
       - HumanEval
+    sub_tags:
+      - { name: "AI Coding", keywords: [AI Coding, Cursor, Claude Code, Copilot, Codex] }
+      - { name: "Prompt Engineering", keywords: [Prompt Engineering] }
+      - { name: "Eval", keywords: [Eval, Evaluation, Benchmark, MMLU, HumanEval, SWE-bench] }
+      - { name: "Inference Engine", keywords: [vLLM, TGI, Ollama, Inference Engine, llama.cpp] }
+      - { name: "Observability", keywords: [Observability, Tracing, Langfuse, OpenTelemetry] }
+      - { name: "MLOps", keywords: [MLOps, Model Serving, Deployment Pipeline] }
