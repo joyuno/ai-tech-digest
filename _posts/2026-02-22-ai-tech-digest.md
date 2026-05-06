@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "SLA2 학습 라우팅 Sparse Attention 혁신"
+title: "pentagi 자율 AI 모의해킹 에이전트"
 date: 2026-02-22
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
@@ -10,7 +10,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 ---
 
 
-## 📚 arXiv 논문
+## <i data-lucide="book-open"></i> arXiv 논문
 
 
 <div class="digest-item" markdown="1">
@@ -32,7 +32,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 
 
 <div class="categories">
-<span class="category-tag">🤖 에이전트</span> <span class="category-tag">💻 개발 도구</span> 
+<span class="category-tag"><i data-lucide="bot"></i> 에이전트</span> <span class="category-tag"><i data-lucide="code-2"></i> 개발 도구</span> 
 </div>
 
 
@@ -49,7 +49,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 
 
 <div class="categories">
-<span class="category-tag">🔧 학습/최적화</span> 
+<span class="category-tag"><i data-lucide="wrench"></i> 학습/최적화</span> 
 </div>
 
 
@@ -66,7 +66,7 @@ Diffusion 모델 가속을 위해 Top-k와 Top-p 마스킹을 결합하고 Disti
 
 
 <div class="categories">
-<span class="category-tag">🧠 모델/아키텍처</span> 
+<span class="category-tag"><i data-lucide="brain"></i> 모델/아키텍처</span> 
 </div>
 
 
@@ -83,7 +83,7 @@ Diffusion 모델 가속을 위해 Top-k와 Top-p 마스킹을 결합하고 Disti
 
 
 <div class="categories">
-<span class="category-tag">🎯 신뢰성/안전</span> <span class="category-tag">🤖 에이전트</span> <span class="category-tag">💻 개발 도구</span> 
+<span class="category-tag"><i data-lucide="target"></i> 신뢰성/안전</span> <span class="category-tag"><i data-lucide="bot"></i> 에이전트</span> <span class="category-tag"><i data-lucide="code-2"></i> 개발 도구</span> 
 </div>
 
 
@@ -98,7 +98,7 @@ Diffusion 모델 가속을 위해 Top-k와 Top-p 마스킹을 결합하고 Disti
 ---
 
 
-## 🤗 Hugging Face Blog
+## <i data-lucide="cpu"></i> Hugging Face Blog
 
 
 <div class="digest-item" markdown="1">
@@ -107,13 +107,13 @@ Diffusion 모델 가속을 위해 Top-k와 Top-p 마스킹을 결합하고 Disti
 
 
 <div class="categories">
-<span class="category-tag">🧠 모델/아키텍처</span> 
+<span class="category-tag"><i data-lucide="brain"></i> 모델/아키텍처</span> 
 </div>
 
 
 로컬 환경에서 LLM을 구동하는 핵심 기술인 GGML과 llama.cpp 팀이 Hugging Face에 합류했다는 소식이에요. 앞으로 로컬 AI 기술의 장기적인 발전과 오픈소스 생태계 확장에 큰 도움이 될 것으로 보여요.
 
-<small>👤 Hugging Face</small>
+<small><i data-lucide="user"></i> Hugging Face</small>
 
 </div>
 
@@ -126,7 +126,7 @@ Diffusion 모델 가속을 위해 Top-k와 Top-p 마스킹을 결합하고 Disti
 
 AI 모델 학습 속도를 획기적으로 높여주는 Unsloth를 이제 Hugging Face Jobs에서 무료로 사용할 수 있게 되었어요. 비용 부담 없이 빠르고 효율적으로 나만의 모델을 미세조정(Fine-tuning) 해볼 수 있는 좋은 기회랍니다.
 
-<small>👤 Hugging Face</small>
+<small><i data-lucide="user"></i> Hugging Face</small>
 
 </div>
 
@@ -139,7 +139,7 @@ AI 모델 학습 속도를 획기적으로 높여주는 Unsloth를 이제 Huggin
 
 데이터 부족 문제를 해결하기 위해 합성 페르소나(Synthetic Persona) 데이터를 활용하여 일본의 AI 개발을 가속화하는 방법을 다룹니다. 양질의 합성 데이터를 통해 AI 모델의 성능을 높이고 다양한 사용자 시나리오에 대응할 수 있게 도와줘요.
 
-<small>👤 Hugging Face</small>
+<small><i data-lucide="user"></i> Hugging Face</small>
 
 </div>
 
@@ -148,7 +148,7 @@ AI 모델 학습 속도를 획기적으로 높여주는 Unsloth를 이제 Huggin
 ---
 
 
-## ⭐ GitHub Trending
+## <i data-lucide="star"></i> GitHub Trending
 
 
 <div class="digest-item" markdown="1">
@@ -157,7 +157,7 @@ AI 모델 학습 속도를 획기적으로 높여주는 Unsloth를 이제 Huggin
 
 
 <div class="categories">
-<span class="category-tag">🤖 에이전트</span> 
+<span class="category-tag"><i data-lucide="bot"></i> 에이전트</span> 
 </div>
 
 
@@ -174,7 +174,7 @@ AI 모델 학습 속도를 획기적으로 높여주는 Unsloth를 이제 Huggin
 
 
 <div class="categories">
-<span class="category-tag">🔧 학습/최적화</span> <span class="category-tag">🔍 추론/검색</span> <span class="category-tag">🤖 에이전트</span> 
+<span class="category-tag"><i data-lucide="wrench"></i> 학습/최적화</span> <span class="category-tag"><i data-lucide="search"></i> 추론/검색</span> <span class="category-tag"><i data-lucide="bot"></i> 에이전트</span> 
 </div>
 
 
@@ -191,7 +191,7 @@ AI 모델 학습 속도를 획기적으로 높여주는 Unsloth를 이제 Huggin
 
 
 <div class="categories">
-<span class="category-tag">🧠 모델/아키텍처</span> <span class="category-tag">🤖 에이전트</span> <span class="category-tag">💻 개발 도구</span> 
+<span class="category-tag"><i data-lucide="brain"></i> 모델/아키텍처</span> <span class="category-tag"><i data-lucide="bot"></i> 에이전트</span> <span class="category-tag"><i data-lucide="code-2"></i> 개발 도구</span> 
 </div>
 
 
@@ -221,7 +221,7 @@ AI 모델 학습 속도를 획기적으로 높여주는 Unsloth를 이제 Huggin
 
 
 <div class="categories">
-<span class="category-tag">🧠 모델/아키텍처</span> 
+<span class="category-tag"><i data-lucide="brain"></i> 모델/아키텍처</span> 
 </div>
 
 
@@ -237,7 +237,7 @@ AI 모델 학습 속도를 획기적으로 높여주는 Unsloth를 이제 Huggin
 
 
 
-## 📊 오늘의 키워드
+## <i data-lucide="bar-chart-3"></i> 오늘의 키워드
 
 <div class="keywords">
 <code>Agent</code> <code>Eval</code> <code>Fine-tuning</code> <code>Multimodal</code> <code>Grounding</code> <code>Benchmark</code> <code>Llama</code> <code>AI Agent</code> <code>LoRA</code> <code>RAG</code> 

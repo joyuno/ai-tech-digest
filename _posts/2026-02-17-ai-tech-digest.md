@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "LLM Feature Space 다양한 데이터 합성"
+title: "Feature Activation Coverage LLM 데이터 다양성"
 date: 2026-02-17
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
@@ -10,7 +10,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 ---
 
 
-## 📚 arXiv 논문
+## <i data-lucide="book-open"></i> arXiv 논문
 
 
 <div class="digest-item" markdown="1">
@@ -19,7 +19,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 
 
 <div class="categories">
-<span class="category-tag">🧠 모델/아키텍처</span> <span class="category-tag">🔍 추론/검색</span> 
+<span class="category-tag"><i data-lucide="brain"></i> 모델/아키텍처</span> <span class="category-tag"><i data-lucide="search"></i> 추론/검색</span> 
 </div>
 
 
@@ -36,7 +36,7 @@ LLM의 성능을 높이기 위해 데이터의 다양성을 텍스트가 아닌 
 
 
 <div class="categories">
-<span class="category-tag">🔍 추론/검색</span> <span class="category-tag">💻 개발 도구</span> 
+<span class="category-tag"><i data-lucide="search"></i> 추론/검색</span> <span class="category-tag"><i data-lucide="code-2"></i> 개발 도구</span> 
 </div>
 
 
@@ -53,7 +53,7 @@ LLM의 성능을 높이기 위해 데이터의 다양성을 텍스트가 아닌 
 
 
 <div class="categories">
-<span class="category-tag">💻 개발 도구</span> 
+<span class="category-tag"><i data-lucide="code-2"></i> 개발 도구</span> 
 </div>
 
 
@@ -70,7 +70,7 @@ LLM 강화학습(RL)에서 검증 가능한 프롬프트를 더 효율적으로 
 
 
 <div class="categories">
-<span class="category-tag">🧠 모델/아키텍처</span> 
+<span class="category-tag"><i data-lucide="brain"></i> 모델/아키텍처</span> 
 </div>
 
 
@@ -87,7 +87,7 @@ LLM 강화학습(RL)에서 검증 가능한 프롬프트를 더 효율적으로 
 
 
 <div class="categories">
-<span class="category-tag">🧠 모델/아키텍처</span> <span class="category-tag">🔍 추론/검색</span> <span class="category-tag">💻 개발 도구</span> 
+<span class="category-tag"><i data-lucide="brain"></i> 모델/아키텍처</span> <span class="category-tag"><i data-lucide="search"></i> 추론/검색</span> <span class="category-tag"><i data-lucide="code-2"></i> 개발 도구</span> 
 </div>
 
 
@@ -102,7 +102,7 @@ LLM 강화학습(RL)에서 검증 가능한 프롬프트를 더 효율적으로 
 ---
 
 
-## 🤗 Hugging Face Blog
+## <i data-lucide="cpu"></i> Hugging Face Blog
 
 
 <div class="digest-item" markdown="1">
@@ -111,13 +111,13 @@ LLM 강화학습(RL)에서 검증 가능한 프롬프트를 더 효율적으로 
 
 
 <div class="categories">
-<span class="category-tag">🧠 모델/아키텍처</span> 
+<span class="category-tag"><i data-lucide="brain"></i> 모델/아키텍처</span> 
 </div>
 
 
 Codex나 Claude 같은 LLM을 활용해 누구나 쉽게 맞춤형 GPU 커널을 작성할 수 있는 방법을 다룹니다. 복잡한 하드웨어 지식 없이도 AI의 도움을 받아 연산 속도를 최적화하는 흥미로운 가능성을 제시합니다.
 
-<small>👤 Hugging Face</small>
+<small><i data-lucide="user"></i> Hugging Face</small>
 
 </div>
 
@@ -128,13 +128,13 @@ Codex나 Claude 같은 LLM을 활용해 누구나 쉽게 맞춤형 GPU 커널을
 
 
 <div class="categories">
-<span class="category-tag">🤖 에이전트</span> <span class="category-tag">💻 개발 도구</span> 
+<span class="category-tag"><i data-lucide="bot"></i> 에이전트</span> <span class="category-tag"><i data-lucide="code-2"></i> 개발 도구</span> 
 </div>
 
 
 도구를 사용하는 AI 에이전트들이 실제 환경에서 얼마나 잘 작동하는지 평가하는 'OpenEnv'의 활용 사례를 소개합니다. 단순한 테스트를 넘어, 복잡한 현실 세계의 문제들을 해결하는 에이전트의 실질적인 능력을 검증하는 데 중점을 둡니다.
 
-<small>👤 Hugging Face</small>
+<small><i data-lucide="user"></i> Hugging Face</small>
 
 </div>
 
@@ -145,13 +145,13 @@ Codex나 Claude 같은 LLM을 활용해 누구나 쉽게 맞춤형 GPU 커널을
 
 
 <div class="categories">
-<span class="category-tag">🧠 모델/아키텍처</span> 
+<span class="category-tag"><i data-lucide="brain"></i> 모델/아키텍처</span> 
 </div>
 
 
 웹 브라우저에서 직접 최신 AI 모델을 실행할 수 있는 Transformers.js의 v4 프리뷰 버전이 NPM에 공개되었습니다. 이번 업데이트로 더 많은 모델 지원과 성능 개선이 이루어져, 자바스크립트 환경에서도 강력한 머신러닝 기능을 손쉽게 구현할 수 있습니다.
 
-<small>👤 Hugging Face</small>
+<small><i data-lucide="user"></i> Hugging Face</small>
 
 </div>
 
@@ -160,7 +160,7 @@ Codex나 Claude 같은 LLM을 활용해 누구나 쉽게 맞춤형 GPU 커널을
 ---
 
 
-## ⭐ GitHub Trending
+## <i data-lucide="star"></i> GitHub Trending
 
 
 <div class="digest-item" markdown="1">
@@ -233,7 +233,7 @@ Gmail, 캘린더, 드라이브 등 구글의 주요 서비스들을 터미널에
 
 
 
-## 📊 오늘의 키워드
+## <i data-lucide="bar-chart-3"></i> 오늘의 키워드
 
 <div class="keywords">
 <code>LLM</code> <code>RAG</code> <code>Retrieval</code> <code>Eval</code> <code>Prompt</code> <code>Multimodal</code> <code>Benchmark</code> <code>Claude</code> <code>Agent</code> <code>Transformer</code> 

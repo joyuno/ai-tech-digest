@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Utonia 포인트 클라우드 통합 인코더"
+title: "임베디드 로보틱스 — VLA 파인튜닝 + 온디바이스"
 date: 2026-03-06
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
@@ -10,7 +10,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 ---
 
 
-## 📚 arXiv 논문
+## <i data-lucide="book-open"></i> arXiv 논문
 
 
 <div class="digest-item" markdown="1">
@@ -19,7 +19,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 
 
 <div class="categories">
-<span class="category-tag">🧠 모델/아키텍처</span> 
+<span class="category-tag"><i data-lucide="brain"></i> 모델/아키텍처</span> 
 </div>
 
 
@@ -49,7 +49,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 
 
 <div class="categories">
-<span class="category-tag">🧠 모델/아키텍처</span> <span class="category-tag">💻 개발 도구</span> 
+<span class="category-tag"><i data-lucide="brain"></i> 모델/아키텍처</span> <span class="category-tag"><i data-lucide="code-2"></i> 개발 도구</span> 
 </div>
 
 
@@ -66,7 +66,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 
 
 <div class="categories">
-<span class="category-tag">🧠 모델/아키텍처</span> <span class="category-tag">🔍 추론/검색</span> <span class="category-tag">🤖 에이전트</span> 
+<span class="category-tag"><i data-lucide="brain"></i> 모델/아키텍처</span> <span class="category-tag"><i data-lucide="search"></i> 추론/검색</span> <span class="category-tag"><i data-lucide="bot"></i> 에이전트</span> 
 </div>
 
 
@@ -83,7 +83,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 
 
 <div class="categories">
-<span class="category-tag">🧠 모델/아키텍처</span> <span class="category-tag">🤖 에이전트</span> <span class="category-tag">💻 개발 도구</span> 
+<span class="category-tag"><i data-lucide="brain"></i> 모델/아키텍처</span> <span class="category-tag"><i data-lucide="bot"></i> 에이전트</span> <span class="category-tag"><i data-lucide="code-2"></i> 개발 도구</span> 
 </div>
 
 
@@ -98,7 +98,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 ---
 
 
-## 🤗 Hugging Face Blog
+## <i data-lucide="cpu"></i> Hugging Face Blog
 
 
 <div class="digest-item" markdown="1">
@@ -109,7 +109,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 
 임베디드 플랫폼에서 로보틱스 AI를 구현하기 위한 전체적인 워크플로우를 다루는 글입니다. 데이터셋 녹화부터 Vision-Language-Action (VLA) 모델의 파인튜닝, 그리고 온디바이스 최적화 기법까지 상세히 설명합니다.
 
-<small>👤 Hugging Face</small>
+<small><i data-lucide="user"></i> Hugging Face</small>
 
 </div>
 
@@ -122,7 +122,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 
 Diffusion 파이프라인을 더 유연하게 구축할 수 있도록 돕는 모듈형 구성 요소(Building Blocks)를 소개합니다. 필요한 기능을 레고 블록처럼 조립하여 자신만의 파이프라인을 손쉽게 커스터마이징할 수 있게 해줍니다.
 
-<small>👤 Hugging Face</small>
+<small><i data-lucide="user"></i> Hugging Face</small>
 
 </div>
 
@@ -135,7 +135,7 @@ Diffusion 파이프라인을 더 유연하게 구축할 수 있도록 돕는 모
 
 단 24시간 만에 고성능 Text-to-Image 모델을 처음부터 훈련시키는 과정을 상세히 공유합니다. 효율적인 학습 전략과 리소스 활용 팁을 통해 빠르게 모델을 구축하는 노하우를 배울 수 있습니다.
 
-<small>👤 Hugging Face</small>
+<small><i data-lucide="user"></i> Hugging Face</small>
 
 </div>
 
@@ -144,7 +144,7 @@ Diffusion 파이프라인을 더 유연하게 구축할 수 있도록 돕는 모
 ---
 
 
-## ⭐ GitHub Trending
+## <i data-lucide="star"></i> GitHub Trending
 
 
 <div class="digest-item" markdown="1">
@@ -153,7 +153,7 @@ Diffusion 파이프라인을 더 유연하게 구축할 수 있도록 돕는 모
 
 
 <div class="categories">
-<span class="category-tag">🤖 에이전트</span> 
+<span class="category-tag"><i data-lucide="bot"></i> 에이전트</span> 
 </div>
 
 
@@ -170,7 +170,7 @@ Diffusion 파이프라인을 더 유연하게 구축할 수 있도록 돕는 모
 
 
 <div class="categories">
-<span class="category-tag">🧠 모델/아키텍처</span> <span class="category-tag">💻 개발 도구</span> 
+<span class="category-tag"><i data-lucide="brain"></i> 모델/아키텍처</span> <span class="category-tag"><i data-lucide="code-2"></i> 개발 도구</span> 
 </div>
 
 
@@ -187,7 +187,7 @@ Diffusion 파이프라인을 더 유연하게 구축할 수 있도록 돕는 모
 
 
 <div class="categories">
-<span class="category-tag">💻 개발 도구</span> 
+<span class="category-tag"><i data-lucide="code-2"></i> 개발 도구</span> 
 </div>
 
 
@@ -217,7 +217,7 @@ Diffusion 파이프라인을 더 유연하게 구축할 수 있도록 돕는 모
 
 
 <div class="categories">
-<span class="category-tag">🧠 모델/아키텍처</span> 
+<span class="category-tag"><i data-lucide="brain"></i> 모델/아키텍처</span> 
 </div>
 
 
@@ -233,7 +233,7 @@ Diffusion 파이프라인을 더 유연하게 구축할 수 있도록 돕는 모
 
 
 
-## 📊 오늘의 키워드
+## <i data-lucide="bar-chart-3"></i> 오늘의 키워드
 
 <div class="keywords">
 <code>Transformer</code> <code>Reasoning</code> <code>Prompt</code> <code>LLM</code> <code>Inference</code> <code>Agent</code> <code>Eval</code> <code>Claude</code> <code>Claude Code</code> <code>Benchmark</code> 

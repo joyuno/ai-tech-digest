@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "ClawKeeper OpenClaw 에이전트 안전 보호"
+title: "무신사 Self-POS Zero-to-One 경험 설계"
 date: 2026-04-03
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
@@ -10,7 +10,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 ---
 
 
-## 📚 arXiv 논문
+## <i data-lucide="book-open"></i> arXiv 논문
 
 
 <div class="digest-item" markdown="1">
@@ -19,7 +19,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 
 
 <div class="categories">
-<span class="category-tag">🎯 신뢰성/안전</span> <span class="category-tag">🤖 에이전트</span> 
+<span class="category-tag"><i data-lucide="target"></i> 신뢰성/안전</span> <span class="category-tag"><i data-lucide="bot"></i> 에이전트</span> 
 </div>
 
 
@@ -36,7 +36,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 
 
 <div class="categories">
-<span class="category-tag">🤖 에이전트</span> 
+<span class="category-tag"><i data-lucide="bot"></i> 에이전트</span> 
 </div>
 
 
@@ -66,7 +66,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 
 
 <div class="categories">
-<span class="category-tag">🧠 모델/아키텍처</span> <span class="category-tag">🔍 추론/검색</span> <span class="category-tag">🤖 에이전트</span> <span class="category-tag">💻 개발 도구</span> 
+<span class="category-tag"><i data-lucide="brain"></i> 모델/아키텍처</span> <span class="category-tag"><i data-lucide="search"></i> 추론/검색</span> <span class="category-tag"><i data-lucide="bot"></i> 에이전트</span> <span class="category-tag"><i data-lucide="code-2"></i> 개발 도구</span> 
 </div>
 
 
@@ -83,7 +83,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 
 
 <div class="categories">
-<span class="category-tag">🧠 모델/아키텍처</span> <span class="category-tag">🔍 추론/검색</span> <span class="category-tag">💻 개발 도구</span> 
+<span class="category-tag"><i data-lucide="brain"></i> 모델/아키텍처</span> <span class="category-tag"><i data-lucide="search"></i> 추론/검색</span> <span class="category-tag"><i data-lucide="code-2"></i> 개발 도구</span> 
 </div>
 
 
@@ -98,7 +98,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 ---
 
 
-## 🤗 Hugging Face Blog
+## <i data-lucide="cpu"></i> Hugging Face Blog
 
 
 <div class="digest-item" markdown="1">
@@ -107,13 +107,13 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 
 
 <div class="categories">
-<span class="category-tag">🧠 모델/아키텍처</span> <span class="category-tag">💻 개발 도구</span> 
+<span class="category-tag"><i data-lucide="brain"></i> 모델/아키텍처</span> <span class="category-tag"><i data-lucide="code-2"></i> 개발 도구</span> 
 </div>
 
 
 불필요하게 긴 문맥이나 여러 번 이어지는 대화 속에서 LLM의 추론 능력이 어떻게 조용히 짧아지고 약해지는지 분석한 연구입니다. 다양한 시나리오를 통해 최신 추론 모델들이 가진 성능의 한계와 견고성을 체계적으로 평가했어요.
 
-<small>👤 Gleb Rodionov</small>
+<small><i data-lucide="user"></i> Gleb Rodionov</small>
 
 </div>
 
@@ -124,13 +124,13 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 
 
 <div class="categories">
-<span class="category-tag">🧠 모델/아키텍처</span> <span class="category-tag">🔍 추론/검색</span> <span class="category-tag">🤖 에이전트</span> <span class="category-tag">💻 개발 도구</span> 
+<span class="category-tag"><i data-lucide="brain"></i> 모델/아키텍처</span> <span class="category-tag"><i data-lucide="search"></i> 추론/검색</span> <span class="category-tag"><i data-lucide="bot"></i> 에이전트</span> <span class="category-tag"><i data-lucide="code-2"></i> 개발 도구</span> 
 </div>
 
 
 개인용 컴퓨터 환경에서 에이전트가 얼마나 똑똑하게 파일을 관리하는지 평가하는 HippoCamp 벤치마크를 제안합니다. 일반적인 웹 작업이 아닌, 실제 사용자의 다양한 파일 속에서 맥락을 파악하고 추론하는 능력을 효과적으로 테스트할 수 있습니다.
 
-<small>👤 Zhe Yang, Shulin Tian, Kairui Hu</small>
+<small><i data-lucide="user"></i> Zhe Yang, Shulin Tian, Kairui Hu</small>
 
 </div>
 
@@ -141,13 +141,13 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 
 
 <div class="categories">
-<span class="category-tag">🧠 모델/아키텍처</span> <span class="category-tag">🔍 추론/검색</span> <span class="category-tag">🤖 에이전트</span> 
+<span class="category-tag"><i data-lucide="brain"></i> 모델/아키텍처</span> <span class="category-tag"><i data-lucide="search"></i> 추론/검색</span> <span class="category-tag"><i data-lucide="bot"></i> 에이전트</span> 
 </div>
 
 
 LLM의 추론 효율을 높이기 위해 기존 Transformer의 계산 부담과 KV 캐시 문제를 해결한 Universal YOCO 구조를 제안합니다. 디코더 구조에 재귀 연산을 결합하여, 모델의 깊이를 늘려도 가볍고 빠르게 작동할 수 있도록 만들었어요.
 
-<small>👤 Yutao Sun, Li Dong, Tianzhu Ye</small>
+<small><i data-lucide="user"></i> Yutao Sun, Li Dong, Tianzhu Ye</small>
 
 </div>
 
@@ -156,7 +156,7 @@ LLM의 추론 효율을 높이기 위해 기존 Transformer의 계산 부담과 
 ---
 
 
-## 👕 무신사 기술블로그
+## <i data-lucide="shirt"></i> 무신사 기술블로그
 
 
 <div class="digest-item" markdown="1">
@@ -167,7 +167,7 @@ LLM의 추론 효율을 높이기 위해 기존 Transformer의 계산 부담과 
 
 무신사 오프라인 매장의 긴 결제 대기 줄과 인건비 문제를 해결하기 위해 도입한 Self-POS 구축 경험을 공유한 글입니다. 현장 리서치부터 AI를 활용한 UX 설계, UI 컨셉까지 무에서 유를 만들어낸 실무자의 생생한 고민을 엿볼 수 있어요.
 
-<small>👤 Minsun</small>
+<small><i data-lucide="user"></i> Minsun</small>
 
 </div>
 
@@ -176,7 +176,7 @@ LLM의 추론 효율을 높이기 위해 기존 Transformer의 계산 부담과 
 ---
 
 
-## ⭐ GitHub Trending
+## <i data-lucide="star"></i> GitHub Trending
 
 
 <div class="digest-item" markdown="1">
@@ -185,7 +185,7 @@ LLM의 추론 효율을 높이기 위해 기존 Transformer의 계산 부담과 
 
 
 <div class="categories">
-<span class="category-tag">🧠 모델/아키텍처</span> <span class="category-tag">💻 개발 도구</span> 
+<span class="category-tag"><i data-lucide="brain"></i> 모델/아키텍처</span> <span class="category-tag"><i data-lucide="code-2"></i> 개발 도구</span> 
 </div>
 
 
@@ -228,7 +228,7 @@ ChatGPT, Claude, Gemini 등 유명 LLM들의 유출된 시스템 프롬프트를
 
 
 <div class="categories">
-<span class="category-tag">🧠 모델/아키텍처</span> <span class="category-tag">🎯 신뢰성/안전</span> <span class="category-tag">🔍 추론/검색</span> <span class="category-tag">🤖 에이전트</span> 
+<span class="category-tag"><i data-lucide="brain"></i> 모델/아키텍처</span> <span class="category-tag"><i data-lucide="target"></i> 신뢰성/안전</span> <span class="category-tag"><i data-lucide="search"></i> 추론/검색</span> <span class="category-tag"><i data-lucide="bot"></i> 에이전트</span> 
 </div>
 
 
@@ -245,7 +245,7 @@ ChatGPT, Claude, Gemini 등 유명 LLM들의 유출된 시스템 프롬프트를
 
 
 <div class="categories">
-<span class="category-tag">🧠 모델/아키텍처</span> 
+<span class="category-tag"><i data-lucide="brain"></i> 모델/아키텍처</span> 
 </div>
 
 
@@ -261,7 +261,7 @@ ChatGPT, Claude, Gemini 등 유명 LLM들의 유출된 시스템 프롬프트를
 
 
 
-## 📊 오늘의 키워드
+## <i data-lucide="bar-chart-3"></i> 오늘의 키워드
 
 <div class="keywords">
 <code>Safety</code> <code>Agent</code> <code>Multimodal</code> <code>RAG</code> <code>Eval</code> <code>Vision</code> <code>LLM</code> <code>Tool Use</code> <code>Inference</code> <code>GPT</code> 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Diffusion 모델 SNR-t 바이어스 규명"
+title: "The Machine — AI가 지원자 AI 코드 채점"
 date: 2026-04-21
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
@@ -10,7 +10,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 ---
 
 
-## 📚 arXiv 논문
+## <i data-lucide="book-open"></i> arXiv 논문
 
 
 <div class="digest-item" markdown="1">
@@ -19,7 +19,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 
 
 <div class="categories">
-<span class="category-tag">🎯 신뢰성/안전</span> <span class="category-tag">🔍 추론/검색</span> 
+<span class="category-tag"><i data-lucide="target"></i> 신뢰성/안전</span> <span class="category-tag"><i data-lucide="search"></i> 추론/검색</span> 
 </div>
 
 
@@ -36,7 +36,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 
 
 <div class="categories">
-<span class="category-tag">🧠 모델/아키텍처</span> 
+<span class="category-tag"><i data-lucide="brain"></i> 모델/아키텍처</span> 
 </div>
 
 
@@ -53,7 +53,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 
 
 <div class="categories">
-<span class="category-tag">🧠 모델/아키텍처</span> <span class="category-tag">🎯 신뢰성/안전</span> <span class="category-tag">🤖 에이전트</span> 
+<span class="category-tag"><i data-lucide="brain"></i> 모델/아키텍처</span> <span class="category-tag"><i data-lucide="target"></i> 신뢰성/안전</span> <span class="category-tag"><i data-lucide="bot"></i> 에이전트</span> 
 </div>
 
 
@@ -70,7 +70,7 @@ Multimodal LLM이 사용자의 변화하는 취향과 성격을 지속적으로 
 
 
 <div class="categories">
-<span class="category-tag">🧠 모델/아키텍처</span> <span class="category-tag">🔧 학습/최적화</span> 
+<span class="category-tag"><i data-lucide="brain"></i> 모델/아키텍처</span> <span class="category-tag"><i data-lucide="wrench"></i> 학습/최적화</span> 
 </div>
 
 
@@ -87,7 +87,7 @@ Multimodal LLM이 사용자의 변화하는 취향과 성격을 지속적으로 
 
 
 <div class="categories">
-<span class="category-tag">🧠 모델/아키텍처</span> 
+<span class="category-tag"><i data-lucide="brain"></i> 모델/아키텍처</span> 
 </div>
 
 
@@ -102,7 +102,7 @@ Multimodal LLM이 사용자의 변화하는 취향과 성격을 지속적으로 
 ---
 
 
-## 🤗 Hugging Face Blog
+## <i data-lucide="cpu"></i> Hugging Face Blog
 
 
 <div class="digest-item" markdown="1">
@@ -113,7 +113,7 @@ Multimodal LLM이 사용자의 변화하는 취향과 성격을 지속적으로 
 
 기존의 3D 생성 모델을 활용하여 3D 공간의 레이아웃을 직접 구성하는 LaviGen 프레임워크를 소개합니다. Autoregressive 방식을 통해 객체들 간의 물리적 제약과 기하학적 관계를 모델링하여, 훨씬 더 자연스럽고 현실적인 3D 장면을 생성할 수 있습니다.
 
-<small>👤 Haoran Feng, Yifan Niu, Zehuan Huang</small>
+<small><i data-lucide="user"></i> Haoran Feng, Yifan Niu, Zehuan Huang</small>
 
 </div>
 
@@ -124,13 +124,13 @@ Multimodal LLM이 사용자의 변화하는 취향과 성격을 지속적으로 
 
 
 <div class="categories">
-<span class="category-tag">🧠 모델/아키텍처</span> <span class="category-tag">🤖 에이전트</span> <span class="category-tag">💻 개발 도구</span> 
+<span class="category-tag"><i data-lucide="brain"></i> 모델/아키텍처</span> <span class="category-tag"><i data-lucide="bot"></i> 에이전트</span> <span class="category-tag"><i data-lucide="code-2"></i> 개발 도구</span> 
 </div>
 
 
 인간의 인지 과정을 모방하여 드론(UAV)의 Zero-shot Multimodal 내비게이션 성능을 높인 프레임워크입니다. 언어 처리와 주변 환경 인지 등을 세밀한 인지 모듈로 나누어, 복잡한 3D 환경에서도 AI Agent가 긴 지시사항을 잘 따를 수 있게 돕습니다.
 
-<small>👤 Dian Shao, Zhengzheng Xu, Peiyang Wang</small>
+<small><i data-lucide="user"></i> Dian Shao, Zhengzheng Xu, Peiyang Wang</small>
 
 </div>
 
@@ -141,13 +141,13 @@ Multimodal LLM이 사용자의 변화하는 취향과 성격을 지속적으로 
 
 
 <div class="categories">
-<span class="category-tag">💻 개발 도구</span> 
+<span class="category-tag"><i data-lucide="code-2"></i> 개발 도구</span> 
 </div>
 
 
 AI 기반의 비디오 편집 및 시각 효과 시스템들을 종합적으로 평가할 수 있는 VEFX-Bench를 소개합니다. 기존 벤치마크들의 한계를 극복하고자 대규모의 편집 예제와 사람의 직접 평가 라벨을 포함한 고품질 Dataset을 제공합니다.
 
-<small>👤 Xiangbo Gao, Sicong Jiang, Bangya Liu</small>
+<small><i data-lucide="user"></i> Xiangbo Gao, Sicong Jiang, Bangya Liu</small>
 
 </div>
 
@@ -156,7 +156,7 @@ AI 기반의 비디오 편집 및 시각 효과 시스템들을 종합적으로 
 ---
 
 
-## 👕 무신사 기술블로그
+## <i data-lucide="shirt"></i> 무신사 기술블로그
 
 
 <div class="digest-item" markdown="1">
@@ -167,7 +167,7 @@ AI 기반의 비디오 편집 및 시각 효과 시스템들을 종합적으로 
 
 무신사 채용 과정에서 지원자 400여 명의 코드를 AI Agent가 직접 읽고 빌드하며 평가하도록 자동화한 경험을 공유한 글입니다. 대학교 수강신청 시스템이라는 복잡한 동시성 제어 과제를 AI가 정확하게 채점할 수 있도록 평가 시스템을 지속적으로 고도화한 생생한 과정을 담고 있습니다.
 
-<small>👤 Myoung Hun Lee</small>
+<small><i data-lucide="user"></i> Myoung Hun Lee</small>
 
 </div>
 
@@ -176,7 +176,7 @@ AI 기반의 비디오 편집 및 시각 효과 시스템들을 종합적으로 
 ---
 
 
-## ⭐ GitHub Trending
+## <i data-lucide="star"></i> GitHub Trending
 
 
 <div class="digest-item" markdown="1">
@@ -237,7 +237,7 @@ AI 기반의 비디오 편집 및 시각 효과 시스템들을 종합적으로 
 
 
 <div class="categories">
-<span class="category-tag">🤖 에이전트</span> 
+<span class="category-tag"><i data-lucide="bot"></i> 에이전트</span> 
 </div>
 
 
@@ -253,7 +253,7 @@ AI 기반의 비디오 편집 및 시각 효과 시스템들을 종합적으로 
 
 
 
-## 📊 오늘의 키워드
+## <i data-lucide="bar-chart-3"></i> 오늘의 키워드
 
 <div class="keywords">
 <code>Alignment</code> <code>Inference</code> <code>Reasoning</code> <code>LLM</code> <code>Agent</code> <code>Fine-tuning</code> <code>Multimodal</code> <code>Prompt</code> <code>Eval</code> 

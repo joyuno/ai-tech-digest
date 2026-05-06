@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "RationalRewards 추론 보상 시각 생성 스케일링"
+title: "Thunderbolt 트렌드 지속 — Vendor lock-in 회피"
 date: 2026-04-20
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
@@ -10,7 +10,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 ---
 
 
-## 📚 arXiv 논문
+## <i data-lucide="book-open"></i> arXiv 논문
 
 
 <div class="digest-item" markdown="1">
@@ -19,7 +19,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 
 
 <div class="categories">
-<span class="category-tag">🧠 모델/아키텍처</span> <span class="category-tag">💻 개발 도구</span> 
+<span class="category-tag"><i data-lucide="brain"></i> 모델/아키텍처</span> <span class="category-tag"><i data-lucide="code-2"></i> 개발 도구</span> 
 </div>
 
 
@@ -36,7 +36,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 
 
 <div class="categories">
-<span class="category-tag">💻 개발 도구</span> 
+<span class="category-tag"><i data-lucide="code-2"></i> 개발 도구</span> 
 </div>
 
 
@@ -53,7 +53,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 
 
 <div class="categories">
-<span class="category-tag">🧠 모델/아키텍처</span> <span class="category-tag">🔍 추론/검색</span> <span class="category-tag">🤖 에이전트</span> <span class="category-tag">💻 개발 도구</span> 
+<span class="category-tag"><i data-lucide="brain"></i> 모델/아키텍처</span> <span class="category-tag"><i data-lucide="search"></i> 추론/검색</span> <span class="category-tag"><i data-lucide="bot"></i> 에이전트</span> <span class="category-tag"><i data-lucide="code-2"></i> 개발 도구</span> 
 </div>
 
 
@@ -70,7 +70,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 
 
 <div class="categories">
-<span class="category-tag">🔍 추론/검색</span> <span class="category-tag">🤖 에이전트</span> <span class="category-tag">💻 개발 도구</span> 
+<span class="category-tag"><i data-lucide="search"></i> 추론/검색</span> <span class="category-tag"><i data-lucide="bot"></i> 에이전트</span> <span class="category-tag"><i data-lucide="code-2"></i> 개발 도구</span> 
 </div>
 
 
@@ -87,7 +87,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 
 
 <div class="categories">
-<span class="category-tag">🧠 모델/아키텍처</span> 
+<span class="category-tag"><i data-lucide="brain"></i> 모델/아키텍처</span> 
 </div>
 
 
@@ -102,7 +102,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 ---
 
 
-## 🤗 Hugging Face Blog
+## <i data-lucide="cpu"></i> Hugging Face Blog
 
 
 <div class="digest-item" markdown="1">
@@ -111,13 +111,13 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 
 
 <div class="categories">
-<span class="category-tag">🧠 모델/아키텍처</span> 
+<span class="category-tag"><i data-lucide="brain"></i> 모델/아키텍처</span> 
 </div>
 
 
 자율주행의 모션 플래닝을 개선하기 위해 Generator와 Discriminator 구조를 활용한 RAD-2 프레임워크를 제안합니다. 기존 모방 학습의 한계를 극복하고 강화학습을 적용하여, 복잡한 주행 상황에서도 안정적이고 피드백 수용이 가능한 폐루프(closed-loop) 제어를 실현합니다.
 
-<small>👤 Hao Gao, Shaoyu Chen, Yifan Zhu</small>
+<small><i data-lucide="user"></i> Hao Gao, Shaoyu Chen, Yifan Zhu</small>
 
 </div>
 
@@ -128,13 +128,13 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 
 
 <div class="categories">
-<span class="category-tag">🔍 추론/검색</span> 
+<span class="category-tag"><i data-lucide="search"></i> 추론/검색</span> 
 </div>
 
 
 3D Gaussian Splatting의 효율성을 높이기 위해 Global Scene Tokens를 활용하는 GlobalSplat 모델을 소개합니다. 기존의 지역적인 할당 방식의 한계를 벗어나 전체 장면의 맥락을 이해함으로써, 렌더링 품질과 3D 재구성 속도를 모두 크게 개선했습니다.
 
-<small>👤 Roni Itkin, Noam Issachar, Yehonatan Keypur</small>
+<small><i data-lucide="user"></i> Roni Itkin, Noam Issachar, Yehonatan Keypur</small>
 
 </div>
 
@@ -145,13 +145,13 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 
 
 <div class="categories">
-<span class="category-tag">🔧 학습/최적화</span> <span class="category-tag">🎯 신뢰성/안전</span> 
+<span class="category-tag"><i data-lucide="wrench"></i> 학습/최적화</span> <span class="category-tag"><i data-lucide="target"></i> 신뢰성/안전</span> 
 </div>
 
 
 Flow Matching 모델을 인간의 선호도에 맞게 미세조정할 때 발생하는 메모리 및 그래디언트 폭발 문제를 해결하는 LeapAlign 방법을 제안합니다. 전체 생성 과정을 짧은 두 단계 궤적으로 나누어 학습함으로써, 최종 이미지 품질에 중요한 초기 생성 단계까지 효과적으로 최적화할 수 있습니다.
 
-<small>👤 Zhanhao Liang, Tao Yang, Jie Wu</small>
+<small><i data-lucide="user"></i> Zhanhao Liang, Tao Yang, Jie Wu</small>
 
 </div>
 
@@ -160,7 +160,7 @@ Flow Matching 모델을 인간의 선호도에 맞게 미세조정할 때 발생
 ---
 
 
-## ⭐ GitHub Trending
+## <i data-lucide="star"></i> GitHub Trending
 
 
 <div class="digest-item" markdown="1">
@@ -195,7 +195,7 @@ Flow Matching 모델을 인간의 선호도에 맞게 미세조정할 때 발생
 
 
 <div class="categories">
-<span class="category-tag">🤖 에이전트</span> 
+<span class="category-tag"><i data-lucide="bot"></i> 에이전트</span> 
 </div>
 
 
@@ -225,7 +225,7 @@ OpenAI에서 공식적으로 제공하는 Python 기반의 경량화된 Multi-ag
 
 
 <div class="categories">
-<span class="category-tag">🤖 에이전트</span> 
+<span class="category-tag"><i data-lucide="bot"></i> 에이전트</span> 
 </div>
 
 
@@ -240,7 +240,7 @@ OpenAI에서 공식적으로 제공하는 Python 기반의 경량화된 Multi-ag
 ---
 
 
-## 📰 AI Weekly
+## <i data-lucide="newspaper"></i> AI Weekly
 
 
 <div class="digest-item" markdown="1">
@@ -249,7 +249,7 @@ OpenAI에서 공식적으로 제공하는 Python 기반의 경량화된 Multi-ag
 
 
 <div class="categories">
-<span class="category-tag">🤖 에이전트</span> <span class="category-tag">💻 개발 도구</span> 
+<span class="category-tag"><i data-lucide="bot"></i> 에이전트</span> <span class="category-tag"><i data-lucide="code-2"></i> 개발 도구</span> 
 </div>
 
 
@@ -265,7 +265,7 @@ Nvidia의 젠슨 황과 Anthropic에 얽힌 최신 AI 업계의 흥미로운 소
 
 
 
-## 📊 오늘의 키워드
+## <i data-lucide="bar-chart-3"></i> 오늘의 키워드
 
 <div class="keywords">
 <code>Reasoning</code> <code>Eval</code> <code>Prompt</code> <code>Multimodal</code> <code>Retrieval</code> <code>Agent</code> <code>RAG</code> <code>Inference</code> <code>Fine-tuning</code> <code>Alignment</code> 

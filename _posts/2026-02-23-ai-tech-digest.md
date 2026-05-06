@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "SLA2 학습 라우팅 QAT Sparse Attention"
+title: "무신사 3서비스 27 SLO 데이터 운영 안정화"
 date: 2026-02-23
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
@@ -10,7 +10,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 ---
 
 
-## 📚 arXiv 논문
+## <i data-lucide="book-open"></i> arXiv 논문
 
 
 <div class="digest-item" markdown="1">
@@ -32,7 +32,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 
 
 <div class="categories">
-<span class="category-tag">🤖 에이전트</span> <span class="category-tag">💻 개발 도구</span> 
+<span class="category-tag"><i data-lucide="bot"></i> 에이전트</span> <span class="category-tag"><i data-lucide="code-2"></i> 개발 도구</span> 
 </div>
 
 
@@ -49,7 +49,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 
 
 <div class="categories">
-<span class="category-tag">🔧 학습/최적화</span> 
+<span class="category-tag"><i data-lucide="wrench"></i> 학습/최적화</span> 
 </div>
 
 
@@ -66,7 +66,7 @@ Diffusion 모델 가속화를 위해 훈련 가능한 Sparse Attention 기법을
 
 
 <div class="categories">
-<span class="category-tag">🧠 모델/아키텍처</span> 
+<span class="category-tag"><i data-lucide="brain"></i> 모델/아키텍처</span> 
 </div>
 
 
@@ -83,7 +83,7 @@ Diffusion 모델 가속화를 위해 훈련 가능한 Sparse Attention 기법을
 
 
 <div class="categories">
-<span class="category-tag">🎯 신뢰성/안전</span> <span class="category-tag">🤖 에이전트</span> <span class="category-tag">💻 개발 도구</span> 
+<span class="category-tag"><i data-lucide="target"></i> 신뢰성/안전</span> <span class="category-tag"><i data-lucide="bot"></i> 에이전트</span> <span class="category-tag"><i data-lucide="code-2"></i> 개발 도구</span> 
 </div>
 
 
@@ -98,7 +98,7 @@ Diffusion 모델 가속화를 위해 훈련 가능한 Sparse Attention 기법을
 ---
 
 
-## 🤗 Hugging Face Blog
+## <i data-lucide="cpu"></i> Hugging Face Blog
 
 
 <div class="digest-item" markdown="1">
@@ -107,13 +107,13 @@ Diffusion 모델 가속화를 위해 훈련 가능한 Sparse Attention 기법을
 
 
 <div class="categories">
-<span class="category-tag">🧠 모델/아키텍처</span> 
+<span class="category-tag"><i data-lucide="brain"></i> 모델/아키텍처</span> 
 </div>
 
 
 로컬 환경에서 LLM을 구동하는 핵심 기술인 GGML과 llama.cpp 팀이 Hugging Face에 합류했다는 소식입니다. 온디바이스 AI와 오픈소스 생태계의 장기적인 발전을 위한 강력한 협력이 기대됩니다.
 
-<small>👤 Hugging Face</small>
+<small><i data-lucide="user"></i> Hugging Face</small>
 
 </div>
 
@@ -126,7 +126,7 @@ Diffusion 모델 가속화를 위해 훈련 가능한 Sparse Attention 기법을
 
 Unsloth 라이브러리와 Hugging Face Jobs를 활용해 AI 모델을 무료로 학습시키는 방법을 안내합니다. 학습 속도를 높이고 메모리 사용량을 줄여주는 Unsloth를 클라우드 환경에서 쉽게 사용할 수 있습니다.
 
-<small>👤 Hugging Face</small>
+<small><i data-lucide="user"></i> Hugging Face</small>
 
 </div>
 
@@ -139,7 +139,7 @@ Unsloth 라이브러리와 Hugging Face Jobs를 활용해 AI 모델을 무료로
 
 데이터 부족 문제를 해결하기 위해 '합성 페르소나(Synthetic Persona)' 데이터를 활용하는 방법을 다룹니다. 일본어 AI 개발 환경에서 양질의 합성 데이터를 통해 모델 성능을 높이는 전략을 소개합니다.
 
-<small>👤 Hugging Face</small>
+<small><i data-lucide="user"></i> Hugging Face</small>
 
 </div>
 
@@ -148,7 +148,7 @@ Unsloth 라이브러리와 Hugging Face Jobs를 활용해 AI 모델을 무료로
 ---
 
 
-## 👕 무신사 기술블로그
+## <i data-lucide="shirt"></i> 무신사 기술블로그
 
 
 <div class="digest-item" markdown="1">
@@ -159,7 +159,7 @@ Unsloth 라이브러리와 Hugging Face Jobs를 활용해 AI 모델을 무료로
 
 무신사 엔지니어링팀이 잦은 알림과 모니터링 문제를 해결하기 위해 2주간 집중적으로 시스템을 개선한 경험기입니다. 3개 서비스에 대해 명확한 SLO와 모니터링 지표를 설정하고 배포 자동화를 구축하여 운영 안정성을 확보했습니다.
 
-<small>👤 Juhyun Seong</small>
+<small><i data-lucide="user"></i> Juhyun Seong</small>
 
 </div>
 
@@ -168,7 +168,7 @@ Unsloth 라이브러리와 Hugging Face Jobs를 활용해 AI 모델을 무료로
 ---
 
 
-## ⭐ GitHub Trending
+## <i data-lucide="star"></i> GitHub Trending
 
 
 <div class="digest-item" markdown="1">
@@ -177,7 +177,7 @@ Unsloth 라이브러리와 Hugging Face Jobs를 활용해 AI 모델을 무료로
 
 
 <div class="categories">
-<span class="category-tag">🤖 에이전트</span> 
+<span class="category-tag"><i data-lucide="bot"></i> 에이전트</span> 
 </div>
 
 
@@ -194,7 +194,7 @@ Unsloth 라이브러리와 Hugging Face Jobs를 활용해 AI 모델을 무료로
 
 
 <div class="categories">
-<span class="category-tag">🧠 모델/아키텍처</span> <span class="category-tag">🤖 에이전트</span> <span class="category-tag">💻 개발 도구</span> 
+<span class="category-tag"><i data-lucide="brain"></i> 모델/아키텍처</span> <span class="category-tag"><i data-lucide="bot"></i> 에이전트</span> <span class="category-tag"><i data-lucide="code-2"></i> 개발 도구</span> 
 </div>
 
 
@@ -211,7 +211,7 @@ Unsloth 라이브러리와 Hugging Face Jobs를 활용해 AI 모델을 무료로
 
 
 <div class="categories">
-<span class="category-tag">🧠 모델/아키텍처</span> <span class="category-tag">🤖 에이전트</span> <span class="category-tag">💻 개발 도구</span> 
+<span class="category-tag"><i data-lucide="brain"></i> 모델/아키텍처</span> <span class="category-tag"><i data-lucide="bot"></i> 에이전트</span> <span class="category-tag"><i data-lucide="code-2"></i> 개발 도구</span> 
 </div>
 
 
@@ -228,7 +228,7 @@ Cursor, Devin, Claude Code 등 다양한 최신 AI 코딩 도구들의 시스템
 
 
 <div class="categories">
-<span class="category-tag">🤖 에이전트</span> 
+<span class="category-tag"><i data-lucide="bot"></i> 에이전트</span> 
 </div>
 
 
@@ -245,7 +245,7 @@ Cursor, Devin, Claude Code 등 다양한 최신 AI 코딩 도구들의 시스템
 
 
 <div class="categories">
-<span class="category-tag">🤖 에이전트</span> 
+<span class="category-tag"><i data-lucide="bot"></i> 에이전트</span> 
 </div>
 
 
@@ -261,7 +261,7 @@ Cloudflare 인프라 위에서 AI 에이전트를 구축하고 배포할 수 있
 
 
 
-## 📊 오늘의 키워드
+## <i data-lucide="bar-chart-3"></i> 오늘의 키워드
 
 <div class="keywords">
 <code>Agent</code> <code>Eval</code> <code>Fine-tuning</code> <code>Multimodal</code> <code>Grounding</code> <code>Benchmark</code> <code>Llama</code> <code>AI Agent</code> <code>Claude</code> <code>Claude Code</code> 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Video-MME-v2 차세대 비디오 이해 벤치마크"
+title: "무신사 Self-POS 오프라인 고객경험 설계"
 date: 2026-04-09
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
@@ -10,7 +10,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 ---
 
 
-## 📚 arXiv 논문
+## <i data-lucide="book-open"></i> arXiv 논문
 
 
 <div class="digest-item" markdown="1">
@@ -19,7 +19,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 
 
 <div class="categories">
-<span class="category-tag">💻 개발 도구</span> 
+<span class="category-tag"><i data-lucide="code-2"></i> 개발 도구</span> 
 </div>
 
 
@@ -36,7 +36,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 
 
 <div class="categories">
-<span class="category-tag">🧠 모델/아키텍처</span> <span class="category-tag">🔧 학습/최적화</span> <span class="category-tag">💻 개발 도구</span> 
+<span class="category-tag"><i data-lucide="brain"></i> 모델/아키텍처</span> <span class="category-tag"><i data-lucide="wrench"></i> 학습/최적화</span> <span class="category-tag"><i data-lucide="code-2"></i> 개발 도구</span> 
 </div>
 
 
@@ -53,7 +53,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 
 
 <div class="categories">
-<span class="category-tag">🎯 신뢰성/안전</span> <span class="category-tag">🔍 추론/검색</span> <span class="category-tag">🤖 에이전트</span> <span class="category-tag">💻 개발 도구</span> 
+<span class="category-tag"><i data-lucide="target"></i> 신뢰성/안전</span> <span class="category-tag"><i data-lucide="search"></i> 추론/검색</span> <span class="category-tag"><i data-lucide="bot"></i> 에이전트</span> <span class="category-tag"><i data-lucide="code-2"></i> 개발 도구</span> 
 </div>
 
 
@@ -70,7 +70,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 
 
 <div class="categories">
-<span class="category-tag">🧠 모델/아키텍처</span> <span class="category-tag">🔍 추론/검색</span> <span class="category-tag">💻 개발 도구</span> 
+<span class="category-tag"><i data-lucide="brain"></i> 모델/아키텍처</span> <span class="category-tag"><i data-lucide="search"></i> 추론/검색</span> <span class="category-tag"><i data-lucide="code-2"></i> 개발 도구</span> 
 </div>
 
 
@@ -87,7 +87,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 
 
 <div class="categories">
-<span class="category-tag">🧠 모델/아키텍처</span> <span class="category-tag">🔍 추론/검색</span> <span class="category-tag">🤖 에이전트</span> <span class="category-tag">💻 개발 도구</span> 
+<span class="category-tag"><i data-lucide="brain"></i> 모델/아키텍처</span> <span class="category-tag"><i data-lucide="search"></i> 추론/검색</span> <span class="category-tag"><i data-lucide="bot"></i> 에이전트</span> <span class="category-tag"><i data-lucide="code-2"></i> 개발 도구</span> 
 </div>
 
 
@@ -102,7 +102,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 ---
 
 
-## 🤗 Hugging Face Blog
+## <i data-lucide="cpu"></i> Hugging Face Blog
 
 
 <div class="digest-item" markdown="1">
@@ -111,13 +111,13 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 
 
 <div class="categories">
-<span class="category-tag">🎯 신뢰성/안전</span> <span class="category-tag">🔍 추론/검색</span> <span class="category-tag">🤖 에이전트</span> <span class="category-tag">💻 개발 도구</span> 
+<span class="category-tag"><i data-lucide="target"></i> 신뢰성/안전</span> <span class="category-tag"><i data-lucide="search"></i> 추론/검색</span> <span class="category-tag"><i data-lucide="bot"></i> 에이전트</span> <span class="category-tag"><i data-lucide="code-2"></i> 개발 도구</span> 
 </div>
 
 
 기존 에이전트 벤치마크들의 한계를 극복하고 자율 에이전트를 더 신뢰성 있게 평가하기 위한 Claw-Eval 프레임워크를 소개합니다. 최종 결과물만 채점하는 방식에서 벗어나 에이전트의 행동 과정을 투명하게 평가하고, 안전성과 견고성까지 종합적으로 검증할 수 있습니다.
 
-<small>👤 Bowen Ye, Rang Li, Qibin Yang</small>
+<small><i data-lucide="user"></i> Bowen Ye, Rang Li, Qibin Yang</small>
 
 </div>
 
@@ -128,13 +128,13 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 
 
 <div class="categories">
-<span class="category-tag">🧠 모델/아키텍처</span> <span class="category-tag">🤖 에이전트</span> <span class="category-tag">💻 개발 도구</span> 
+<span class="category-tag"><i data-lucide="brain"></i> 모델/아키텍처</span> <span class="category-tag"><i data-lucide="bot"></i> 에이전트</span> <span class="category-tag"><i data-lucide="code-2"></i> 개발 도구</span> 
 </div>
 
 
 매일 쏟아지는 방대한 과학 논문들을 더 쉽게 찾고 분석할 수 있도록 돕는 오픈소스 다중 에이전트 시스템인 Paper Circle을 소개합니다. LLM 기반의 여러 에이전트가 협력하여 연구자 대신 논문을 탐색하고 평가하며 체계적으로 정리해 줍니다.
 
-<small>👤 Komal Kumar, Aman Chadha, Salman Khan</small>
+<small><i data-lucide="user"></i> Komal Kumar, Aman Chadha, Salman Khan</small>
 
 </div>
 
@@ -145,13 +145,13 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 
 
 <div class="categories">
-<span class="category-tag">🧠 모델/아키텍처</span> <span class="category-tag">🔍 추론/검색</span> 
+<span class="category-tag"><i data-lucide="brain"></i> 모델/아키텍처</span> <span class="category-tag"><i data-lucide="search"></i> 추론/검색</span> 
 </div>
 
 
 고정된 가중치로 인해 새로운 정보에 적응하기 어려운 LLM의 한계를 극복하고자, 추론 시점에 모델 일부를 업데이트하는 새로운 Test-Time Training 기법을 제안합니다. 기존의 계산 비효율성과 아키텍처 호환성 문제를 해결하여 실시간 환경에서도 LLM이 유연하게 학습할 수 있게 해줍니다.
 
-<small>👤 Guhao Feng, Shengjie Luo, Kai Hua</small>
+<small><i data-lucide="user"></i> Guhao Feng, Shengjie Luo, Kai Hua</small>
 
 </div>
 
@@ -160,7 +160,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 ---
 
 
-## 👕 무신사 기술블로그
+## <i data-lucide="shirt"></i> 무신사 기술블로그
 
 
 <div class="digest-item" markdown="1">
@@ -171,7 +171,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 
 무신사 오프라인 매장에서 발생하는 긴 결제 대기 시간을 줄이기 위해 도입된 Self-POS 구축기를 다룹니다. 고객이 불필요하게 기다리는 대신 상품과 브랜드 경험에 집중할 수 있도록 기획부터 기술적 구현, 하드웨어 검증 과정까지 생생하게 풀어냈습니다.
 
-<small>👤 Geumji Yang</small>
+<small><i data-lucide="user"></i> Geumji Yang</small>
 
 </div>
 
@@ -180,7 +180,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 ---
 
 
-## ⭐ GitHub Trending
+## <i data-lucide="star"></i> GitHub Trending
 
 
 <div class="digest-item" markdown="1">
@@ -189,7 +189,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 
 
 <div class="categories">
-<span class="category-tag">🧠 모델/아키텍처</span> <span class="category-tag">💻 개발 도구</span> 
+<span class="category-tag"><i data-lucide="brain"></i> 모델/아키텍처</span> <span class="category-tag"><i data-lucide="code-2"></i> 개발 도구</span> 
 </div>
 
 
@@ -232,7 +232,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 
 
 <div class="categories">
-<span class="category-tag">🔧 학습/최적화</span> <span class="category-tag">🔍 추론/검색</span> <span class="category-tag">🤖 에이전트</span> 
+<span class="category-tag"><i data-lucide="wrench"></i> 학습/최적화</span> <span class="category-tag"><i data-lucide="search"></i> 추론/검색</span> <span class="category-tag"><i data-lucide="bot"></i> 에이전트</span> 
 </div>
 
 
@@ -261,7 +261,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 
 
 
-## 📊 오늘의 키워드
+## <i data-lucide="bar-chart-3"></i> 오늘의 키워드
 
 <div class="keywords">
 <code>Eval</code> <code>LLM</code> <code>Fine-tuning</code> <code>Prompt</code> <code>Safety</code> <code>RAG</code> <code>Agent</code> <code>Vision</code> <code>Benchmark</code> <code>Retrieval</code> 
