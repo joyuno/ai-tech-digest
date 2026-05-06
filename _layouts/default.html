@@ -301,6 +301,58 @@
       color: var(--text); font-size: 0.78rem;
     }
 
+    /* sub-tags — 카테고리 안의 세분화 라벨 (#Transformer 같은 형태) */
+    .post-content .sub-tags {
+      display: flex; flex-wrap: wrap; gap: 0.3rem;
+      margin: 0.4rem 0 0.5rem;
+    }
+    .post-content .sub-tag {
+      font-size: 0.72rem;
+      color: var(--accent);
+      background: var(--accent-bg);
+      padding: 0.12rem 0.45rem;
+      border-radius: var(--r-sm);
+      font-family: 'JetBrains Mono', monospace;
+      letter-spacing: -0.01em;
+    }
+
+    /* item-meta — venue / repo / stars / upvotes 작은 메타 pill */
+    .post-content .item-meta {
+      display: flex; flex-wrap: wrap; gap: 0.3rem;
+      margin-top: 0.7rem;
+      padding-top: 0.65rem;
+      border-top: 1px dashed var(--border);
+    }
+    .post-content .meta-pill {
+      display: inline-flex; align-items: center; gap: 0.3rem;
+      font-size: 0.7rem;
+      padding: 0.18rem 0.55rem;
+      border-radius: var(--r-pill);
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+    .post-content .meta-pill i[data-lucide] {
+      width: 0.85em; height: 0.85em; vertical-align: -1px;
+    }
+    .post-content .meta-pill.meta-tier1 {
+      background: oklch(0.95 0.05 30); border-color: oklch(0.85 0.10 30); color: oklch(0.45 0.15 30);
+    }
+    .post-content .meta-pill.meta-tier2 {
+      background: oklch(0.96 0.04 50); border-color: oklch(0.88 0.08 50); color: oklch(0.50 0.12 50);
+    }
+    .post-content .meta-pill.meta-submitted {
+      background: var(--surface-2); color: var(--text-muted);
+    }
+    .post-content .meta-pill.meta-repo,
+    .post-content .meta-pill.meta-stars {
+      color: var(--text); border-color: var(--border-strong);
+    }
+    .post-content .meta-pill.meta-hf {
+      background: oklch(0.96 0.04 80); border-color: oklch(0.88 0.08 80); color: oklch(0.50 0.12 80);
+    }
+
     /* footer */
     .footer {
       margin-top: 3rem; padding: 1.5rem 0;
