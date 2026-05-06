@@ -127,37 +127,46 @@
       transition: transform var(--m-std) var(--ease-std);
     }
     .brand {
-      display: flex; align-items: center; gap: 0.6rem;
-      padding: 0.4rem 0.5rem 1rem;
+      display: block;
+      padding: 0.4rem 0.5rem 1.1rem;
       margin-bottom: 1rem;
       border-bottom: 1px solid var(--border);
       text-decoration: none;
     }
-    .brand-mark {
-      width: 32px; height: 32px;
-      border-radius: var(--r-md);
-      background: var(--grad-mark);
-      display: flex; align-items: center; justify-content: center;
-      color: white; font-size: 1rem;
-      box-shadow: var(--shadow-1);
-    }
     .brand-name {
-      font-weight: 700; font-size: 1.05rem;
-      color: var(--heading); letter-spacing: -0.015em;
+      font-weight: 700; font-size: 1.2rem;
+      color: var(--heading); letter-spacing: -0.02em;
+      background: var(--grad-mark);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
     }
-    .brand-tagline {
-      font-size: 0.72rem; color: var(--text-muted);
-      margin-top: 0.1rem; font-weight: 400;
+
+    .back-link {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.55rem 0.75rem;
+      font-size: 0.84rem;
+      font-weight: 500;
+      color: var(--text);
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: var(--r-sm);
+      text-decoration: none;
+      transition: border-color var(--m-fast) var(--ease-std), color var(--m-fast) var(--ease-std);
     }
+    .back-link:hover { border-color: var(--accent); color: var(--accent); }
+    .back-link .arrow { font-family: 'JetBrains Mono', monospace; opacity: 0.6; }
 
     .nav { display: flex; flex-direction: column; gap: 0.1rem; }
     .nav a {
-      display: flex; align-items: center; gap: 0.65rem;
-      padding: 0.55rem 0.7rem;
+      display: block;
+      padding: 0.55rem 0.75rem;
       color: var(--text);
       border-radius: var(--r-sm);
       font-size: 0.9rem;
       font-weight: 500;
+      text-decoration: none;
       transition: background var(--m-fast) var(--ease-std), color var(--m-fast) var(--ease-std);
     }
     .nav a:hover { background: var(--surface-2); color: var(--accent); }
@@ -165,25 +174,6 @@
       background: var(--accent-bg);
       color: var(--accent);
     }
-
-    .nav-label {
-      font-size: 0.68rem;
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
-      color: var(--text-muted);
-      padding: 1rem 0.7rem 0.4rem;
-      font-weight: 600;
-    }
-
-    .source-link {
-      display: flex; align-items: center; gap: 0.55rem;
-      padding: 0.45rem 0.7rem;
-      font-size: 0.83rem;
-      color: var(--text-muted);
-      border-radius: var(--r-sm);
-      transition: color var(--m-fast) var(--ease-std), background var(--m-fast) var(--ease-std);
-    }
-    .source-link:hover { color: var(--accent); background: var(--surface-2); }
 
     .sidebar-footer {
       margin-top: auto; padding-top: 1rem;
@@ -201,11 +191,11 @@
       cursor: pointer;
       font-size: 0.83rem;
       font-weight: 500;
-      display: flex; align-items: center; gap: 0.55rem;
+      display: flex; align-items: center; justify-content: center;
       transition: border-color var(--m-fast) var(--ease-std), color var(--m-fast) var(--ease-std);
       font-family: inherit;
     }
-    .theme-btn:hover { border-color: var(--border-strong); color: var(--accent); }
+    .theme-btn:hover { border-color: var(--accent); color: var(--accent); }
 
     /* ─── main ─── */
     #main-wrapper {
@@ -520,35 +510,21 @@
   <!-- Left sidebar -->
   <aside id="sidebar">
     <a href="{{ '/' | relative_url }}" class="brand">
-      <div class="brand-mark"><i data-lucide="sparkles" class="icon"></i></div>
-      <div>
-        <div class="brand-name">AI Tech</div>
-        <div class="brand-tagline">매일 아침의 트렌드</div>
-      </div>
+      <span class="brand-name">AI Tech</span>
     </a>
 
     <nav class="nav">
-      <a href="{{ '/' | relative_url }}" {% if page.url == "/" %}class="active"{% endif %}>
-        <i data-lucide="house" class="icon"></i><span>최신</span>
-      </a>
+      <a href="{{ '/' | relative_url }}" {% if page.url == "/" %}class="active"{% endif %}>최신</a>
     </nav>
 
-    <div class="nav-label">Sources</div>
-    <div style="display:flex;flex-direction:column;">
-      <a class="source-link" href="https://arxiv.org" target="_blank" rel="noopener"><i data-lucide="book-open" class="icon"></i>arXiv</a>
-      <a class="source-link" href="https://huggingface.co" target="_blank" rel="noopener"><i data-lucide="cpu" class="icon"></i>Hugging Face</a>
-      <a class="source-link" href="https://github.com/trending" target="_blank" rel="noopener"><i data-lucide="github" class="icon"></i>GitHub Trending</a>
-      <a class="source-link" href="https://aiweekly.co" target="_blank" rel="noopener"><i data-lucide="newspaper" class="icon"></i>AI Weekly</a>
-    </div>
-
     <div class="sidebar-footer">
+      <a class="back-link" href="https://joyuno.github.io">
+        <span>Joyuno's blog</span>
+        <span class="arrow">→</span>
+      </a>
       <button class="theme-btn" onclick="toggleTheme()" id="theme-btn">
-        <i data-lucide="sun" class="icon" id="theme-icon"></i>
         <span id="theme-label">라이트</span>
       </button>
-      <a class="source-link" href="https://github.com/joyuno/ai-tech-digest" target="_blank" rel="noopener">
-        <i data-lucide="github" class="icon"></i>소스
-      </a>
     </div>
   </aside>
 
@@ -565,11 +541,10 @@
   <!-- Right sidebar -->
   <aside id="right-sidebar">
     <div class="widget">
-      <div class="widget-title"><i data-lucide="clock" class="icon"></i> 최근</div>
+      <div class="widget-title">최근</div>
       <div class="recent-list">
-        {% for post in site.posts limit:6 %}
+        {% for post in site.posts limit:8 %}
         <a href="{{ post.url | relative_url }}">
-          {{ post.title | truncate: 38 }}
           <span class="recent-date">{{ post.date | date: "%Y.%m.%d" }}</span>
         </a>
         {% endfor %}
@@ -577,7 +552,7 @@
     </div>
 
     <div class="widget">
-      <div class="widget-title"><i data-lucide="tag" class="icon"></i> 태그</div>
+      <div class="widget-title">태그</div>
       <div class="tag-cloud">
         {% assign all_tags = site.tags | sort %}
         {% for tag in all_tags limit:14 %}
@@ -597,9 +572,7 @@
     }
     function updateThemeUi(t) {
       const isDark = t === 'dark';
-      const icon = document.getElementById('theme-icon');
       const label = document.getElementById('theme-label');
-      if (icon) icon.innerHTML = `<i data-lucide="${isDark ? 'moon' : 'sun'}" class="icon"></i>`;
       if (label) label.textContent = isDark ? '다크' : '라이트';
       if (typeof lucide !== 'undefined') lucide.createIcons();
     }
