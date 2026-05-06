@@ -1,9 +1,9 @@
 # Processors Package
 
 from .ontology_classifier import OntologyClassifier
-from .gemini_summarizer import GeminiSummarizer
+from .openrouter_summarizer import OpenRouterSummarizer
 
 __all__ = [
     "OntologyClassifier",
-    "GeminiSummarizer",
+    "OpenRouterSummarizer",
 ]

@@ -26,7 +26,7 @@ from collectors.aiweekly_collector import AIWeeklyCollector
 
 # Processors
 from processors.ontology_classifier import OntologyClassifier
-from processors.gemini_summarizer import GeminiSummarizer
+from processors.openrouter_summarizer import OpenRouterSummarizer
 
 # Publishers
 from publishers.kakao_notifier import KakaoNotifier
@@ -179,17 +179,21 @@ def main():
         top_keywords = classifier.get_top_keywords(classified_data, top_n=10)
         print(f"\n   🔑 상위 키워드: {', '.join(top_keywords[:5])}")
 
-        # 4. Gemini 요약
+        # 4. AI 요약 (OpenRouter + grok-4.1-fast)
         print("\n" + "=" * 60)
-        print("✨ AI 요약 생성 (Gemini)")
+        print("✨ AI 요약 생성 (OpenRouter)")
         print("=" * 60)
 
-        gemini_model = sources_config.get("gemini", {}).get("model", "gemini-2.0-flash")
-        print(f"   모델: {gemini_model}")
+        summary_model = (
+            sources_config.get("openrouter", {}).get("model")
+            or sources_config.get("gemini", {}).get("model")  # 구설정 호환
+            or "x-ai/grok-4.1-fast"
+        )
+        print(f"   모델: {summary_model}")
 
-        summarizer = GeminiSummarizer(
-            api_key=os.environ.get("GEMINI_API_KEY"),
-            model=gemini_model
+        summarizer = OpenRouterSummarizer(
+            api_key=os.environ.get("OPENROUTER_API_KEY"),
+            model=summary_model,
         )
         summary = summarizer.summarize(classified_data)
         summary["top_keywords"] = top_keywords

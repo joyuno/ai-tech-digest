@@ -9,8 +9,7 @@ lxml>=5.1.0
 # Twitter/X API
 tweepy>=4.14.0
 
-# Google Gemini
-google-generativeai>=0.8.0
+# OpenRouter (HTTP only — no SDK needed; uses urllib)
 
 # Configuration & Templates
 PyYAML>=6.0.1
