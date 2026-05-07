@@ -4,6 +4,10 @@ title: "UI-Voyager — 실패 경험으로 진화하는 GUI 에이전트"
 date: 2026-03-27
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "MinerU-Diffusion: Rethinking Document OCR as Inverse Rendering via Diffusion Decoding"
+daily_url: "https://arxiv.org/abs/2603.22458"
+daily_keywords: ["Vision", "Agent", "LLM", "Fine-tuning", "Distillation", "RAG", "Multimodal", "AI Agent", "Claude", "Claude Code"]
 ---
 
 

@@ -4,6 +4,10 @@ title: "OpenViking — AI agent용 파일시스템형 컨텍스트 DB"
 date: 2026-03-15
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "Spatial-TTT: Streaming Visual-based Spatial Intelligence with Test-Time Training"
+daily_url: "https://arxiv.org/abs/2603.12255"
+daily_keywords: ["Multimodal", "Agent", "Eval", "DeepSeek", "Inference", "Reasoning", "Prompt", "Benchmark", "AI Agent", "Claude"]
 ---
 
 

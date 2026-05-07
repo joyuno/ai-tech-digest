@@ -4,6 +4,10 @@ title: "Omni-WorldBench — 상호작용 중심 4D World Model 평가"
 date: 2026-03-25
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "Omni-WorldBench: Towards a Comprehensive Interaction-Centric Evaluation for World Models"
+daily_url: "https://arxiv.org/abs/2603.22212"
+daily_keywords: ["Alignment", "Eval", "Audio", "Inference", "MoE", "Agent", "Vision", "Retrieval", "Reasoning", "LLM"]
 ---
 
 

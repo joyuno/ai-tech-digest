@@ -4,6 +4,10 @@ title: "Lost in Stories — LLM 장편 생성의 일관성 결함"
 date: 2026-03-11
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "Lost in Stories: Consistency Bugs in Long Story Generation by LLMs"
+daily_url: "https://arxiv.org/abs/2603.05890"
+daily_keywords: ["LLM", "Benchmark", "RAG", "Reasoning", "Agent", "Red team", "Prompt", "Gemini", "GPT"]
 ---
 
 

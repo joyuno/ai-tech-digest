@@ -4,6 +4,10 @@ title: "Seeing Fast and Slow — 비디오 속 시간 흐름을 학습하는 모
 date: 2026-04-25
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "LLaDA2.0-Uni: Unifying Multimodal Understanding and Generation with Diffusion Large Language Model"
+daily_url: "https://arxiv.org/abs/2604.20796"
+daily_keywords: ["LLM", "RAG", "Eval", "LoRA", "Small Language Model", "Agent", "Multimodal", "Claude", "Claude Code"]
 ---
 
 

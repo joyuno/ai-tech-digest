@@ -4,6 +4,10 @@ title: "Apache Flink + RocksDB로 토스 광고 frequency capping 7일 확장"
 date: 2026-04-17
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "ClawGUI: A Unified Framework for Training, Evaluating, and Deploying GUI Agents"
+daily_url: "https://arxiv.org/abs/2604.11784"
+daily_keywords: ["Agent", "Eval", "Audio", "LLM", "Reasoning", "LoRA", "Claude Code", "Claude", "AI Agent", "Workflow"]
 ---
 
 

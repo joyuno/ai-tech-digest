@@ -4,6 +4,10 @@ title: "OPUS — LLM 사전학습 매 step 데이터 선별 프레임워크"
 date: 2026-02-12
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "OPUS: Towards Efficient and Principled Data Selection in Large Language Model Pre-training in Every Iteration"
+daily_url: "https://arxiv.org/abs/2602.05400"
+daily_keywords: ["Vision", "Agent", "LLM", "Transformer", "Multimodal", "Retrieval", "Eval", "Grounding", "Claude", "Claude Code"]
 ---
 
 

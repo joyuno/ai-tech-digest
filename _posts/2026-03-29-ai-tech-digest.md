@@ -4,6 +4,10 @@ title: "AI-Scientist-v2 — tree-search agent로 과학 발견 자동화"
 date: 2026-03-29
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "PixelSmile: Toward Fine-Grained Facial Expression Editing"
+daily_url: "https://arxiv.org/abs/2603.25728"
+daily_keywords: ["Eval", "Multimodal", "Agent", "Transformer", "Prompt", "Vision", "Inference", "LLM"]
 ---
 
 

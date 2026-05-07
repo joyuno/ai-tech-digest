@@ -4,6 +4,10 @@ title: "Terminal-Task-Gen — LLM 터미널 능력을 키우는 데이터 엔지
 date: 2026-02-26
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "On Data Engineering for Scaling LLM Terminal Capabilities"
+daily_url: "https://arxiv.org/abs/2602.21193"
+daily_keywords: ["LLM", "Agent", "Vision", "LoRA", "RAG", "Eval", "Reasoning", "Llama"]
 ---
 
 

@@ -4,6 +4,10 @@ title: "무신사 Self-POS Zero-to-One — 직원 없는 계산대 경험 설계
 date: 2026-04-03
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "ClawKeeper: Comprehensive Safety Protection for OpenClaw Agents Through Skills, Plugins, and Watchers"
+daily_url: "https://arxiv.org/abs/2603.24414"
+daily_keywords: ["Safety", "Agent", "Multimodal", "RAG", "Eval", "Vision", "LLM", "Tool Use", "Inference", "GPT"]
 ---
 
 

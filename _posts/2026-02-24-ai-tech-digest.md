@@ -4,6 +4,10 @@ title: "VESPO — Off-Policy LLM RL 안정화하는 variational soft PO"
 date: 2026-02-24
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "VESPO: Variational Sequence-Level Soft Policy Optimization for Stable Off-Policy LLM Training"
+daily_url: "https://arxiv.org/abs/2602.10693"
+daily_keywords: ["LLM", "Inference", "Reasoning", "CoT", "Agent", "Eval", "Fine-tuning", "Llama", "Claude", "Cursor"]
 ---
 
 

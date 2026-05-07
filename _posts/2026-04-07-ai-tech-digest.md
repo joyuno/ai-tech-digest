@@ -4,6 +4,10 @@ title: "Self-Distilled RLVR — teacher 없이 LLM RL 자기증류"
 date: 2026-04-07
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "Self-Distilled RLVR"
+daily_url: "https://arxiv.org/abs/2604.03128"
+daily_keywords: ["LLM", "Distillation", "Eval", "Retrieval", "Prompt", "LoRA", "Agent", "Reasoning", "Chain-of-Thought", "Vision"]
 ---
 
 

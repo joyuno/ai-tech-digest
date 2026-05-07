@@ -4,6 +4,10 @@ title: "Self-POS — 무신사다운 오프라인 고객경험 만들기"
 date: 2026-04-09
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "Video-MME-v2: Towards the Next Stage in Benchmarks for Comprehensive Video Understanding"
+daily_url: "https://arxiv.org/abs/2604.05015"
+daily_keywords: ["Eval", "LLM", "Fine-tuning", "Prompt", "Safety", "RAG", "Agent", "Vision", "Benchmark", "Retrieval"]
 ---
 
 

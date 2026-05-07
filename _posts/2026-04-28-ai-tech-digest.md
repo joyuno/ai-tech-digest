@@ -4,6 +4,10 @@ title: "Post-Quantum Cryptography — 토스가 10년 일찍 도입한 이유"
 date: 2026-04-28
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "Agentic World Modeling: Foundations, Capabilities, Laws, and Beyond"
+daily_url: "https://arxiv.org/abs/2604.22748"
+daily_keywords: ["Agent", "LLM", "RAG", "Eval", "Claude", "LoRA", "Claude Code"]
 ---
 
 

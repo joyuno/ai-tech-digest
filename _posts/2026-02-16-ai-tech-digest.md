@@ -4,6 +4,10 @@ title: "gogcli, Google Workspace를 터미널에서 굴리는 CLI"
 date: 2026-02-16
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "The Devil Behind Moltbook: Anthropic Safety is Always Vanishing in Self-Evolving AI Societies"
+daily_url: "https://arxiv.org/abs/2602.09877"
+daily_keywords: ["LLM", "Alignment", "Agent", "Prompt", "Multimodal", "Distillation", "Vision", "Claude", "Eval", "Transformer"]
 ---
 
 

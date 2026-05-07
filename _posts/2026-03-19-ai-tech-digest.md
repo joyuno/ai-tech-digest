@@ -4,6 +4,10 @@ title: "InCoder-32B — 산업 시나리오용 32B 코드 foundation 모델"
 date: 2026-03-19
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "InCoder-32B: Code Foundation Model for Industrial Scenarios"
+daily_url: "https://arxiv.org/abs/2603.16790"
+daily_keywords: ["Reasoning", "Agent", "Vision", "Prompt", "Multimodal", "Hallucination", "RAG", "Transformer", "Distillation", "Claude"]
 ---
 
 

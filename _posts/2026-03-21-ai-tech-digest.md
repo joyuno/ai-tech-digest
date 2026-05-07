@@ -4,6 +4,10 @@ title: "토스의 LLM 기반 서비스 취약점 자동 분석 #2"
 date: 2026-03-21
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "Efficient Reasoning with Balanced Thinking"
+daily_url: "https://arxiv.org/abs/2603.12372"
+daily_keywords: ["Reasoning", "LLM", "Eval", "Multimodal", "RAG", "Alignment", "Vision", "Inference", "Claude", "Agent"]
 ---
 
 

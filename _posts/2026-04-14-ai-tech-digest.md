@@ -4,6 +4,10 @@ title: "VisionFoundry — 합성 이미지로 VLM 시각 인식 가르치기"
 date: 2026-04-14
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "Rethinking Generalization in Reasoning SFT: A Conditional Analysis on Optimization, Data, and Model Capability"
+daily_url: "https://arxiv.org/abs/2604.06628"
+daily_keywords: ["LLM", "Chain-of-Thought", "AI Agent", "Eval", "RAG", "Prompt", "Vision", "Synthetic Data", "Fine-tuning", "Alignment"]
 ---
 
 

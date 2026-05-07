@@ -4,6 +4,10 @@ title: "The Machine — AI agent가 지원자의 AI 코드를 채점하다"
 date: 2026-04-21
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "Elucidating the SNR-t Bias of Diffusion Probabilistic Models"
+daily_url: "https://arxiv.org/abs/2604.16044"
+daily_keywords: ["Alignment", "Inference", "Reasoning", "LLM", "Agent", "Fine-tuning", "Multimodal", "Prompt", "Eval"]
 ---
 
 

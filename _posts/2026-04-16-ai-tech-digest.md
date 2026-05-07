@@ -4,6 +4,10 @@ title: "Gemini 기반 무신사 QA 테스트 케이스 자동화 시행착오"
 date: 2026-04-16
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "ClawGUI: A Unified Framework for Training, Evaluating, and Deploying GUI Agents"
+daily_url: "https://arxiv.org/abs/2604.11784"
+daily_keywords: ["Agent", "Eval", "RAG", "LLM", "Distillation", "Multimodal", "LoRA", "Gemini", "Claude Code", "Claude"]
 ---
 
 

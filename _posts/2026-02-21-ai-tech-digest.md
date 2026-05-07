@@ -4,6 +4,10 @@ title: "무신사 O4O팀이 슬랙 대신 무전기를 든 매장 체험기"
 date: 2026-02-21
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "SLA2: Sparse-Linear Attention with Learnable Routing and QAT"
+daily_url: "https://arxiv.org/abs/2602.12675"
+daily_keywords: ["Agent", "Eval", "Multimodal", "Fine-tuning", "Llama", "AI Agent", "RAG", "Claude", "Claude Code"]
 ---
 
 

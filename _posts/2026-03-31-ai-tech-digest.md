@@ -4,6 +4,10 @@ title: "후기 10만 개를 한 줄로 — 무신사 AI 후기 요약 도입기"
 date: 2026-03-31
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "Out of Sight but Not Out of Mind: Hybrid Memory for Dynamic Video World Models"
+daily_url: "https://arxiv.org/abs/2603.25716"
+daily_keywords: ["Multimodal", "Agent", "Eval", "Prompt", "Transformer", "LLM", "Benchmark", "Vision", "Claude", "Claude Code"]
 ---
 
 

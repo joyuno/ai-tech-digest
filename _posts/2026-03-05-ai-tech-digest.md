@@ -4,6 +4,10 @@ title: "Utonia, 모든 point cloud를 위한 단일 인코더 시도"
 date: 2026-03-05
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "Utonia: Toward One Encoder for All Point Clouds"
+daily_url: "https://arxiv.org/abs/2603.03283"
+daily_keywords: ["Transformer", "Multimodal", "LoRA", "Eval", "Reasoning", "Agent", "RAG", "MoE", "Vision", "Benchmark"]
 ---
 
 

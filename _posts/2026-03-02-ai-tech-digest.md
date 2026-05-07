@@ -4,6 +4,10 @@ title: "airi 트렌드 지속 — Waifu AI를 내 OS에서 굴리는 흐름"
 date: 2026-03-02
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "The Trinity of Consistency as a Defining Principle for General World Models"
+daily_url: "https://arxiv.org/abs/2602.23152"
+daily_keywords: ["Multimodal", "LLM", "Agent", "Eval", "Retrieval", "MoE", "Vision", "Llama", "Claude", "RAG"]
 ---
 
 

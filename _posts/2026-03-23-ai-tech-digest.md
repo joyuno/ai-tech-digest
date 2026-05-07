@@ -4,6 +4,10 @@ title: "TradingAgents — 멀티 LLM 협업 자동 트레이딩 프레임워크"
 date: 2026-03-23
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "Efficient Reasoning with Balanced Thinking"
+daily_url: "https://arxiv.org/abs/2603.12372"
+daily_keywords: ["Reasoning", "LLM", "Eval", "Multimodal", "RAG", "Alignment", "Prompt", "Agent", "AI Agent", "Claude"]
 ---
 
 

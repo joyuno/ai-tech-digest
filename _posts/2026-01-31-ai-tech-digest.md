@@ -4,6 +4,10 @@ title: "토스가 공개한 마케팅 문구 클릭률 6원칙"
 date: 2026-01-31
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "Idea2Story: An Automated Pipeline for Transforming Research Concepts into Complete Scientific Narratives"
+daily_url: "https://arxiv.org/abs/2601.20833"
+daily_keywords: ["LLM", "Agent", "Reasoning", "Prompt", "MoE", "Vision", "Multimodal", "Claude", "GPT", "MCP"]
 ---
 
 

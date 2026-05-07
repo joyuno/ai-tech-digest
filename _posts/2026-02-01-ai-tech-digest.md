@@ -4,6 +4,10 @@ title: "ThePrimeagen/99, Neovim 안에서 굴러가는 AI 에이전트"
 date: 2026-02-01
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "Idea2Story: An Automated Pipeline for Transforming Research Concepts into Complete Scientific Narratives"
+daily_url: "https://arxiv.org/abs/2601.20833"
+daily_keywords: ["LLM", "Agent", "Reasoning", "Prompt", "MoE", "Vision", "Multimodal", "RAG", "Claude", "AI Agent"]
 ---
 
 

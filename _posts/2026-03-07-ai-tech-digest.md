@@ -4,6 +4,10 @@ title: "토스의 외국인 사용자 인증 실패 사례 리서치"
 date: 2026-03-07
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "Heterogeneous Agent Collaborative Reinforcement Learning"
+daily_url: "https://arxiv.org/abs/2603.02604"
+daily_keywords: ["LLM", "Inference", "Agent", "Reasoning", "Prompt", "RAG", "AI Agent", "Eval", "MoE", "Orchestration"]
 ---
 
 

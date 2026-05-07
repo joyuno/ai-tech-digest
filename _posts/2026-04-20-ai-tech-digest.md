@@ -4,6 +4,10 @@ title: "thunderbolt 트렌드 지속 — bring-your-own AI 흐름"
 date: 2026-04-20
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "RationalRewards: Reasoning Rewards Scale Visual Generation Both Training and Test Time"
+daily_url: "https://arxiv.org/abs/2604.11626"
+daily_keywords: ["Reasoning", "Eval", "Prompt", "Multimodal", "Retrieval", "Agent", "RAG", "Inference", "Fine-tuning", "Alignment"]
 ---
 
 

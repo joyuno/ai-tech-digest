@@ -4,6 +4,10 @@ title: "Kronos — 금융 시장 전용 foundation model"
 date: 2026-04-13
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "Rethinking Generalization in Reasoning SFT: A Conditional Analysis on Optimization, Data, and Model Capability"
+daily_url: "https://arxiv.org/abs/2604.06628"
+daily_keywords: ["LLM", "Chain-of-Thought", "Agent", "AI Agent", "Eval", "Vision", "Alignment", "Prompt", "Multimodal", "RAG"]
 ---
 
 

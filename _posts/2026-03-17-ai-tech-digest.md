@@ -4,6 +4,10 @@ title: "LMEB — long-horizon memory를 평가하는 새 벤치마크"
 date: 2026-03-17
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "LMEB: Long-horizon Memory Embedding Benchmark"
+daily_url: "https://arxiv.org/abs/2603.12572"
+daily_keywords: ["RAG", "Eval", "Vision", "Benchmark", "Multimodal", "Tool Use", "Agent", "Fine-tuning", "Claude", "Claude Code"]
 ---
 
 

@@ -4,6 +4,10 @@ title: "Less is Enough — feature space로 측정하는 데이터 다양성"
 date: 2026-02-17
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "Less is Enough: Synthesizing Diverse Data in Feature Space of LLMs"
+daily_url: "https://arxiv.org/abs/2602.10388"
+daily_keywords: ["LLM", "RAG", "Retrieval", "Eval", "Prompt", "Multimodal", "Benchmark", "Claude", "Agent", "Transformer"]
 ---
 
 

@@ -4,6 +4,10 @@ title: "무신사 3개 서비스 27 SLO·54 모니터·배포 자동화 2주"
 date: 2026-02-23
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "SLA2: Sparse-Linear Attention with Learnable Routing and QAT"
+daily_url: "https://arxiv.org/abs/2602.12675"
+daily_keywords: ["Agent", "Eval", "Fine-tuning", "Multimodal", "Grounding", "Benchmark", "Llama", "AI Agent", "Claude", "Claude Code"]
 ---
 
 

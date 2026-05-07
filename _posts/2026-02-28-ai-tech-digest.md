@@ -4,6 +4,10 @@ title: "주니어 디자이너를 위한 비회원 퍼널 실험 설계 팁"
 date: 2026-02-28
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "The Trinity of Consistency as a Defining Principle for General World Models"
+daily_url: "https://arxiv.org/abs/2602.23152"
+daily_keywords: ["Multimodal", "LLM", "Agent", "Eval", "Retrieval", "MoE", "Vision", "Llama", "RAG", "Claude"]
 ---
 
 

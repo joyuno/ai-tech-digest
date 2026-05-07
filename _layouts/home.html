@@ -178,6 +178,52 @@
       color: var(--ink-muted); font-size: 0.9rem;
       background: var(--paper);
     }
+    /* image 없는 글의 text-only fallback 카드 */
+    .page-text {
+      width: 100%; height: 100%;
+      padding: 1.5rem 1.4rem 1.2rem;
+      display: flex; flex-direction: column; justify-content: space-between;
+      background: var(--paper);
+      background-image:
+        radial-gradient(ellipse 60% 40% at 80% 0%, oklch(0.32 0.06 252 / 0.55), transparent 70%),
+        radial-gradient(ellipse 70% 50% at 0% 100%, oklch(0.32 0.06 195 / 0.45), transparent 70%);
+      color: var(--ink);
+    }
+    .page-text .pt-source {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-2);
+    }
+    .page-text .pt-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin: 0.5rem 0 0;
+      overflow: hidden; text-overflow: ellipsis; display: -webkit-box;
+      -webkit-line-clamp: 5; -webkit-box-orient: vertical;
+    }
+    .page-text .pt-kws {
+      display: flex; flex-wrap: wrap; gap: 0.3rem;
+      margin-top: 0.7rem;
+    }
+    .page-text .pt-kw {
+      font-size: 0.7rem;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--accent);
+      background: oklch(0.30 0.05 252 / 0.5);
+      border: 1px solid oklch(0.40 0.08 252 / 0.6);
+      border-radius: var(--r-pill);
+      padding: 0.12rem 0.55rem;
+    }
+    .page-text .pt-date {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--ink-muted);
+    }
     .page-meta {
       position: absolute; bottom: 0; left: 0; right: 0;
       padding: 0.85rem 1rem;
@@ -419,8 +465,8 @@
 
     /* ─────────── flipping book ─────────── */
     function initBook(allPosts) {
-      // 이미지 있는 글만, 최신순 (search.json 은 이미 최신순으로 내려옴)
-      const pages = allPosts.filter(p => p.image && p.image.length > 0);
+      // 모든 글을 책에 넣음 — 이미지 없으면 text-only 카드로 fallback (다양성 ↑)
+      const pages = allPosts;
       const left  = document.getElementById('page-left');
       const right = document.getElementById('page-right');
       const counter = document.getElementById('book-counter');
@@ -430,29 +476,43 @@
       const book = document.getElementById('book');
 
       if (!pages.length) {
-        left.innerHTML  = '<div class="page-empty">아직 이미지가 있는 글이 없어요</div>';
+        left.innerHTML  = '<div class="page-empty">아직 글이 없어요</div>';
         right.innerHTML = '<div class="page-empty">매일 KST 8시 자동 추가</div>';
         counter.textContent = '0 / 0';
         btnPrev.disabled = btnNext.disabled = btnPause.disabled = true;
         return;
       }
 
-      // index 0 = 가장 최신, 책은 책 표지처럼 처음엔 "오늘의 한 장" + "어제"
       let idx = 0;
       let auto = true;
       let timer = null;
 
-      const renderPage = (target, p) => {
-        if (!p) {
-          target.innerHTML = '<div class="page-empty">—</div>';
-          return;
+      const pageHtml = (p) => {
+        if (!p) return '<div class="page-empty">—</div>';
+        if (p.image && p.image.length > 0) {
+          return `
+            <img class="page-img" src="${escapeAttr(p.image)}" alt="${escapeAttr(p.daily_title || p.title)}" referrerpolicy="no-referrer" loading="lazy">
+            <div class="page-meta">
+              <span class="pm-title">${escapeHtml(p.daily_title || p.title)}</span>
+              <span class="pm-sub">${escapeHtml(p.date)} · ${escapeHtml(sourceLabel(p.source))}</span>
+            </div>`;
         }
-        target.innerHTML = `
-          <img class="page-img" src="${escapeAttr(p.image)}" alt="${escapeAttr(p.daily_title || p.title)}" referrerpolicy="no-referrer" loading="lazy">
-          <div class="page-meta">
-            <span class="pm-title">${escapeHtml(p.daily_title || p.title)}</span>
-            <span class="pm-sub">${escapeHtml(p.date)} · ${escapeHtml(sourceLabel(p.source))}</span>
+        // text-only fallback
+        const kws = (p.keywords || []).slice(0, 6);
+        const kwsHtml = kws.map(k => `<span class="pt-kw">${escapeHtml(k)}</span>`).join('');
+        return `
+          <div class="page-text">
+            <div>
+              <div class="pt-source">${escapeHtml(sourceLabel(p.source))}</div>
+              <div class="pt-title">${escapeHtml(p.daily_title || p.title)}</div>
+              ${kws.length ? `<div class="pt-kws">${kwsHtml}</div>` : ''}
+            </div>
+            <div class="pt-date">${escapeHtml(p.date)}</div>
           </div>`;
+      };
+
+      const renderPage = (target, p) => {
+        target.innerHTML = pageHtml(p);
       };
 
       const refresh = () => {
@@ -466,22 +526,14 @@
 
       const flipNext = () => {
         if (idx <= 0) return;  // 더 최신 페이지 없음
-        // leaf overlay: front = 현재 right, back = 다음 right (= pages[idx-1])
         const cur = pages[idx];
         const next = pages[idx - 1];
         const leaf = document.createElement('div');
         leaf.className = 'leaf';
         leaf.innerHTML = `
-          <div class="face front">
-            <img class="page-img" src="${escapeAttr(cur.image)}" alt="" referrerpolicy="no-referrer">
-            <div class="page-meta"><span class="pm-title">${escapeHtml(cur.daily_title || cur.title)}</span><span class="pm-sub">${escapeHtml(cur.date)}</span></div>
-          </div>
-          <div class="face back">
-            <img class="page-img" src="${escapeAttr(next.image)}" alt="" referrerpolicy="no-referrer">
-            <div class="page-meta"><span class="pm-title">${escapeHtml(next.daily_title || next.title)}</span><span class="pm-sub">${escapeHtml(next.date)}</span></div>
-          </div>`;
+          <div class="face front">${pageHtml(cur)}</div>
+          <div class="face back">${pageHtml(next)}</div>`;
         book.querySelector('.spread').appendChild(leaf);
-        // force reflow then add class
         void leaf.offsetWidth;
         leaf.classList.add('flipping');
         setTimeout(() => {

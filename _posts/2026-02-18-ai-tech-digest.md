@@ -4,6 +4,10 @@ title: "heretic, LLM 검열·안전장치를 자동으로 풀어주는 도구"
 date: 2026-02-18
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "Less is Enough: Synthesizing Diverse Data in Feature Space of LLMs"
+daily_url: "https://arxiv.org/abs/2602.10388"
+daily_keywords: ["LLM", "RAG", "Retrieval", "Eval", "Multimodal", "LoRA", "Agent", "Claude", "Transformer"]
 ---
 
 

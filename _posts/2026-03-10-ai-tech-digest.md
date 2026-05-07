@@ -4,6 +4,10 @@ title: "Granite 4.0 1B Speech — 엣지용 다국어 음성 모델"
 date: 2026-03-10
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "MOOSE-Star: Unlocking Tractable Training for Scientific Discovery by Breaking the Complexity Barrier"
+daily_url: "https://arxiv.org/abs/2603.03756"
+daily_keywords: ["LLM", "Inference", "RAG", "AI Agent", "Eval", "DPO", "Retrieval", "Agent", "Gemini", "GPT"]
 ---
 
 

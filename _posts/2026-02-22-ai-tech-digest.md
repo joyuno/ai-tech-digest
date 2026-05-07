@@ -4,6 +4,10 @@ title: "pentagi, 모의해킹을 끝까지 수행하는 자율 AI 에이전트"
 date: 2026-02-22
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "SLA2: Sparse-Linear Attention with Learnable Routing and QAT"
+daily_url: "https://arxiv.org/abs/2602.12675"
+daily_keywords: ["Agent", "Eval", "Fine-tuning", "Multimodal", "Grounding", "Benchmark", "Llama", "AI Agent", "LoRA", "RAG"]
 ---
 
 

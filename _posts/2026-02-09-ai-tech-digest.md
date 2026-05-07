@@ -4,6 +4,10 @@ title: "CAR-bench가 짚은 실세계 불확실성 속 LLM 한계"
 date: 2026-02-09
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "CAR-bench: Evaluating the Consistency and Limit-Awareness of LLM Agents under Real-World Uncertainty"
+daily_url: "https://arxiv.org/abs/2601.22027"
+daily_keywords: ["LLM", "Tool Use", "Agent", "Eval", "Inference", "Multimodal", "Retrieval", "Benchmark", "Grounding"]
 ---
 
 

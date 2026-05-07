@@ -4,6 +4,10 @@ title: "Green-VLA, 휴머노이드용 5-stage curriculum VLA"
 date: 2026-02-04
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "Green-VLA: Staged Vision-Language-Action Model for Generalist Robots"
+daily_url: "https://arxiv.org/abs/2602.00919"
+daily_keywords: ["Multimodal", "Alignment", "RAG", "Agent", "Eval", "Vision", "LLM", "RLHF", "DeepSeek", "Claude"]
 ---
 
 

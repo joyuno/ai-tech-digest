@@ -4,6 +4,10 @@ title: "AI에게 테스트 코드를 맡겨 무신사 iOS 커버리지 9 → 79%
 date: 2026-04-06
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "DataFlex: A Unified Framework for Data-Centric Dynamic Training of Large Language Models"
+daily_url: "https://arxiv.org/abs/2603.26164"
+daily_keywords: ["LLM", "Synthetic Data", "Retrieval", "Agent", "Eval", "Prompt", "Vision", "Fine-tuning", "Inference", "AI Agent"]
 ---
 
 

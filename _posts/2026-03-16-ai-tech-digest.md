@@ -4,6 +4,10 @@ title: "TranslateGemma로 GPT-4o-mini를 대체한 무신사 번역 실험"
 date: 2026-03-16
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "Spatial-TTT: Streaming Visual-based Spatial Intelligence with Test-Time Training"
+daily_url: "https://arxiv.org/abs/2603.12255"
+daily_keywords: ["Multimodal", "Agent", "Eval", "DeepSeek", "Inference", "Reasoning", "Prompt", "Benchmark", "GPT", "AI Agent"]
 ---
 
 

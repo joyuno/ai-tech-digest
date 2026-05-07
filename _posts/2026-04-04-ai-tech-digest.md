@@ -4,6 +4,10 @@ title: "토스가 디자인 직무를 6개에서 2개로 줄인 이유"
 date: 2026-04-04
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "DataFlex: A Unified Framework for Data-Centric Dynamic Training of Large Language Models"
+daily_url: "https://arxiv.org/abs/2603.26164"
+daily_keywords: ["LLM", "Synthetic Data", "Retrieval", "Agent", "Eval", "Grounding", "Prompt", "AI Agent", "GPT", "Claude"]
 ---
 
 

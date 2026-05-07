@@ -4,6 +4,10 @@ title: "무신사 모노레포에 i18next 다국어 시스템 깔기"
 date: 2026-03-09
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "Heterogeneous Agent Collaborative Reinforcement Learning"
+daily_url: "https://arxiv.org/abs/2603.02604"
+daily_keywords: ["LLM", "Inference", "Agent", "Reasoning", "Prompt", "RAG", "AI Agent", "Eval", "Gemini", "Orchestration"]
 ---
 
 

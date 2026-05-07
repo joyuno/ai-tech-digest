@@ -4,6 +4,10 @@ title: "셀프호스팅 AI 캐릭터의 정착, airi 3일째 1위"
 date: 2026-03-03
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "The Trinity of Consistency as a Defining Principle for General World Models"
+daily_url: "https://arxiv.org/abs/2602.23152"
+daily_keywords: ["Multimodal", "LLM", "Agent", "Eval", "AI Agent", "MoE", "Vision", "Llama", "Prompt Engineering", "Claude"]
 ---
 
 

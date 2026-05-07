@@ -4,6 +4,10 @@ title: "하마터면 못생겨질 뻔했다 — 토스 프론트 2 폰트 제작
 date: 2026-04-10
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "Think in Strokes, Not Pixels: Process-Driven Image Generation via Interleaved Reasoning"
+daily_url: "https://arxiv.org/abs/2604.04746"
+daily_keywords: ["Multimodal", "LLM", "RAG", "Agent", "Eval", "Vision", "Inference", "Claude Code", "Claude", "AI Coding"]
 ---
 
 

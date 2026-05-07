@@ -4,6 +4,10 @@ title: "moltbot — OS·플랫폼 가리지 않는 개인용 AI 비서"
 date: 2026-01-30
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "Harder Is Better: Boosting Mathematical Reasoning via Difficulty-Aware GRPO and Multi-Aspect Question Reformulation"
+daily_url: "https://arxiv.org/abs/2601.20614"
+daily_keywords: ["Reasoning", "Safety", "Tool Use", "AI Agent", "Multimodal", "LLM", "Orchestration", "Claude", "Claude Code", "GPT"]
 ---
 
 

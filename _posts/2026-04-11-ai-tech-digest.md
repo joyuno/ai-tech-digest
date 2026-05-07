@@ -4,6 +4,10 @@ title: "Reasoning SFT도 일반화한다 — RL only 통념을 반박"
 date: 2026-04-11
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "Rethinking Generalization in Reasoning SFT: A Conditional Analysis on Optimization, Data, and Model Capability"
+daily_url: "https://arxiv.org/abs/2604.06628"
+daily_keywords: ["LLM", "Chain-of-Thought", "Agent", "Vision", "Alignment", "Prompt", "AI Agent", "Eval", "Multimodal", "RAG"]
 ---
 
 

@@ -4,6 +4,10 @@ title: "쓰기 쉬운 Toss Front SDK — Facade 패턴 적용기"
 date: 2026-02-27
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "HyTRec: A Hybrid Temporal-Aware Attention Architecture for Long Behavior Sequential Recommendation"
+daily_url: "https://arxiv.org/abs/2602.18283"
+daily_keywords: ["Retrieval", "Eval", "RAG", "Audio", "MoE", "Vision", "Llama", "Agent", "Claude", "Claude Code"]
 ---
 
 

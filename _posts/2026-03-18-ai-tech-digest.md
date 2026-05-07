@@ -4,6 +4,10 @@ title: "Embracing the Software 3.0 Era (English edition)"
 date: 2026-03-18
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "AI Can Learn Scientific Taste"
+daily_url: "https://arxiv.org/abs/2603.14473"
+daily_keywords: ["LLM", "Agent", "Tool Use", "Eval", "Grounding", "Retrieval", "RAG", "Claude", "Claude Code", "LoRA"]
 ---
 
 

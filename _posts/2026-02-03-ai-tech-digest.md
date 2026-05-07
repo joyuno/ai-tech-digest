@@ -4,6 +4,10 @@ title: "claude-mem 트렌드 지속 + 코딩 메모리 압축 흐름"
 date: 2026-02-03
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "ASTRA: Automated Synthesis of agentic Trajectories and Reinforcement Arenas"
+daily_url: "https://arxiv.org/abs/2601.21558"
+daily_keywords: ["LLM", "Fine-tuning", "Agent", "Reasoning", "Distillation", "Alignment", "RAG", "Prompt", "Claude", "Claude Code"]
 ---
 
 

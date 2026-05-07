@@ -4,6 +4,10 @@ title: "moeru-ai/airi — 셀프호스팅 AI companion + 게임 플레이"
 date: 2026-03-01
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "The Trinity of Consistency as a Defining Principle for General World Models"
+daily_url: "https://arxiv.org/abs/2602.23152"
+daily_keywords: ["Multimodal", "LLM", "Agent", "Eval", "Retrieval", "MoE", "Vision", "Llama", "Claude", "Claude Code"]
 ---
 
 

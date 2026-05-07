@@ -4,6 +4,10 @@ title: "Sparse Autoencoder, 정말 random baseline을 이기는가"
 date: 2026-02-19
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "Sanity Checks for Sparse Autoencoders: Do SAEs Beat Random Baselines?"
+daily_url: "https://arxiv.org/abs/2602.14111"
+daily_keywords: ["Eval", "Multimodal", "LoRA", "Retrieval", "Agent", "LLM", "Inference", "Reasoning", "Alignment", "AI Agent"]
 ---
 
 

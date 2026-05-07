@@ -4,6 +4,10 @@ title: "shannon, XBOW 96% 성공률의 자율 AI 해커"
 date: 2026-02-08
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "CAR-bench: Evaluating the Consistency and Limit-Awareness of LLM Agents under Real-World Uncertainty"
+daily_url: "https://arxiv.org/abs/2601.22027"
+daily_keywords: ["LLM", "Tool Use", "Agent", "Eval", "Vision", "Long Context", "Multimodal", "Retrieval", "Benchmark"]
 ---
 
 

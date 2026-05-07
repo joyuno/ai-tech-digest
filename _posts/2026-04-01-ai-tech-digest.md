@@ -4,6 +4,10 @@ title: "claude-howto 트렌드 유지 + Claude Code 가이드 확산"
 date: 2026-04-01
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "Out of Sight but Not Out of Mind: Hybrid Memory for Dynamic Video World Models"
+daily_url: "https://arxiv.org/abs/2603.25716"
+daily_keywords: ["Prompt", "GPT", "Eval", "Reasoning", "Agent", "Transformer", "Alignment", "Claude", "Claude Code", "AI Agent"]
 ---
 
 

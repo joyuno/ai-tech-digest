@@ -4,6 +4,10 @@ title: "claude-howto, Claude Code를 시각 가이드로 익히는 법"
 date: 2026-03-30
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "PixelSmile: Toward Fine-Grained Facial Expression Editing"
+daily_url: "https://arxiv.org/abs/2603.25728"
+daily_keywords: ["Eval", "Multimodal", "Agent", "Transformer", "Prompt", "Vision", "Inference", "AI Agent", "Claude", "Claude Code"]
 ---
 
 

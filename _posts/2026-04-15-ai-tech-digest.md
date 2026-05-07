@@ -4,6 +4,10 @@ title: "QuanBench+ — multi-framework quantum code 생성 벤치마크"
 date: 2026-04-15
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "QuanBench+: A Unified Multi-Framework Benchmark for LLM-Based Quantum Code Generation"
+daily_url: "https://arxiv.org/abs/2604.08570"
+daily_keywords: ["LLM", "Eval", "RAG", "Transformer", "Hallucination", "Inference", "Multimodal", "Agent", "Claude Code", "Claude"]
 ---
 
 

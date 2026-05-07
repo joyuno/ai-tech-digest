@@ -4,6 +4,10 @@ title: "토스페이먼츠의 zero-trust 보안 고도화 여정"
 date: 2026-02-11
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "QuantaAlpha: An Evolutionary Framework for LLM-Driven Alpha Mining"
+daily_url: "https://arxiv.org/abs/2602.07085"
+daily_keywords: ["LLM", "Agent", "Multimodal", "Vision", "Benchmark", "Chain-of-Thought", "Prompt", "Transformer", "Retrieval", "Eval"]
 ---
 
 

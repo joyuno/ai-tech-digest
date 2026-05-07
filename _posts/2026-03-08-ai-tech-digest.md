@@ -4,6 +4,10 @@ title: "HACRL — heterogeneous agent들의 협력 강화학습"
 date: 2026-03-08
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "Heterogeneous Agent Collaborative Reinforcement Learning"
+daily_url: "https://arxiv.org/abs/2603.02604"
+daily_keywords: ["LLM", "Inference", "Agent", "Reasoning", "Prompt", "RAG", "AI Agent", "Eval", "Gemini"]
 ---
 
 

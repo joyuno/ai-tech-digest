@@ -4,6 +4,10 @@ title: "mlx-vlm — Apple MLX로 Mac에서 굴리는 VLM 패키지"
 date: 2026-04-05
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "DataFlex: A Unified Framework for Data-Centric Dynamic Training of Large Language Models"
+daily_url: "https://arxiv.org/abs/2603.26164"
+daily_keywords: ["LLM", "Synthetic Data", "Retrieval", "Agent", "Eval", "Prompt", "Vision", "Fine-tuning", "Inference", "AI Agent"]
 ---
 
 

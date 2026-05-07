@@ -4,6 +4,10 @@ title: "PixelSmile — 미세한 얼굴 표정까지 편집하는 Diffusion"
 date: 2026-03-28
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+daily_source: "arxiv"
+daily_title: "PixelSmile: Toward Fine-Grained Facial Expression Editing"
+daily_url: "https://arxiv.org/abs/2603.25728"
+daily_keywords: ["Eval", "Multimodal", "Agent", "LLM", "Prompt", "Vision", "Inference", "AI Agent", "Claude", "Claude Code"]
 ---
 
 
