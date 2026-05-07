@@ -56,11 +56,12 @@ class OntologyClassifier:
                 text = f"{item.get('title', '')} {item.get('summary', '')}"
                 categories = self.classify(text)
                 item["categories"] = categories
-                # 모든 sub_tags 평탄화 — 카드/그래프에서 키워드로 사용
+                # related_keywords = ontology sub_tags + HF ai_keywords 합집합 (dedupe, 최대 12개)
                 related = []
                 for c in categories:
                     related.extend(c.get("sub_tags", []))
-                item["related_keywords"] = list(dict.fromkeys(related))
+                related.extend(item.get("ai_keywords", []))
+                item["related_keywords"] = list(dict.fromkeys(related))[:12]
                 classified_items.append(item)
             classified[source_name] = classified_items
         return classified

@@ -108,6 +108,12 @@ class ArxivCollector:
                 summary = (paper.get("summary") or "").replace("\n", " ").strip()[:500]
                 title = (paper.get("title") or "").strip()
                 upvotes = int(paper.get("upvotes") or 0)
+                # HF Daily Papers 이미 제공하는 풍부한 메타 — PDF figure 추출 불필요
+                thumbnail = paper_data.get("thumbnail") or ""
+                ai_keywords = paper.get("ai_keywords") or []
+                ai_summary = paper.get("ai_summary") or ""
+                num_comments = int(paper_data.get("numComments") or 0)
+                org = (paper.get("organization") or {}).get("name", "")
 
                 item = {
                     "title": title,
@@ -119,6 +125,17 @@ class ArxivCollector:
                     "hf_upvotes": upvotes,           # scoring.py 호환
                     "source": "arxiv",
                 }
+                if thumbnail:
+                    item["image_url"] = thumbnail
+                    item["image_source"] = "hf_daily"
+                if ai_keywords:
+                    item["ai_keywords"] = list(ai_keywords)[:10]
+                if ai_summary:
+                    item["ai_summary"] = ai_summary[:400]
+                if num_comments > 0:
+                    item["num_comments"] = num_comments
+                if org:
+                    item["organization"] = org
 
                 if self.enable_enrichment:
                     self._enrich(item, paper)
