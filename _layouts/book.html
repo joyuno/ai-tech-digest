@@ -275,11 +275,29 @@
       overflow: hidden; text-overflow: ellipsis; display: -webkit-box;
       -webkit-line-clamp: 2; -webkit-box-orient: vertical;
     }
+    .page-meta .pm-orig {
+      display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical;
+      margin-top: 0.2rem;
+      font-size: 0.72rem;
+      font-style: italic;
+      color: oklch(0.78 0.005 240);
+      opacity: 0.78;
+      overflow: hidden; text-overflow: ellipsis;
+    }
     .page-meta .pm-sub {
       display: block; margin-top: 0.25rem;
       font-size: 0.74rem; color: oklch(0.85 0.005 240);
       font-family: 'JetBrains Mono', monospace;
       opacity: 0.85;
+    }
+    .page-text .pt-sub {
+      margin-top: 0.4rem;
+      font-size: 0.78rem;
+      font-style: italic;
+      color: var(--ink-muted);
+      line-height: 1.4;
+      overflow: hidden; text-overflow: ellipsis;
+      display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
     }
     /* 페이지 호버 — 클릭 가능 신호 */
     .page { cursor: pointer; transition: filter 200ms; }
@@ -526,14 +544,25 @@
       let auto = true;
       let timer = null;
 
+      // 한국어 헤드라인 (= post.title, Claude 직접 작성) 우선,
+      // 원 항목 제목 (= daily_title, arxiv/GitHub 영어) 은 sub 로
+      const headline = (p) => p.title || p.daily_title || '';
+      const subTitle = (p) => {
+        const dt = p.daily_title;
+        if (!dt || dt === p.title) return '';
+        return dt;
+      };
+
       const textCardHtml = (p) => {
         const kws = (p.keywords || []).slice(0, 6);
         const kwsHtml = kws.map(k => `<span class="pt-kw">${escapeHtml(k)}</span>`).join('');
+        const sub = subTitle(p);
         return `
           <div class="page-text">
             <div>
               <div class="pt-source">${escapeHtml(sourceLabel(p.source))}</div>
-              <div class="pt-title">${escapeHtml(p.daily_title || p.title)}</div>
+              <div class="pt-title">${escapeHtml(headline(p))}</div>
+              ${sub ? `<div class="pt-sub">${escapeHtml(sub)}</div>` : ''}
               ${kws.length ? `<div class="pt-kws">${kwsHtml}</div>` : ''}
             </div>
             <div class="pt-date">${escapeHtml(p.date)}</div>
@@ -543,15 +572,16 @@
       const pageHtml = (p) => {
         if (!p) return '<div class="page-empty">—</div>';
         if (p.image && p.image.length > 0) {
-          // image 깨지면 onerror 가 부모를 text-card 로 swap
           const fallback = textCardHtml(p).replace(/`/g, '\\`').replace(/'/g, "\\'");
+          const sub = subTitle(p);
           return `
             <img class="page-img" src="${escapeAttr(p.image)}"
-                 alt="${escapeAttr(p.daily_title || p.title)}"
+                 alt="${escapeAttr(headline(p))}"
                  referrerpolicy="no-referrer" loading="lazy"
                  onerror="this.parentNode.innerHTML='${fallback.replace(/\n\s*/g, '')}'">
             <div class="page-meta">
-              <span class="pm-title">${escapeHtml(p.daily_title || p.title)}</span>
+              <span class="pm-title">${escapeHtml(headline(p))}</span>
+              ${sub ? `<span class="pm-orig">${escapeHtml(sub)}</span>` : ''}
               <span class="pm-sub">${escapeHtml(p.date)} · ${escapeHtml(sourceLabel(p.source))}</span>
             </div>`;
         }
