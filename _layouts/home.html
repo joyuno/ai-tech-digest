@@ -197,7 +197,15 @@
     }
     .page.left  { border-radius: 6px 0 0 6px; }
     .page.right { border-radius: 0 6px 6px 0; }
-    .page-img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+    /* 이미지: 비율 유지(contain). architecture figure는 보통 가로형이라 위쪽에 자연스럽게 자리잡고 메타는 아래 그라디언트로 겹침 */
+    .page-img {
+      width: 100%; height: 100%;
+      object-fit: contain;
+      object-position: center top;
+      display: block;
+      background: oklch(0.96 0.005 80);  /* 한지 톤의 밝은 paper 배경 */
+      padding: 1rem 1rem 4rem;            /* 사방 여백, 아래는 meta 공간 */
+    }
     .page-empty {
       width: 100%; height: 100%;
       display: grid; place-items: center;
@@ -252,10 +260,11 @@
     }
     .page-meta {
       position: absolute; bottom: 0; left: 0; right: 0;
-      padding: 0.85rem 1rem;
-      background: linear-gradient(to top, rgba(0,0,0,0.78), rgba(0,0,0,0));
+      padding: 1.5rem 1rem 0.85rem;
+      background: linear-gradient(to top, oklch(0.20 0.016 250 / 0.95) 25%, oklch(0.20 0.016 250 / 0.7) 60%, transparent);
       color: var(--ink); font-size: 0.85rem;
       pointer-events: none;
+      z-index: 2;
     }
     .page-meta .pm-title {
       display: block;
@@ -272,6 +281,10 @@
       font-family: 'JetBrains Mono', monospace;
       opacity: 0.85;
     }
+    /* 페이지 호버 — 클릭 가능 신호 */
+    .page { cursor: pointer; transition: filter 200ms; }
+    .page:hover { filter: brightness(1.08); }
+    .page:hover .page-meta { background: linear-gradient(to top, oklch(0.30 0.04 252 / 0.95) 30%, oklch(0.30 0.04 252 / 0.6) 60%, transparent); }
 
     /* center spine */
     .gutter {
@@ -547,6 +560,7 @@
 
       const renderPage = (target, p) => {
         target.innerHTML = pageHtml(p);
+        target.dataset.url = p && p.url ? p.url : '';
       };
 
       const refresh = () => {
@@ -607,6 +621,20 @@
       });
       book.addEventListener('mouseenter', stopAuto);
       book.addEventListener('mouseleave', () => { if (auto) startAuto(); });
+
+      // 페이지 클릭 → 해당 글 본문으로 이동
+      const goToPostFromPage = (target) => {
+        const url = target.dataset.url;
+        if (url) window.location = url;
+      };
+      left.addEventListener('click', e => {
+        if (e.target.closest('.book-nav')) return;  // 화살표 클릭은 제외
+        goToPostFromPage(left);
+      });
+      right.addEventListener('click', e => {
+        if (e.target.closest('.book-nav')) return;
+        goToPostFromPage(right);
+      });
 
       refresh();
       startAuto();
