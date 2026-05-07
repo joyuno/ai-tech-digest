@@ -36,6 +36,29 @@ def _classify_venue(text: str) -> str:
 
 GH_REPO_RE = re.compile(r"github\.com/([\w.-]+/[\w.-]+?)(?=[\s)\],.;]|$)", re.IGNORECASE)
 
+# ar5iv (LaTeX→HTML) 의 첫 figure — assets/x{N}.{png|jpg} 가 figure 1 = 보통 architecture
+AR5IV_FIG_RE = re.compile(
+    r'<img[^>]+src="(/html/[\d\.]+v?\d*/assets/x\d+\.(?:png|jpg))"',
+    re.IGNORECASE,
+)
+
+
+def _fetch_ar5iv_figure(arxiv_id: str, timeout: int = 8):
+    """arxiv 논문의 figure 1 (architecture diagram) URL 반환. 못 찾으면 None."""
+    if not arxiv_id:
+        return None
+    url = f"https://ar5iv.labs.arxiv.org/html/{arxiv_id}"
+    try:
+        r = requests.get(url, timeout=timeout, headers={"User-Agent": "Mozilla/5.0"})
+        if r.status_code != 200:
+            return None
+        m = AR5IV_FIG_RE.search(r.text)
+        if not m:
+            return None
+        return "https://ar5iv.labs.arxiv.org" + m.group(1)
+    except requests.RequestException:
+        return None
+
 
 def _extract_github_repo(*texts: str) -> str:
     """여러 string 후보에서 처음 발견되는 github.com/owner/repo 추출."""
@@ -154,8 +177,8 @@ class ArxivCollector:
         return results
 
     def _enrich(self, item: Dict, paper: Dict) -> None:
-        """venue tier + linked GitHub repo + stars 채움. 어떤 신호도 못 찾으면 묵묵히 skip."""
-        # venue tier — paper 메타 + abstract 합쳐서 검사
+        """venue tier + linked GitHub repo + stars + 진짜 architecture figure 채움."""
+        # venue tier
         meta_text = " ".join([
             str(paper.get("conference") or ""),
             str(paper.get("venue") or ""),
@@ -166,7 +189,7 @@ class ArxivCollector:
         if tier:
             item["venue_tier"] = tier
 
-        # linked GitHub repo — paper meta + summary
+        # linked GitHub repo
         repo_candidates = [
             str(paper.get("github") or ""),
             str(paper.get("projectPage") or paper.get("project_page") or ""),
@@ -179,6 +202,15 @@ class ArxivCollector:
             stars = _fetch_github_stars(repo, token=self.gh_token)
             if stars is not None:
                 item["github_stars"] = stars
+
+        # ar5iv figure (architecture diagram) — 있으면 image_url 덮어씀
+        # priority: ar5iv figure > HF first-page thumbnail > 없음
+        arxiv_id = paper.get("id", "")
+        if arxiv_id:
+            fig = _fetch_ar5iv_figure(arxiv_id)
+            if fig:
+                item["image_url"] = fig
+                item["image_source"] = "ar5iv_fig"
 
     def _fallback_collect(self) -> List[Dict]:
         try:
