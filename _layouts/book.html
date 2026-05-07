@@ -413,6 +413,25 @@
       display: grid; place-items: center;
       color: var(--ink-muted); font-size: 0.88rem;
     }
+    .graph-legend {
+      position: absolute; top: 0.9rem; left: 0.9rem;
+      z-index: 5;
+      display: flex; flex-wrap: wrap; gap: 0.7rem;
+      padding: 0.55rem 0.85rem;
+      background: oklch(0.20 0.016 250 / 0.85);
+      border: 1px solid var(--border);
+      border-radius: var(--r-md);
+      backdrop-filter: blur(10px);
+      font-size: 0.72rem;
+      color: var(--ink-2);
+      font-family: 'JetBrains Mono', monospace;
+      pointer-events: none;
+    }
+    .graph-legend .lg-item { display: inline-flex; align-items: center; gap: 0.4rem; }
+    .graph-legend .lg-dot {
+      display: inline-block; width: 10px; height: 10px; border-radius: 50%;
+      border: 1.5px solid;
+    }
 
     /* footer */
     footer.bottom {
@@ -686,59 +705,135 @@
     }
     function escapeAttr(s) { return escapeHtml(s); }
 
-    /* ─────────── obsidian-style graph ─────────── */
+    /* ─────────── obsidian-style graph (categorized + clustered) ─────────── */
     function initGraph(allPosts) {
       const container = document.getElementById('graph');
       if (typeof vis === 'undefined') {
         container.innerHTML = '<div class="empty-state">그래프 라이브러리 로드 실패</div>';
         return;
       }
-      // post 노드 + keyword 노드 + edges
       const postsWithKw = allPosts.filter(p => Array.isArray(p.keywords) && p.keywords.length);
       if (!postsWithKw.length) {
         container.innerHTML = '<div class="empty-state">아직 키워드가 충분하지 않아요</div>';
         return;
       }
 
+      // ── ontology sub_tags + 핵심 키워드 → 메인 카테고리 매핑 ──
+      const KW_CAT = {
+        // model/architecture (블루)
+        'transformer':'model','attention':'model','bert':'model','moe':'model','mixture of experts':'model',
+        'diffusion':'model','ddpm':'model','ddim':'model','stable diffusion':'model','latent diffusion':'model',
+        'vlm':'model','vision-language':'model','vla':'model','vision-language-action':'model',
+        'world model':'model','ssm':'model','mamba':'model','state space':'model',
+        'reasoning model':'model','slm':'model','small language model':'model',
+        'llm':'model','gpt':'model','claude':'model','llama':'model','deepseek':'model','gemini':'model',
+        'multimodal':'model','모델/아키텍처':'model',
+        // train/optim (그린)
+        'sft':'train','supervised fine-tuning':'train','rlhf':'train','dpo':'train','rlvr':'train',
+        'lora':'train','qlora':'train','peft':'train','quantization':'train','int8':'train','int4':'train',
+        'fp8':'train','fp4':'train','distillation':'train','knowledge distillation':'train',
+        'synthetic data':'train','model merging':'train','mergekit':'train','fine-tuning':'train',
+        '학습/최적화':'train',
+        // safety/trust (레드)
+        'hallucination':'safety','환각':'safety','factuality':'safety','alignment':'safety',
+        'constitutional ai':'safety','jailbreak':'safety','red-team':'safety','red team':'safety',
+        'watermark':'safety','guardrails':'safety','safety':'safety','신뢰성/안전':'safety',
+        // reason/retrieval (옐로)
+        'rag':'reason','retrieval':'reason','retrieval-augmented':'reason','cot':'reason',
+        'chain-of-thought':'reason','tool use':'reason','function calling':'reason',
+        'long context':'reason','1m tokens':'reason','embedding':'reason','vector':'reason',
+        'reranking':'reason','cross-encoder':'reason','test-time compute':'reason',
+        'test-time scaling':'reason','inference':'reason','knowledge graph':'reason','추론/검색':'reason',
+        // agent (시안)
+        'agent':'agent','ai agent':'agent','multi-agent':'agent','multi agent':'agent',
+        'computer use':'agent','browser use':'agent','gui agent':'agent','coding agent':'agent',
+        'web agent':'agent','swe agent':'agent','agentic':'agent','workflow':'agent',
+        'orchestration':'agent','mcp':'agent','model context protocol':'agent','self-evolving':'agent',
+        '에이전트':'agent',
+        // dev tools (핑크)
+        'ai coding':'tools','cursor':'tools','claude code':'tools','copilot':'tools','codex':'tools',
+        'prompt engineering':'tools','prompt':'tools','eval':'tools','evaluation':'tools',
+        'benchmark':'tools','mmlu':'tools','humaneval':'tools','swe-bench':'tools',
+        'vllm':'tools','tgi':'tools','ollama':'tools','inference engine':'tools','llama.cpp':'tools',
+        'observability':'tools','tracing':'tools','langfuse':'tools','opentelemetry':'tools',
+        'mlops':'tools','개발 도구':'tools',
+      };
+      const CAT_COLOR = {
+        model:  { bg:'oklch(0.30 0.10 252 / 0.65)', border:'oklch(0.74 0.16 252)', edge:'oklch(0.55 0.10 252 / 0.45)', label:'모델/아키텍처' },
+        train:  { bg:'oklch(0.30 0.10 145 / 0.65)', border:'oklch(0.72 0.14 145)', edge:'oklch(0.55 0.10 145 / 0.45)', label:'학습/최적화' },
+        safety: { bg:'oklch(0.30 0.10 25 / 0.65)',  border:'oklch(0.72 0.16 25)',  edge:'oklch(0.55 0.10 25 / 0.45)',  label:'신뢰성/안전' },
+        reason: { bg:'oklch(0.30 0.10 80 / 0.65)',  border:'oklch(0.74 0.14 80)',  edge:'oklch(0.55 0.10 80 / 0.45)',  label:'추론/검색' },
+        agent:  { bg:'oklch(0.30 0.10 195 / 0.65)', border:'oklch(0.74 0.13 195)', edge:'oklch(0.55 0.10 195 / 0.45)', label:'에이전트' },
+        tools:  { bg:'oklch(0.30 0.10 320 / 0.65)', border:'oklch(0.72 0.14 320)', edge:'oklch(0.55 0.10 320 / 0.45)', label:'개발 도구' },
+        other:  { bg:'oklch(0.28 0.02 250 / 0.55)', border:'oklch(0.55 0.02 250)', edge:'oklch(0.45 0.02 250 / 0.35)', label:'기타' },
+      };
+      const catOf = kw => KW_CAT[(kw || '').toLowerCase()] || 'other';
+
+      // ── 키워드 빈도 + 카테고리 집계 ──
+      const kwSeen = new Map();
+      postsWithKw.forEach(p => {
+        p.keywords.slice(0, 10).forEach(kw => {
+          if (!kw) return;
+          kwSeen.set(kw, (kwSeen.get(kw) || 0) + 1);
+        });
+      });
+      // long-tail 거름: degree 2+ 만 (1번만 등장한 키워드는 노이즈)
+      const KW_DEG_MIN = 2;
+      const visibleKws = new Set(
+        Array.from(kwSeen.entries()).filter(([, d]) => d >= KW_DEG_MIN).map(([k]) => k)
+      );
+
       const nodes = [];
       const edges = [];
-      const kwSeen = new Map();   // kw → degree
       const kwId = kw => 'kw:' + kw;
 
-      // 글 노드 + 글→키워드 엣지
-      postsWithKw.forEach((p, i) => {
+      // ── 글 노드 ── 그 글의 키워드 다수결로 카테고리 결정 (그래서 같은 cluster 에 들어감)
+      postsWithKw.forEach(p => {
         const id = 'p:' + p.url;
+        // 글의 dominant 카테고리
+        const counts = {};
+        p.keywords.forEach(kw => {
+          const c = catOf(kw); counts[c] = (counts[c] || 0) + 1;
+        });
+        const domCat = Object.entries(counts).sort((a, b) => b[1] - a[1])[0][0];
+        const col = CAT_COLOR[domCat];
         nodes.push({
           id,
-          label: (p.daily_title || p.title || '').slice(0, 40),
+          label: (p.title || p.daily_title || '').slice(0, 28),
           shape: p.image ? 'circularImage' : 'dot',
           image: p.image || undefined,
-          brokenImage: undefined,
-          size: p.image ? 32 : 12,
-          font: { color: 'oklch(0.85 0.012 240)', size: 11, face: 'Pretendard, sans-serif' },
-          color: { background: 'oklch(0.30 0.05 252)', border: 'oklch(0.74 0.16 252)', highlight: { background: 'oklch(0.40 0.10 252)', border: 'oklch(0.85 0.18 252)' } },
-          group: 'post',
-          title: (p.daily_title || p.title) + '\n' + p.date,
+          size: 22,
+          font: { color: 'oklch(0.88 0.012 240)', size: 11, face: 'Pretendard, sans-serif', strokeWidth: 0 },
+          color: { background: col.bg, border: col.border, highlight: { background: col.bg, border: col.border } },
+          group: 'post:' + domCat,
+          title: (p.title || p.daily_title) + '\n' + p.date + ' · ' + (CAT_COLOR[domCat]?.label || ''),
           url: p.url,
+          mass: 2,
         });
-        p.keywords.slice(0, 8).forEach(kw => {
-          if (!kw) return;
-          const kid = kwId(kw);
-          kwSeen.set(kw, (kwSeen.get(kw) || 0) + 1);
-          edges.push({ from: id, to: kid, color: { color: 'oklch(0.40 0.05 252 / 0.5)', highlight: 'oklch(0.74 0.16 252)' }, width: 1 });
+        // 글 → 키워드 엣지 (visibleKws 만, 카테고리 색)
+        p.keywords.slice(0, 10).forEach(kw => {
+          if (!visibleKws.has(kw)) return;
+          edges.push({
+            from: id, to: kwId(kw),
+            color: { color: CAT_COLOR[catOf(kw)].edge, highlight: CAT_COLOR[catOf(kw)].border },
+            width: 0.8,
+          });
         });
       });
 
-      // 키워드 노드
-      kwSeen.forEach((degree, kw) => {
+      // ── 키워드 노드 ── 카테고리 색상, degree 비례 size
+      visibleKws.forEach(kw => {
+        const degree = kwSeen.get(kw);
+        const cat = catOf(kw);
+        const col = CAT_COLOR[cat];
         nodes.push({
           id: kwId(kw),
           label: kw,
           shape: 'dot',
-          size: 6 + Math.min(degree, 8) * 2,
-          font: { color: 'oklch(0.62 0.016 245)', size: 10, face: 'JetBrains Mono, monospace' },
-          color: { background: 'oklch(0.45 0.08 195)', border: 'oklch(0.74 0.13 195)', highlight: { background: 'oklch(0.60 0.12 195)', border: 'oklch(0.85 0.15 195)' } },
-          group: 'keyword',
+          size: 5 + Math.min(degree, 12) * 1.6,  // 7~24
+          font: { color: col.border, size: 10, face: 'JetBrains Mono, monospace', strokeWidth: 0 },
+          color: { background: col.bg, border: col.border, highlight: { background: col.bg, border: col.border } },
+          group: 'kw:' + cat,
         });
       });
 
@@ -751,19 +846,43 @@
         physics: {
           enabled: true,
           solver: 'forceAtlas2Based',
-          forceAtlas2Based: { gravitationalConstant: -50, centralGravity: 0.005, springLength: 95, springConstant: 0.08, damping: 0.5, avoidOverlap: 0.6 },
-          stabilization: { iterations: 200 }
+          forceAtlas2Based: {
+            gravitationalConstant: -85,
+            centralGravity: 0.012,
+            springLength: 65,
+            springConstant: 0.12,
+            damping: 0.55,
+            avoidOverlap: 0.85,
+          },
+          stabilization: { iterations: 300, fit: true }
         },
         interaction: {
-          hover: true, dragNodes: true, zoomView: true, multiselect: false, tooltipDelay: 120
+          hover: true, dragNodes: true, zoomView: true, multiselect: false, tooltipDelay: 120,
         },
-        nodes: { borderWidth: 1.5 },
-        edges: { smooth: { type: 'continuous', roundness: 0.4 }, selectionWidth: 2 },
+        nodes: { borderWidth: 1.4 },
+        edges: { smooth: { type: 'continuous', roundness: 0.35 }, selectionWidth: 2 },
+        groups: {},
       };
 
-      // empty-state 제거
+      // empty-state 제거 + legend 박기
       container.innerHTML = '';
+      const legend = document.createElement('div');
+      legend.className = 'graph-legend';
+      legend.innerHTML = ['model','train','safety','reason','agent','tools'].map(c => {
+        const col = CAT_COLOR[c];
+        return `<span class="lg-item"><span class="lg-dot" style="background:${col.bg};border-color:${col.border};"></span>${col.label}</span>`;
+      }).join('');
+      container.appendChild(legend);
+
       const network = new vis.Network(container, data, options);
+
+      // post 노드를 같은 카테고리 키워드 cluster 와 더 강하게 끌어붙이기 위한
+      // gravity well 시뮬: 안정화 후 cluster 별로 중심 좌표 nudge.
+      network.once('stabilizationIterationsDone', () => {
+        network.setOptions({ physics: { enabled: true, solver: 'forceAtlas2Based',
+          forceAtlas2Based: { gravitationalConstant: -55, centralGravity: 0.008, springLength: 75, springConstant: 0.08, damping: 0.65, avoidOverlap: 0.85 } } });
+      });
+
       network.on('click', params => {
         if (params.nodes && params.nodes.length) {
           const n = data.nodes.get(params.nodes[0]);
