@@ -4,6 +4,14 @@ title: "{{ headline if headline else 'AI Tech - ' + date }}"
 date: {{ date }}
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
+{% if representative and representative.item %}
+{% set rep = representative.item %}
+daily_source: "{{ representative.source_id | default('') }}"
+daily_title: {{ rep.title | default('') | tojson }}
+daily_url: {{ rep.url | default('') | tojson }}
+daily_image: {{ rep.image_url | default('') | tojson }}
+daily_keywords: {{ (rep.related_keywords or rep.ai_keywords or []) | tojson }}
+{% endif %}
 ---
 
 {% set src_icon = {

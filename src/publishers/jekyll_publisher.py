@@ -53,6 +53,7 @@ class JekyllPublisher:
                 headline=summary.get("headline", "").strip(),
                 sources=summary.get("sources", []),
                 top_keywords=top_keywords[:10],
+                representative=summary.get("representative") or {},
             )
 
         # 기본 포스트
