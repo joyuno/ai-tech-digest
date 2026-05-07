@@ -6,7 +6,13 @@ layout: null
   {
     "title": {{ post.title | jsonify }},
     "url": {{ post.url | relative_url | jsonify }},
-    "date": "{{ post.date | date: '%Y.%m.%d' }}"
+    "date": "{{ post.date | date: '%Y.%m.%d' }}",
+    "iso": "{{ post.date | date: '%Y-%m-%d' }}",
+    "image": {{ post.daily_image | default: "" | jsonify }},
+    "source": {{ post.daily_source | default: "" | jsonify }},
+    "daily_title": {{ post.daily_title | default: post.title | jsonify }},
+    "daily_url": {{ post.daily_url | default: post.url | jsonify }},
+    "keywords": {% if post.daily_keywords %}{{ post.daily_keywords | jsonify }}{% else %}[]{% endif %}
   }{% unless forloop.last %},{% endunless %}
   {% endfor %}
 ]

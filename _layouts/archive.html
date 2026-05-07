@@ -1,0 +1,59 @@
+---
+layout: default
+---
+<header class="page-hero">
+  <h1>전체 보기</h1>
+  <p class="meta">매일 KST 8시 자동 업데이트 · grok-4.1-fast 요약</p>
+</header>
+
+<div class="search-wrap">
+  <input type="text" id="search-input" placeholder="검색...">
+  <ul id="search-results"></ul>
+</div>
+
+{% if site.posts.size == 0 %}
+<p style="color:var(--text-muted);text-align:center;padding:3rem 0;">아직 포스트가 없습니다.</p>
+{% else %}
+<ul class="post-list" id="post-list">
+  {% if paginator %}{% assign list_posts = paginator.posts %}{% else %}{% assign list_posts = site.posts %}{% endif %}
+  {% for post in list_posts %}
+  <li>
+    <a href="{{ post.url | relative_url }}">
+      <span class="pl-date">{{ post.date | date: "%Y.%m.%d" }}</span>
+      <span class="pl-title">{{ post.title }}</span>
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+
+{% if paginator and paginator.total_pages > 1 %}
+<nav class="pagination" aria-label="페이지">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | relative_url }}">← 최신</a>
+  {% else %}
+    <span class="disabled">← 최신</span>
+  {% endif %}
+  <span class="page-num">{{ paginator.page }} / {{ paginator.total_pages }}</span>
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | relative_url }}">이전 →</a>
+  {% else %}
+    <span class="disabled">이전 →</span>
+  {% endif %}
+</nav>
+{% endif %}
+{% endif %}
+
+<script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script>
+<script>
+  if (typeof SimpleJekyllSearch !== 'undefined') {
+    SimpleJekyllSearch({
+      searchInput: document.getElementById('search-input'),
+      resultsContainer: document.getElementById('search-results'),
+      json: '{{ "/search.json" | relative_url }}',
+      searchResultTemplate: '<li><a href="{url}"><span class="sr-date">{date}</span><span>{title}</span></a></li>',
+      noResultsText: '<li style="padding:0.5rem 0.7rem;color:var(--text-muted);font-size:0.85rem;">결과 없음</li>',
+      limit: 12,
+      fuzzy: false
+    });
+  }
+</script>
