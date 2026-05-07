@@ -153,10 +153,15 @@ class GitHubTrendingCollector:
         repo_full = _extract_owner_repo(item.get("url", ""))
         if not repo_full:
             return
+        # 1순위: README 첫 의미있는 이미지 (직접 hero/screenshot)
         img = _fetch_readme_image(repo_full, token=self.gh_token)
         if img:
             item["image_url"] = img
             item["image_source"] = "readme"
+            return
+        # 2순위: GitHub 자동 생성 OG image (모든 repo 에 100% 존재)
+        item["image_url"] = f"https://opengraph.githubassets.com/auto/{repo_full}"
+        item["image_source"] = "github_og"
 
     def _parse_repo(self, repo_element):
         try:
