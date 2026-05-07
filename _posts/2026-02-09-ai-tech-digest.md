@@ -5,10 +5,10 @@ date: 2026-02-09
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
 daily_source: "arxiv"
-daily_title: "CAR-bench: Evaluating the Consistency and Limit-Awareness of LLM Agents under Real-World Uncertainty"
-daily_url: "https://arxiv.org/abs/2602.06036"
+daily_title: "MemSkill: Learning and Evolving Memory Skills for Self-Evolving Agents"
+daily_url: "https://arxiv.org/abs/2602.02474"
 daily_keywords: ["LLM", "Tool Use", "Agent", "Eval", "Inference", "Multimodal", "Retrieval", "Benchmark", "Grounding"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2602.06036/assets/x1.png"
+daily_image: "https://ar5iv.labs.arxiv.org/html/2602.02474/assets/x1.png"
 daily_image_kind: "ar5iv_fig"
 ---
 

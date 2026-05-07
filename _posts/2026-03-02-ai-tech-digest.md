@@ -5,11 +5,11 @@ date: 2026-03-02
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
 daily_source: "arxiv"
-daily_title: "The Trinity of Consistency as a Defining Principle for General World Models"
-daily_url: "https://arxiv.org/abs/2602.23152"
+daily_title: "MobilityBench: A Benchmark for Evaluating Route-Planning Agents in Real-World Mobility Scenarios"
+daily_url: "https://arxiv.org/abs/2602.22638"
 daily_keywords: ["Multimodal", "LLM", "Agent", "Eval", "Retrieval", "MoE", "Vision", "Llama", "Claude", "RAG"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2602.23152/assets/x1.png"
-daily_image_kind: "ar5iv_fig"
+daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2602.22638.png"
+daily_image_kind: "hf_first_page"
 ---
 
 

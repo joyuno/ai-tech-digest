@@ -5,10 +5,10 @@ date: 2026-02-01
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
 daily_source: "arxiv"
-daily_title: "Idea2Story: An Automated Pipeline for Transforming Research Concepts into Complete Scientific Narratives"
-daily_url: "https://arxiv.org/abs/2601.21821"
+daily_title: "Everything in Its Place: Benchmarking Spatial Intelligence of Text-to-Image Models"
+daily_url: "https://arxiv.org/abs/2601.20354"
 daily_keywords: ["LLM", "Agent", "Reasoning", "Prompt", "MoE", "Vision", "Multimodal", "RAG", "Claude", "AI Agent"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2601.21821/assets/x1.png"
+daily_image: "https://ar5iv.labs.arxiv.org/html/2601.20354/assets/x1.png"
 daily_image_kind: "ar5iv_fig"
 ---
 

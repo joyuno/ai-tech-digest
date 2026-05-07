@@ -5,11 +5,11 @@ date: 2026-05-07
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
 daily_source: "arxiv"
-daily_title: "MolmoAct2: Action Reasoning Models for Real-world Deployment"
-daily_url: "https://arxiv.org/abs/2605.03042"
+daily_title: "From Context to Skills: Can Language Models Learn from Context Skillfully?"
+daily_url: "https://arxiv.org/abs/2604.27660"
 daily_keywords: ["Vision", "Grounding", "Inference", "LLM", "Agent", "Fine-tuning", "Multimodal", "Alignment", "AI Agent", "Reasoning"]
-daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.03042.png"
-daily_image_kind: "hf_first_page"
+daily_image: "https://ar5iv.labs.arxiv.org/html/2604.27660/assets/x1.png"
+daily_image_kind: "ar5iv_fig"
 ---
 
 

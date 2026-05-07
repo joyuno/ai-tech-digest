@@ -5,11 +5,11 @@ date: 2026-04-13
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
 daily_source: "arxiv"
-daily_title: "Rethinking Generalization in Reasoning SFT: A Conditional Analysis on Optimization, Data, and Model Capability"
-daily_url: "https://arxiv.org/abs/2604.06628"
+daily_title: "ClawBench: Can AI Agents Complete Everyday Online Tasks?"
+daily_url: "https://arxiv.org/abs/2604.08523"
 daily_keywords: ["LLM", "Chain-of-Thought", "Agent", "AI Agent", "Eval", "Vision", "Alignment", "Prompt", "Multimodal", "RAG"]
-daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2604.06628.png"
-daily_image_kind: "hf_first_page"
+daily_image: "https://ar5iv.labs.arxiv.org/html/2604.08523/assets/x1.png"
+daily_image_kind: "ar5iv_fig"
 ---
 
 

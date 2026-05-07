@@ -5,10 +5,10 @@ date: 2026-03-23
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
 daily_source: "arxiv"
-daily_title: "Efficient Reasoning with Balanced Thinking"
-daily_url: "https://arxiv.org/abs/2603.12372"
+daily_title: "Generation Models Know Space: Unleashing Implicit 3D Priors for Scene Understanding"
+daily_url: "https://arxiv.org/abs/2603.19235"
 daily_keywords: ["Reasoning", "LLM", "Eval", "Multimodal", "RAG", "Alignment", "Prompt", "Agent", "AI Agent", "Claude"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2603.12372/assets/x1.png"
+daily_image: "https://ar5iv.labs.arxiv.org/html/2603.19235/assets/x1.png"
 daily_image_kind: "ar5iv_fig"
 ---
 

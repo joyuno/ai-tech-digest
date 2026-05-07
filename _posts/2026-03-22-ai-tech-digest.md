@@ -5,11 +5,11 @@ date: 2026-03-22
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
 daily_source: "arxiv"
-daily_title: "Efficient Reasoning with Balanced Thinking"
-daily_url: "https://arxiv.org/abs/2603.18524"
+daily_title: "Video-CoE: Reinforcing Video Event Prediction via Chain of Events"
+daily_url: "https://arxiv.org/abs/2603.14935"
 daily_keywords: ["Reasoning", "LLM", "Eval", "Multimodal", "RAG", "Alignment", "Prompt", "Claude", "Agent", "Claude Code"]
-daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.18524.png"
-daily_image_kind: "hf_first_page"
+daily_image: "https://ar5iv.labs.arxiv.org/html/2603.14935/assets/x1.png"
+daily_image_kind: "ar5iv_fig"
 ---
 
 

@@ -5,11 +5,11 @@ date: 2026-02-08
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
 daily_source: "arxiv"
-daily_title: "CAR-bench: Evaluating the Consistency and Limit-Awareness of LLM Agents under Real-World Uncertainty"
-daily_url: "https://arxiv.org/abs/2602.02474"
+daily_title: "Spider-Sense: Intrinsic Risk Sensing for Efficient Agent Defense with Hierarchical Adaptive Screening"
+daily_url: "https://arxiv.org/abs/2602.05386"
 daily_keywords: ["LLM", "Tool Use", "Agent", "Eval", "Vision", "Long Context", "Multimodal", "Retrieval", "Benchmark"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2602.02474/assets/x1.png"
-daily_image_kind: "ar5iv_fig"
+daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2602.05386.png"
+daily_image_kind: "hf_first_page"
 ---
 
 

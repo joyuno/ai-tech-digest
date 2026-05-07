@@ -5,11 +5,11 @@ date: 2026-02-15
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
 daily_source: "arxiv"
-daily_title: "The Devil Behind Moltbook: Anthropic Safety is Always Vanishing in Self-Evolving AI Societies"
-daily_url: "https://arxiv.org/abs/2602.09877"
+daily_title: "Composition-RL: Compose Your Verifiable Prompts for Reinforcement Learning of Large Language Models"
+daily_url: "https://arxiv.org/abs/2602.12036"
 daily_keywords: ["LLM", "Alignment", "Agent", "Prompt", "Multimodal", "Distillation", "Audio", "Claude", "Eval", "Transformer"]
-daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2602.09877.png"
-daily_image_kind: "hf_first_page"
+daily_image: "https://ar5iv.labs.arxiv.org/html/2602.12036/assets/x1.png"
+daily_image_kind: "ar5iv_fig"
 ---
 
 

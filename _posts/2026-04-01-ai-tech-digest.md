@@ -5,11 +5,11 @@ date: 2026-04-01
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
 daily_source: "arxiv"
-daily_title: "Out of Sight but Not Out of Mind: Hybrid Memory for Dynamic Video World Models"
-daily_url: "https://arxiv.org/abs/2603.27027"
+daily_title: "ShotStream: Streaming Multi-Shot Video Generation for Interactive Storytelling"
+daily_url: "https://arxiv.org/abs/2603.25746"
 daily_keywords: ["Prompt", "GPT", "Eval", "Reasoning", "Agent", "Transformer", "Alignment", "Claude", "Claude Code", "AI Agent"]
-daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.27027.png"
-daily_image_kind: "hf_first_page"
+daily_image: "https://ar5iv.labs.arxiv.org/html/2603.25746/assets/x1.png"
+daily_image_kind: "ar5iv_fig"
 ---
 
 

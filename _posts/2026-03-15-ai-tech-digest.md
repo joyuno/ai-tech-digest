@@ -5,10 +5,10 @@ date: 2026-03-15
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
 daily_source: "arxiv"
-daily_title: "Spatial-TTT: Streaming Visual-based Spatial Intelligence with Test-Time Training"
-daily_url: "https://arxiv.org/abs/2603.11421"
+daily_title: "Strategic Navigation or Stochastic Search? How Agents and Humans Reason Over Document Collections"
+daily_url: "https://arxiv.org/abs/2603.12180"
 daily_keywords: ["Multimodal", "Agent", "Eval", "DeepSeek", "Inference", "Reasoning", "Prompt", "Benchmark", "AI Agent", "Claude"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2603.11421/assets/x1.png"
+daily_image: "https://ar5iv.labs.arxiv.org/html/2603.12180/assets/x1.png"
 daily_image_kind: "ar5iv_fig"
 ---
 

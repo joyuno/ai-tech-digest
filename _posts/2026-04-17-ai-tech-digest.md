@@ -5,7 +5,7 @@ date: 2026-04-17
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
 daily_source: "arxiv"
-daily_title: "ClawGUI: A Unified Framework for Training, Evaluating, and Deploying GUI Agents"
+daily_title: "Seedance 2.0: Advancing Video Generation for World Complexity"
 daily_url: "https://arxiv.org/abs/2604.14148"
 daily_keywords: ["Agent", "Eval", "Audio", "LLM", "Reasoning", "LoRA", "Claude Code", "Claude", "AI Agent", "Workflow"]
 daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2604.14148.png"

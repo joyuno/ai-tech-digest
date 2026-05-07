@@ -5,10 +5,10 @@ date: 2026-04-06
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
 daily_source: "arxiv"
-daily_title: "DataFlex: A Unified Framework for Data-Centric Dynamic Training of Large Language Models"
-daily_url: "https://arxiv.org/abs/2603.26164"
+daily_title: "Generative World Renderer"
+daily_url: "https://arxiv.org/abs/2604.02329"
 daily_keywords: ["LLM", "Synthetic Data", "Retrieval", "Agent", "Eval", "Prompt", "Vision", "Fine-tuning", "Inference", "AI Agent"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2603.26164/assets/x1.png"
+daily_image: "https://ar5iv.labs.arxiv.org/html/2604.02329/assets/x1.png"
 daily_image_kind: "ar5iv_fig"
 ---
 

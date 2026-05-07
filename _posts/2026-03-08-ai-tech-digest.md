@@ -5,10 +5,10 @@ date: 2026-03-08
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
 daily_source: "arxiv"
-daily_title: "Heterogeneous Agent Collaborative Reinforcement Learning"
-daily_url: "https://arxiv.org/abs/2603.02604"
+daily_title: "T2S-Bench & Structure-of-Thought: Benchmarking and Prompting Comprehensive Text-to-Structure Reasoning"
+daily_url: "https://arxiv.org/abs/2603.03790"
 daily_keywords: ["LLM", "Inference", "Agent", "Reasoning", "Prompt", "RAG", "AI Agent", "Eval", "Gemini"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2603.02604/assets/x1.png"
+daily_image: "https://ar5iv.labs.arxiv.org/html/2603.03790/assets/x1.png"
 daily_image_kind: "ar5iv_fig"
 ---
 

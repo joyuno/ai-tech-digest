@@ -6,9 +6,9 @@ categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
 daily_source: "arxiv"
 daily_title: "Qianfan-OCR: A Unified End-to-End Model for Document Intelligence"
-daily_url: "https://arxiv.org/abs/2603.17187"
+daily_url: "https://arxiv.org/abs/2603.13398"
 daily_keywords: ["Vision", "Prompt", "LLM", "Agent", "Eval", "Alignment", "Claude", "Claude Code", "GPT"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2603.17187/assets/x1.png"
+daily_image: "https://ar5iv.labs.arxiv.org/html/2603.13398/assets/x1.png"
 daily_image_kind: "ar5iv_fig"
 ---
 

@@ -5,10 +5,10 @@ date: 2026-04-27
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
 daily_source: "arxiv"
-daily_title: "LLaDA2.0-Uni: Unifying Multimodal Understanding and Generation with Diffusion Large Language Model"
-daily_url: "https://arxiv.org/abs/2604.20796"
+daily_title: "DR-Venus: Towards Frontier Edge-Scale Deep Research Agents with Only 10K Open Data"
+daily_url: "https://arxiv.org/abs/2604.19859"
 daily_keywords: ["LLM", "RAG", "Eval", "LoRA", "Small Language Model", "Agent", "Multimodal", "Claude", "AI Agent"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2604.20796/assets/x1.png"
+daily_image: "https://ar5iv.labs.arxiv.org/html/2604.19859/assets/x1.png"
 daily_image_kind: "ar5iv_fig"
 ---
 

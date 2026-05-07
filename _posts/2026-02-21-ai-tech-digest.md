@@ -6,9 +6,9 @@ categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
 daily_source: "arxiv"
 daily_title: "SLA2: Sparse-Linear Attention with Learnable Routing and QAT"
-daily_url: "https://arxiv.org/abs/2602.14296"
+daily_url: "https://arxiv.org/abs/2602.12675"
 daily_keywords: ["Agent", "Eval", "Multimodal", "Fine-tuning", "Llama", "AI Agent", "RAG", "Claude", "Claude Code"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2602.14296/assets/x1.png"
+daily_image: "https://ar5iv.labs.arxiv.org/html/2602.12675/assets/x1.png"
 daily_image_kind: "ar5iv_fig"
 ---
 
