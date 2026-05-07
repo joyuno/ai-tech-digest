@@ -4,12 +4,12 @@ title: "무신사의 AI Native Hiring 채용 파이프라인 철학"
 date: 2026-03-14
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
-daily_source: "arxiv"
-daily_title: "Spatial-TTT: Streaming Visual-based Spatial Intelligence with Test-Time Training"
-daily_url: "https://arxiv.org/abs/2603.12255"
+daily_source: "musinsa"
+daily_title: "The Philosophy: AI Native Hiring"
+daily_url: "https://techblog.musinsa.com/the-philosophy-ai-native-hiring-c002c2775b3a?source=rss----f107b03c406e---4"
 daily_keywords: ["Multimodal", "Agent", "Eval", "DeepSeek", "Inference", "Reasoning", "Benchmark", "GPT", "Copilot", "LLM"]
-daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.12255.png"
-daily_image_kind: "hf_first_page"
+daily_image: ""
+daily_image_kind: "none"
 ---
 
 

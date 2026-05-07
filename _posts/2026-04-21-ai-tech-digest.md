@@ -4,12 +4,12 @@ title: "The Machine — AI agent가 지원자의 AI 코드를 채점하다"
 date: 2026-04-21
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
-daily_source: "arxiv"
-daily_title: "Elucidating the SNR-t Bias of Diffusion Probabilistic Models"
-daily_url: "https://arxiv.org/abs/2604.16044"
+daily_source: "musinsa"
+daily_title: "The Machine: AI가 AI 활용 코드를 평가하다"
+daily_url: "https://techblog.musinsa.com/the-machine-ai%EA%B0%80-ai-%ED%99%9C%EC%9A%A9-%EC%BD%94%EB%93%9C%EB%A5%BC-%ED%8F%89%EA%B0%80%ED%95%98%EB%8B%A4-c2345aab5b7a?source=rss----f107b03c406e---4"
 daily_keywords: ["Alignment", "Inference", "Reasoning", "LLM", "Agent", "Fine-tuning", "Multimodal", "Prompt", "Eval"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2604.16044/assets/x1.png"
-daily_image_kind: "ar5iv_fig"
+daily_image: ""
+daily_image_kind: "none"
 ---
 
 

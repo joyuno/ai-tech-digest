@@ -4,12 +4,12 @@ title: "Granite 4.0 1B Speech — 엣지용 다국어 음성 모델"
 date: 2026-03-10
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
-daily_source: "arxiv"
-daily_title: "Penguin-VL: Exploring the Efficiency Limits of VLM with LLM-based Vision Encoders"
-daily_url: "https://arxiv.org/abs/2603.06569"
+daily_source: "huggingface"
+daily_title: "Granite 4.0 1B Speech: Compact, Multilingual, and Built for the Edge"
+daily_url: "https://huggingface.co/blog/ibm-granite/granite-4-speech"
 daily_keywords: ["LLM", "Inference", "RAG", "AI Agent", "Eval", "DPO", "Retrieval", "Agent", "Gemini", "GPT"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2603.06569/assets/x1.png"
-daily_image_kind: "ar5iv_fig"
+daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/blog/ibm-granite/granite-4-speech.png"
+daily_image_kind: "og_image"
 ---
 
 

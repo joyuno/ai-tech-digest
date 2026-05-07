@@ -4,12 +4,12 @@ title: "AI에게 테스트 코드를 맡겨 무신사 iOS 커버리지 9 → 79%
 date: 2026-04-06
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
-daily_source: "arxiv"
-daily_title: "Generative World Renderer"
-daily_url: "https://arxiv.org/abs/2604.02329"
+daily_source: "musinsa"
+daily_title: "AI한테 테스트 코드를 맡겼더니 커버리지가 8배 올랐다"
+daily_url: "https://techblog.musinsa.com/ai%ED%95%9C%ED%85%8C-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%BD%94%EB%93%9C%EB%A5%BC-%EB%A7%A1%EA%B2%BC%EB%8D%94%EB%8B%88-%EC%BB%A4%EB%B2%84%EB%A6%AC%EC%A7%80%EA%B0%80-8%EB%B0%B0-%EC%98%AC%EB%9E%90%EB%8B%A4-b4add7b664b9?source=rss----f107b03c406e---4"
 daily_keywords: ["LLM", "Synthetic Data", "Retrieval", "Agent", "Eval", "Prompt", "Vision", "Fine-tuning", "Inference", "AI Agent"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2604.02329/assets/x1.png"
-daily_image_kind: "ar5iv_fig"
+daily_image: ""
+daily_image_kind: "none"
 ---
 
 

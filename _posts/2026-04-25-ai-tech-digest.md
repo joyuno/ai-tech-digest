@@ -4,12 +4,12 @@ title: "Seeing Fast and Slow — 비디오 속 시간 흐름을 학습하는 모
 date: 2026-04-25
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
-daily_source: "arxiv"
-daily_title: "LLaTiSA: Towards Difficulty-Stratified Time Series Reasoning from Visual Perception to Semantics"
-daily_url: "https://arxiv.org/abs/2604.17295"
+daily_source: "huggingface"
+daily_title: "Seeing Fast and Slow: Learning the Flow of Time in Videos"
+daily_url: "https://huggingface.co/papers/2604.21931"
 daily_keywords: ["LLM", "RAG", "Eval", "LoRA", "Small Language Model", "Agent", "Multimodal", "Claude", "Claude Code"]
-daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2604.17295.png"
-daily_image_kind: "hf_first_page"
+daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2604.21931/gradient.png"
+daily_image_kind: "og_image"
 ---
 
 

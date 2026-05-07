@@ -5,11 +5,11 @@ date: 2026-04-02
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
 daily_source: "arxiv"
-daily_title: "FIPO: Eliciting Deep Reasoning with Future-KL Influenced Policy Optimization"
-daily_url: "https://arxiv.org/abs/2603.19835"
+daily_title: "CARLA-Air: Fly Drones Inside a CARLA World -- A Unified Infrastructure for Air-Ground Embodied Intelligence"
+daily_url: "https://arxiv.org/abs/2603.28032"
 daily_keywords: ["Reasoning", "Agent", "Multimodal", "RAG", "Claude", "Claude Code", "LLM", "Alignment", "Benchmark"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2603.19835/assets/x1.png"
-daily_image_kind: "ar5iv_fig"
+daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.28032.png"
+daily_image_kind: "hf_first_page"
 ---
 
 

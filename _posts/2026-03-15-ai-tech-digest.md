@@ -4,12 +4,12 @@ title: "OpenViking — AI agent용 파일시스템형 컨텍스트 DB"
 date: 2026-03-15
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
-daily_source: "arxiv"
-daily_title: "Strategic Navigation or Stochastic Search? How Agents and Humans Reason Over Document Collections"
-daily_url: "https://arxiv.org/abs/2603.12180"
+daily_source: "github_trending"
+daily_title: "volcengine/OpenViking"
+daily_url: "https://github.com/volcengine/OpenViking"
 daily_keywords: ["Multimodal", "Agent", "Eval", "DeepSeek", "Inference", "Reasoning", "Prompt", "Benchmark", "AI Agent", "Claude"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2603.12180/assets/x1.png"
-daily_image_kind: "ar5iv_fig"
+daily_image: "https://opengraph.githubassets.com/auto/volcengine/OpenViking"
+daily_image_kind: "github_og"
 ---
 
 

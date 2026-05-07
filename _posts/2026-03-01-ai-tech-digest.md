@@ -4,12 +4,12 @@ title: "moeru-ai/airi — 셀프호스팅 AI companion + 게임 플레이"
 date: 2026-03-01
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
-daily_source: "arxiv"
-daily_title: "From Blind Spots to Gains: Diagnostic-Driven Iterative Training for Large Multimodal Models"
-daily_url: "https://arxiv.org/abs/2602.22859"
+daily_source: "github_trending"
+daily_title: "moeru-ai/airi"
+daily_url: "https://github.com/moeru-ai/airi"
 daily_keywords: ["Multimodal", "LLM", "Agent", "Eval", "Retrieval", "MoE", "Vision", "Llama", "Claude", "Claude Code"]
-daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2602.22859.png"
-daily_image_kind: "hf_first_page"
+daily_image: "https://opengraph.githubassets.com/auto/moeru-ai/airi"
+daily_image_kind: "github_og"
 ---
 
 

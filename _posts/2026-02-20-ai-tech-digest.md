@@ -4,12 +4,12 @@ title: "claude-code-telegram — 텔레그램으로 원격 Claude Code"
 date: 2026-02-20
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
-daily_source: "arxiv"
-daily_title: "GLM-5: from Vibe Coding to Agentic Engineering"
-daily_url: "https://arxiv.org/abs/2602.15763"
+daily_source: "github_trending"
+daily_title: "RichardAtCT/claude-code-telegram"
+daily_url: "https://github.com/RichardAtCT/claude-code-telegram"
 daily_keywords: ["Eval", "Reasoning", "Alignment", "Inference", "Agent", "LLM", "Multimodal", "Claude", "Claude Code", "RAG"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2602.15763/assets/x1.png"
-daily_image_kind: "ar5iv_fig"
+daily_image: "https://opengraph.githubassets.com/auto/RichardAtCT/claude-code-telegram"
+daily_image_kind: "github_og"
 ---
 
 

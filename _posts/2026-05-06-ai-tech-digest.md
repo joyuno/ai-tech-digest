@@ -4,12 +4,12 @@ title: "DeepSeek-TUI — DeepSeek 코딩 에이전트를 터미널에서"
 date: 2026-05-06
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
-daily_source: "arxiv"
-daily_title: "MolmoAct2: Action Reasoning Models for Real-world Deployment"
-daily_url: "https://arxiv.org/abs/2605.02881"
+daily_source: "github_trending"
+daily_title: "Hmbown/DeepSeek-TUI"
+daily_url: "https://github.com/Hmbown/DeepSeek-TUI"
 daily_keywords: ["Vision", "Grounding", "Inference", "LLM", "RAG", "Agent", "Multimodal", "Fine-tuning", "Alignment", "AI Agent"]
-daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.02881.png"
-daily_image_kind: "hf_first_page"
+daily_image: "https://opengraph.githubassets.com/auto/Hmbown/DeepSeek-TUI"
+daily_image_kind: "github_og"
 ---
 
 

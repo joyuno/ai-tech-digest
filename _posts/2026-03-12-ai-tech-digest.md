@@ -4,12 +4,12 @@ title: "무신사가 명절에 Claude Code Agent Teams로 결제 장애 잡기"
 date: 2026-03-12
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
-daily_source: "arxiv"
-daily_title: "Geometry-Guided Reinforcement Learning for Multi-view Consistent 3D Scene Editing"
-daily_url: "https://arxiv.org/abs/2603.03143"
+daily_source: "musinsa"
+daily_title: "설 연휴에 Claude Code Agent Teams를 데려갔습니다."
+daily_url: "https://techblog.musinsa.com/%EC%84%A4-%EC%97%B0%ED%9C%B4%EC%97%90-claude-code-agent-teams%EB%A5%BC-%EB%8D%B0%EB%A0%A4%EA%B0%94%EC%8A%B5%EB%8B%88%EB%8B%A4-fa96286f6954?source=rss----f107b03c406e---4"
 daily_keywords: ["Fine-tuning", "RAG", "LLM", "Agent", "Multimodal", "Vision", "Benchmark", "Prompt", "Claude", "Claude Code"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2603.03143/assets/x1.png"
-daily_image_kind: "ar5iv_fig"
+daily_image: ""
+daily_image_kind: "none"
 ---
 
 

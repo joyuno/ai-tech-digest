@@ -5,10 +5,10 @@ date: 2026-02-23
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
 daily_source: "arxiv"
-daily_title: "SpargeAttention2: Trainable Sparse Attention via Hybrid Top-k+Top-p Masking and Distillation Fine-Tuning"
-daily_url: "https://arxiv.org/abs/2602.13515"
+daily_title: "AutoWebWorld: Synthesizing Infinite Verifiable Web Environments via Finite State Machines"
+daily_url: "https://arxiv.org/abs/2602.14296"
 daily_keywords: ["Agent", "Eval", "Fine-tuning", "Multimodal", "Grounding", "Benchmark", "Llama", "AI Agent", "Claude", "Claude Code"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2602.13515/assets/x1.png"
+daily_image: "https://ar5iv.labs.arxiv.org/html/2602.14296/assets/x1.png"
 daily_image_kind: "ar5iv_fig"
 ---
 

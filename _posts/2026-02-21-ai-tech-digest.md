@@ -4,12 +4,12 @@ title: "무신사 O4O팀이 슬랙 대신 무전기를 든 매장 체험기"
 date: 2026-02-21
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
-daily_source: "arxiv"
-daily_title: "SLA2: Sparse-Linear Attention with Learnable Routing and QAT"
-daily_url: "https://arxiv.org/abs/2602.12675"
+daily_source: "musinsa"
+daily_title: "무신사 오프라인 제품팀이 슬랙 대신 무전기를 들게된 사연"
+daily_url: "https://techblog.musinsa.com/%EB%AC%B4%EC%8B%A0%EC%82%AC-%EC%98%A4%ED%94%84%EB%9D%BC%EC%9D%B8-%EC%A0%9C%ED%92%88%ED%8C%80%EC%9D%B4-%EC%8A%AC%EB%9E%99-%EB%8C%80%EC%8B%A0-%EB%AC%B4%EC%A0%84%EA%B8%B0%EB%A5%BC-%EB%93%A4%EA%B2%8C%EB%90%9C-%EC%82%AC%EC%97%B0-1e5aa0ad45f7?source=rss----f107b03c406e---4"
 daily_keywords: ["Agent", "Eval", "Multimodal", "Fine-tuning", "Llama", "AI Agent", "RAG", "Claude", "Claude Code"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2602.12675/assets/x1.png"
-daily_image_kind: "ar5iv_fig"
+daily_image: ""
+daily_image_kind: "none"
 ---
 
 

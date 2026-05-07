@@ -4,12 +4,12 @@ title: "Archon — AI coding을 일관·반복 가능하게 만드는 harness"
 date: 2026-04-12
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
-daily_source: "arxiv"
-daily_title: "SkillClaw: Let Skills Evolve Collectively with Agentic Evolver"
-daily_url: "https://arxiv.org/abs/2604.08377"
+daily_source: "github_trending"
+daily_title: "coleam00/Archon"
+daily_url: "https://github.com/coleam00/Archon"
 daily_keywords: ["LLM", "Agent", "Chain-of-Thought", "Vision", "AI Agent", "Eval", "Alignment", "Prompt", "Multimodal", "RAG"]
-daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2604.08377.png"
-daily_image_kind: "hf_first_page"
+daily_image: "https://opengraph.githubassets.com/auto/coleam00/Archon"
+daily_image_kind: "github_og"
 ---
 
 

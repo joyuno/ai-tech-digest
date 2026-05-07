@@ -4,12 +4,12 @@ title: "Kronos — 금융 시장 전용 foundation model"
 date: 2026-04-13
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
-daily_source: "arxiv"
-daily_title: "ClawBench: Can AI Agents Complete Everyday Online Tasks?"
-daily_url: "https://arxiv.org/abs/2604.08523"
+daily_source: "github_trending"
+daily_title: "shiyu-coder/Kronos"
+daily_url: "https://github.com/shiyu-coder/Kronos"
 daily_keywords: ["LLM", "Chain-of-Thought", "Agent", "AI Agent", "Eval", "Vision", "Alignment", "Prompt", "Multimodal", "RAG"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2604.08523/assets/x1.png"
-daily_image_kind: "ar5iv_fig"
+daily_image: "https://opengraph.githubassets.com/auto/shiyu-coder/Kronos"
+daily_image_kind: "github_og"
 ---
 
 

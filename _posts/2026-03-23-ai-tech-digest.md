@@ -4,12 +4,12 @@ title: "TradingAgents — 멀티 LLM 협업 자동 트레이딩 프레임워크"
 date: 2026-03-23
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
-daily_source: "arxiv"
-daily_title: "Generation Models Know Space: Unleashing Implicit 3D Priors for Scene Understanding"
-daily_url: "https://arxiv.org/abs/2603.19235"
+daily_source: "github_trending"
+daily_title: "TauricResearch/TradingAgents"
+daily_url: "https://github.com/TauricResearch/TradingAgents"
 daily_keywords: ["Reasoning", "LLM", "Eval", "Multimodal", "RAG", "Alignment", "Prompt", "Agent", "AI Agent", "Claude"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2603.19235/assets/x1.png"
-daily_image_kind: "ar5iv_fig"
+daily_image: "https://opengraph.githubassets.com/auto/TauricResearch/TradingAgents"
+daily_image_kind: "github_og"
 ---
 
 

@@ -5,10 +5,10 @@ date: 2026-04-20
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
 daily_source: "arxiv"
-daily_title: "DR^{3}-Eval: Towards Realistic and Reproducible Deep Research Evaluation"
-daily_url: "https://arxiv.org/abs/2604.14683"
+daily_title: "RationalRewards: Reasoning Rewards Scale Visual Generation Both Training and Test Time"
+daily_url: "https://arxiv.org/abs/2604.11626"
 daily_keywords: ["Reasoning", "Eval", "Prompt", "Multimodal", "Retrieval", "Agent", "RAG", "Inference", "Fine-tuning", "Alignment"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2604.14683/assets/x1.png"
+daily_image: "https://ar5iv.labs.arxiv.org/html/2604.11626/assets/x1.png"
 daily_image_kind: "ar5iv_fig"
 ---
 

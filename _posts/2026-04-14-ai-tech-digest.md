@@ -4,12 +4,12 @@ title: "VisionFoundry — 합성 이미지로 VLM 시각 인식 가르치기"
 date: 2026-04-14
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
-daily_source: "arxiv"
-daily_title: "WildDet3D: Scaling Promptable 3D Detection in the Wild"
-daily_url: "https://arxiv.org/abs/2604.08626"
+daily_source: "huggingface"
+daily_title: "VisionFoundry: Teaching VLMs Visual Perception with Synthetic Images"
+daily_url: "https://huggingface.co/papers/2604.09531"
 daily_keywords: ["LLM", "Chain-of-Thought", "AI Agent", "Eval", "RAG", "Prompt", "Vision", "Synthetic Data", "Fine-tuning", "Alignment"]
-daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2604.08626.png"
-daily_image_kind: "hf_first_page"
+daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2604.09531/gradient.png"
+daily_image_kind: "og_image"
 ---
 
 

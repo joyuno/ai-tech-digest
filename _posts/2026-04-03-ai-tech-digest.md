@@ -4,12 +4,12 @@ title: "무신사 Self-POS Zero-to-One — 직원 없는 계산대 경험 설계
 date: 2026-04-03
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
-daily_source: "arxiv"
-daily_title: "ClawKeeper: Comprehensive Safety Protection for OpenClaw Agents Through Skills, Plugins, and Watchers"
-daily_url: "https://arxiv.org/abs/2603.24414"
+daily_source: "musinsa"
+daily_title: "무신사 Self-POS — Zero to One 구축기: 직원이 사라진 계산대, 그 자리를 채운 경험 설계"
+daily_url: "https://techblog.musinsa.com/%EB%AC%B4%EC%8B%A0%EC%82%AC-self-pos-zero-to-one-%EA%B5%AC%EC%B6%95%EA%B8%B0-%EC%A7%81%EC%9B%90%EC%9D%B4-%EC%82%AC%EB%9D%BC%EC%A7%84-%EA%B3%84%EC%82%B0%EB%8C%80-%EA%B7%B8-%EC%9E%90%EB%A6%AC%EB%A5%BC-%EC%B1%84%EC%9A%B4-%EA%B2%BD%ED%97%98-%EC%84%A4%EA%B3%84-f5030d7d2292?source=rss----f107b03c406e---4"
 daily_keywords: ["Safety", "Agent", "Multimodal", "RAG", "Eval", "Vision", "LLM", "Tool Use", "Inference", "GPT"]
-daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.24414.png"
-daily_image_kind: "hf_first_page"
+daily_image: ""
+daily_image_kind: "none"
 ---
 
 

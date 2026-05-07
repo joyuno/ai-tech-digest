@@ -4,12 +4,12 @@ title: "thunderbolt — vendor lock-in 없는 오픈소스 AI 데이터 주권"
 date: 2026-04-19
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
-daily_source: "arxiv"
-daily_title: "HY-World 2.0: A Multi-Modal World Model for Reconstructing, Generating, and Simulating 3D Worlds"
-daily_url: "https://arxiv.org/abs/2604.14268"
+daily_source: "github_trending"
+daily_title: "thunderbird/thunderbolt"
+daily_url: "https://github.com/thunderbird/thunderbolt"
 daily_keywords: ["Reasoning", "Eval", "Prompt", "RAG", "Agent", "Multimodal", "Retrieval", "LLM", "LoRA", "Inference"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2604.14268/assets/x1.png"
-daily_image_kind: "ar5iv_fig"
+daily_image: "https://opengraph.githubassets.com/auto/thunderbird/thunderbolt"
+daily_image_kind: "github_og"
 ---
 
 

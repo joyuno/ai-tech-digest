@@ -4,12 +4,12 @@ title: "무신사 모노레포에 i18next 다국어 시스템 깔기"
 date: 2026-03-09
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
-daily_source: "arxiv"
-daily_title: "MOOSE-Star: Unlocking Tractable Training for Scientific Discovery by Breaking the Complexity Barrier"
-daily_url: "https://arxiv.org/abs/2603.03756"
+daily_source: "musinsa"
+daily_title: "모노레포 환경에서 i18next 다국어 시스템 구축하기"
+daily_url: "https://techblog.musinsa.com/%EB%AA%A8%EB%85%B8%EB%A0%88%ED%8F%AC-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-i18next-%EB%8B%A4%EA%B5%AD%EC%96%B4-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0-01f994f84930?source=rss----f107b03c406e---4"
 daily_keywords: ["LLM", "Inference", "Agent", "Reasoning", "Prompt", "RAG", "AI Agent", "Eval", "Gemini", "Orchestration"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2603.03756/assets/x1.png"
-daily_image_kind: "ar5iv_fig"
+daily_image: ""
+daily_image_kind: "none"
 ---
 
 

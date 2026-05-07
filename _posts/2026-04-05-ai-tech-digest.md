@@ -4,12 +4,12 @@ title: "mlx-vlm — Apple MLX로 Mac에서 굴리는 VLM 패키지"
 date: 2026-04-05
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
-daily_source: "arxiv"
-daily_title: "The Latent Space: Foundation, Evolution, Mechanism, Ability, and Outlook"
-daily_url: "https://arxiv.org/abs/2604.02029"
+daily_source: "github_trending"
+daily_title: "Blaizzy/mlx-vlm"
+daily_url: "https://github.com/Blaizzy/mlx-vlm"
 daily_keywords: ["LLM", "Synthetic Data", "Retrieval", "Agent", "Eval", "Prompt", "Vision", "Fine-tuning", "Inference", "AI Agent"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2604.02029/assets/x1.png"
-daily_image_kind: "ar5iv_fig"
+daily_image: "https://opengraph.githubassets.com/auto/Blaizzy/mlx-vlm"
+daily_image_kind: "github_og"
 ---
 
 

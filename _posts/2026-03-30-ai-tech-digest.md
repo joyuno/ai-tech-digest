@@ -4,12 +4,12 @@ title: "claude-howto, Claude Code를 시각 가이드로 익히는 법"
 date: 2026-03-30
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
-daily_source: "arxiv"
-daily_title: "CUA-Suite: Massive Human-annotated Video Demonstrations for Computer-Use Agents"
-daily_url: "https://arxiv.org/abs/2603.24440"
+daily_source: "github_trending"
+daily_title: "luongnv89/claude-howto"
+daily_url: "https://github.com/luongnv89/claude-howto"
 daily_keywords: ["Eval", "Multimodal", "Agent", "Transformer", "Prompt", "Vision", "Inference", "AI Agent", "Claude", "Claude Code"]
-daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.24440.png"
-daily_image_kind: "hf_first_page"
+daily_image: "https://opengraph.githubassets.com/auto/luongnv89/claude-howto"
+daily_image_kind: "github_og"
 ---
 
 

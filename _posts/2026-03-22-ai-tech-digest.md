@@ -4,12 +4,12 @@ title: "Trivy — 컨테이너·클라우드 SBOM 보안 스캐너"
 date: 2026-03-22
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
-daily_source: "arxiv"
-daily_title: "Video-CoE: Reinforcing Video Event Prediction via Chain of Events"
-daily_url: "https://arxiv.org/abs/2603.14935"
+daily_source: "github_trending"
+daily_title: "aquasecurity/trivy"
+daily_url: "https://github.com/aquasecurity/trivy"
 daily_keywords: ["Reasoning", "LLM", "Eval", "Multimodal", "RAG", "Alignment", "Prompt", "Claude", "Agent", "Claude Code"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2603.14935/assets/x1.png"
-daily_image_kind: "ar5iv_fig"
+daily_image: "https://opengraph.githubassets.com/auto/aquasecurity/trivy"
+daily_image_kind: "github_og"
 ---
 
 

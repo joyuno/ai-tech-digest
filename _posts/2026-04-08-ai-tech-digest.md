@@ -4,12 +4,12 @@ title: "Layers of your time — 토스 근속 굿즈 8개월 기획기"
 date: 2026-04-08
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
-daily_source: "arxiv"
-daily_title: "OpenWorldLib: A Unified Codebase and Definition of Advanced World Models"
-daily_url: "https://arxiv.org/abs/2604.04707"
+daily_source: "toss"
+daily_title: "Layers of your time : 토스와 함께한 시간을 기념하기"
+daily_url: "https://toss.tech/article/layers-of-your-time"
 daily_keywords: ["Inference", "LLM", "Distillation", "Vision", "RAG", "Benchmark", "Eval", "LoRA", "Agent", "Claude"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2604.04707/assets/x1.png"
-daily_image_kind: "ar5iv_fig"
+daily_image: "https://static.toss.im/photos/nyears-goods.png"
+daily_image_kind: "og_image"
 ---
 
 

@@ -5,10 +5,10 @@ date: 2026-03-02
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
 daily_source: "arxiv"
-daily_title: "MobilityBench: A Benchmark for Evaluating Route-Planning Agents in Real-World Mobility Scenarios"
-daily_url: "https://arxiv.org/abs/2602.22638"
+daily_title: "From Blind Spots to Gains: Diagnostic-Driven Iterative Training for Large Multimodal Models"
+daily_url: "https://arxiv.org/abs/2602.22859"
 daily_keywords: ["Multimodal", "LLM", "Agent", "Eval", "Retrieval", "MoE", "Vision", "Llama", "Claude", "RAG"]
-daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2602.22638.png"
+daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2602.22859.png"
 daily_image_kind: "hf_first_page"
 ---
 

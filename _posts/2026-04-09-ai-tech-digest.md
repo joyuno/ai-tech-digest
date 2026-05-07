@@ -4,12 +4,12 @@ title: "Self-POS — 무신사다운 오프라인 고객경험 만들기"
 date: 2026-04-09
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
-daily_source: "arxiv"
-daily_title: "Video-MME-v2: Towards the Next Stage in Benchmarks for Comprehensive Video Understanding"
-daily_url: "https://arxiv.org/abs/2604.05015"
+daily_source: "musinsa"
+daily_title: "Self-POS(무인 계산대) : 무신사다운 오프라인 고객경험을 설계하다."
+daily_url: "https://techblog.musinsa.com/self-pos-%EB%AC%B4%EC%9D%B8-%EA%B3%84%EC%82%B0%EB%8C%80-%EB%AC%B4%EC%8B%A0%EC%82%AC%EB%8B%A4%EC%9A%B4-%EC%98%A4%ED%94%84%EB%9D%BC%EC%9D%B8-%EA%B3%A0%EA%B0%9D%EA%B2%BD%ED%97%98%EC%9D%84-%EC%84%A4%EA%B3%84%ED%95%98%EB%8B%A4-586169f788c7?source=rss----f107b03c406e---4"
 daily_keywords: ["Eval", "LLM", "Fine-tuning", "Prompt", "Safety", "RAG", "Agent", "Vision", "Benchmark", "Retrieval"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2604.05015/assets/x1.png"
-daily_image_kind: "ar5iv_fig"
+daily_image: ""
+daily_image_kind: "none"
 ---
 
 

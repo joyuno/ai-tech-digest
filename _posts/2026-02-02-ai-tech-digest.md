@@ -4,12 +4,12 @@ title: "claude-mem — Claude 세션 컨텍스트 자동 보존"
 date: 2026-02-02
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
-daily_source: "arxiv"
-daily_title: "ASTRA: Automated Synthesis of agentic Trajectories and Reinforcement Arenas"
-daily_url: "https://arxiv.org/abs/2601.21558"
+daily_source: "huggingface"
+daily_title: "We Got Claude to Build CUDA Kernels and teach open models!"
+daily_url: "https://huggingface.co/blog/upskill"
 daily_keywords: ["LLM", "Fine-tuning", "Agent", "Reasoning", "Distillation", "Alignment", "RAG", "Prompt", "Llama", "Eval"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2601.21558/assets/x1.png"
-daily_image_kind: "ar5iv_fig"
+daily_image: "https://huggingface.co/blog/assets/upskill/thumbnail.png"
+daily_image_kind: "og_image"
 ---
 
 

@@ -4,12 +4,12 @@ title: "LLM2Vec-Gen — 잠재 응답으로 만드는 generative embedding"
 date: 2026-03-13
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
-daily_source: "arxiv"
-daily_title: "OpenClaw-RL: Train Any Agent Simply by Talking"
-daily_url: "https://arxiv.org/abs/2603.10165"
+daily_source: "huggingface"
+daily_title: "LLM2Vec-Gen: Generative Embeddings from Large Language Models"
+daily_url: "https://huggingface.co/papers/2603.10913"
 daily_keywords: ["Fine-tuning", "RAG", "Agent", "LLM", "Multimodal", "Eval", "Inference"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2603.10165/assets/x1.png"
-daily_image_kind: "ar5iv_fig"
+daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.10913/gradient.png"
+daily_image_kind: "og_image"
 ---
 
 

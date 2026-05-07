@@ -4,12 +4,12 @@ title: "Nemotron ColEmbed V2, ViDoRe V3 1위 멀티모달 검색"
 date: 2026-02-05
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
-daily_source: "arxiv"
-daily_title: "CodeOCR: On the Effectiveness of Vision Language Models in Code Understanding"
-daily_url: "https://arxiv.org/abs/2602.01785"
+daily_source: "huggingface"
+daily_title: "Nemotron ColEmbed V2: Raising the Bar for Multimodal Retrieval with ViDoRe V3’s Top Model"
+daily_url: "https://huggingface.co/blog/nvidia/nemotron-colembed-v2"
 daily_keywords: ["LLM", "Agent", "Chain-of-Thought", "Eval", "Multimodal", "Retrieval", "DeepSeek", "Claude", "Claude Code"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2602.01785/assets/x1.png"
-daily_image_kind: "ar5iv_fig"
+daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/blog/nvidia/nemotron-colembed-v2.png"
+daily_image_kind: "og_image"
 ---
 
 

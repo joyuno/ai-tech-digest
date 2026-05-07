@@ -4,12 +4,12 @@ title: "Gemini 기반 무신사 QA 테스트 케이스 자동화 시행착오"
 date: 2026-04-16
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
-daily_source: "arxiv"
-daily_title: "ClawGUI: A Unified Framework for Training, Evaluating, and Deploying GUI Agents"
-daily_url: "https://arxiv.org/abs/2604.11784"
+daily_source: "musinsa"
+daily_title: "Gemini 기반 테스트 케이스 자동화 실패와 성공기"
+daily_url: "https://techblog.musinsa.com/gemini-%EA%B8%B0%EB%B0%98-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%BC%80%EC%9D%B4%EC%8A%A4-%EC%9E%90%EB%8F%99%ED%99%94-%EC%8B%A4%ED%8C%A8%EC%99%80-%EC%84%B1%EA%B3%B5%EA%B8%B0-5d558317f2a5?source=rss----f107b03c406e---4"
 daily_keywords: ["Agent", "Eval", "RAG", "LLM", "Distillation", "Multimodal", "LoRA", "Gemini", "Claude Code", "Claude"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2604.11784/assets/x1.png"
-daily_image_kind: "ar5iv_fig"
+daily_image: ""
+daily_image_kind: "none"
 ---
 
 

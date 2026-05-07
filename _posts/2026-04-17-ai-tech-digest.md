@@ -4,12 +4,12 @@ title: "Apache Flink + RocksDB로 토스 광고 frequency capping 7일 확장"
 date: 2026-04-17
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
-daily_source: "arxiv"
-daily_title: "Seedance 2.0: Advancing Video Generation for World Complexity"
-daily_url: "https://arxiv.org/abs/2604.14148"
+daily_source: "toss"
+daily_title: "Apache Flink + RocksDB 튜닝으로 광고 Frequency Capping 실시간 집계를 일주일까지 확장하기"
+daily_url: "https://toss.tech/article/flink-realtime-frequency-capping"
 daily_keywords: ["Agent", "Eval", "Audio", "LLM", "Reasoning", "LoRA", "Claude Code", "Claude", "AI Agent", "Workflow"]
-daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2604.14148.png"
-daily_image_kind: "hf_first_page"
+daily_image: "https://static.toss.im/assets/tech-blog/og-image/techblog-og.png"
+daily_image_kind: "og_image"
 ---
 
 
