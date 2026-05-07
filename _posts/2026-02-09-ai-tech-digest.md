@@ -8,6 +8,7 @@ daily_source: "arxiv"
 daily_title: "CAR-bench: Evaluating the Consistency and Limit-Awareness of LLM Agents under Real-World Uncertainty"
 daily_url: "https://arxiv.org/abs/2601.22027"
 daily_keywords: ["LLM", "Tool Use", "Agent", "Eval", "Inference", "Multimodal", "Retrieval", "Benchmark", "Grounding"]
+daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2601.22027.png"
 ---
 
 

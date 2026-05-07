@@ -8,6 +8,7 @@ daily_source: "arxiv"
 daily_title: "On Data Engineering for Scaling LLM Terminal Capabilities"
 daily_url: "https://arxiv.org/abs/2602.21193"
 daily_keywords: ["LLM", "Agent", "Vision", "LoRA", "RAG", "Eval", "Reasoning", "Llama"]
+daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2602.21193.png"
 ---
 
 

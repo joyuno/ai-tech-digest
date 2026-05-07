@@ -8,6 +8,7 @@ daily_source: "arxiv"
 daily_title: "SkillClaw: Let Skills Evolve Collectively with Agentic Evolver"
 daily_url: "https://arxiv.org/abs/2604.08377"
 daily_keywords: ["LLM", "Agent", "Chain-of-Thought", "Vision", "AI Agent", "Eval", "Alignment", "Prompt", "Multimodal", "RAG"]
+daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2604.08377.png"
 ---
 
 

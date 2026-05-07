@@ -8,6 +8,7 @@ daily_source: "arxiv"
 daily_title: "Think in Strokes, Not Pixels: Process-Driven Image Generation via Interleaved Reasoning"
 daily_url: "https://arxiv.org/abs/2604.04746"
 daily_keywords: ["Multimodal", "LLM", "RAG", "Agent", "Eval", "Vision", "Inference", "Claude Code", "Claude", "AI Coding"]
+daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2604.04746.png"
 ---
 
 

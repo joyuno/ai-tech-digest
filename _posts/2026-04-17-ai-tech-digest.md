@@ -8,6 +8,7 @@ daily_source: "arxiv"
 daily_title: "ClawGUI: A Unified Framework for Training, Evaluating, and Deploying GUI Agents"
 daily_url: "https://arxiv.org/abs/2604.11784"
 daily_keywords: ["Agent", "Eval", "Audio", "LLM", "Reasoning", "LoRA", "Claude Code", "Claude", "AI Agent", "Workflow"]
+daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2604.11784.png"
 ---
 
 

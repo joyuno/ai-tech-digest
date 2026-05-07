@@ -8,6 +8,7 @@ daily_source: "arxiv"
 daily_title: "Out of Sight but Not Out of Mind: Hybrid Memory for Dynamic Video World Models"
 daily_url: "https://arxiv.org/abs/2603.25716"
 daily_keywords: ["Prompt", "GPT", "Eval", "Reasoning", "Agent", "Transformer", "Alignment", "Claude", "Claude Code", "AI Agent"]
+daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.25716.png"
 ---
 
 

@@ -8,6 +8,7 @@ daily_source: "arxiv"
 daily_title: "Utonia: Toward One Encoder for All Point Clouds"
 daily_url: "https://arxiv.org/abs/2603.03283"
 daily_keywords: ["Transformer", "Multimodal", "LoRA", "Eval", "Reasoning", "Agent", "RAG", "MoE", "Vision", "Benchmark"]
+daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.03283.png"
 ---
 
 

@@ -8,6 +8,7 @@ daily_source: "arxiv"
 daily_title: "Geometry-Guided Reinforcement Learning for Multi-view Consistent 3D Scene Editing"
 daily_url: "https://arxiv.org/abs/2603.03143"
 daily_keywords: ["Fine-tuning", "RAG", "Agent", "LLM", "Multimodal", "Eval", "Inference"]
+daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.03143.png"
 ---
 
 

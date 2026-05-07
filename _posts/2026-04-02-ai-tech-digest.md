@@ -8,6 +8,7 @@ daily_source: "arxiv"
 daily_title: "FIPO: Eliciting Deep Reasoning with Future-KL Influenced Policy Optimization"
 daily_url: "https://arxiv.org/abs/2603.19835"
 daily_keywords: ["Reasoning", "Agent", "Multimodal", "RAG", "Claude", "Claude Code", "LLM", "Alignment", "Benchmark"]
+daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.19835.png"
 ---
 
 

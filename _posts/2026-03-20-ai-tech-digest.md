@@ -8,6 +8,7 @@ daily_source: "arxiv"
 daily_title: "Qianfan-OCR: A Unified End-to-End Model for Document Intelligence"
 daily_url: "https://arxiv.org/abs/2603.13398"
 daily_keywords: ["Vision", "Prompt", "LLM", "Agent", "Eval", "Alignment", "Claude", "Claude Code", "GPT"]
+daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.13398.png"
 ---
 
 

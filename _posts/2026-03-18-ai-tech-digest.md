@@ -8,6 +8,7 @@ daily_source: "arxiv"
 daily_title: "AI Can Learn Scientific Taste"
 daily_url: "https://arxiv.org/abs/2603.14473"
 daily_keywords: ["LLM", "Agent", "Tool Use", "Eval", "Grounding", "Retrieval", "RAG", "Claude", "Claude Code", "LoRA"]
+daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.14473.png"
 ---
 
 

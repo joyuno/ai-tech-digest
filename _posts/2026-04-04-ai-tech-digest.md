@@ -8,6 +8,7 @@ daily_source: "arxiv"
 daily_title: "DataFlex: A Unified Framework for Data-Centric Dynamic Training of Large Language Models"
 daily_url: "https://arxiv.org/abs/2603.26164"
 daily_keywords: ["LLM", "Synthetic Data", "Retrieval", "Agent", "Eval", "Grounding", "Prompt", "AI Agent", "GPT", "Claude"]
+daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.26164.png"
 ---
 
 

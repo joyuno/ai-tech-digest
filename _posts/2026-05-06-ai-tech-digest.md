@@ -8,6 +8,7 @@ daily_source: "arxiv"
 daily_title: "MolmoAct2: Action Reasoning Models for Real-world Deployment"
 daily_url: "https://arxiv.org/abs/2605.02881"
 daily_keywords: ["Vision", "Grounding", "Inference", "LLM", "RAG", "Agent", "Multimodal", "Fine-tuning", "Alignment", "AI Agent"]
+daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.02881.png"
 ---
 
 

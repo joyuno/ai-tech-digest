@@ -8,6 +8,7 @@ daily_source: "arxiv"
 daily_title: "Video-MME-v2: Towards the Next Stage in Benchmarks for Comprehensive Video Understanding"
 daily_url: "https://arxiv.org/abs/2604.05015"
 daily_keywords: ["Eval", "LLM", "Fine-tuning", "Prompt", "Safety", "RAG", "Agent", "Vision", "Benchmark", "Retrieval"]
+daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2604.05015.png"
 ---
 
 

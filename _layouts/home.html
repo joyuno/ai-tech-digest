@@ -284,7 +284,7 @@
     .leaf .face.front { border-radius: 0 6px 6px 0; }
     .leaf .face.back  { transform: rotateY(180deg); border-radius: 6px 0 0 6px; }
     .leaf.flipping {
-      transition: transform 1100ms cubic-bezier(0.55, 0.05, 0.35, 1);
+      transition: transform 1430ms cubic-bezier(0.55, 0.05, 0.35, 1);
       transform: rotateY(-180deg);
     }
     /* edge curl */
@@ -487,17 +487,7 @@
       let auto = true;
       let timer = null;
 
-      const pageHtml = (p) => {
-        if (!p) return '<div class="page-empty">—</div>';
-        if (p.image && p.image.length > 0) {
-          return `
-            <img class="page-img" src="${escapeAttr(p.image)}" alt="${escapeAttr(p.daily_title || p.title)}" referrerpolicy="no-referrer" loading="lazy">
-            <div class="page-meta">
-              <span class="pm-title">${escapeHtml(p.daily_title || p.title)}</span>
-              <span class="pm-sub">${escapeHtml(p.date)} · ${escapeHtml(sourceLabel(p.source))}</span>
-            </div>`;
-        }
-        // text-only fallback
+      const textCardHtml = (p) => {
         const kws = (p.keywords || []).slice(0, 6);
         const kwsHtml = kws.map(k => `<span class="pt-kw">${escapeHtml(k)}</span>`).join('');
         return `
@@ -509,6 +499,24 @@
             </div>
             <div class="pt-date">${escapeHtml(p.date)}</div>
           </div>`;
+      };
+
+      const pageHtml = (p) => {
+        if (!p) return '<div class="page-empty">—</div>';
+        if (p.image && p.image.length > 0) {
+          // image 깨지면 onerror 가 부모를 text-card 로 swap
+          const fallback = textCardHtml(p).replace(/`/g, '\\`').replace(/'/g, "\\'");
+          return `
+            <img class="page-img" src="${escapeAttr(p.image)}"
+                 alt="${escapeAttr(p.daily_title || p.title)}"
+                 referrerpolicy="no-referrer" loading="lazy"
+                 onerror="this.parentNode.innerHTML='${fallback.replace(/\n\s*/g, '')}'">
+            <div class="page-meta">
+              <span class="pm-title">${escapeHtml(p.daily_title || p.title)}</span>
+              <span class="pm-sub">${escapeHtml(p.date)} · ${escapeHtml(sourceLabel(p.source))}</span>
+            </div>`;
+        }
+        return textCardHtml(p);
       };
 
       const renderPage = (target, p) => {
@@ -540,7 +548,7 @@
           leaf.remove();
           idx -= 1;
           refresh();
-        }, 1150);
+        }, 1500);
       };
 
       const flipPrev = () => {
@@ -560,7 +568,7 @@
           } else {
             flipNext();
           }
-        }, 5500);
+        }, 6600);
       };
       const stopAuto = () => { clearInterval(timer); timer = null; };
 

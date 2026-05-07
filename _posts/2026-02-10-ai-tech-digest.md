@@ -8,6 +8,7 @@ daily_source: "arxiv"
 daily_title: "F-GRPO: Don't Let Your Policy Learn the Obvious and Forget the Rare"
 daily_url: "https://arxiv.org/abs/2602.06717"
 daily_keywords: ["Reasoning", "Workflow", "LLM", "Agent", "Eval", "Audio", "Transformer", "Multimodal", "Retrieval", "Claude"]
+daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2602.06717.png"
 ---
 
 

@@ -8,6 +8,7 @@ daily_source: "arxiv"
 daily_title: "Harder Is Better: Boosting Mathematical Reasoning via Difficulty-Aware GRPO and Multi-Aspect Question Reformulation"
 daily_url: "https://arxiv.org/abs/2601.20614"
 daily_keywords: ["Reasoning", "Safety", "Tool Use", "AI Agent", "Multimodal", "LLM", "Orchestration", "Claude", "Claude Code", "GPT"]
+daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2601.20614.png"
 ---
 
 

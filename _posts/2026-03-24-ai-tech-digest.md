@@ -8,6 +8,7 @@ daily_source: "arxiv"
 daily_title: "HopChain: Multi-Hop Data Synthesis for Generalizable Vision-Language Reasoning"
 daily_url: "https://arxiv.org/abs/2603.17024"
 daily_keywords: ["Multimodal", "Hallucination", "CoT", "Distillation", "Prompt", "Vision", "Grounding", "Retrieval", "Eval", "Alignment"]
+daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.17024.png"
 ---
 
 

@@ -8,6 +8,7 @@ daily_source: "arxiv"
 daily_title: "From Scale to Speed: Adaptive Test-Time Scaling for Image Editing"
 daily_url: "https://arxiv.org/abs/2603.00141"
 daily_keywords: ["Chain-of-Thought", "Agent", "Benchmark", "LLM", "Alignment", "Eval", "MoE", "Vision", "Claude"]
+daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.00141.png"
 ---
 
 

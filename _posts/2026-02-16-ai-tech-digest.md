@@ -8,6 +8,7 @@ daily_source: "arxiv"
 daily_title: "The Devil Behind Moltbook: Anthropic Safety is Always Vanishing in Self-Evolving AI Societies"
 daily_url: "https://arxiv.org/abs/2602.09877"
 daily_keywords: ["LLM", "Alignment", "Agent", "Prompt", "Multimodal", "Distillation", "Vision", "Claude", "Eval", "Transformer"]
+daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2602.09877.png"
 ---
 
 

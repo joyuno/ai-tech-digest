@@ -8,6 +8,7 @@ daily_source: "arxiv"
 daily_title: "SLA2: Sparse-Linear Attention with Learnable Routing and QAT"
 daily_url: "https://arxiv.org/abs/2602.12675"
 daily_keywords: ["Agent", "Eval", "Multimodal", "Fine-tuning", "Llama", "AI Agent", "RAG", "Claude", "Claude Code"]
+daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2602.12675.png"
 ---
 
 

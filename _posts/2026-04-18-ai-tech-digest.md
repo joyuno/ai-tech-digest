@@ -8,6 +8,7 @@ daily_source: "arxiv"
 daily_title: "RationalRewards: Reasoning Rewards Scale Visual Generation Both Training and Test Time"
 daily_url: "https://arxiv.org/abs/2604.11626"
 daily_keywords: ["Reasoning", "Eval", "Prompt", "RAG", "Agent", "LLM", "LoRA", "AI Coding", "Multimodal", "Inference"]
+daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2604.11626.png"
 ---
 
 

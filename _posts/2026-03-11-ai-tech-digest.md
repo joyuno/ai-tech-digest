@@ -8,6 +8,7 @@ daily_source: "arxiv"
 daily_title: "Lost in Stories: Consistency Bugs in Long Story Generation by LLMs"
 daily_url: "https://arxiv.org/abs/2603.05890"
 daily_keywords: ["LLM", "Benchmark", "RAG", "Reasoning", "Agent", "Red team", "Prompt", "Gemini", "GPT"]
+daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.05890.png"
 ---
 
 

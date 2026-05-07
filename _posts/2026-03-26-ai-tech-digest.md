@@ -8,6 +8,7 @@ daily_source: "arxiv"
 daily_title: "MinerU-Diffusion: Rethinking Document OCR as Inverse Rendering via Diffusion Decoding"
 daily_url: "https://arxiv.org/abs/2603.22458"
 daily_keywords: ["Vision", "Retrieval", "Eval", "Reasoning", "Agent", "LLM", "Prompt", "AI Agent", "RAG", "Guardrails"]
+daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.22458.png"
 ---
 
 

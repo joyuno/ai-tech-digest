@@ -8,6 +8,7 @@ daily_source: "arxiv"
 daily_title: "A Very Big Video Reasoning Suite"
 daily_url: "https://arxiv.org/abs/2602.20159"
 daily_keywords: ["Reasoning", "CoT", "LLM", "Inference", "Vision", "LoRA", "RAG", "Eval", "Agent", "Llama"]
+daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2602.20159.png"
 ---
 
 

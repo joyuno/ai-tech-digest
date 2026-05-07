@@ -8,6 +8,7 @@ daily_source: "arxiv"
 daily_title: "Spatial-TTT: Streaming Visual-based Spatial Intelligence with Test-Time Training"
 daily_url: "https://arxiv.org/abs/2603.12255"
 daily_keywords: ["Multimodal", "Agent", "Eval", "DeepSeek", "Inference", "Reasoning", "Benchmark", "GPT", "Copilot", "LLM"]
+daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.12255.png"
 ---
 
 

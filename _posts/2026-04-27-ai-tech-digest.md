@@ -8,6 +8,7 @@ daily_source: "arxiv"
 daily_title: "LLaDA2.0-Uni: Unifying Multimodal Understanding and Generation with Diffusion Large Language Model"
 daily_url: "https://arxiv.org/abs/2604.20796"
 daily_keywords: ["LLM", "RAG", "Eval", "LoRA", "Small Language Model", "Agent", "Multimodal", "Claude", "AI Agent"]
+daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2604.20796.png"
 ---
 
 

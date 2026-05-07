@@ -8,6 +8,7 @@ daily_source: "arxiv"
 daily_title: "CodeOCR: On the Effectiveness of Vision Language Models in Code Understanding"
 daily_url: "https://arxiv.org/abs/2602.01785"
 daily_keywords: ["LLM", "Agent", "Chain-of-Thought", "Eval", "Multimodal", "Retrieval", "DeepSeek", "Claude", "Claude Code"]
+daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2602.01785.png"
 ---
 
 

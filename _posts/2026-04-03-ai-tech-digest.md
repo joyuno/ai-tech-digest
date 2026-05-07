@@ -8,6 +8,7 @@ daily_source: "arxiv"
 daily_title: "ClawKeeper: Comprehensive Safety Protection for OpenClaw Agents Through Skills, Plugins, and Watchers"
 daily_url: "https://arxiv.org/abs/2603.24414"
 daily_keywords: ["Safety", "Agent", "Multimodal", "RAG", "Eval", "Vision", "LLM", "Tool Use", "Inference", "GPT"]
+daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.24414.png"
 ---
 
 

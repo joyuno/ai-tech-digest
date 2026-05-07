@@ -8,6 +8,7 @@ daily_source: "arxiv"
 daily_title: "MOOSE-Star: Unlocking Tractable Training for Scientific Discovery by Breaking the Complexity Barrier"
 daily_url: "https://arxiv.org/abs/2603.03756"
 daily_keywords: ["LLM", "Inference", "RAG", "AI Agent", "Eval", "DPO", "Retrieval", "Agent", "Gemini", "GPT"]
+daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.03756.png"
 ---
 
 
