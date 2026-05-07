@@ -9,6 +9,7 @@ daily_title: "The Devil Behind Moltbook: Anthropic Safety is Always Vanishing in
 daily_url: "https://arxiv.org/abs/2602.09877"
 daily_keywords: ["LLM", "Alignment", "Agent", "Prompt", "Multimodal", "Distillation", "Audio", "Claude", "Eval", "Transformer"]
 daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2602.09877.png"
+daily_image_kind: "hf_first_page"
 ---
 
 

@@ -6,9 +6,10 @@ categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
 daily_source: "arxiv"
 daily_title: "Less is Enough: Synthesizing Diverse Data in Feature Space of LLMs"
-daily_url: "https://arxiv.org/abs/2602.10388"
+daily_url: "https://arxiv.org/abs/2602.13191"
 daily_keywords: ["LLM", "RAG", "Retrieval", "Eval", "Multimodal", "LoRA", "Agent", "Claude", "Transformer"]
-daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2602.10388.png"
+daily_image: "https://ar5iv.labs.arxiv.org/html/2602.13191/assets/x1.png"
+daily_image_kind: "ar5iv_fig"
 ---
 
 

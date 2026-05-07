@@ -8,7 +8,8 @@ daily_source: "arxiv"
 daily_title: "VESPO: Variational Sequence-Level Soft Policy Optimization for Stable Off-Policy LLM Training"
 daily_url: "https://arxiv.org/abs/2602.10693"
 daily_keywords: ["LLM", "Inference", "Reasoning", "CoT", "Agent", "Eval", "Fine-tuning", "Llama", "Claude", "Cursor"]
-daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2602.10693.png"
+daily_image: "https://ar5iv.labs.arxiv.org/html/2602.10693/assets/x1.png"
+daily_image_kind: "ar5iv_fig"
 ---
 
 

@@ -8,7 +8,8 @@ daily_source: "arxiv"
 daily_title: "InCoder-32B: Code Foundation Model for Industrial Scenarios"
 daily_url: "https://arxiv.org/abs/2603.16790"
 daily_keywords: ["Reasoning", "Agent", "Vision", "Prompt", "Multimodal", "Hallucination", "RAG", "Transformer", "Distillation", "Claude"]
-daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.16790.png"
+daily_image: "https://ar5iv.labs.arxiv.org/html/2603.16790/assets/x1.png"
+daily_image_kind: "ar5iv_fig"
 ---
 
 

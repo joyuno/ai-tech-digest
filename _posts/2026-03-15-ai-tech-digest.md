@@ -6,9 +6,10 @@ categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
 daily_source: "arxiv"
 daily_title: "Spatial-TTT: Streaming Visual-based Spatial Intelligence with Test-Time Training"
-daily_url: "https://arxiv.org/abs/2603.12255"
+daily_url: "https://arxiv.org/abs/2603.11421"
 daily_keywords: ["Multimodal", "Agent", "Eval", "DeepSeek", "Inference", "Reasoning", "Prompt", "Benchmark", "AI Agent", "Claude"]
-daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.12255.png"
+daily_image: "https://ar5iv.labs.arxiv.org/html/2603.11421/assets/x1.png"
+daily_image_kind: "ar5iv_fig"
 ---
 
 

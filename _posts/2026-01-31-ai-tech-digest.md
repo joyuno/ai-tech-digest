@@ -9,6 +9,7 @@ daily_title: "Idea2Story: An Automated Pipeline for Transforming Research Concep
 daily_url: "https://arxiv.org/abs/2601.20833"
 daily_keywords: ["LLM", "Agent", "Reasoning", "Prompt", "MoE", "Vision", "Multimodal", "Claude", "GPT", "MCP"]
 daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2601.20833.png"
+daily_image_kind: "hf_first_page"
 ---
 
 

@@ -9,6 +9,7 @@ daily_title: "HyTRec: A Hybrid Temporal-Aware Attention Architecture for Long Be
 daily_url: "https://arxiv.org/abs/2602.18283"
 daily_keywords: ["Retrieval", "Eval", "RAG", "Audio", "MoE", "Vision", "Llama", "Agent", "Claude", "Claude Code"]
 daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2602.18283.png"
+daily_image_kind: "hf_first_page"
 ---
 
 

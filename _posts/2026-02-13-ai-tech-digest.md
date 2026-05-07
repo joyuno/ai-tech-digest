@@ -8,7 +8,8 @@ daily_source: "arxiv"
 daily_title: "Step 3.5 Flash: Open Frontier-Level Intelligence with 11B Active Parameters"
 daily_url: "https://arxiv.org/abs/2602.10604"
 daily_keywords: ["MoE", "Inference", "Agent", "Multimodal", "Alignment", "Eval", "LLM", "Fine-tuning", "RAG", "Prompt"]
-daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2602.10604.png"
+daily_image: "https://ar5iv.labs.arxiv.org/html/2602.10604/assets/x1.png"
+daily_image_kind: "ar5iv_fig"
 ---
 
 

@@ -6,9 +6,10 @@ categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
 daily_source: "arxiv"
 daily_title: "Sanity Checks for Sparse Autoencoders: Do SAEs Beat Random Baselines?"
-daily_url: "https://arxiv.org/abs/2602.14111"
+daily_url: "https://arxiv.org/abs/2602.12675"
 daily_keywords: ["Eval", "Reasoning", "Alignment", "Inference", "Agent", "LLM", "Multimodal", "Claude", "Claude Code", "RAG"]
-daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2602.14111.png"
+daily_image: "https://ar5iv.labs.arxiv.org/html/2602.12675/assets/x1.png"
+daily_image_kind: "ar5iv_fig"
 ---
 
 

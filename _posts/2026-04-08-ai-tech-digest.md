@@ -8,7 +8,8 @@ daily_source: "arxiv"
 daily_title: "OpenWorldLib: A Unified Codebase and Definition of Advanced World Models"
 daily_url: "https://arxiv.org/abs/2604.04707"
 daily_keywords: ["Inference", "LLM", "Distillation", "Vision", "RAG", "Benchmark", "Eval", "LoRA", "Agent", "Claude"]
-daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2604.04707.png"
+daily_image: "https://ar5iv.labs.arxiv.org/html/2604.04707/assets/x1.png"
+daily_image_kind: "ar5iv_fig"
 ---
 
 

@@ -6,9 +6,10 @@ categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
 daily_source: "arxiv"
 daily_title: "The Trinity of Consistency as a Defining Principle for General World Models"
-daily_url: "https://arxiv.org/abs/2602.23152"
+daily_url: "https://arxiv.org/abs/2602.22661"
 daily_keywords: ["Multimodal", "LLM", "Agent", "Eval", "AI Agent", "MoE", "Vision", "Llama", "Prompt Engineering", "Claude"]
-daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2602.23152.png"
+daily_image: "https://ar5iv.labs.arxiv.org/html/2602.22661/assets/x1.png"
+daily_image_kind: "ar5iv_fig"
 ---
 
 

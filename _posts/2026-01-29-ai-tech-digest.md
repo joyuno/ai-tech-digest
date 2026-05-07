@@ -9,6 +9,7 @@ daily_title: "daVinci-Dev: Agent-native Mid-training for Software Engineering"
 daily_url: "https://arxiv.org/abs/2601.18418"
 daily_keywords: ["LLM", "Agent", "Safety", "Tool Use", "AI Agent", "Orchestration", "Quantization", "Benchmark", "Vision", "RAG"]
 daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2601.18418.png"
+daily_image_kind: "hf_first_page"
 ---
 
 

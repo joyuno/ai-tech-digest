@@ -6,9 +6,10 @@ categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
 daily_source: "arxiv"
 daily_title: "RationalRewards: Reasoning Rewards Scale Visual Generation Both Training and Test Time"
-daily_url: "https://arxiv.org/abs/2604.11626"
+daily_url: "https://arxiv.org/abs/2604.14268"
 daily_keywords: ["Reasoning", "Eval", "Prompt", "RAG", "Agent", "LLM", "LoRA", "AI Coding", "Multimodal", "Inference"]
-daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2604.11626.png"
+daily_image: "https://ar5iv.labs.arxiv.org/html/2604.14268/assets/x1.png"
+daily_image_kind: "ar5iv_fig"
 ---
 
 

@@ -8,7 +8,8 @@ daily_source: "arxiv"
 daily_title: "Efficient Reasoning with Balanced Thinking"
 daily_url: "https://arxiv.org/abs/2603.12372"
 daily_keywords: ["Reasoning", "LLM", "Eval", "Multimodal", "RAG", "Alignment", "Vision", "Inference", "Claude", "Agent"]
-daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.12372.png"
+daily_image: "https://ar5iv.labs.arxiv.org/html/2603.12372/assets/x1.png"
+daily_image_kind: "ar5iv_fig"
 ---
 
 

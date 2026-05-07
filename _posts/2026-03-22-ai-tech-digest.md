@@ -6,9 +6,10 @@ categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
 daily_source: "arxiv"
 daily_title: "Efficient Reasoning with Balanced Thinking"
-daily_url: "https://arxiv.org/abs/2603.12372"
+daily_url: "https://arxiv.org/abs/2603.18524"
 daily_keywords: ["Reasoning", "LLM", "Eval", "Multimodal", "RAG", "Alignment", "Prompt", "Claude", "Agent", "Claude Code"]
-daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.12372.png"
+daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.18524.png"
+daily_image_kind: "hf_first_page"
 ---
 
 

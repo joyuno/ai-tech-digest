@@ -8,7 +8,8 @@ daily_source: "arxiv"
 daily_title: "Elucidating the SNR-t Bias of Diffusion Probabilistic Models"
 daily_url: "https://arxiv.org/abs/2604.16044"
 daily_keywords: ["Alignment", "Inference", "Reasoning", "LLM", "Agent", "Fine-tuning", "Multimodal", "Prompt", "Eval"]
-daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2604.16044.png"
+daily_image: "https://ar5iv.labs.arxiv.org/html/2604.16044/assets/x1.png"
+daily_image_kind: "ar5iv_fig"
 ---
 
 

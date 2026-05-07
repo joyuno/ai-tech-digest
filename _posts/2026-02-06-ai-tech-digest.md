@@ -8,7 +8,8 @@ daily_source: "arxiv"
 daily_title: "ERNIE 5.0 Technical Report"
 daily_url: "https://arxiv.org/abs/2602.04705"
 daily_keywords: ["Multimodal", "LLM", "RAG", "Tool Use", "Agent", "Retrieval", "Eval", "AI Agent", "Claude", "Claude Code"]
-daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2602.04705.png"
+daily_image: "https://ar5iv.labs.arxiv.org/html/2602.04705/assets/x1.png"
+daily_image_kind: "ar5iv_fig"
 ---
 
 

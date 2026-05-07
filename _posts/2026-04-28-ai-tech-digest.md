@@ -8,7 +8,8 @@ daily_source: "arxiv"
 daily_title: "Agentic World Modeling: Foundations, Capabilities, Laws, and Beyond"
 daily_url: "https://arxiv.org/abs/2604.22748"
 daily_keywords: ["Agent", "LLM", "RAG", "Eval", "Claude", "LoRA", "Claude Code"]
-daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2604.22748.png"
+daily_image: "https://ar5iv.labs.arxiv.org/html/2604.22748/assets/x1.png"
+daily_image_kind: "ar5iv_fig"
 ---
 
 

@@ -6,9 +6,10 @@ categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
 daily_source: "arxiv"
 daily_title: "ASTRA: Automated Synthesis of agentic Trajectories and Reinforcement Arenas"
-daily_url: "https://arxiv.org/abs/2601.21558"
+daily_url: "https://arxiv.org/abs/2601.22813"
 daily_keywords: ["LLM", "Fine-tuning", "Agent", "Reasoning", "Distillation", "Alignment", "RAG", "Prompt", "Claude", "Claude Code"]
-daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2601.21558.png"
+daily_image: "https://ar5iv.labs.arxiv.org/html/2601.22813/assets/x1.png"
+daily_image_kind: "ar5iv_fig"
 ---
 
 

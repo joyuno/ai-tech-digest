@@ -6,9 +6,10 @@ categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
 daily_source: "arxiv"
 daily_title: "Heterogeneous Agent Collaborative Reinforcement Learning"
-daily_url: "https://arxiv.org/abs/2603.02604"
+daily_url: "https://arxiv.org/abs/2603.03756"
 daily_keywords: ["LLM", "Inference", "Agent", "Reasoning", "Prompt", "RAG", "AI Agent", "Eval", "MoE", "Orchestration"]
-daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.02604.png"
+daily_image: "https://ar5iv.labs.arxiv.org/html/2603.03756/assets/x1.png"
+daily_image_kind: "ar5iv_fig"
 ---
 
 
