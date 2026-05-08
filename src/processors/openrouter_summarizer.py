@@ -140,12 +140,26 @@ class OpenRouterSummarizer:
         prompt = (
             "당신은 매일의 AI 기술 트렌드를 한국어 헤드라인으로 정제하는 에디터입니다.\n\n"
             "오늘의 항목들과 점수화된 대표 항목을 보고 그날의 핵심 흐름을 "
-            "**한국어 15~35자 한 줄 제목**으로 요약해주세요.\n"
-            "- 대표 항목이 헤드라인의 중심 — 그 키워드를 헤드라인에 포함\n"
-            "- 영어 고유명사(LLM, RAG, Transformer 등)는 그대로 OK\n"
-            "- 따옴표·이모지·말꼬리 종결(~다, ~음) 모두 금지\n"
-            "- 명사형 또는 키워드 조합 헤드라인\n"
-            "- 출력은 제목 한 줄만\n\n"
+            "**25~45자 한 줄 헤드라인**으로 작성해주세요. 너무 짧게 자르지 말 것.\n\n"
+            "## 핵심 규칙\n"
+            "1. **영어 고유명사·논문명·repo명·모델명·회사명은 영어 그대로**. 한국어 음역 절대 금지.\n"
+            "   - X: 앤스로픽, 모로모액트, 클로드  →  O: Anthropic, MolmoAct2, Claude\n"
+            "2. **권장 패턴 (다음 둘 중 하나)**:\n"
+            "   - `영어명 — 한국어 보조 설명`  (예: `MolmoAct2 — 로봇의 real-world 행동추론 모델`)\n"
+            "   - `영어명/회사, 한국어 동작·결과`  (예: `Anthropic, 금융서비스 가이드라인 제공`)\n"
+            "3. 한국어 단어 + 영어 키워드 자연스럽게 섞기 (예: `로봇의 real-world 행동추론`).\n"
+            "4. 따옴표·이모지·말꼬리 종결(`~다`, `~음`) 금지.\n"
+            "5. 출력은 제목 한 줄만 (다른 설명 X).\n\n"
+            "## 안 좋은 예 (절대 X)\n"
+            "- `실세계 로` (너무 짧음, 어절 잘림)\n"
+            "- `앤스로픽, 금융` (한국어 음역 + 짧음)\n"
+            "- `로봇 행동 모델` (영어 고유명사 모두 한국어로 압축)\n"
+            "- `MolmoAct2: Action Reasoning Models for Real-world Deployment` (논문 영어 제목 그대로 = 번역 안 한 것)\n\n"
+            "## 좋은 예\n"
+            "- `MolmoAct2 — 로봇의 real-world 행동추론 모델`\n"
+            "- `Anthropic, 금융서비스 가이드라인 제공`\n"
+            "- `DeepSeek-TUI, 터미널에서 굴리는 DeepSeek 코딩 에이전트`\n"
+            "- `LLaDA2.0-Uni — 통합 멀티모달 diffusion LLM`\n\n"
             f"카테고리: {', '.join(cats) if cats else '—'}\n"
             "전체 항목:\n"
             + "\n".join(f"- {t}" for t in items)
@@ -177,9 +191,12 @@ class OpenRouterSummarizer:
                 if not text:
                     continue
                 line = text.splitlines()[0].strip().strip('"\'').rstrip(".· ")
-                if 5 <= len(line) <= 80 and korean_ratio(line) >= 0.2:
+                # 강화: 너무 짧은 제목 거부 (15자 미만 = 어절 잘림 위험)
+                if 15 <= len(line) <= 80 and korean_ratio(line) >= 0.2:
                     print(f"  📰 헤드라인: {line}")
                     return line
+                else:
+                    print(f"  ⚠️ 헤드라인 부적절 ({len(line)}자, 한국어 {korean_ratio(line):.0%}) — 다음 모델: {line!r}")
             except Exception as e:
                 print(f"  ⚠️ 헤드라인 생성 실패 ({model}): {e}")
         return ""
