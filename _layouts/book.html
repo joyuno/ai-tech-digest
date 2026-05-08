@@ -894,20 +894,46 @@
     }
 
     /* ─────────── boot ─────────── */
+    function showError(msg) {
+      const left = document.getElementById('page-left');
+      const right = document.getElementById('page-right');
+      if (left) left.innerHTML = `<div class="page-empty">⚠️ ${msg}</div>`;
+      if (right) right.innerHTML = '<div class="page-empty">새로고침 (Cmd+Shift+R) 시도</div>';
+      const g = document.getElementById('graph');
+      if (g) g.innerHTML = `<div class="empty-state">⚠️ ${msg}</div>`;
+    }
     document.addEventListener('DOMContentLoaded', () => {
-      initSearch();
-      fetch(SEARCH_JSON, { credentials: 'omit' })
-        .then(r => r.json())
+      try { initSearch(); } catch (e) { console.error('initSearch', e); }
+      fetch(SEARCH_JSON)
+        .then(r => {
+          if (!r.ok) throw new Error('HTTP ' + r.status);
+          return r.json();
+        })
         .then(posts => {
-          initBook(posts);
-          // 그래프는 첫 페인트 후 살짝 늦게 (vis-network 무거움)
-          requestIdleCallback ? requestIdleCallback(() => initGraph(posts), { timeout: 1500 })
-                              : setTimeout(() => initGraph(posts), 800);
+          if (!Array.isArray(posts) || !posts.length) {
+            showError('데이터가 비어있어요');
+            return;
+          }
+          try { initBook(posts); }
+          catch (e) { console.error('initBook 실패', e); showError('책 렌더 실패: ' + e.message); }
+          // 그래프는 첫 페인트 후 살짝 늦게
+          const startGraph = () => {
+            try { initGraph(posts); }
+            catch (e) { console.error('initGraph 실패', e); }
+          };
+          if (typeof window.requestIdleCallback === 'function') {
+            window.requestIdleCallback(startGraph, { timeout: 1500 });
+          } else {
+            setTimeout(startGraph, 800);
+          }
         })
         .catch(e => {
           console.error('search.json fetch 실패', e);
+          showError('search.json 로드 실패: ' + e.message);
         });
-      if (window.lucide && window.lucide.createIcons) window.lucide.createIcons();
+      if (window.lucide && window.lucide.createIcons) {
+        try { window.lucide.createIcons(); } catch (_) {}
+      }
     });
   })();
   </script>

@@ -12,6 +12,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js" defer></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+  <style>
+    .explore i[data-lucide] { width: 1em; height: 1em; vertical-align: -2px; margin-right: 0.4rem; }
+  </style>
   {% feed_meta %}
   {% seo %}
   <style>
@@ -417,8 +421,8 @@
     </ul>
 
     <nav class="explore">
-      <a href="{{ '/book/' | relative_url }}">📖 책으로 보기</a>
-      <a href="{{ '/archives/' | relative_url }}">📚 전체 글 목록</a>
+      <a href="{{ '/book/' | relative_url }}"><i data-lucide="book-open"></i> 책으로 보기</a>
+      <a href="{{ '/archives/' | relative_url }}"><i data-lucide="layers"></i> 전체 글 목록</a>
     </nav>
 
     {% else %}
@@ -455,6 +459,7 @@
           wrap.innerHTML = wrap.classList.contains('thumb') ? 'no image' : '오늘은 figure 가 아직 없어요';
         });
       });
+      if (window.lucide && window.lucide.createIcons) window.lucide.createIcons();
     });
   </script>
 </body>

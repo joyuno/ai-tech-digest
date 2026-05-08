@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "실세계 로"
+title: "MolmoAct2 — 로봇의 real-world 행동추론 모델"
 date: 2026-05-07
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
