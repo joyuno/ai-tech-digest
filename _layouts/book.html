@@ -91,14 +91,18 @@
       border-bottom: 1px solid var(--border);
     }
     .back-link {
-      font-size: 0.78rem; color: var(--ink-muted);
-      display: inline-flex; align-items: center; gap: 0.4rem;
-      padding: 0.4rem 0.7rem; border-radius: 0.5rem;
-      transition: color 150ms, background 150ms;
       justify-self: start;
+      background: var(--paper);
+      border: 1px solid var(--border);
+      color: var(--ink-2);
+      border-radius: var(--r-pill);
+      width: 34px; height: 34px;
+      display: grid; place-items: center;
+      cursor: pointer;
+      transition: border-color 150ms, color 150ms, background 150ms;
     }
-    .back-link:hover { color: var(--accent); background: var(--surface-2, var(--paper-2)); }
-    .back-link .arrow { font-family: 'JetBrains Mono', monospace; opacity: 0.6; }
+    .back-link:hover { border-color: var(--accent); color: var(--accent); }
+    .back-link i[data-lucide] { width: 1.05rem; height: 1.05rem; }
 
     .search-wrap {
       width: min(60vw, 720px);
@@ -539,8 +543,8 @@
 </head>
 <body>
   <header class="topbar">
-    <a class="back-link" href="https://joyuno.github.io">
-      <span class="arrow">‹‹</span><span>블로그로 돌아가기</span>
+    <a class="back-link" href="{{ '/' | relative_url }}" aria-label="AI Tech 메인으로">
+      <i data-lucide="house"></i>
     </a>
     <div class="search-wrap">
       <input type="text" id="search-input" placeholder="검색...">

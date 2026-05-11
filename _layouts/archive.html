@@ -6,11 +6,6 @@ layout: default
   <p class="meta">매일 KST 8시 자동 업데이트 · grok-4.1-fast 요약</p>
 </header>
 
-<div class="search-wrap">
-  <input type="text" id="search-input" placeholder="검색...">
-  <ul id="search-results"></ul>
-</div>
-
 {% if site.posts.size == 0 %}
 <p style="color:var(--text-muted);text-align:center;padding:3rem 0;">아직 포스트가 없습니다.</p>
 {% else %}
@@ -50,21 +45,9 @@ layout: default
 </style>
 {% endif %}
 
-<script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js" defer></script>
-<script src="{{ '/assets/js/search.js' | relative_url }}" defer></script>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    if (window.initFuseSearch) {
-      window.initFuseSearch({
-        searchJsonUrl: '{{ "/search.json" | relative_url }}',
-        inputId: 'search-input',
-        resultsId: 'search-results',
-      });
-    }
-  });
-</script>
 <script>
   // 클라이언트사이드 페이지네이션 — jekyll-paginate v1 은 /archives/ 경로 지원 X
+  // (search 은 default.html 의 topbar 가 처리)
   (function() {
     const PAGE_SIZE = 20;
     const list = document.getElementById('post-list');
