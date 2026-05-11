@@ -15,8 +15,7 @@ layout: default
 <p style="color:var(--text-muted);text-align:center;padding:3rem 0;">아직 포스트가 없습니다.</p>
 {% else %}
 <ul class="post-list" id="post-list">
-  {% if paginator %}{% assign list_posts = paginator.posts %}{% else %}{% assign list_posts = site.posts %}{% endif %}
-  {% for post in list_posts %}
+  {% for post in site.posts %}
   <li>
     <a href="{{ post.url | relative_url }}">
       <span class="pl-date">{{ post.date | date: "%Y.%m.%d" }}</span>
@@ -26,21 +25,29 @@ layout: default
   {% endfor %}
 </ul>
 
-{% if paginator and paginator.total_pages > 1 %}
-<nav class="pagination" aria-label="페이지">
-  {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path | relative_url }}">← 최신</a>
-  {% else %}
-    <span class="disabled">← 최신</span>
-  {% endif %}
-  <span class="page-num">{{ paginator.page }} / {{ paginator.total_pages }}</span>
-  {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path | relative_url }}">이전 →</a>
-  {% else %}
-    <span class="disabled">이전 →</span>
-  {% endif %}
+<nav class="pagination js-pagination" aria-label="페이지" id="post-pagination" hidden>
+  <button type="button" class="pg-btn" data-dir="prev">← 최신</button>
+  <span class="page-num"><span id="pg-cur">1</span> / <span id="pg-total">1</span></span>
+  <button type="button" class="pg-btn" data-dir="next">이전 →</button>
 </nav>
-{% endif %}
+
+<style>
+  .pagination .pg-btn {
+    padding: 0.5rem 0.85rem;
+    border-radius: var(--r-sm);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text);
+    border: 1px solid var(--border);
+    background: var(--surface);
+    font-variant-numeric: tabular-nums;
+    cursor: pointer;
+    font-family: inherit;
+    transition: border-color 150ms, color 150ms;
+  }
+  .pagination .pg-btn:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+  .pagination .pg-btn:disabled { color: var(--text-muted); opacity: 0.5; cursor: not-allowed; }
+</style>
 {% endif %}
 
 <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script>
@@ -56,4 +63,36 @@ layout: default
       fuzzy: false
     });
   }
+
+  // 클라이언트사이드 페이지네이션 — jekyll-paginate v1 은 /archives/ 경로 지원 X
+  (function() {
+    const PAGE_SIZE = 20;
+    const list = document.getElementById('post-list');
+    const nav = document.getElementById('post-pagination');
+    if (!list || !nav) return;
+    const items = Array.from(list.children);
+    const total = Math.ceil(items.length / PAGE_SIZE);
+    if (total <= 1) return;
+
+    let cur = 1;
+    const elPrev = nav.querySelector('[data-dir="prev"]');
+    const elNext = nav.querySelector('[data-dir="next"]');
+    const elCur  = document.getElementById('pg-cur');
+    const elTot  = document.getElementById('pg-total');
+    elTot.textContent = total;
+    nav.hidden = false;
+
+    const render = (p) => {
+      cur = p;
+      const start = (p - 1) * PAGE_SIZE;
+      const end = start + PAGE_SIZE;
+      items.forEach((li, i) => { li.style.display = (i >= start && i < end) ? '' : 'none'; });
+      elCur.textContent = p;
+      elPrev.disabled = p === 1;
+      elNext.disabled = p === total;
+    };
+    elPrev.addEventListener('click', () => { if (cur > 1) { render(cur - 1); window.scrollTo({top:0, behavior:'smooth'}); } });
+    elNext.addEventListener('click', () => { if (cur < total) { render(cur + 1); window.scrollTo({top:0, behavior:'smooth'}); } });
+    render(1);
+  })();
 </script>
