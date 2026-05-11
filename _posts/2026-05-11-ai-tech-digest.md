@@ -22,12 +22,7 @@ daily_keywords: []
 ## <i data-lucide="book-open"></i> arXiv 논문
 
 
-<div class="digest-item has-thumb" markdown="1">
-
-
-<div class="digest-thumb">
-  <img src="https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.05242.png" alt="Beyond Semantic Similarity: Rethinking Retrieval for Agentic Search via Direct Corpus Interaction" loading="lazy" referrerpolicy="no-referrer">
-</div>
+<div class="digest-item" markdown="1">
 
 
 <h3><a href="https://arxiv.org/abs/2605.05242" target="_blank">Beyond Semantic Similarity: Rethinking Retrieval for Agentic Search via Direct Corpus Interaction</a></h3>
@@ -71,7 +66,7 @@ daily_keywords: []
 
 
 <div class="digest-thumb">
-  <img src="https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.06130.png" alt="Skill1: Unified Evolution of Skill-Augmented Agents via Reinforcement Learning" loading="lazy" referrerpolicy="no-referrer">
+  <img src="https://arxiv.org/html/2605.06130v2/x1.png" alt="Skill1: Unified Evolution of Skill-Augmented Agents via Reinforcement Learning" loading="lazy" referrerpolicy="no-referrer">
 </div>
 
 
@@ -106,7 +101,7 @@ daily_keywords: []
 
 
 <div class="digest-thumb">
-  <img src="https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.06548.png" alt="Continuous Latent Diffusion Language Model" loading="lazy" referrerpolicy="no-referrer">
+  <img src="https://arxiv.org/html/2605.06548v1/x2.png" alt="Continuous Latent Diffusion Language Model" loading="lazy" referrerpolicy="no-referrer">
 </div>
 
 
@@ -135,7 +130,7 @@ daily_keywords: []
 
 
 <div class="digest-thumb">
-  <img src="https://ar5iv.labs.arxiv.org/html/2604.27393/assets/x1.png" alt="MiniCPM-o 4.5: Towards Real-Time Full-Duplex Omni-Modal Interaction" loading="lazy" referrerpolicy="no-referrer">
+  <img src="https://arxiv.org/html/2604.27393v1/media/radar_minicpmo4.5.png" alt="MiniCPM-o 4.5: Towards Real-Time Full-Duplex Omni-Modal Interaction" loading="lazy" referrerpolicy="no-referrer">
 </div>
 
 
@@ -176,7 +171,7 @@ daily_keywords: []
 
 
 <div class="digest-thumb">
-  <img src="https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.06416.png" alt="MiA-Signature: Approximating Global Activation for Long-Context Understanding" loading="lazy" referrerpolicy="no-referrer">
+  <img src="https://arxiv.org/html/2605.06416v1/x1.png" alt="MiA-Signature: Approximating Global Activation for Long-Context Understanding" loading="lazy" referrerpolicy="no-referrer">
 </div>
 
 
