@@ -50,20 +50,20 @@ layout: default
 </style>
 {% endif %}
 
-<script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js" defer></script>
+<script src="{{ '/assets/js/search.js' | relative_url }}" defer></script>
 <script>
-  if (typeof SimpleJekyllSearch !== 'undefined') {
-    SimpleJekyllSearch({
-      searchInput: document.getElementById('search-input'),
-      resultsContainer: document.getElementById('search-results'),
-      json: '{{ "/search.json" | relative_url }}',
-      searchResultTemplate: '<li><a href="{url}"><span class="sr-date">{date}</span><span>{title}</span></a></li>',
-      noResultsText: '<li style="padding:0.5rem 0.7rem;color:var(--text-muted);font-size:0.85rem;">결과 없음</li>',
-      limit: 12,
-      fuzzy: false
-    });
-  }
-
+  document.addEventListener('DOMContentLoaded', function () {
+    if (window.initFuseSearch) {
+      window.initFuseSearch({
+        searchJsonUrl: '{{ "/search.json" | relative_url }}',
+        inputId: 'search-input',
+        resultsId: 'search-results',
+      });
+    }
+  });
+</script>
+<script>
   // 클라이언트사이드 페이지네이션 — jekyll-paginate v1 은 /archives/ 경로 지원 X
   (function() {
     const PAGE_SIZE = 20;
