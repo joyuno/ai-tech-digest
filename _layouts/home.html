@@ -7,12 +7,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ site.title }}</title>
   <meta name="description" content="{{ site.description }}">
+  <script>
+    // 페인트 전에 테마 attr 세팅 — 깜빡임 방지. joyuno.github.io 와 동일 origin/key 사용 → 자동 sync.
+    (function(){ try { document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'dark'); } catch(_) {} })();
+  </script>
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js" defer></script>
   <script src="{{ '/assets/js/search.js' | relative_url }}" defer></script>
+  <script src="{{ '/assets/js/theme.js' | relative_url }}" defer></script>
+  <script src="{{ '/assets/js/favicon.js' | relative_url }}" defer></script>
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
   <style>
     .explore i[data-lucide] { width: 1em; height: 1em; vertical-align: -2px; margin-right: 0.4rem; }
@@ -39,6 +45,19 @@
       --r-lg: 18px;
       --r-pill: 9999px;
     }
+    [data-theme="light"] {
+      --bg:        oklch(0.97 0.003 250);
+      --bg-2:      oklch(0.99 0.003 250);
+      --surface:   oklch(1 0 0);
+      --surface-2: oklch(0.96 0.004 250);
+      --ink:       oklch(0.18 0.014 250);
+      --ink-2:     oklch(0.35 0.018 260);
+      --ink-muted: oklch(0.50 0.014 260);
+      --border:    oklch(0.90 0.005 250);
+      --accent:    oklch(0.55 0.18 263);
+      --accent-2:  oklch(0.60 0.15 195);
+      --accent-bg: oklch(0.92 0.04 252);
+    }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html, body {
       background: radial-gradient(ellipse 90% 70% at 50% 25%, var(--bg-2) 0%, var(--bg) 65%);
@@ -60,7 +79,7 @@
       align-items: center;
       padding: 0 1.25rem;
       z-index: 50;
-      background: linear-gradient(to bottom, oklch(0.16 0.014 250 / 0.96), oklch(0.16 0.014 250 / 0.78));
+      background: linear-gradient(to bottom, oklch(from var(--bg) l c h / 0.96), oklch(from var(--bg) l c h / 0.78));
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
       border-bottom: 1px solid var(--border);
@@ -77,7 +96,7 @@
     .search-wrap { width: min(60vw, 720px); position: relative; }
     #search-input {
       width: 100%;
-      background: oklch(0.22 0.018 250 / 0.7);
+      background: oklch(from var(--surface) l c h / 0.7);
       border: 1px solid var(--border);
       border-radius: var(--r-pill);
       color: var(--ink);
@@ -93,7 +112,7 @@
       list-style: none;
       position: absolute; top: calc(100% + 0.4rem); left: 0; right: 0;
       max-height: 60vh; overflow-y: auto;
-      background: oklch(0.20 0.016 250 / 0.98);
+      background: oklch(from var(--bg-2) l c h / 0.98);
       border: 1px solid var(--border);
       border-radius: var(--r-md);
       box-shadow: 0 16px 40px rgba(0,0,0,0.5);
@@ -110,16 +129,21 @@
 
     .topbar-right {
       justify-self: end;
-      font-family: 'JetBrains Mono', monospace; font-size: 0.74rem;
-      color: var(--ink-muted);
+      display: flex; align-items: center; gap: 0.5rem;
     }
-    .topbar-right .brand {
-      background: var(--grad-mark);
-      -webkit-background-clip: text; background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-weight: 700; font-size: 0.88rem;
-      letter-spacing: -0.02em;
+    .theme-toggle {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--ink-2);
+      border-radius: var(--r-pill);
+      width: 34px; height: 34px;
+      cursor: pointer;
+      display: grid; place-items: center;
+      font-size: 1.05rem; line-height: 1;
+      font-family: inherit;
+      transition: border-color 150ms, color 150ms, background 150ms;
     }
+    .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
 
     /* main */
     main {
@@ -356,7 +380,11 @@
       <input type="text" id="search-input" placeholder="검색...">
       <ul id="search-results"></ul>
     </div>
-    <div class="topbar-right"><span class="brand">AI Tech</span></div>
+    <div class="topbar-right">
+      <button class="theme-toggle" data-theme-toggle aria-label="테마 전환">
+        <span class="theme-icon">☾</span>
+      </button>
+    </div>
   </header>
 
   <main>

@@ -5,11 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
   <meta name="description" content="{{ page.description | default: site.description }}">
+  <script>
+    (function(){ try { document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'dark'); } catch(_) {} })();
+  </script>
 
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script src="{{ '/assets/js/theme.js' | relative_url }}" defer></script>
+  <script src="{{ '/assets/js/favicon.js' | relative_url }}" defer></script>
   {% feed_meta %}
   {% seo %}
   <style>
@@ -47,7 +52,25 @@
       --shadow-1: 0 1px 3px rgba(0,0,0,0.30);
       --shadow-2: 0 2px 8px rgba(0,0,0,0.45);
     }
-    body { background: radial-gradient(ellipse 90% 70% at 50% 25%, oklch(0.20 0.016 250) 0%, var(--bg) 65%); }
+    [data-theme="light"] {
+      --bg:           oklch(0.97 0.003 250);
+      --surface:      oklch(1 0 0);
+      --surface-2:    oklch(0.96 0.005 250);
+      --heading:      oklch(0.18 0.014 250);
+      --text:         oklch(0.30 0.018 260);
+      --text-body:    oklch(0.35 0.018 260);
+      --text-muted:   oklch(0.50 0.014 260);
+      --border:       oklch(0.90 0.005 250);
+      --border-strong:oklch(0.78 0.010 250);
+      --code-bg:      oklch(0.95 0.005 250);
+      --tag-bg:       oklch(0.93 0.008 250);
+      --accent:       oklch(0.55 0.18 263);
+      --accent-hover: oklch(0.45 0.20 263);
+      --accent-bg:    oklch(0.92 0.04 252);
+      --shadow-1: 0 1px 3px rgba(0,0,0,0.05);
+      --shadow-2: 0 2px 8px rgba(0,0,0,0.10);
+    }
+    body { background: radial-gradient(ellipse 90% 70% at 50% 25%, var(--surface-2) 0%, var(--bg) 65%); }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -118,6 +141,22 @@
     .nav a:hover { background: var(--surface-2); color: var(--accent); }
     .nav a.active { background: var(--accent-bg); color: var(--accent); }
     .nav a .arrow { font-family: 'JetBrains Mono', monospace; opacity: 0.5; font-size: 0.85em; }
+
+    .sidebar-footer { margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--border); }
+    .theme-toggle {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      color: var(--text);
+      border-radius: var(--r-sm);
+      padding: 0.45rem 0.7rem;
+      cursor: pointer;
+      display: flex; align-items: center; gap: 0.45rem;
+      font-size: 0.85rem; font-family: inherit;
+      width: 100%;
+      transition: border-color var(--m-fast) var(--ease-std), color var(--m-fast) var(--ease-std);
+    }
+    .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+    .theme-toggle .theme-icon { font-size: 1.05rem; line-height: 1; }
 
     /* main */
     #main-wrapper {
@@ -436,6 +475,13 @@
         <span>블로그로 돌아가기</span><span class="arrow">→</span>
       </a>
     </nav>
+
+    <div class="sidebar-footer">
+      <button class="theme-toggle" data-theme-toggle aria-label="테마 전환">
+        <span class="theme-icon">☾</span>
+        <span class="theme-label">테마</span>
+      </button>
+    </div>
   </aside>
 
   <div id="main-wrapper">

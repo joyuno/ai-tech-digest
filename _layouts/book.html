@@ -7,6 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ site.title }}</title>
   <meta name="description" content="{{ site.description }}">
+  <script>
+    (function(){ try { document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'dark'); } catch(_) {} })();
+  </script>
 
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
@@ -16,6 +19,8 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js" defer></script>
   <script src="{{ '/assets/js/search.js' | relative_url }}" defer></script>
+  <script src="{{ '/assets/js/theme.js' | relative_url }}" defer></script>
+  <script src="{{ '/assets/js/favicon.js' | relative_url }}" defer></script>
   {% feed_meta %}
   {% seo %}
   <style>
@@ -38,6 +43,21 @@
       --r-md: 12px;
       --r-pill: 9999px;
     }
+    [data-theme="light"] {
+      --bg:        oklch(0.97 0.003 250);
+      --bg-2:      oklch(0.99 0.003 250);
+      --paper:     oklch(0.99 0.003 250);
+      --paper-2:   oklch(0.96 0.005 250);
+      --paper-edge: oklch(0.85 0.008 250);
+      --ink:       oklch(0.18 0.014 250);
+      --ink-2:     oklch(0.35 0.018 260);
+      --ink-muted: oklch(0.50 0.014 260);
+      --border:    oklch(0.88 0.005 250);
+      --accent:    oklch(0.55 0.18 263);
+      --accent-2:  oklch(0.60 0.15 195);
+      --shadow-deep: 0 24px 60px rgba(0,0,0,0.12), 0 8px 20px rgba(0,0,0,0.08);
+      --shadow-spine: inset 24px 0 28px -22px rgba(0,0,0,0.12), inset -24px 0 28px -22px rgba(0,0,0,0.12);
+    }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html, body {
@@ -59,7 +79,7 @@
       align-items: center;
       padding: 0 1.25rem;
       z-index: 50;
-      background: linear-gradient(to bottom, oklch(0.16 0.014 250 / 0.92), oklch(0.16 0.014 250 / 0.7));
+      background: linear-gradient(to bottom, oklch(from var(--bg) l c h / 0.92), oklch(from var(--bg) l c h / 0.7));
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
@@ -71,7 +91,7 @@
       transition: color 150ms, background 150ms;
       justify-self: start;
     }
-    .back-link:hover { color: var(--accent); background: oklch(0.24 0.018 250); }
+    .back-link:hover { color: var(--accent); background: var(--surface-2, var(--paper-2)); }
     .back-link .arrow { font-family: 'JetBrains Mono', monospace; opacity: 0.6; }
 
     .search-wrap {
@@ -80,7 +100,7 @@
     }
     #search-input {
       width: 100%;
-      background: oklch(0.22 0.018 250 / 0.6);
+      background: oklch(from var(--paper) l c h / 0.6);
       border: 1px solid var(--border);
       border-radius: var(--r-pill);
       color: var(--ink);
@@ -91,13 +111,13 @@
       transition: border-color 150ms, background 150ms;
     }
     #search-input::placeholder { color: var(--ink-muted); }
-    #search-input:focus { border-color: var(--accent); background: oklch(0.20 0.016 250); }
+    #search-input:focus { border-color: var(--accent); background: var(--bg-2); }
 
     #search-results {
       list-style: none;
       position: absolute; top: calc(100% + 0.4rem); left: 0; right: 0;
       max-height: 60vh; overflow-y: auto;
-      background: oklch(0.20 0.016 250 / 0.96);
+      background: oklch(from var(--bg-2) l c h / 0.96);
       border: 1px solid var(--border);
       border-radius: var(--r-md);
       box-shadow: var(--shadow-deep);
@@ -110,7 +130,7 @@
       padding: 0.55rem 0.85rem; color: var(--ink-2);
       font-size: 0.88rem;
     }
-    #search-results li a:hover { background: oklch(0.24 0.018 250); color: var(--accent); }
+    #search-results li a:hover { background: var(--paper-2); color: var(--accent); }
     #search-results .sr-date {
       font-family: 'JetBrains Mono', monospace; font-size: 0.74rem;
       color: var(--ink-muted); flex-shrink: 0;
@@ -118,16 +138,21 @@
 
     .topbar-right {
       justify-self: end;
-      font-size: 0.74rem; color: var(--ink-muted);
-      font-family: 'JetBrains Mono', monospace;
+      display: flex; align-items: center; gap: 0.5rem;
     }
-    .topbar-right .brand {
-      background: var(--grad-mark);
-      -webkit-background-clip: text; background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-weight: 700; font-size: 0.85rem;
-      letter-spacing: -0.02em;
+    .theme-toggle {
+      background: var(--paper);
+      border: 1px solid var(--border);
+      color: var(--ink-2);
+      border-radius: var(--r-pill);
+      width: 34px; height: 34px;
+      cursor: pointer;
+      display: grid; place-items: center;
+      font-size: 1.05rem; line-height: 1;
+      font-family: inherit;
+      transition: border-color 150ms, color 150ms, background 150ms;
     }
+    .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
 
     /* ── book stage ── */
     .stage {
@@ -546,7 +571,9 @@
       <ul id="search-results"></ul>
     </div>
     <div class="topbar-right">
-      <span class="brand">AI Tech</span>
+      <button class="theme-toggle" data-theme-toggle aria-label="테마 전환">
+        <span class="theme-icon">☾</span>
+      </button>
     </div>
   </header>
 
@@ -966,6 +993,7 @@
     }
     document.addEventListener('DOMContentLoaded', () => {
       try { initSearch(); } catch (e) { console.error('initSearch', e); }
+      if (window.faviconSpinner) window.faviconSpinner.start();
       fetch(SEARCH_JSON)
         .then(r => {
           if (!r.ok) throw new Error('HTTP ' + r.status);
@@ -992,6 +1020,9 @@
         .catch(e => {
           console.error('search.json fetch 실패', e);
           showError('search.json 로드 실패: ' + e.message);
+        })
+        .finally(() => {
+          if (window.faviconSpinner) window.faviconSpinner.stop();
         });
       if (window.lucide && window.lucide.createIcons) {
         try { window.lucide.createIcons(); } catch (_) {}
