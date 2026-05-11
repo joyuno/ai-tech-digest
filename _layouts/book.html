@@ -875,7 +875,7 @@
         return;
       }
       const last8 = allWeeks.slice(-8);
-      const trendKws = scored.slice(0, 5).map(s => s.kw);
+      const trendKws = scored.slice(0, 10).map(s => s.kw);
       if (!trendKws.length) return;
 
       const PALETTE = [
@@ -884,6 +884,11 @@
         { line: 'oklch(0.74 0.14 80)',  fill: 'oklch(0.74 0.14 80 / 0.12)'  },  // 옐로
         { line: 'oklch(0.72 0.14 145)', fill: 'oklch(0.72 0.14 145 / 0.12)' },  // 그린
         { line: 'oklch(0.72 0.14 320)', fill: 'oklch(0.72 0.14 320 / 0.12)' },  // 핑크
+        { line: 'oklch(0.70 0.18 25)',  fill: 'oklch(0.70 0.18 25 / 0.12)'  },  // 빨강
+        { line: 'oklch(0.74 0.16 50)',  fill: 'oklch(0.74 0.16 50 / 0.12)'  },  // 오렌지
+        { line: 'oklch(0.74 0.16 120)', fill: 'oklch(0.74 0.16 120 / 0.12)' },  // 라임
+        { line: 'oklch(0.70 0.14 295)', fill: 'oklch(0.70 0.14 295 / 0.12)' },  // 보라
+        { line: 'oklch(0.74 0.10 230)', fill: 'oklch(0.74 0.10 230 / 0.12)' },  // 청회
       ];
 
       // 라이트/다크 모드에 따라 차트 색 동적 — CSS 변수에서 읽어옴
