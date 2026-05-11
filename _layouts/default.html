@@ -121,17 +121,16 @@
     }
     .back-link {
       justify-self: start;
-      background: var(--surface);
-      border: 1px solid var(--border);
       color: var(--text);
-      border-radius: var(--r-pill);
-      width: 34px; height: 34px;
+      padding: 0.35rem;
       display: grid; place-items: center;
       cursor: pointer;
-      transition: border-color var(--m-fast) var(--ease-std), color var(--m-fast) var(--ease-std);
+      transition: color var(--m-fast) var(--ease-std);
+      background: transparent;
+      border: 0;
     }
-    .back-link:hover { border-color: var(--accent); color: var(--accent); }
-    .back-link i[data-lucide] { width: 1.05rem; height: 1.05rem; }
+    .back-link:hover { color: var(--accent); }
+    .back-link i[data-lucide] { width: 1.3rem; height: 1.3rem; }
 
     .search-wrap { width: min(60vw, 720px); position: relative; }
     #search-input {
@@ -188,11 +187,11 @@
     }
     .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
 
-    /* main */
+    /* main — topbar 와 시각적 분리 위해 충분한 top padding */
     .main-content {
       max-width: 880px;
       margin: 0 auto;
-      padding: 2.5rem 1.5rem 4rem;
+      padding: 4rem 1.5rem 4rem;
     }
 
     /* page hero */
@@ -456,7 +455,7 @@
     @media (max-width: 720px) {
       .topbar { grid-template-columns: auto 1fr auto; gap: 0.5rem; padding: 0 0.85rem; }
       .search-wrap { width: 100%; }
-      .main-content { padding: 1.5rem 1rem 2.5rem; }
+      .main-content { padding: 2.5rem 1rem 2.5rem; }
       .page-hero h1 { font-size: 1.4rem; }
       .post-list .pl-date { width: 4.5rem; font-size: 0.72rem; }
       .post-list .pl-title { font-size: 0.88rem; }

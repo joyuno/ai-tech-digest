@@ -92,17 +92,16 @@
     }
     .back-link {
       justify-self: start;
-      background: var(--paper);
-      border: 1px solid var(--border);
       color: var(--ink-2);
-      border-radius: var(--r-pill);
-      width: 34px; height: 34px;
+      padding: 0.35rem;
       display: grid; place-items: center;
       cursor: pointer;
-      transition: border-color 150ms, color 150ms, background 150ms;
+      transition: color 150ms;
+      background: transparent;
+      border: 0;
     }
-    .back-link:hover { border-color: var(--accent); color: var(--accent); }
-    .back-link i[data-lucide] { width: 1.05rem; height: 1.05rem; }
+    .back-link:hover { color: var(--accent); }
+    .back-link i[data-lucide] { width: 1.3rem; height: 1.3rem; }
 
     .search-wrap {
       width: min(60vw, 720px);
@@ -168,7 +167,7 @@
     .stage {
       min-height: 100vh;
       display: grid; place-items: center;
-      padding: calc(var(--topbar-h) + 1rem) 1.5rem 2rem;
+      padding: calc(var(--topbar-h) + 2rem) 1.5rem 2rem;
       position: relative;
     }
     .stage-title {
@@ -445,38 +444,39 @@
       gap: 1.5rem;
     }
     .tm-card {
-      background: oklch(0.20 0.016 250 / 0.65);
+      background: oklch(from var(--paper) l c h / 0.92);
       border: 1px solid var(--border);
       border-radius: var(--r-md);
-      padding: 1.25rem 1.4rem;
+      padding: 1.5rem 1.6rem;
     }
     .tm-card-title {
-      font-size: 0.78rem;
-      letter-spacing: 0.15em; text-transform: uppercase;
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
       color: var(--ink);
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.35rem;
     }
     .tm-card-sub {
-      font-size: 0.74rem; color: var(--ink-muted);
+      font-size: 0.85rem; color: var(--ink-muted);
       margin-bottom: 1rem;
       line-height: 1.5;
     }
-    #tm-hot { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+    #tm-hot { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.55rem; }
     .tm-hot-item {
       display: grid;
       grid-template-columns: 1fr auto;
       column-gap: 0.85rem;
-      row-gap: 0.15rem;
+      row-gap: 0.18rem;
       align-items: baseline;
-      padding: 0.55rem 0.75rem;
-      background: oklch(0.24 0.018 250 / 0.6);
-      border: 1px solid oklch(0.32 0.020 250 / 0.5);
+      padding: 0.7rem 0.9rem;
+      background: oklch(from var(--paper-2) l c h / 0.7);
+      border: 1px solid var(--border);
       border-radius: var(--r-md);
-      font-size: 0.88rem;
+      font-size: 1rem;
     }
     .tm-hot-item .tm-kw {
       color: var(--accent);
-      font-weight: 600;
+      font-weight: 700;
       overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
     }
     .tm-hot-item .tm-count {
@@ -485,7 +485,7 @@
       font-variant-numeric: tabular-nums;
     }
     .tm-hot-item .tm-delta {
-      font-size: 0.7rem;
+      font-size: 0.78rem;
       color: var(--ink-muted);
       grid-column: 1 / -1;
     }
@@ -886,6 +886,15 @@
         { line: 'oklch(0.72 0.14 320)', fill: 'oklch(0.72 0.14 320 / 0.12)' },  // 핑크
       ];
 
+      // 라이트/다크 모드에 따라 차트 색 동적 — CSS 변수에서 읽어옴
+      const cs = getComputedStyle(document.documentElement);
+      const colInk      = cs.getPropertyValue('--ink').trim()       || '#222';
+      const colInk2     = cs.getPropertyValue('--ink-2').trim()     || '#444';
+      const colInkMuted = cs.getPropertyValue('--ink-muted').trim() || '#888';
+      const colBg2      = cs.getPropertyValue('--bg-2').trim()      || '#fff';
+      const colBorder   = cs.getPropertyValue('--border').trim()    || '#ddd';
+      const gridCol     = 'oklch(from ' + colBorder + ' l c h / 0.35)';
+
       new Chart(canvas, {
         type: 'line',
         data: {
@@ -910,16 +919,16 @@
             legend: {
               position: 'top',
               labels: {
-                color: 'oklch(0.78 0.012 240)',
+                color: colInk2,
                 font: { family: "'Pretendard Variable', Pretendard, sans-serif", size: 12 },
                 boxWidth: 10, boxHeight: 10, padding: 12,
               },
             },
             tooltip: {
-              backgroundColor: 'oklch(0.20 0.016 250 / 0.95)',
-              titleColor: 'oklch(0.92 0.005 240)',
-              bodyColor: 'oklch(0.85 0.012 240)',
-              borderColor: 'oklch(0.32 0.020 250)',
+              backgroundColor: colBg2,
+              titleColor: colInk,
+              bodyColor: colInk2,
+              borderColor: colBorder,
               borderWidth: 1,
               titleFont: { family: "'Pretendard Variable', Pretendard, sans-serif" },
               bodyFont: { family: "'Pretendard Variable', Pretendard, sans-serif" },
@@ -927,13 +936,13 @@
           },
           scales: {
             x: {
-              ticks: { color: 'oklch(0.60 0.015 240)', maxRotation: 0, autoSkip: true, maxTicksLimit: 10 },
-              grid: { color: 'oklch(0.32 0.020 250 / 0.3)' },
+              ticks: { color: colInkMuted, maxRotation: 0, autoSkip: true, maxTicksLimit: 10 },
+              grid: { color: gridCol },
             },
             y: {
               beginAtZero: true,
-              ticks: { precision: 0, color: 'oklch(0.60 0.015 240)' },
-              grid: { color: 'oklch(0.32 0.020 250 / 0.3)' },
+              ticks: { precision: 0, color: colInkMuted },
+              grid: { color: gridCol },
             },
           },
         },
