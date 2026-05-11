@@ -999,7 +999,6 @@
     }
     document.addEventListener('DOMContentLoaded', () => {
       try { initSearch(); } catch (e) { console.error('initSearch', e); }
-      if (window.faviconSpinner) window.faviconSpinner.start();
       fetch(SEARCH_JSON)
         .then(r => {
           if (!r.ok) throw new Error('HTTP ' + r.status);
@@ -1026,9 +1025,6 @@
         .catch(e => {
           console.error('search.json fetch 실패', e);
           showError('search.json 로드 실패: ' + e.message);
-        })
-        .finally(() => {
-          if (window.faviconSpinner) window.faviconSpinner.stop();
         });
       if (window.lucide && window.lucide.createIcons) {
         try { window.lucide.createIcons(); } catch (_) {}

@@ -148,22 +148,6 @@
     .nav a.active { background: var(--accent-bg); color: var(--accent); }
     .nav a .arrow { font-family: 'JetBrains Mono', monospace; opacity: 0.5; font-size: 0.85em; }
 
-    .sidebar-footer { margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--border); }
-    .theme-toggle {
-      background: var(--surface-2);
-      border: 1px solid var(--border);
-      color: var(--text);
-      border-radius: var(--r-sm);
-      padding: 0.45rem 0.7rem;
-      cursor: pointer;
-      display: flex; align-items: center; gap: 0.45rem;
-      font-size: 0.85rem; font-family: inherit;
-      width: 100%;
-      transition: border-color var(--m-fast) var(--ease-std), color var(--m-fast) var(--ease-std);
-    }
-    .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
-    .theme-toggle .theme-icon { font-size: 1.05rem; line-height: 1; }
-
     /* main */
     #main-wrapper {
       margin-left: var(--sidebar-w);
@@ -481,13 +465,6 @@
         <span>블로그로 돌아가기</span><span class="arrow">→</span>
       </a>
     </nav>
-
-    <div class="sidebar-footer">
-      <button class="theme-toggle" data-theme-toggle aria-label="테마 전환">
-        <span class="theme-icon">☾</span>
-        <span class="theme-label">테마</span>
-      </button>
-    </div>
   </aside>
 
   <div id="main-wrapper">
