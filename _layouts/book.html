@@ -202,11 +202,41 @@
     .page-img {
       width: 100%; height: 100%;
       object-fit: contain;
-      object-position: center top;
+      object-position: center;
       display: block;
       background: #ffffff;  /* 순백 — figure 가장 가독성 좋게 */
-      padding: 1rem 1rem 4rem;            /* 사방 여백, 아래는 meta 공간 */
+      padding: 0.5rem 0.5rem 3.25rem;     /* 사방 최소 여백, 아래는 meta 그라디언트 공간 */
     }
+    /* 동적 사이징 — 이미지 종횡비에 따라 페이지를 펼치거나 좁힘.
+       wide-img: landscape figure 가 책 페이지 한쪽에서는 25-30% 면적만 차지하니까,
+       오른쪽 페이지에 wide 이미지가 오면 spread 전체에 펼쳐 90%+ 면적 사용. */
+    .page.right.wide-img {
+      overflow: visible;
+      z-index: 6;
+    }
+    .page.right.wide-img .page-img {
+      position: absolute;
+      top: 0.5rem;
+      bottom: 3.5rem;
+      left: calc(-100% + 1rem);   /* 왼쪽 페이지 영역까지 침범 */
+      right: 0.5rem;
+      width: auto;
+      height: auto;
+      max-width: none;
+      max-height: none;
+      padding: 0;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+    }
+    .page.right.wide-img .page-meta {
+      left: calc(-100% + 1rem);
+      z-index: 7;
+      border-radius: 0 0 6px 6px;
+    }
+    /* spread 전체로 펼쳐진 wide 이미지가 왼쪽 페이지를 가리니, 왼쪽은 어둡게 처리해 컨텍스트 임을 표시 */
+    .spread.has-wide-img .page.left { filter: brightness(0.35); }
+    /* tall-img: portrait figure — padding 더 축소해 세로 면적 최대화 */
+    .page.tall-img .page-img { padding: 0.25rem 0.5rem 3rem; }
     .page-empty {
       width: 100%; height: 100%;
       display: grid; place-items: center;
@@ -649,6 +679,24 @@
       const renderPage = (target, p) => {
         target.innerHTML = pageHtml(p);
         target.dataset.url = p && p.url ? p.url : '';
+        // aspect 기반 동적 클래스 — wide-img / tall-img 리셋 후 이미지 로드되면 재할당
+        target.classList.remove('wide-img', 'tall-img');
+        const spread = target.closest('.spread');
+        if (spread && target.classList.contains('right')) spread.classList.remove('has-wide-img');
+        const img = target.querySelector('img.page-img');
+        if (!img) return;
+        const apply = () => {
+          if (!img.naturalWidth || !img.naturalHeight) return;
+          const aspect = img.naturalWidth / img.naturalHeight;
+          if (aspect > 1.4) {
+            target.classList.add('wide-img');
+            if (spread && target.classList.contains('right')) spread.classList.add('has-wide-img');
+          } else if (aspect < 0.75) {
+            target.classList.add('tall-img');
+          }
+        };
+        if (img.complete && img.naturalWidth) apply();
+        else img.addEventListener('load', apply, { once: true });
       };
 
       const refresh = () => {
