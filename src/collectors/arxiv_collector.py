@@ -6,6 +6,7 @@ import time
 import requests
 from datetime import datetime, timedelta
 from typing import List, Dict, Optional
+from urllib.parse import urljoin
 
 # venue tier 매핑 — abstract / paper meta 의 venue 키워드
 TIER1_VENUES = (
@@ -36,26 +37,39 @@ def _classify_venue(text: str) -> str:
 
 GH_REPO_RE = re.compile(r"github\.com/([\w.-]+/[\w.-]+?)(?=[\s)\],.;]|$)", re.IGNORECASE)
 
-# ar5iv (LaTeX→HTML) 의 첫 figure — assets/x{N}.{png|jpg} 가 figure 1 = 보통 architecture
-AR5IV_FIG_RE = re.compile(
-    r'<img[^>]+src="(/html/[\d\.]+v?\d*/assets/x\d+\.(?:png|jpg))"',
-    re.IGNORECASE,
-)
+
+# arxiv 공식 HTML 의 <figure> 순회 — 디지스트 썸네일용 first reasonable figure (architecture 보장 X)
+FIGURE_RE = re.compile(r"<figure\b[^>]*>(.*?)</figure>", re.IGNORECASE | re.DOTALL)
+IMG_SRC_RE = re.compile(r'<img[^>]+src="([^"]+)"', re.IGNORECASE)
+MAX_FIGURE_BYTES = 3 * 1024 * 1024  # 3 MB — Jekyll 페이지 로딩 보호
 
 
-def _fetch_ar5iv_figure(arxiv_id: str, timeout: int = 8):
-    """arxiv 논문의 figure 1 (architecture diagram) URL 반환. 못 찾으면 None."""
+def _fetch_arxiv_html_figure(arxiv_id: str, timeout: int = 8):
+    """arxiv 공식 HTML 에서 3MB 이하 첫 figure 이미지 절대 URL 반환. 못 찾으면 None.
+
+    architecture diagram 을 보장하지 않음 — 단순히 디지스트 썸네일용으로 적정 크기인
+    첫 figure 를 채택한다.
+    """
     if not arxiv_id:
         return None
-    url = f"https://ar5iv.labs.arxiv.org/html/{arxiv_id}"
+    base_url = f"https://arxiv.org/html/{arxiv_id}"
     try:
-        r = requests.get(url, timeout=timeout, headers={"User-Agent": "Mozilla/5.0"})
+        r = requests.get(base_url, timeout=timeout, headers={"User-Agent": "Mozilla/5.0"}, allow_redirects=True)
         if r.status_code != 200:
             return None
-        m = AR5IV_FIG_RE.search(r.text)
-        if not m:
-            return None
-        return "https://ar5iv.labs.arxiv.org" + m.group(1)
+        for fig_match in FIGURE_RE.finditer(r.text):
+            img_match = IMG_SRC_RE.search(fig_match.group(1))
+            if not img_match:
+                continue
+            abs_url = urljoin(r.url, img_match.group(1))
+            try:
+                head = requests.head(abs_url, timeout=timeout, headers={"User-Agent": "Mozilla/5.0"}, allow_redirects=True)
+                size = int(head.headers.get("Content-Length", 0))
+            except (requests.RequestException, ValueError):
+                continue
+            if 0 < size <= MAX_FIGURE_BYTES:
+                return abs_url
+        return None
     except requests.RequestException:
         return None
 
@@ -131,8 +145,6 @@ class ArxivCollector:
                 summary = (paper.get("summary") or "").replace("\n", " ").strip()[:500]
                 title = (paper.get("title") or "").strip()
                 upvotes = int(paper.get("upvotes") or 0)
-                # HF Daily Papers 이미 제공하는 풍부한 메타 — PDF figure 추출 불필요
-                thumbnail = paper_data.get("thumbnail") or ""
                 ai_keywords = paper.get("ai_keywords") or []
                 ai_summary = paper.get("ai_summary") or ""
                 num_comments = int(paper_data.get("numComments") or 0)
@@ -148,9 +160,6 @@ class ArxivCollector:
                     "hf_upvotes": upvotes,           # scoring.py 호환
                     "source": "arxiv",
                 }
-                if thumbnail:
-                    item["image_url"] = thumbnail
-                    item["image_source"] = "hf_daily"
                 if ai_keywords:
                     item["ai_keywords"] = list(ai_keywords)[:10]
                 if ai_summary:
@@ -203,14 +212,13 @@ class ArxivCollector:
             if stars is not None:
                 item["github_stars"] = stars
 
-        # ar5iv figure (architecture diagram) — 있으면 image_url 덮어씀
-        # priority: ar5iv figure > HF first-page thumbnail > 없음
+        # arxiv 공식 HTML 의 첫 적정 크기 figure 를 썸네일로 — 못 찾으면 이미지 없이 발행
         arxiv_id = paper.get("id", "")
         if arxiv_id:
-            fig = _fetch_ar5iv_figure(arxiv_id)
+            fig = _fetch_arxiv_html_figure(arxiv_id)
             if fig:
                 item["image_url"] = fig
-                item["image_source"] = "ar5iv_fig"
+                item["image_source"] = "arxiv_html_fig"
 
     def _fallback_collect(self) -> List[Dict]:
         try:

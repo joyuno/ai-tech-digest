@@ -215,8 +215,9 @@ def select_representative(
 ) -> Optional[Dict[str, Any]]:
     """그날의 대표 항목 + 모든 소스 점수.
 
-    각 소스 안에서 첫 신규 항목(없으면 첫 항목)을 그 소스의 대표로 잡고 점수 매김.
-    EXCLUDED_FROM_REPRESENTATIVE 의 source 는 후보에서 빠지지만 본문 노출은 유지.
+    각 소스 안에서 썸네일(image_url) 보유한 첫 신규 항목(없으면 첫 항목)을 대표 후보로 잡는다.
+    썸네일 없는 항목은 대표 후보에서 제외 — 본문 노출은 그대로 유지.
+    EXCLUDED_FROM_REPRESENTATIVE 의 source 도 후보에서 빠지지만 본문 노출은 유지.
     """
     seen_titles = seen_titles or set()
     by_source = []
@@ -225,9 +226,12 @@ def select_representative(
             continue
         if source_id in EXCLUDED_FROM_REPRESENTATIVE:
             continue
+        items_with_image = [it for it in items if it.get("image_url")]
+        if not items_with_image:
+            continue
         rep = next(
-            (it for it in items if (it.get("title") or "").strip() not in seen_titles),
-            items[0],
+            (it for it in items_with_image if (it.get("title") or "").strip() not in seen_titles),
+            items_with_image[0],
         )
         s = score_item(source_id, rep, rank=0, seen_titles=seen_titles)
         by_source.append({"source_id": source_id, "score": s, "item": rep})
