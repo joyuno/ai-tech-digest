@@ -42,15 +42,13 @@
       const img = new Image();
       img.onload = function () { resolve(img); };
       img.onerror = function () {
-        // fallback: 인라인 SVG 데이터 URL
+        // fallback: 인라인 SVG 데이터 URL — PNG 없을 때 폴백
         const svg = new Image();
         svg.onload = function () { resolve(svg); };
         svg.src = 'data:image/svg+xml;utf8,' + encodeURIComponent(CAT_FALLBACK_SVG);
       };
-      // 사용자가 직접 둘 수 있도록 외부 PNG 경로 우선 시도
-      // Jekyll baseurl 을 알 수 없으므로 절대 경로 + 폴백 SVG 로 처리
-      const base = (window.SITE_BASEURL || '');
-      img.src = base + '/assets/favicon/oiia-cat.png';
+      // 레이아웃이 Jekyll relative_url 적용된 경로를 inline 으로 미리 주입한다
+      img.src = window.OIIA_CAT_URL || '/assets/favicon/oiia-cat.png';
     });
   }
 
