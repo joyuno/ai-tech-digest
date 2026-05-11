@@ -281,21 +281,27 @@
       transition: box-shadow var(--m-std) var(--ease-std), border-color var(--m-fast) var(--ease-std), transform var(--m-std) var(--ease-std);
       overflow: hidden;
     }
-    /* thumbnail (collector enrichment 의 README 첫 이미지) */
+    /* thumbnail — arxiv figure / github README 이미지.
+       비율 그대로 보여줘야 architecture 가 보임. cover crop / 220px 강제 제한 X */
     .post-content .digest-thumb {
       margin: -1.1rem -1.2rem 0.85rem;
-      max-height: 220px;
-      overflow: hidden;
-      background: var(--surface-2);
+      background: #ffffff;       /* 순백 — figure 가독성용 */
       border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      min-height: 140px;          /* 너무 납작해지지 않게 */
+      overflow: hidden;
     }
     .post-content .digest-thumb img {
-      width: 100%;
-      height: 100%;
-      max-height: 220px;
-      object-fit: cover;
-      object-position: center;
       display: block;
+      width: auto;
+      max-width: 100%;
+      height: auto;
+      max-height: 560px;          /* 매우 tall 한 이미지만 캡, 보통은 자연 비율 */
+      object-fit: contain;
+    }
+    @media (max-width: 720px) {
+      .post-content .digest-thumb { min-height: 100px; }
+      .post-content .digest-thumb img { max-height: 380px; }
     }
     .post-content .digest-item:hover {
       border-color: var(--border-strong);
