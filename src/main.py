@@ -195,7 +195,28 @@ def main():
             api_key=os.environ.get("OPENROUTER_API_KEY"),
             model=summary_model,
         )
-        summary = summarizer.summarize(classified_data)
+
+        # JekyllPublisher 를 먼저 만들어서 (a) 최근 N일 대표 title 을 가져와
+        # 중복 페널티(scoring.seen_titles) 에 먹이고, (b) 마지막 publish 단계에서
+        # 같은 인스턴스를 재사용한다. 토큰 없으면 페널티 미적용으로 진행.
+        gh_token = os.environ.get("GH_PAT")
+        jekyll = None
+        seen_titles = set()
+        if gh_token:
+            jekyll_config = sources_config.get("output", {}).get("jekyll", {})
+            jekyll = JekyllPublisher(
+                gh_token=gh_token,
+                repo=jekyll_config.get("repo", "joyuno/ai-tech-digest"),
+                branch=jekyll_config.get("branch", "gh-pages"),
+            )
+            try:
+                seen_titles = jekyll.fetch_recent_daily_titles(days=14)
+                if seen_titles:
+                    print(f"   📜 최근 14일 대표 {len(seen_titles)}개 로드 — 중복 페널티 활성")
+            except Exception as e:
+                print(f"   ⚠️ 최근 대표 로드 실패 ({e}) — 페널티 미적용 진행")
+
+        summary = summarizer.summarize(classified_data, seen_titles=seen_titles)
         summary["top_keywords"] = top_keywords
 
         # 요약 결과 저장
@@ -225,14 +246,7 @@ def main():
         print("📝 Jekyll 블로그 포스팅")
         print("=" * 60)
 
-        gh_token = os.environ.get("GH_PAT")
-        if gh_token:
-            jekyll_config = sources_config.get("output", {}).get("jekyll", {})
-            jekyll = JekyllPublisher(
-                gh_token=gh_token,
-                repo=jekyll_config.get("repo", "joyuno/ai-tech-digest"),
-                branch=jekyll_config.get("branch", "gh-pages")
-            )
+        if jekyll:
             if jekyll.publish(summary):
                 print("   ✓ Jekyll 포스팅 성공")
             else:

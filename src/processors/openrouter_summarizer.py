@@ -13,7 +13,7 @@ import re
 import time
 import urllib.request
 import urllib.error
-from typing import Dict, List, Any
+from typing import Dict, List, Any, Optional
 from datetime import datetime
 
 from .scoring import select_representative
@@ -72,7 +72,11 @@ class OpenRouterSummarizer:
 
     # ---------- 외부 API ----------
 
-    def summarize(self, classified_data: Dict[str, List[Dict]]) -> Dict[str, Any]:
+    def summarize(
+        self,
+        classified_data: Dict[str, List[Dict]],
+        seen_titles: Optional[set] = None,
+    ) -> Dict[str, Any]:
         if not self.api_key:
             print("⚠️ OPENROUTER_API_KEY 미설정 — fallback (원문 유지)")
             return self._fallback(classified_data)
@@ -80,8 +84,9 @@ class OpenRouterSummarizer:
         summarized_data = self._summarize_per_source(classified_data)
         sources = self._format_sources(summarized_data)
 
-        # 점수화 → 그날의 대표 항목 (헤드라인 angle)
-        representative = select_representative(classified_data, seen_titles=set())
+        # 점수화 → 그날의 대표 항목 (헤드라인 angle).
+        # seen_titles 가 있으면 최근 며칠 대표였던 항목은 1순위에서 밀려나고 +new_bonus 도 못 받는다.
+        representative = select_representative(classified_data, seen_titles=seen_titles or set())
         if representative:
             print(
                 f"  🏆 대표 소스={representative['source_id']} "
