@@ -29,6 +29,7 @@ def _is_badge(url: str) -> bool:
         "deploy.workers.dev", "deploy.cf",
         "securityscorecards.dev", "snyk.io/test", "deps.dev",
         "scorecard.dev", "sonarcloud.io",
+        "skills.sh", "forthebadge.com", "img.icons8.com",
     )
     if any(h in u for h in bad_hosts):
         return True
@@ -36,6 +37,31 @@ def _is_badge(url: str) -> bool:
     if "/badge." in u or "/button." in u or "actions/workflows" in u:
         return True
     return False
+
+
+def _validate_image(url: str, timeout: int = 5) -> Optional[str]:
+    """이미지 URL 사후 검증: HEAD 200 + content-type image/* (svg 제외) + size ≥ 5KB.
+
+    Why: README 의 첫 img 가 GitLab uploads 같은 깨진 경로거나 SVG 배지인데도
+         _is_badge() 우회로 통과하는 경우, 빌드 시 거름.
+    """
+    try:
+        r = requests.head(url, allow_redirects=True, timeout=timeout)
+    except requests.RequestException:
+        return None
+    if r.status_code != 200:
+        return None
+    ct = r.headers.get("content-type", "").split(";")[0].strip().lower()
+    if not ct.startswith("image/") or ct == "image/svg+xml":
+        return None
+    try:
+        size = int(r.headers.get("content-length", "0"))
+    except ValueError:
+        size = 0
+    # content-length 없는 경우(OG 같은 동적 생성) 통과시키되, 명시된 5KB 미만은 거름
+    if 0 < size < 5000:
+        return None
+    return url
 
 
 def _resolve_relative(url: str, owner: str, repo: str, branch: str) -> str:
@@ -92,7 +118,10 @@ def _fetch_readme_image(repo_full_name: str, token: Optional[str], timeout: int 
             continue
         if _is_badge(url):
             continue
-        return _resolve_relative(url, owner, repo, branch)
+        resolved = _resolve_relative(url, owner, repo, branch)
+        validated = _validate_image(resolved)
+        if validated:
+            return validated
     return None
 
 
@@ -159,7 +188,21 @@ class GitHubTrendingCollector:
             item["image_url"] = img
             item["image_source"] = "readme"
             return
-        # 2순위: GitHub 자동 생성 OG image (모든 repo 에 100% 존재)
+        # 2순위: 일반 hero 파일 (logo/banner/hero) — 직접 시도
+        owner, repo = repo_full.split("/", 1)
+        for branch in ("main", "master"):
+            for fname in ("docs/logo.png", "docs/banner.png", "docs/hero.png",
+                          "assets/logo.png", "assets/banner.png", "assets/hero.png",
+                          "images/logo.png", "images/banner.png", "images/hero.png",
+                          "logo.png", "banner.png", "hero.png"):
+                url = f"https://raw.githubusercontent.com/{owner}/{repo}/{branch}/{fname}"
+                v = _validate_image(url)
+                if v:
+                    item["image_url"] = v
+                    item["image_source"] = f"hero_file"
+                    return
+
+        # 3순위: GitHub 자동 생성 OG image (모든 repo 에 100% 존재 — 텍스트 카드)
         item["image_url"] = f"https://opengraph.githubassets.com/auto/{repo_full}"
         item["image_source"] = "github_og"
 
