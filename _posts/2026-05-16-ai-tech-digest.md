@@ -9,7 +9,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 daily_source: "github_trending"
 daily_title: "anthropics/skills"
 daily_url: "https://github.com/anthropics/skills"
-daily_image: "https://skills.sh/b/anthropics/skills"
+daily_image: "https://opengraph.githubassets.com/auto/anthropics/skills"
 daily_keywords: []
 
 ---

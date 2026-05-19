@@ -9,7 +9,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 daily_source: "github_trending"
 daily_title: "BigBodyCobain/Shadowbroker"
 daily_url: "https://github.com/BigBodyCobain/Shadowbroker"
-daily_image: "https://raw.githubusercontent.com/BigBodyCobain/Shadowbroker/main/uploads/46f99d19fa141a2efba37feee9de8aab/Title.jpg"
+daily_image: "https://opengraph.githubassets.com/auto/BigBodyCobain/Shadowbroker"
 daily_keywords: []
 
 ---
