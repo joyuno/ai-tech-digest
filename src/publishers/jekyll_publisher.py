@@ -62,18 +62,98 @@ class JekyllPublisher:
         return ""
 
     def publish(self, summary: Dict[str, Any]) -> bool:
-        """Jekyll 포스트 발행"""
+        """Jekyll 포스트 발행 — daily_image self-host 후 글 commit"""
         if not self.gh_token:
             print("⚠️ GitHub 토큰 없음")
             return False
 
-        # 포스트 내용 생성
+        # 외부 daily_image 다운로드 → assets/og/ 에 commit + summary 의 URL 교체
+        # Why: opengraph.githubassets.com 등 외부 호스트가 429 / 다운되면 사이트 이미지가
+        #      동시에 깨짐. 모든 이미지를 repo 정적 자산으로 들고와 의존도 0.
+        self._self_host_image(summary)
+
+        # 포스트 내용 생성 (image_url 이 이미 로컬 경로로 교체된 상태)
         content = self._build_post(summary)
         date = summary.get("date", datetime.now().strftime("%Y-%m-%d"))
         filename = f"_posts/{date}-ai-tech-digest.md"
 
         # GitHub API로 파일 생성/업데이트
         return self._create_or_update_file(filename, content)
+
+    BASE_URL = "/ai-tech-digest"
+    _EXT_MAP = {
+        "image/png": ".png", "image/jpeg": ".jpg", "image/jpg": ".jpg",
+        "image/webp": ".webp", "image/gif": ".gif",
+    }
+
+    def _self_host_image(self, summary: Dict[str, Any]) -> None:
+        """summary.representative.item.image_url 이 외부 URL 이면 다운로드 후 commit.
+        성공 시 image_url 을 /ai-tech-digest/assets/og/{date}-{source}.{ext} 로 교체.
+        실패해도 raise X — 외부 URL 그대로 사용 (기존 동작 유지)."""
+        rep = (summary.get("representative") or {})
+        item = rep.get("item") or {}
+        url = (item.get("image_url") or "").strip()
+        if not url or url.startswith("/"):
+            return
+        if url.endswith(".svg") or "skills.sh" in url:
+            return
+        date = summary.get("date", datetime.now().strftime("%Y-%m-%d"))
+        src = (rep.get("source_id") or rep.get("source") or "unknown").replace("/", "-")
+
+        try:
+            r = requests.get(url, headers={
+                "User-Agent": "Mozilla/5.0 (compatible; ai-tech-digest-mirror/1.0)",
+                "Accept": "image/*",
+            }, timeout=20)
+            r.raise_for_status()
+        except Exception as e:
+            print(f"  ⚠️ self-host 다운로드 실패 ({url[:50]}): {e}")
+            return
+
+        ct = (r.headers.get("content-type") or "").split(";")[0].strip().lower()
+        if ct == "image/svg+xml" or (ct and not ct.startswith("image/")):
+            print(f"  ⚠️ self-host skip (non-image ct={ct})")
+            return
+
+        ext = self._EXT_MAP.get(ct, ".png")
+        asset_path = f"assets/og/{date}-{src}{ext}"
+        if not self._upload_binary(asset_path, r.content):
+            return
+
+        new_url = f"{self.BASE_URL}/{asset_path}"
+        item["image_url"] = new_url
+        print(f"  ✅ self-host: {asset_path} ({len(r.content)//1024}KB)")
+
+    def _upload_binary(self, path: str, data: bytes) -> bool:
+        """GitHub API 로 바이너리 파일 upload (Contents API). 기존 있으면 sha 같이 보내 update."""
+        url = f"{self.api_base}/{path}"
+        headers = {
+            "Authorization": f"token {self.gh_token}",
+            "Accept": "application/vnd.github.v3+json",
+        }
+        sha = None
+        try:
+            check = requests.get(url, headers=headers, params={"ref": self.branch}, timeout=15)
+            if check.status_code == 200:
+                sha = check.json().get("sha")
+        except Exception:
+            pass
+        body = {
+            "message": f"chore(og): self-host image {path}",
+            "content": base64.b64encode(data).decode("ascii"),
+            "branch": self.branch,
+        }
+        if sha:
+            body["sha"] = sha
+        try:
+            resp = requests.put(url, headers=headers, json=body, timeout=30)
+            if resp.status_code not in (200, 201):
+                print(f"  ⚠️ upload 실패 {resp.status_code}: {resp.text[:120]}")
+                return False
+            return True
+        except Exception as e:
+            print(f"  ⚠️ upload 예외: {e}")
+            return False
 
     def _build_post(self, summary: Dict[str, Any]) -> str:
         """Jekyll 포스트 생성"""
