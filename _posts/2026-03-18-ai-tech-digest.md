@@ -8,7 +8,7 @@ daily_source: "toss"
 daily_title: "Embracing the Software 3.0 Era"
 daily_url: "https://toss.tech/article/harness-for-team-productivity-eng"
 daily_keywords: ["LLM", "Agent", "Tool Use", "Eval", "Grounding", "Retrieval", "RAG", "Claude", "Claude Code", "LoRA"]
-daily_image: "https://static.toss.im/assets/tech-blog/og-image/techblog-og.png"
+daily_image: "/ai-tech-digest/assets/og/2026-03-18-toss.png"
 daily_image_kind: "og_image"
 ---
 

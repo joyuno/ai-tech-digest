@@ -8,7 +8,7 @@ daily_source: "arxiv"
 daily_title: "PixelSmile: Toward Fine-Grained Facial Expression Editing"
 daily_url: "https://arxiv.org/abs/2603.25728"
 daily_keywords: ["Eval", "Multimodal", "Agent", "LLM", "Prompt", "Vision", "Inference", "AI Agent", "Claude", "Claude Code"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2603.25728/assets/x1.png"
+daily_image: "/ai-tech-digest/assets/og/2026-03-28-arxiv.png"
 daily_image_kind: "ar5iv_fig"
 ---
 

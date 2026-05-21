@@ -8,7 +8,7 @@ daily_source: "arxiv"
 daily_title: "Sanity Checks for Sparse Autoencoders: Do SAEs Beat Random Baselines?"
 daily_url: "https://arxiv.org/abs/2602.14111"
 daily_keywords: ["Eval", "Multimodal", "LoRA", "Retrieval", "Agent", "LLM", "Inference", "Reasoning", "Alignment", "AI Agent"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2602.14111/assets/x1.png"
+daily_image: "/ai-tech-digest/assets/og/2026-02-19-arxiv.png"
 daily_image_kind: "ar5iv_fig"
 ---
 

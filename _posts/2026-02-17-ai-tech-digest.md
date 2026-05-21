@@ -8,7 +8,7 @@ daily_source: "arxiv"
 daily_title: "Less is Enough: Synthesizing Diverse Data in Feature Space of LLMs"
 daily_url: "https://arxiv.org/abs/2602.10388"
 daily_keywords: ["LLM", "RAG", "Retrieval", "Eval", "Prompt", "Multimodal", "Benchmark", "Claude", "Agent", "Transformer"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2602.10388/assets/x1.png"
+daily_image: "/ai-tech-digest/assets/og/2026-02-17-arxiv.png"
 daily_image_kind: "ar5iv_fig"
 ---
 

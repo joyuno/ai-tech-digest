@@ -8,7 +8,7 @@ daily_source: "toss"
 daily_title: "Metric Review, 실행을 이끌다"
 daily_url: "https://toss.tech/article/place-metric-review"
 daily_keywords: ["Vision", "Retrieval", "Eval", "Reasoning", "Agent", "LLM", "Prompt", "AI Agent", "RAG", "Guardrails"]
-daily_image: "https://static.toss.im/illusts-common/img-finance-analysis-cover-2.png"
+daily_image: "/ai-tech-digest/assets/og/2026-03-26-toss.png"
 daily_image_kind: "og_image"
 ---
 

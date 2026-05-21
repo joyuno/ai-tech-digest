@@ -8,7 +8,7 @@ daily_source: "arxiv"
 daily_title: "Heterogeneous Agent Collaborative Reinforcement Learning"
 daily_url: "https://arxiv.org/abs/2603.02604"
 daily_keywords: ["LLM", "Inference", "Agent", "Reasoning", "Prompt", "RAG", "AI Agent", "Eval", "MoE", "Orchestration"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2603.02604/assets/x1.png"
+daily_image: "/ai-tech-digest/assets/og/2026-03-07-arxiv.png"
 daily_image_kind: "ar5iv_fig"
 ---
 

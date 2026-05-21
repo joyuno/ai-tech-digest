@@ -8,7 +8,7 @@ daily_source: "toss"
 daily_title: "Why We Adopted Post-Quantum Cryptography a Decade Before Quantum Computers Arrive"
 daily_url: "https://toss.tech/article/post-quantum-cryptography-eng"
 daily_keywords: ["Agent", "LLM", "RAG", "Eval", "Claude", "LoRA", "Claude Code"]
-daily_image: "https://static.toss.im/3d/security-thumb.png"
+daily_image: "/ai-tech-digest/assets/og/2026-04-28-toss.png"
 daily_image_kind: "og_image"
 ---
 

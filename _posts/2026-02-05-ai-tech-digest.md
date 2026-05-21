@@ -8,7 +8,7 @@ daily_source: "huggingface"
 daily_title: "Nemotron ColEmbed V2: Raising the Bar for Multimodal Retrieval with ViDoRe V3’s Top Model"
 daily_url: "https://huggingface.co/blog/nvidia/nemotron-colembed-v2"
 daily_keywords: ["LLM", "Agent", "Chain-of-Thought", "Eval", "Multimodal", "Retrieval", "DeepSeek", "Claude", "Claude Code"]
-daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/blog/nvidia/nemotron-colembed-v2.png"
+daily_image: "/ai-tech-digest/assets/og/2026-02-05-huggingface.png"
 daily_image_kind: "og_image"
 ---
 

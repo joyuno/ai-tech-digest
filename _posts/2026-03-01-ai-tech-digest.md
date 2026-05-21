@@ -8,7 +8,7 @@ daily_source: "github_trending"
 daily_title: "moeru-ai/airi"
 daily_url: "https://github.com/moeru-ai/airi"
 daily_keywords: ["Multimodal", "LLM", "Agent", "Eval", "Retrieval", "MoE", "Vision", "Llama", "Claude", "Claude Code"]
-daily_image: "https://opengraph.githubassets.com/auto/moeru-ai/airi"
+daily_image: "/ai-tech-digest/assets/og/2026-03-01-github_trending.png"
 daily_image_kind: "github_og"
 ---
 

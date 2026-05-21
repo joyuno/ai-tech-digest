@@ -8,7 +8,7 @@ daily_source: "arxiv"
 daily_title: "Intern-S1-Pro: Scientific Multimodal Foundation Model at Trillion Scale"
 daily_url: "https://arxiv.org/abs/2603.25040"
 daily_keywords: ["Eval", "Multimodal", "Agent", "Transformer", "Prompt", "Vision", "Inference", "LLM"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2603.25040/assets/x1.png"
+daily_image: "/ai-tech-digest/assets/og/2026-03-29-arxiv.png"
 daily_image_kind: "ar5iv_fig"
 ---
 

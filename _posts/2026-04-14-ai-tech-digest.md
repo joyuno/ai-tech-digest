@@ -8,7 +8,7 @@ daily_source: "huggingface"
 daily_title: "VisionFoundry: Teaching VLMs Visual Perception with Synthetic Images"
 daily_url: "https://huggingface.co/papers/2604.09531"
 daily_keywords: ["LLM", "Chain-of-Thought", "AI Agent", "Eval", "RAG", "Prompt", "Vision", "Synthetic Data", "Fine-tuning", "Alignment"]
-daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2604.09531/gradient.png"
+daily_image: "/ai-tech-digest/assets/og/2026-04-14-huggingface.png"
 daily_image_kind: "og_image"
 ---
 

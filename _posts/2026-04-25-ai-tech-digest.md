@@ -8,7 +8,7 @@ daily_source: "huggingface"
 daily_title: "Seeing Fast and Slow: Learning the Flow of Time in Videos"
 daily_url: "https://huggingface.co/papers/2604.21931"
 daily_keywords: ["LLM", "RAG", "Eval", "LoRA", "Small Language Model", "Agent", "Multimodal", "Claude", "Claude Code"]
-daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2604.21931/gradient.png"
+daily_image: "/ai-tech-digest/assets/og/2026-04-25-huggingface.png"
 daily_image_kind: "og_image"
 ---
 

@@ -8,7 +8,7 @@ daily_source: "arxiv"
 daily_title: "SLA2: Sparse-Linear Attention with Learnable Routing and QAT"
 daily_url: "https://arxiv.org/abs/2602.12675"
 daily_keywords: ["Agent", "Eval", "Fine-tuning", "Multimodal", "Grounding", "Benchmark", "Llama", "AI Agent", "LoRA", "RAG"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2602.12675/assets/x1.png"
+daily_image: "/ai-tech-digest/assets/og/2026-02-22-arxiv.png"
 daily_image_kind: "ar5iv_fig"
 ---
 

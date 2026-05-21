@@ -8,7 +8,7 @@ daily_source: "arxiv"
 daily_title: "RationalRewards: Reasoning Rewards Scale Visual Generation Both Training and Test Time"
 daily_url: "https://arxiv.org/abs/2604.11626"
 daily_keywords: ["Reasoning", "Eval", "Prompt", "Multimodal", "Retrieval", "Agent", "RAG", "Inference", "Fine-tuning", "Alignment"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2604.11626/assets/x1.png"
+daily_image: "/ai-tech-digest/assets/og/2026-04-20-arxiv.png"
 daily_image_kind: "ar5iv_fig"
 ---
 

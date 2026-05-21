@@ -8,7 +8,7 @@ daily_source: "github_trending"
 daily_title: "TauricResearch/TradingAgents"
 daily_url: "https://github.com/TauricResearch/TradingAgents"
 daily_keywords: ["Reasoning", "LLM", "Eval", "Multimodal", "RAG", "Alignment", "Prompt", "Agent", "AI Agent", "Claude"]
-daily_image: "https://opengraph.githubassets.com/auto/TauricResearch/TradingAgents"
+daily_image: "/ai-tech-digest/assets/og/2026-03-23-github_trending.png"
 daily_image_kind: "github_og"
 ---
 

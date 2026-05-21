@@ -8,7 +8,7 @@ daily_source: "huggingface"
 daily_title: "Granite 4.0 1B Speech: Compact, Multilingual, and Built for the Edge"
 daily_url: "https://huggingface.co/blog/ibm-granite/granite-4-speech"
 daily_keywords: ["LLM", "Inference", "RAG", "AI Agent", "Eval", "DPO", "Retrieval", "Agent", "Gemini", "GPT"]
-daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/blog/ibm-granite/granite-4-speech.png"
+daily_image: "/ai-tech-digest/assets/og/2026-03-10-huggingface.png"
 daily_image_kind: "og_image"
 ---
 

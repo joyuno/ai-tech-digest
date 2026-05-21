@@ -8,7 +8,7 @@ daily_source: "arxiv"
 daily_title: "QuantaAlpha: An Evolutionary Framework for LLM-Driven Alpha Mining"
 daily_url: "https://arxiv.org/abs/2602.07085"
 daily_keywords: ["LLM", "Agent", "Multimodal", "Vision", "Benchmark", "Chain-of-Thought", "Prompt", "Transformer", "Retrieval", "Eval"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2602.07085/assets/x1.png"
+daily_image: "/ai-tech-digest/assets/og/2026-02-11-arxiv.png"
 daily_image_kind: "ar5iv_fig"
 ---
 

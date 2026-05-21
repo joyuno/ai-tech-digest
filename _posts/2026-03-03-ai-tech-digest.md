@@ -8,7 +8,7 @@ daily_source: "arxiv"
 daily_title: "MobilityBench: A Benchmark for Evaluating Route-Planning Agents in Real-World Mobility Scenarios"
 daily_url: "https://arxiv.org/abs/2602.22638"
 daily_keywords: ["Multimodal", "LLM", "Agent", "Eval", "AI Agent", "MoE", "Vision", "Llama", "Prompt Engineering", "Claude"]
-daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2602.22638.png"
+daily_image: "/ai-tech-digest/assets/og/2026-03-03-arxiv.png"
 daily_image_kind: "hf_first_page"
 ---
 

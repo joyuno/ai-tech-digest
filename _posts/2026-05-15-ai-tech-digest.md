@@ -9,7 +9,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 daily_source: "github_trending"
 daily_title: "K-Dense-AI/scientific-agent-skills"
 daily_url: "https://github.com/K-Dense-AI/scientific-agent-skills"
-daily_image: "https://opengraph.githubassets.com/auto/K-Dense-AI/scientific-agent-skills"
+daily_image: "/ai-tech-digest/assets/og/2026-05-15-github_trending.png"
 daily_keywords: []
 
 ---

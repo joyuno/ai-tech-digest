@@ -9,7 +9,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 daily_source: "github_trending"
 daily_title: "tinyhumansai/openhuman"
 daily_url: "https://github.com/tinyhumansai/openhuman"
-daily_image: "https://raw.githubusercontent.com/tinyhumansai/openhuman/main/gitbooks/.gitbook/assets/demo.png"
+daily_image: "/ai-tech-digest/assets/og/2026-05-13-github_trending.png"
 daily_keywords: []
 
 ---

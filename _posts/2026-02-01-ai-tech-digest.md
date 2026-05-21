@@ -8,7 +8,7 @@ daily_source: "arxiv"
 daily_title: "Everything in Its Place: Benchmarking Spatial Intelligence of Text-to-Image Models"
 daily_url: "https://arxiv.org/abs/2601.20354"
 daily_keywords: ["LLM", "Agent", "Reasoning", "Prompt", "MoE", "Vision", "Multimodal", "RAG", "Claude", "AI Agent"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2601.20354/assets/x1.png"
+daily_image: "/ai-tech-digest/assets/og/2026-02-01-arxiv.png"
 daily_image_kind: "ar5iv_fig"
 ---
 

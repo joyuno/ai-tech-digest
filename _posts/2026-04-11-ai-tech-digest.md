@@ -8,7 +8,7 @@ daily_source: "arxiv"
 daily_title: "Rethinking Generalization in Reasoning SFT: A Conditional Analysis on Optimization, Data, and Model Capability"
 daily_url: "https://arxiv.org/abs/2604.06628"
 daily_keywords: ["LLM", "Chain-of-Thought", "Agent", "Vision", "Alignment", "Prompt", "AI Agent", "Eval", "Multimodal", "RAG"]
-daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2604.06628.png"
+daily_image: "/ai-tech-digest/assets/og/2026-04-11-arxiv.png"
 daily_image_kind: "hf_first_page"
 ---
 

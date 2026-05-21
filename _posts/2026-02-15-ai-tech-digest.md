@@ -8,7 +8,7 @@ daily_source: "arxiv"
 daily_title: "Composition-RL: Compose Your Verifiable Prompts for Reinforcement Learning of Large Language Models"
 daily_url: "https://arxiv.org/abs/2602.12036"
 daily_keywords: ["LLM", "Alignment", "Agent", "Prompt", "Multimodal", "Distillation", "Audio", "Claude", "Eval", "Transformer"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2602.12036/assets/x1.png"
+daily_image: "/ai-tech-digest/assets/og/2026-02-15-arxiv.png"
 daily_image_kind: "ar5iv_fig"
 ---
 

@@ -8,7 +8,7 @@ daily_source: "toss"
 daily_title: "쓰기 쉬운 Toss Front SDK"
 daily_url: "https://toss.tech/article/toss-front-sdk"
 daily_keywords: ["Retrieval", "Eval", "RAG", "Audio", "MoE", "Vision", "Llama", "Agent", "Claude", "Claude Code"]
-daily_image: "https://static.toss.im/illusts/OG-thumbnail-sdk-front-card-pay.png"
+daily_image: "/ai-tech-digest/assets/og/2026-02-27-toss.png"
 daily_image_kind: "og_image"
 ---
 

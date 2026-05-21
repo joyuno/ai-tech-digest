@@ -8,7 +8,7 @@ daily_source: "arxiv"
 daily_title: "Spider-Sense: Intrinsic Risk Sensing for Efficient Agent Defense with Hierarchical Adaptive Screening"
 daily_url: "https://arxiv.org/abs/2602.05386"
 daily_keywords: ["LLM", "Tool Use", "Agent", "Eval", "Vision", "Long Context", "Multimodal", "Retrieval", "Benchmark"]
-daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2602.05386.png"
+daily_image: "/ai-tech-digest/assets/og/2026-02-08-arxiv.png"
 daily_image_kind: "hf_first_page"
 ---
 

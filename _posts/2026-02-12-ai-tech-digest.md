@@ -8,7 +8,7 @@ daily_source: "arxiv"
 daily_title: "OPUS: Towards Efficient and Principled Data Selection in Large Language Model Pre-training in Every Iteration"
 daily_url: "https://arxiv.org/abs/2602.05400"
 daily_keywords: ["Vision", "Agent", "LLM", "Transformer", "Multimodal", "Retrieval", "Eval", "Grounding", "Claude", "Claude Code"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2602.05400/assets/x1.png"
+daily_image: "/ai-tech-digest/assets/og/2026-02-12-arxiv.png"
 daily_image_kind: "ar5iv_fig"
 ---
 

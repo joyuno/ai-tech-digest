@@ -8,7 +8,7 @@ daily_source: "github_trending"
 daily_title: "luongnv89/claude-howto"
 daily_url: "https://github.com/luongnv89/claude-howto"
 daily_keywords: ["Eval", "Multimodal", "Agent", "Transformer", "Prompt", "Vision", "Inference", "AI Agent", "Claude", "Claude Code"]
-daily_image: "https://opengraph.githubassets.com/auto/luongnv89/claude-howto"
+daily_image: "/ai-tech-digest/assets/og/2026-03-30-github_trending.png"
 daily_image_kind: "github_og"
 ---
 

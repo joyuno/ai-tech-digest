@@ -8,7 +8,7 @@ daily_source: "arxiv"
 daily_title: "SQuTR: A Robustness Benchmark for Spoken Query to Text Retrieval under Acoustic Noise"
 daily_url: "https://arxiv.org/abs/2602.12783"
 daily_keywords: ["LLM", "RAG", "Retrieval", "Eval", "Multimodal", "LoRA", "Agent", "Claude", "Transformer"]
-daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2602.12783.png"
+daily_image: "/ai-tech-digest/assets/og/2026-02-18-arxiv.png"
 daily_image_kind: "hf_first_page"
 ---
 

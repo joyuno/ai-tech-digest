@@ -9,7 +9,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 daily_source: "github_trending"
 daily_title: "Imbad0202/academic-research-skills"
 daily_url: "https://github.com/Imbad0202/academic-research-skills"
-daily_image: "https://opengraph.githubassets.com/auto/Imbad0202/academic-research-skills"
+daily_image: "/ai-tech-digest/assets/og/2026-05-19-github_trending.png"
 daily_keywords: ["AI Coding"]
 
 ---

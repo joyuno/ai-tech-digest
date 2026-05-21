@@ -8,7 +8,7 @@ daily_source: "arxiv"
 daily_title: "DeepGen 1.0: A Lightweight Unified Multimodal Model for Advancing Image Generation and Editing"
 daily_url: "https://arxiv.org/abs/2602.12205"
 daily_keywords: ["LLM", "Alignment", "Agent", "Prompt", "Multimodal", "Distillation", "Vision", "Claude", "Eval", "Transformer"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2602.12205/assets/x1.png"
+daily_image: "/ai-tech-digest/assets/og/2026-02-16-arxiv.png"
 daily_image_kind: "ar5iv_fig"
 ---
 

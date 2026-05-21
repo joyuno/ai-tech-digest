@@ -8,7 +8,7 @@ daily_source: "arxiv"
 daily_title: "The Trinity of Consistency as a Defining Principle for General World Models"
 daily_url: "https://arxiv.org/abs/2602.23152"
 daily_keywords: ["Multimodal", "LLM", "Agent", "Eval", "Retrieval", "MoE", "Vision", "Llama", "RAG", "Claude"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2602.23152/assets/x1.png"
+daily_image: "/ai-tech-digest/assets/og/2026-02-28-arxiv.png"
 daily_image_kind: "ar5iv_fig"
 ---
 

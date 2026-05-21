@@ -8,7 +8,7 @@ daily_source: "arxiv"
 daily_title: "Out of Sight but Not Out of Mind: Hybrid Memory for Dynamic Video World Models"
 daily_url: "https://arxiv.org/abs/2603.25716"
 daily_keywords: ["Multimodal", "Agent", "Eval", "Prompt", "Transformer", "LLM", "Benchmark", "Vision", "Claude", "Claude Code"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2603.25716/assets/x1.png"
+daily_image: "/ai-tech-digest/assets/og/2026-03-31-arxiv.png"
 daily_image_kind: "ar5iv_fig"
 ---
 

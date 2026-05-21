@@ -8,7 +8,7 @@ daily_source: "toss"
 daily_title: "Layers of your time : 토스와 함께한 시간을 기념하기"
 daily_url: "https://toss.tech/article/layers-of-your-time"
 daily_keywords: ["Inference", "LLM", "Distillation", "Vision", "RAG", "Benchmark", "Eval", "LoRA", "Agent", "Claude"]
-daily_image: "https://static.toss.im/photos/nyears-goods.png"
+daily_image: "/ai-tech-digest/assets/og/2026-04-08-toss.png"
 daily_image_kind: "og_image"
 ---
 

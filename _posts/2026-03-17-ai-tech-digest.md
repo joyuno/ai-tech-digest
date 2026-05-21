@@ -8,7 +8,7 @@ daily_source: "arxiv"
 daily_title: "LMEB: Long-horizon Memory Embedding Benchmark"
 daily_url: "https://arxiv.org/abs/2603.12572"
 daily_keywords: ["RAG", "Eval", "Vision", "Benchmark", "Multimodal", "Tool Use", "Agent", "Fine-tuning", "Claude", "Claude Code"]
-daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.12572.png"
+daily_image: "/ai-tech-digest/assets/og/2026-03-17-arxiv.png"
 daily_image_kind: "hf_first_page"
 ---
 

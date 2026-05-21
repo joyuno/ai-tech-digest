@@ -8,7 +8,7 @@ daily_source: "arxiv"
 daily_title: "QuanBench+: A Unified Multi-Framework Benchmark for LLM-Based Quantum Code Generation"
 daily_url: "https://arxiv.org/abs/2604.08570"
 daily_keywords: ["LLM", "Eval", "RAG", "Transformer", "Hallucination", "Inference", "Multimodal", "Agent", "Claude Code", "Claude"]
-daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2604.08570.png"
+daily_image: "/ai-tech-digest/assets/og/2026-04-15-arxiv.png"
 daily_image_kind: "hf_first_page"
 ---
 

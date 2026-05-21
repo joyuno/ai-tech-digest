@@ -8,7 +8,7 @@ daily_source: "toss"
 daily_title: "Apache Flink + RocksDB 튜닝으로 광고 Frequency Capping 실시간 집계를 일주일까지 확장하기"
 daily_url: "https://toss.tech/article/flink-realtime-frequency-capping"
 daily_keywords: ["Agent", "Eval", "Audio", "LLM", "Reasoning", "LoRA", "Claude Code", "Claude", "AI Agent", "Workflow"]
-daily_image: "https://static.toss.im/assets/tech-blog/og-image/techblog-og.png"
+daily_image: "/ai-tech-digest/assets/og/2026-04-17-toss.png"
 daily_image_kind: "og_image"
 ---
 

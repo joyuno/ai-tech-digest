@@ -8,7 +8,7 @@ daily_source: "arxiv"
 daily_title: "CAR-bench: Evaluating the Consistency and Limit-Awareness of LLM Agents under Real-World Uncertainty"
 daily_url: "https://arxiv.org/abs/2601.22027"
 daily_keywords: ["LLM", "Tool Use", "Agent", "Eval", "Vision", "Long Context", "Multimodal", "Retrieval", "AI Agent"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2601.22027/assets/x1.png"
+daily_image: "/ai-tech-digest/assets/og/2026-02-07-arxiv.png"
 daily_image_kind: "ar5iv_fig"
 ---
 

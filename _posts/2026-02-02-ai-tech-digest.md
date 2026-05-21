@@ -8,7 +8,7 @@ daily_source: "huggingface"
 daily_title: "We Got Claude to Build CUDA Kernels and teach open models!"
 daily_url: "https://huggingface.co/blog/upskill"
 daily_keywords: ["LLM", "Fine-tuning", "Agent", "Reasoning", "Distillation", "Alignment", "RAG", "Prompt", "Llama", "Eval"]
-daily_image: "https://huggingface.co/blog/assets/upskill/thumbnail.png"
+daily_image: "/ai-tech-digest/assets/og/2026-02-02-huggingface.png"
 daily_image_kind: "og_image"
 ---
 

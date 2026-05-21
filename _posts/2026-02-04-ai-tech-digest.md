@@ -8,7 +8,7 @@ daily_source: "arxiv"
 daily_title: "Green-VLA: Staged Vision-Language-Action Model for Generalist Robots"
 daily_url: "https://arxiv.org/abs/2602.00919"
 daily_keywords: ["Multimodal", "Alignment", "RAG", "Agent", "Eval", "Vision", "LLM", "RLHF", "DeepSeek", "Claude"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2602.00919/assets/x1.png"
+daily_image: "/ai-tech-digest/assets/og/2026-02-04-arxiv.png"
 daily_image_kind: "ar5iv_fig"
 ---
 

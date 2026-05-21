@@ -8,7 +8,7 @@ daily_source: "arxiv"
 daily_title: "MemSkill: Learning and Evolving Memory Skills for Self-Evolving Agents"
 daily_url: "https://arxiv.org/abs/2602.02474"
 daily_keywords: ["LLM", "Tool Use", "Agent", "Eval", "Inference", "Multimodal", "Retrieval", "Benchmark", "Grounding"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2602.02474/assets/x1.png"
+daily_image: "/ai-tech-digest/assets/og/2026-02-09-arxiv.png"
 daily_image_kind: "ar5iv_fig"
 ---
 

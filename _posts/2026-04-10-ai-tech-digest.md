@@ -8,7 +8,7 @@ daily_source: "toss"
 daily_title: "하마터면 못생겨질 뻔했다 - 토스 프론트 2 제작기"
 daily_url: "https://toss.tech/article/toss_front"
 daily_keywords: ["Multimodal", "LLM", "RAG", "Agent", "Eval", "Vision", "Inference", "Claude Code", "Claude", "AI Coding"]
-daily_image: "https://static.toss.im/photos/tech_front.png"
+daily_image: "/ai-tech-digest/assets/og/2026-04-10-toss.png"
 daily_image_kind: "og_image"
 ---
 

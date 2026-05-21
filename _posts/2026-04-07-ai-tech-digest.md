@@ -8,7 +8,7 @@ daily_source: "arxiv"
 daily_title: "Self-Distilled RLVR"
 daily_url: "https://arxiv.org/abs/2604.03128"
 daily_keywords: ["LLM", "Distillation", "Eval", "Retrieval", "Prompt", "LoRA", "Agent", "Reasoning", "Chain-of-Thought", "Vision"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2604.03128/assets/x1.png"
+daily_image: "/ai-tech-digest/assets/og/2026-04-07-arxiv.png"
 daily_image_kind: "ar5iv_fig"
 ---
 

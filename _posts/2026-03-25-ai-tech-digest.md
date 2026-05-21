@@ -8,7 +8,7 @@ daily_source: "arxiv"
 daily_title: "Omni-WorldBench: Towards a Comprehensive Interaction-Centric Evaluation for World Models"
 daily_url: "https://arxiv.org/abs/2603.22212"
 daily_keywords: ["Alignment", "Eval", "Audio", "Inference", "MoE", "Agent", "Vision", "Retrieval", "Reasoning", "LLM"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2603.22212/assets/x1.png"
+daily_image: "/ai-tech-digest/assets/og/2026-03-25-arxiv.png"
 daily_image_kind: "ar5iv_fig"
 ---
 

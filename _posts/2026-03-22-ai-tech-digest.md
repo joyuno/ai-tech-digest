@@ -8,7 +8,7 @@ daily_source: "github_trending"
 daily_title: "aquasecurity/trivy"
 daily_url: "https://github.com/aquasecurity/trivy"
 daily_keywords: ["Reasoning", "LLM", "Eval", "Multimodal", "RAG", "Alignment", "Prompt", "Claude", "Agent", "Claude Code"]
-daily_image: "https://opengraph.githubassets.com/auto/aquasecurity/trivy"
+daily_image: "/ai-tech-digest/assets/og/2026-03-22-github_trending.png"
 daily_image_kind: "github_og"
 ---
 

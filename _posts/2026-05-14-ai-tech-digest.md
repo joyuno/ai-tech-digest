@@ -9,7 +9,7 @@ tags: [AI, LLM, 트렌드, 기술블로그]
 daily_source: "github_trending"
 daily_title: "rohitg00/agentmemory"
 daily_url: "https://github.com/rohitg00/agentmemory"
-daily_image: "https://raw.githubusercontent.com/rohitg00/agentmemory/main/assets/banner.png"
+daily_image: "/ai-tech-digest/assets/og/2026-05-14-github_trending.png"
 daily_keywords: ["Coding Agent", "AI Coding", "Eval"]
 
 ---

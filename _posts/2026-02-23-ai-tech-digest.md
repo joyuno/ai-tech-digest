@@ -8,7 +8,7 @@ daily_source: "arxiv"
 daily_title: "AutoWebWorld: Synthesizing Infinite Verifiable Web Environments via Finite State Machines"
 daily_url: "https://arxiv.org/abs/2602.14296"
 daily_keywords: ["Agent", "Eval", "Fine-tuning", "Multimodal", "Grounding", "Benchmark", "Llama", "AI Agent", "Claude", "Claude Code"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2602.14296/assets/x1.png"
+daily_image: "/ai-tech-digest/assets/og/2026-02-23-arxiv.png"
 daily_image_kind: "ar5iv_fig"
 ---
 

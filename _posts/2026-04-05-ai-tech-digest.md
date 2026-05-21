@@ -8,7 +8,7 @@ daily_source: "github_trending"
 daily_title: "Blaizzy/mlx-vlm"
 daily_url: "https://github.com/Blaizzy/mlx-vlm"
 daily_keywords: ["LLM", "Synthetic Data", "Retrieval", "Agent", "Eval", "Prompt", "Vision", "Fine-tuning", "Inference", "AI Agent"]
-daily_image: "https://opengraph.githubassets.com/auto/Blaizzy/mlx-vlm"
+daily_image: "/ai-tech-digest/assets/og/2026-04-05-github_trending.png"
 daily_image_kind: "github_og"
 ---
 

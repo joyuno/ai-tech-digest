@@ -8,7 +8,7 @@ daily_source: "arxiv"
 daily_title: "From Blind Spots to Gains: Diagnostic-Driven Iterative Training for Large Multimodal Models"
 daily_url: "https://arxiv.org/abs/2602.22859"
 daily_keywords: ["Multimodal", "LLM", "Agent", "Eval", "Retrieval", "MoE", "Vision", "Llama", "Claude", "RAG"]
-daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2602.22859.png"
+daily_image: "/ai-tech-digest/assets/og/2026-03-02-arxiv.png"
 daily_image_kind: "hf_first_page"
 ---
 

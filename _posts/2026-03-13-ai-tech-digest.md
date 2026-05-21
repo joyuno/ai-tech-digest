@@ -8,7 +8,7 @@ daily_source: "huggingface"
 daily_title: "LLM2Vec-Gen: Generative Embeddings from Large Language Models"
 daily_url: "https://huggingface.co/papers/2603.10913"
 daily_keywords: ["Fine-tuning", "RAG", "Agent", "LLM", "Multimodal", "Eval", "Inference"]
-daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.10913/gradient.png"
+daily_image: "/ai-tech-digest/assets/og/2026-03-13-huggingface.png"
 daily_image_kind: "og_image"
 ---
 

@@ -8,7 +8,7 @@ daily_source: "arxiv"
 daily_title: "Helios: Real Real-Time Long Video Generation Model"
 daily_url: "https://arxiv.org/abs/2603.04379"
 daily_keywords: ["Transformer", "Reasoning", "Prompt", "LLM", "Inference", "Agent", "Eval", "Claude", "Claude Code", "Benchmark"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2603.04379/assets/x1.png"
+daily_image: "/ai-tech-digest/assets/og/2026-03-06-arxiv.png"
 daily_image_kind: "ar5iv_fig"
 ---
 

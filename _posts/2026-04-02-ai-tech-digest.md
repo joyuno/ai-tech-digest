@@ -8,7 +8,7 @@ daily_source: "arxiv"
 daily_title: "CARLA-Air: Fly Drones Inside a CARLA World -- A Unified Infrastructure for Air-Ground Embodied Intelligence"
 daily_url: "https://arxiv.org/abs/2603.28032"
 daily_keywords: ["Reasoning", "Agent", "Multimodal", "RAG", "Claude", "Claude Code", "LLM", "Alignment", "Benchmark"]
-daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.28032.png"
+daily_image: "/ai-tech-digest/assets/og/2026-04-02-arxiv.png"
 daily_image_kind: "hf_first_page"
 ---
 

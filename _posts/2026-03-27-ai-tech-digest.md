@@ -8,7 +8,7 @@ daily_source: "arxiv"
 daily_title: "CUA-Suite: Massive Human-annotated Video Demonstrations for Computer-Use Agents"
 daily_url: "https://arxiv.org/abs/2603.24440"
 daily_keywords: ["Vision", "Agent", "LLM", "Fine-tuning", "Distillation", "RAG", "Multimodal", "AI Agent", "Claude", "Claude Code"]
-daily_image: "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.24440.png"
+daily_image: "/ai-tech-digest/assets/og/2026-03-27-arxiv.png"
 daily_image_kind: "hf_first_page"
 ---
 

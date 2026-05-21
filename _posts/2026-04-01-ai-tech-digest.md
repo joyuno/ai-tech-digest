@@ -8,7 +8,7 @@ daily_source: "arxiv"
 daily_title: "ShotStream: Streaming Multi-Shot Video Generation for Interactive Storytelling"
 daily_url: "https://arxiv.org/abs/2603.25746"
 daily_keywords: ["Prompt", "GPT", "Eval", "Reasoning", "Agent", "Transformer", "Alignment", "Claude", "Claude Code", "AI Agent"]
-daily_image: "https://ar5iv.labs.arxiv.org/html/2603.25746/assets/x1.png"
+daily_image: "/ai-tech-digest/assets/og/2026-04-01-arxiv.png"
 daily_image_kind: "ar5iv_fig"
 ---
 
