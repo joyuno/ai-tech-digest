@@ -87,9 +87,13 @@ class JekyllPublisher:
     }
 
     def _self_host_image(self, summary: Dict[str, Any]) -> None:
-        """summary.representative.item.image_url 이 외부 URL 이면 다운로드 후 commit.
-        성공 시 image_url 을 /ai-tech-digest/assets/og/{date}-{source}.{ext} 로 교체.
-        실패해도 raise X — 외부 URL 그대로 사용 (기존 동작 유지)."""
+        """daily_image 가 외부 URL 인데 **빌드 시점에 깨져있을 때만** self-host.
+
+        평소 정책: 외부 URL 그대로 사용 (repo 깨끗 유지).
+        예외: HEAD 가 429/404/SVG/너무 작은 응답이면 자가 호스트로 fallback.
+
+        Why: opengraph.githubassets.com 같은 호스트가 가끔 429 → 사이트 깨짐.
+             빌드 시점에 죽어있는 글만 골라서 repo 자산으로 백업."""
         rep = (summary.get("representative") or {})
         item = rep.get("item") or {}
         url = (item.get("image_url") or "").strip()
@@ -97,6 +101,26 @@ class JekyllPublisher:
             return
         if url.endswith(".svg") or "skills.sh" in url:
             return
+
+        # 1) HEAD 로 외부 URL 살아있는지 확인 — 정상이면 self-host 안 함
+        try:
+            head = requests.head(url, headers={
+                "User-Agent": "Mozilla/5.0 (compatible; ai-tech-digest-mirror/1.0)",
+                "Accept": "image/*",
+            }, timeout=10, allow_redirects=True)
+            ct_head = (head.headers.get("content-type") or "").split(";")[0].strip().lower()
+            cl_head = int(head.headers.get("content-length") or 0)
+            if (head.status_code == 200
+                    and ct_head.startswith("image/")
+                    and ct_head != "image/svg+xml"
+                    and (cl_head == 0 or cl_head >= 5000)):
+                # 외부 URL 정상 — repo 깨끗 유지
+                return
+            print(f"  ⚠️ 외부 깨짐 감지 ({head.status_code}/{ct_head}/{cl_head}) → self-host fallback")
+        except Exception as e:
+            print(f"  ⚠️ HEAD 실패 ({e}) → self-host fallback 시도")
+
+        # 2) 외부 깨짐 확인됨 — 다운로드 시도
         date = summary.get("date", datetime.now().strftime("%Y-%m-%d"))
         src = (rep.get("source_id") or rep.get("source") or "unknown").replace("/", "-")
 
@@ -107,7 +131,7 @@ class JekyllPublisher:
             }, timeout=20)
             r.raise_for_status()
         except Exception as e:
-            print(f"  ⚠️ self-host 다운로드 실패 ({url[:50]}): {e}")
+            print(f"  ⚠️ self-host 다운로드도 실패 ({url[:50]}): {e}")
             return
 
         ct = (r.headers.get("content-type") or "").split(";")[0].strip().lower()
@@ -122,7 +146,7 @@ class JekyllPublisher:
 
         new_url = f"{self.BASE_URL}/{asset_path}"
         item["image_url"] = new_url
-        print(f"  ✅ self-host: {asset_path} ({len(r.content)//1024}KB)")
+        print(f"  ✅ self-host fallback: {asset_path} ({len(r.content)//1024}KB)")
 
     def _upload_binary(self, path: str, data: bytes) -> bool:
         """GitHub API 로 바이너리 파일 upload (Contents API). 기존 있으면 sha 같이 보내 update."""
