@@ -1,0 +1,36 @@
+---
+layout: post
+title: "{{ post_title | replace('\\', '\\\\') | replace('"', '\\"') }}"
+date: {{ date }}
+categories: [AI, Weekly Papers]
+tags: [AI, 논문, weekly, arxiv]
+weekly_topic_id: {{ geeknews_topic_id | default('') }}
+weekly_source: "GeekNews · ninebow"
+---
+
+> 큐레이션 출처: [GeekNews · ninebow — {{ geeknews_title }}]({{ geeknews_url }}). 본문은 arXiv abstract 만 기반으로 한 본인 시각의 재정리.
+
+## 이번 주 트렌드
+
+{{ intro }}
+
+---
+
+{% for paper in papers %}
+## {{ loop.index }}. {{ paper.title }}
+
+{% if paper.authors %}*{{ paper.authors[:3] | join(', ') }}{% if paper.authors | length > 3 %} 외{% endif %} · `{{ paper.primary_category }}` · {{ paper.published[:10] if paper.published else '' }}*{% endif %}
+
+{{ paper.explanation_ko }}
+
+> **Abstract.** {{ paper.abstract[:600] }}{% if paper.abstract | length > 600 %}…{% endif %}
+
+🔗 [arXiv]({{ paper.url }}){% if paper.pdf_url %} · [PDF]({{ paper.pdf_url }}){% endif %}{% if paper.code_url %} · [Code]({{ paper.code_url }}){% endif %}
+
+---
+
+{% endfor %}
+
+### 출처
+
+이번 주 논문 10편의 선정은 [GeekNews 의 주간 AI/ML 논문 모음]({{ geeknews_url }}) (큐레이터: ninebow) 의 큐레이션을 따랐고, 본문 해설은 각 논문 arXiv abstract 만을 근거로 본인 시각에서 재정리한 것입니다. 원문 큐레이터의 깊이 있는 코멘트는 원본 GeekNews 글을 참고해 주세요.
