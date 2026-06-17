@@ -1,10 +1,39 @@
 """Hugging Face 수집기 - Daily Papers (인기도 기반)"""
 
+import time
 import requests
-from typing import List, Dict
+from typing import List, Dict, Optional
 import logging
 
 logger = logging.getLogger(__name__)
+
+# HF API 는 UA 없는 익명 요청을 GitHub Actions 공유 IP 에서 강하게 rate-limit (429) → UA + 백오프 재시도
+HF_UA = "Mozilla/5.0 (compatible; ai-tech-digest/1.0; +https://github.com/joyuno/ai-tech-digest)"
+
+
+def _hf_get(url: str, timeout: int, params: Optional[dict] = None, retries: int = 3) -> requests.Response:
+    """HF API GET — 429/일시 오류 시 지수 백오프로 재시도. 최종 응답에 raise_for_status 적용."""
+    headers = {"Accept": "application/json", "User-Agent": HF_UA}
+    last_exc = None
+    for attempt in range(retries):
+        try:
+            resp = requests.get(url, params=params, timeout=timeout, headers=headers)
+            if resp.status_code == 429 and attempt < retries - 1:
+                wait = 2 ** attempt * 3  # 3s, 6s, 12s
+                print(f"  ⏳ 429 rate-limit — {wait}s 후 재시도 ({attempt + 1}/{retries - 1})")
+                time.sleep(wait)
+                continue
+            resp.raise_for_status()
+            return resp
+        except requests.exceptions.RequestException as e:
+            last_exc = e
+            if attempt < retries - 1:
+                time.sleep(2 ** attempt * 3)
+                continue
+            raise
+    if last_exc:
+        raise last_exc
+    raise requests.exceptions.RequestException("HF GET 재시도 소진")
 
 
 class HuggingFaceCollector:
@@ -29,13 +58,11 @@ class HuggingFaceCollector:
             print("  📊 Hugging Face Papers에서 인기 논문 수집 중...")
 
             # Papers API에서 최근 인기 논문 조회
-            response = requests.get(
+            response = _hf_get(
                 self.PAPERS_API,
-                params={"limit": self.max_results * 2},  # 여유분
                 timeout=self.timeout,
-                headers={"Accept": "application/json"}
+                params={"limit": self.max_results * 2},  # 여유분
             )
-            response.raise_for_status()
             papers = response.json()
 
             if not papers:

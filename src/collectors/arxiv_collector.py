@@ -35,6 +35,35 @@ def _classify_venue(text: str) -> str:
     return ""
 
 
+# HF API 는 UA 없는 익명 요청을 GitHub Actions 공유 IP 에서 강하게 rate-limit (429) → UA + 백오프 재시도
+HF_UA = "Mozilla/5.0 (compatible; ai-tech-digest/1.0; +https://github.com/joyuno/ai-tech-digest)"
+
+
+def _hf_get(url: str, timeout: int, params: Optional[dict] = None, retries: int = 3) -> requests.Response:
+    """HF API GET — 429/일시 오류 시 지수 백오프로 재시도. 최종 응답에 raise_for_status 적용."""
+    headers = {"Accept": "application/json", "User-Agent": HF_UA}
+    last_exc = None
+    for attempt in range(retries):
+        try:
+            resp = requests.get(url, params=params, timeout=timeout, headers=headers)
+            if resp.status_code == 429 and attempt < retries - 1:
+                wait = 2 ** attempt * 3  # 3s, 6s, 12s
+                print(f"  ⏳ 429 rate-limit — {wait}s 후 재시도 ({attempt + 1}/{retries - 1})")
+                time.sleep(wait)
+                continue
+            resp.raise_for_status()
+            return resp
+        except requests.exceptions.RequestException as e:
+            last_exc = e
+            if attempt < retries - 1:
+                time.sleep(2 ** attempt * 3)
+                continue
+            raise
+    if last_exc:
+        raise last_exc
+    raise requests.exceptions.RequestException("HF GET 재시도 소진")
+
+
 GH_REPO_RE = re.compile(r"github\.com/([\w.-]+/[\w.-]+?)(?=[\s)\],.;]|$)", re.IGNORECASE)
 
 
@@ -120,12 +149,7 @@ class ArxivCollector:
         results = []
         try:
             print("  📊 Hugging Face Daily Papers에서 인기 논문 수집 중...")
-            response = requests.get(
-                self.DAILY_PAPERS_API,
-                timeout=self.timeout,
-                headers={"Accept": "application/json"},
-            )
-            response.raise_for_status()
+            response = _hf_get(self.DAILY_PAPERS_API, timeout=self.timeout)
             papers = response.json()
 
             if not papers:
@@ -233,8 +257,10 @@ class ArxivCollector:
                 sort_order=arxiv.SortOrder.Descending,
             )
 
+            # arxiv 2.x: Search.results() 제거됨 → Client().results(search) 사용
+            client = arxiv.Client()
             results = []
-            for paper in search.results():
+            for paper in client.results(search):
                 summary = paper.summary.replace("\n", " ").strip()[:500]
                 comment = paper.comment or ""
                 item = {
