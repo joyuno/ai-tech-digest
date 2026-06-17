@@ -4,7 +4,7 @@
   - 35개 한 번에 batch → 부분 실패 시 전체 손실 → **소스별로 batch 분리**
   - max_output_tokens 미지정으로 잘림 → **8000으로 명시**
   - Gemini가 영어로 fallback → **한국어 비율 검증**으로 강제
-  - 모델 deprecated 시 즉시 중단 → **fallback chain** (grok → claude-haiku → gemini)
+  - 모델 deprecated 시 즉시 중단 → **fallback chain** (gemini-flash → claude-haiku)
 """
 
 import json
@@ -20,9 +20,8 @@ from .scoring import select_representative
 
 
 FALLBACK_MODEL_CHAIN = [
-    "x-ai/grok-4.1-fast",
-    "anthropic/claude-haiku-4-5",
     "google/gemini-2.5-flash",
+    "anthropic/claude-haiku-4-5",
 ]
 RETRY_BACKOFF = [10, 20, 40]
 HTTP_TIMEOUT = 180
@@ -178,7 +177,9 @@ class OpenRouterSummarizer:
                 payload = json.dumps({
                     "model": model,
                     "messages": [{"role": "user", "content": prompt}],
-                    "max_tokens": 120,
+                    # gemini-2.5-pro 등 reasoning 모델은 추론 토큰이 budget 을 먹어
+                    # 120 으로는 헤드라인이 잘림(예: 'alibaba/zvec —') → 여유 확보
+                    "max_tokens": 1024,
                     "temperature": 0.5,
                 }).encode("utf-8")
                 req = urllib.request.Request(

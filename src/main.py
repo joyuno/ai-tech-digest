@@ -2,7 +2,7 @@
 """
 AI Tech Digest - Main Entry Point
 
-매일 AI 기술 트렌드를 수집, 요약하여 카카오톡 알림 및 Jekyll 블로그 포스팅
+매일 AI 기술 트렌드를 수집, 요약하여 Jekyll 블로그 포스팅
 """
 
 import os
@@ -29,7 +29,6 @@ from processors.ontology_classifier import OntologyClassifier
 from processors.openrouter_summarizer import OpenRouterSummarizer
 
 # Publishers
-from publishers.kakao_notifier import KakaoNotifier
 from publishers.jekyll_publisher import JekyllPublisher
 
 # Utils
@@ -179,7 +178,7 @@ def main():
         top_keywords = classifier.get_top_keywords(classified_data, top_n=10)
         print(f"\n   🔑 상위 키워드: {', '.join(top_keywords[:5])}")
 
-        # 4. AI 요약 (OpenRouter + grok-4.1-fast)
+        # 4. AI 요약 (OpenRouter + gemini-2.5-pro)
         print("\n" + "=" * 60)
         print("✨ AI 요약 생성 (OpenRouter)")
         print("=" * 60)
@@ -187,7 +186,7 @@ def main():
         summary_model = (
             sources_config.get("openrouter", {}).get("model")
             or sources_config.get("gemini", {}).get("model")  # 구설정 호환
-            or "x-ai/grok-4.1-fast"
+            or "google/gemini-2.5-flash"
         )
         print(f"   모델: {summary_model}")
 
@@ -222,26 +221,7 @@ def main():
         # 요약 결과 저장
         save_output(summary, output_dir, "summary.json")
 
-        # 5. 카카오톡 알림
-        print("\n" + "=" * 60)
-        print("📱 카카오톡 알림")
-        print("=" * 60)
-
-        kakao_enabled = bool(os.environ.get("KAKAO_REST_API_KEY"))
-        if kakao_enabled:
-            kakao = KakaoNotifier(
-                rest_api_key=os.environ.get("KAKAO_REST_API_KEY"),
-                refresh_token=os.environ.get("KAKAO_REFRESH_TOKEN"),
-                client_secret=os.environ.get("KAKAO_CLIENT_SECRET")
-            )
-            if kakao.send(summary):
-                print("   ✓ 카카오톡 발송 성공")
-            else:
-                print("   ⚠️ 카카오톡 발송 실패")
-        else:
-            print("   ⏭️ 스킵 (API 키 없음)")
-
-        # 6. Jekyll 블로그 포스팅
+        # 5. Jekyll 블로그 포스팅
         print("\n" + "=" * 60)
         print("📝 Jekyll 블로그 포스팅")
         print("=" * 60)
