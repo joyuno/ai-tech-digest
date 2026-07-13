@@ -10,6 +10,8 @@
 """
 import os
 import re
+import time
+from html import unescape
 from typing import Dict, List, Optional
 from xml.etree import ElementTree as ET
 
@@ -18,10 +20,15 @@ import requests
 
 RSS_URL = "https://news.hada.io/rss/news"
 TOPIC_URL_TEMPLATE = "https://news.hada.io/topic?id={topic_id}"
+HOME_URL_TEMPLATE = "https://news.hada.io/?page={page}"
+# GeekNews 주간 논문 글 제목 변형 대응 (확인된 형식: "[2026/06/01 ~ 07] 이번 주에 살펴볼 만한 AI/ML 논문 모음")
 TITLE_PATTERNS = [
-    re.compile(r"이번\s*주.*살펴볼.*AI/?ML.*논문"),
-    re.compile(r"이번\s*주.*AI/?ML.*논문.*모음"),
+    re.compile(r"살펴볼.{0,12}AI/?ML.*논문"),
+    re.compile(r"AI/?ML\s*논문\s*모음"),
+    re.compile(r"이번\s*주.*AI/?ML.*논문"),
 ]
+# 홈 페이지네이션 파싱용 (RSS 50창 밖으로 밀려난 글 탐지 폴백)
+HOME_LINK_TITLE_RE = re.compile(r'topic\?id=(\d+)"[^>]*>\s*([^<]{5,120})')
 ARXIV_ID_RE = re.compile(r"arxiv\.org/abs/(\d{4}\.\d{4,5})", re.IGNORECASE)
 TOPIC_ID_RE = re.compile(r"topic\?id=(\d+)")
 PAGE_TITLE_RE = re.compile(r"<title>([^<]+)</title>", re.IGNORECASE)
@@ -48,9 +55,14 @@ class GeekNewsPapersCollector:
           - arxiv_ids: List[str]
         실패 시 arxiv_ids=[] 로 반환 (main_weekly 가 skip 결정).
         """
-        topic_id = self.manual_topic_id or self._discover_topic_id_via_rss()
+        # RSS(최신 50) → 페이지네이션(약 2주치) → 수동 지정 순으로 탐지
+        topic_id = (
+            self.manual_topic_id
+            or self._discover_topic_id_via_rss()
+            or self._discover_topic_id_via_pagination()
+        )
         if not topic_id:
-            print("  ❌ GeekNews 주간 논문 글을 RSS 에서 찾지 못함 (수동 GEEKNEWS_TOPIC_ID 지정 필요)")
+            print("  ℹ️ GeekNews 주간 논문 글을 찾지 못함 — 이번 주 글이 없는 것일 수 있음(정상). 수동 지정: GEEKNEWS_TOPIC_ID")
             return {"topic_id": None, "topic_url": "", "topic_title": "", "arxiv_ids": []}
 
         topic_url = TOPIC_URL_TEMPLATE.format(topic_id=topic_id)
@@ -108,7 +120,35 @@ class GeekNewsPapersCollector:
                     print(f"  🔎 RSS 매칭: {title_text!r} → topic id {m.group(1)}")
                     return m.group(1)
 
-        print("  ⚠️ RSS 에서 weekly papers 패턴 매칭 0건")
+        print("  ⚠️ RSS 에서 weekly papers 패턴 매칭 0건 — 페이지네이션 폴백 시도")
+        return None
+
+    def _discover_topic_id_via_pagination(self, max_pages: int = 20) -> Optional[str]:
+        """RSS 50개 창을 넘어 밀려난 경우 대비 — GeekNews 홈을 페이지 역순 스캔.
+
+        20페이지 ≈ 최근 400개 항목 ≈ 약 2주치. 주간 글이 발행됐다면 이 범위에서 잡힌다.
+        요청 간 짧은 지연으로 rate-limit 회피.
+        """
+        for page in range(1, max_pages + 1):
+            try:
+                r = requests.get(
+                    HOME_URL_TEMPLATE.format(page=page),
+                    headers={"User-Agent": UA}, timeout=self.timeout,
+                )
+                r.raise_for_status()
+            except Exception as e:
+                print(f"  ⚠️ 페이지네이션 fetch 실패(page {page}): {e}")
+                break
+            pairs = HOME_LINK_TITLE_RE.findall(r.text)
+            if not pairs:
+                break  # 더 이상 항목 없음
+            for tid, title in pairs:
+                title = unescape(title.strip())
+                if any(p.search(title) for p in TITLE_PATTERNS):
+                    print(f"  🔎 페이지네이션 매칭(page {page}): {title!r} → topic id {tid}")
+                    return tid
+            time.sleep(0.3)
+        print(f"  ⚠️ 페이지네이션 {max_pages}p 스캔에서도 매칭 0건")
         return None
 
     @staticmethod

@@ -55,15 +55,18 @@ def main(argv=None):
     print("📡 [1/4] GeekNews 주간 글 탐지")
     geek = gnc_mod.GeekNewsPapersCollector().collect()
     if not geek["arxiv_ids"]:
-        print("❌ 이번 주 글 또는 arXiv ID 0건 — 종료")
-        return 1
+        # '이번 주 글 없음'은 외부(GeekNews) 사정으로 정상적으로 발생 — 실패가 아니라 skip.
+        # 하드 실패(exit 1)로 두면 매주 CI 실패 메일이 발송되므로 정상 종료한다.
+        print("ℹ️ 이번 주 GeekNews 논문 글 없음(또는 arXiv ID 0건) — 발행 skip. 정상 종료(실패 아님).")
+        return 0
 
     # 3) arXiv 메타 fetch
     print(f"\n📚 [2/4] arXiv 메타 fetch ({len(geek['arxiv_ids'])}건)")
     papers = am_mod.fetch_papers_by_ids(geek["arxiv_ids"])
     if not papers:
-        print("❌ arXiv 메타 0건 — 종료")
-        return 1
+        # arXiv 일시 장애 등 — 발행할 게 없으니 skip. 매주 실패 메일 방지 위해 정상 종료.
+        print("ℹ️ arXiv 메타 0건(일시적일 수 있음) — 발행 skip. 정상 종료(실패 아님).")
+        return 0
     success_ratio = len(papers) / len(geek["arxiv_ids"])
     if success_ratio < 0.7:
         print(f"⚠️ arXiv 성공률 {success_ratio:.0%} — 30% 이상 실패, 진행은 하되 카카오 알림 권장")
