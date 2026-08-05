@@ -46,8 +46,8 @@ jobs:
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           GH_PAT: ${{ secrets.GH_PAT }}
-          BLOG_REPO: ${{ vars.BLOG_REPO || 'joyuno/joyuno.github.io' }}
-          BLOG_BRANCH: ${{ vars.BLOG_BRANCH || 'gh-pages' }}
+          BLOG_REPO: joyuno/joyuno.github.io
+          BLOG_BRANCH: main   # 메인 블로그(빌드 브랜치=main)에 발행 → /blog 목록에 노출 (gh-pages는 서빙 안 됨)
         run: |
           ARGS=""
           if [ -n "${{ github.event.inputs.topic_id }}" ]; then

@@ -103,7 +103,7 @@ def main(argv=None):
 
     gh_token = os.environ.get("GH_PAT") or os.environ.get("GITHUB_TOKEN", "")
     repo = os.environ.get("BLOG_REPO", "joyuno/joyuno.github.io")
-    branch = os.environ.get("BLOG_BRANCH", "gh-pages")
+    branch = os.environ.get("BLOG_BRANCH", "main")  # 메인 블로그 빌드 브랜치
     publisher = WeeklyPapersPublisher(gh_token=gh_token, repo=repo, branch=branch)
 
     if args.dry_run:
