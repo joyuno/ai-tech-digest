@@ -74,7 +74,9 @@ class GeekNewsPapersCollector:
             print(f"  ❌ topic fetch 실패: {e}")
             return {"topic_id": topic_id, "topic_url": topic_url, "topic_title": "", "arxiv_ids": []}
 
-        html = r.text
+        # GeekNews는 UTF-8이지만 Content-Type에 charset이 없어 requests가 Latin-1로 오탐지
+        # → 한글 제목 모지바케. 명시적으로 UTF-8 디코딩.
+        html = r.content.decode("utf-8", errors="replace")
         title = self._extract_title(html)
         arxiv_ids = self._extract_arxiv_ids(html)
         print(f"  ✅ 제목: {title!r}, arXiv 링크 {len(arxiv_ids)}개 추출")
