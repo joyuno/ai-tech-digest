@@ -42,16 +42,24 @@ def fetch_papers_by_ids(arxiv_ids: List[str], timeout: int = 30) -> List[Dict]:
     for i in range(0, len(arxiv_ids), batch_size):
         batch = arxiv_ids[i: i + batch_size]
         params = {"id_list": ",".join(batch), "max_results": len(batch)}
-        try:
-            r = requests.get(
-                ARXIV_API,
-                params=params,
-                headers={"User-Agent": UA},
-                timeout=timeout,
-            )
-            r.raise_for_status()
-        except Exception as e:
-            print(f"  ⚠️ arXiv API fetch 실패 (batch {i // batch_size}): {e}")
+        # arXiv export API 는 간헐적으로 느림/타임아웃 → 재시도(백오프, 타임아웃 점증).
+        r = None
+        for attempt in range(3):
+            try:
+                r = requests.get(
+                    ARXIV_API,
+                    params=params,
+                    headers={"User-Agent": UA},
+                    timeout=timeout + attempt * 30,  # 30 → 60 → 90
+                )
+                r.raise_for_status()
+                break
+            except Exception as e:
+                r = None
+                print(f"  ⚠️ arXiv fetch 실패 (batch {i // batch_size}, 시도 {attempt + 1}/3): {e}")
+                if attempt < 2:
+                    time.sleep(5 * (attempt + 1))  # 5s, 10s 백오프
+        if r is None:
             continue
 
         try:
