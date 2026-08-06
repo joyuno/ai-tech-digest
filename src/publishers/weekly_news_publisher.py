@@ -10,7 +10,7 @@ from .jekyll_publisher import JekyllPublisher
 
 class WeeklyNewsPublisher(JekyllPublisher):
     TEMPLATE_NAME = "weekly_news_post.j2"
-    FILENAME_SUFFIX = "geeknews-weekly"
+    FILENAME_SUFFIX = "tech-weekly"  # URL slug에 매체명(geeknews) 미노출
 
     def post_path(self, date: str) -> str:
         return f"_posts/{date}-{self.FILENAME_SUFFIX}.md"
