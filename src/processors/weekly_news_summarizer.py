@@ -10,9 +10,11 @@ from typing import Any, Dict, List, Optional
 
 MODEL = "deepseek/deepseek-v4-flash"
 PROVIDER = {"order": ["deepseek"], "allow_fallbacks": True}
-HTTP_TIMEOUT = 60
+HTTP_TIMEOUT = 90
 RETRY_BACKOFF = [5, 12]
-MAX_OUTPUT_TOKENS = 700
+# deepseek-v4 는 reasoning 토큰이 max_tokens 를 함께 소모 → 700이면 5줄 답변이 중간에 잘림.
+# 5줄 요약 + reasoning 여유로 2000. (출력 토큰 단가 저렴해 비용 영향 미미)
+MAX_OUTPUT_TOKENS = 2000
 
 ITEM_PROMPT = """당신은 지난 한 주 개발·기술 소식을 골라 블로그에 정리하는 개발자입니다.
 아래 뉴스의 제목과 내용을 바탕으로, 핵심만 뽑아 한국어로 재정리하세요.
