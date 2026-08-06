@@ -1,15 +1,27 @@
-name: Weekly AI/ML Papers Digest (레거시 — 수동 전용)
+name: Weekly Tech News Digest
 
-# 주간 다이제스트는 weekly-news.yml(GeekNews Weekly 요약)로 대체됨.
-# 이 논문 파이프라인은 자동 스케줄 제거, 필요 시 수동 실행만 유지.
 on:
+  schedule:
+    # GeekNews Weekly 는 매주 월요일 아침 발행 → 월요일 오후 KST 실행
+    # KST 월요일 14:00 = UTC 월요일 05:00
+    - cron: '0 5 * * MON'
   workflow_dispatch:
     inputs:
-      topic_id:
+      weekly_id:
         type: string
-        description: 'GeekNews topic id 수동 지정 (자동 탐지 우회, 선택)'
+        description: 'weekly 이슈 id 수동 지정 (예: 202631, 선택)'
         required: false
         default: ''
+      max_items:
+        type: string
+        description: '요약할 최대 뉴스 수 (기본 35)'
+        required: false
+        default: ''
+      force:
+        type: boolean
+        description: '이미 발행됐어도 재발행'
+        required: false
+        default: false
       dry_run:
         type: boolean
         description: 'Dry-run (발행 없이 마크다운만 출력)'
@@ -21,7 +33,7 @@ env:
   TZ: 'Asia/Seoul'
 
 jobs:
-  generate-weekly:
+  generate-weekly-news:
     runs-on: ubuntu-latest
     timeout-minutes: 20
 
@@ -40,35 +52,30 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests jinja2 pyyaml
 
-      - name: Run weekly papers digest
+      - name: Run weekly news digest
         id: digest
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           GH_PAT: ${{ secrets.GH_PAT }}
           BLOG_REPO: joyuno/joyuno.github.io
-          BLOG_BRANCH: main   # 메인 블로그(빌드 브랜치=main)에 발행 → /blog 목록에 노출 (gh-pages는 서빙 안 됨)
+          BLOG_BRANCH: main
+          MAX_ITEMS: ${{ github.event.inputs.max_items }}
         run: |
           ARGS=""
-          if [ -n "${{ github.event.inputs.topic_id }}" ]; then
-            ARGS="$ARGS --topic-id ${{ github.event.inputs.topic_id }}"
+          if [ -n "${{ github.event.inputs.weekly_id }}" ]; then
+            ARGS="$ARGS --weekly-id ${{ github.event.inputs.weekly_id }}"
+          fi
+          if [ "${{ github.event.inputs.force }}" = "true" ]; then
+            ARGS="$ARGS --force"
           fi
           if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
             ARGS="$ARGS --dry-run"
           fi
-          python src/main_weekly.py $ARGS
-
-      - name: Upload artifact (rendered JSON)
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: weekly-papers-${{ github.run_number }}
-          path: output/weekly_papers.json
-          retention-days: 30
-          if-no-files-found: warn
+          python src/main_weekly_news.py $ARGS
 
       - name: Summary
         if: always()
         run: |
-          echo "## 📚 Weekly Papers Digest 실행 결과" >> $GITHUB_STEP_SUMMARY
+          echo "## 📰 Weekly Tech News Digest 실행 결과" >> $GITHUB_STEP_SUMMARY
           echo "- **시간**: $(date '+%Y-%m-%d %H:%M:%S %Z')" >> $GITHUB_STEP_SUMMARY
           echo "- **상태**: ${{ steps.digest.outcome }}" >> $GITHUB_STEP_SUMMARY
