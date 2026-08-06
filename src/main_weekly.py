@@ -43,21 +43,26 @@ def main(argv=None):
     args = parser.parse_args(argv)
 
     if args.topic_id:
-        os.environ["GEEKNEWS_TOPIC_ID"] = args.topic_id
+        # 시리즈가 PyTorchKR로 이전 → --topic-id 는 PyTorchKR topic id 로 해석
+        os.environ["PYTORCHKR_TOPIC_ID"] = args.topic_id
 
     # 1) 모듈 로드
+    pkr_mod = _load("pkr", "collectors/pytorchkr_papers_collector.py")
     gnc_mod = _load("gnc", "collectors/geeknews_papers_collector.py")
     am_mod = _load("am", "collectors/arxiv_metadata.py")
     smr_mod = _load("smr", "processors/paper_digest_summarizer.py")
 
-    # 2) GeekNews 탐지 + arXiv ID 추출
+    # 2) 주간 글 탐지 — PyTorchKR(현행 소스) 우선, GeekNews(레거시) fallback
     print("=" * 60)
-    print("📡 [1/4] GeekNews 주간 글 탐지")
-    geek = gnc_mod.GeekNewsPapersCollector().collect()
+    print("📡 [1/4] 주간 논문 글 탐지 (PyTorchKR → GeekNews)")
+    geek = pkr_mod.PyTorchKRPapersCollector().collect()
     if not geek["arxiv_ids"]:
-        # '이번 주 글 없음'은 외부(GeekNews) 사정으로 정상적으로 발생 — 실패가 아니라 skip.
+        print("  ↩️ PyTorchKR 0건 — GeekNews fallback 시도")
+        geek = gnc_mod.GeekNewsPapersCollector().collect()
+    if not geek["arxiv_ids"]:
+        # '이번 주 글 없음'은 외부 사정으로 정상 발생 — 실패가 아니라 skip.
         # 하드 실패(exit 1)로 두면 매주 CI 실패 메일이 발송되므로 정상 종료한다.
-        print("ℹ️ 이번 주 GeekNews 논문 글 없음(또는 arXiv ID 0건) — 발행 skip. 정상 종료(실패 아님).")
+        print("ℹ️ 이번 주 주간 논문 글 없음(또는 arXiv ID 0건) — 발행 skip. 정상 종료(실패 아님).")
         return 0
 
     # 3) arXiv 메타 fetch
