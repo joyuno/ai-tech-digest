@@ -7,15 +7,17 @@ tags: [주간, 기술뉴스, 요약]
 weekly_id: {{ weekly_id }}
 ---
 
-> 지난 한 주 개발·기술 소식 중 눈에 띈 {{ items | length }}건을 골라 핵심만 5줄로 정리했습니다.
+> 지난 한 주 개발·기술 소식 중 눈에 띈 **{{ items | length }}건**을 골라 핵심만 5줄로 정리했습니다.
 
 {% if intro %}{{ intro }}
-
----
 {% endif %}
 {% for it in items %}
+---
+
 ## {{ loop.index }}. {{ it.title }}
 
 {{ it.summary }}
-
+{% if it.links %}
+🔗 {% for l in it.links %}[{{ l.label }}]({{ l.url }}){% if not loop.last %} · {% endif %}{% endfor %}
+{% endif %}
 {% endfor %}

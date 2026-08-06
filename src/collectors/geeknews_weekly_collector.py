@@ -22,12 +22,36 @@ ITEM_RE = re.compile(
     re.S,
 )
 PERIOD_RE = re.compile(r"(\d{4}-\d{2}-\d{2})\s*[–\-]\s*(\d{4}-\d{2}-\d{2})")
-EXT_SRC_RE = re.compile(r"Original source URL:\s*\[?(https?://[^\]\s)]+)", re.I)
+# .md 메타데이터의 라벨은 'Original source: [도메인](URL)' (URL 아님 주의)
+SOURCE_RE = re.compile(r"Original source:\s*\[[^\]]*\]\((https?://[^)]+)\)", re.I)
+GITHUB_RE = re.compile(r"https?://github\.com/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+")
 CONTENT_CAP = 6000  # 요약 입력 상한(토큰/속도 절약; deepseek 1M 컨텍스트라 여유)
 
 
 def _clean(html: str) -> str:
     return re.sub(r"\s+", " ", unescape(re.sub(r"<[^>]+>", " ", html))).strip()
+
+
+def _norm_gh(u: str) -> str:
+    """github URL 을 owner/repo 루트로 정규화(프래그먼트·하위경로 제거)."""
+    u = u.split("#")[0].split("?")[0].rstrip("/")
+    parts = u.split("/")
+    return "/".join(parts[:5]) if len(parts) >= 5 else u
+
+
+def _build_links(source_url: str, github_url: str) -> list:
+    """요약 말미에 붙일 관련 링크 [{label,url}] — 원문·GitHub, url 기준 중복 제거."""
+    links, seen = [], set()
+    for label, u in (("GitHub", github_url), ("원문", source_url)):
+        if not u:
+            continue
+        if "github.com" in u:
+            label, u = "GitHub", _norm_gh(u)
+        if u in seen:
+            continue
+        seen.add(u)
+        links.append({"label": label, "url": u})
+    return links
 
 
 class GeekNewsWeeklyCollector:
@@ -41,21 +65,23 @@ class GeekNewsWeeklyCollector:
         # Content-Type charset 누락 시 requests 가 Latin-1 오탐지 → 한글 깨짐. UTF-8 강제.
         return r.content.decode("utf-8", errors="replace")
 
-    def _topic_md(self, tid: str) -> tuple[str, str]:
-        """/topic/{id}.md 에서 (본문 텍스트, 외부원문 URL). 실패 시 ('','')."""
+    def _topic_md(self, tid: str) -> tuple[str, str, str]:
+        """/topic/{id}.md 에서 (요약용 본문, 원문 URL, GitHub URL). 실패 시 ('','','')."""
         try:
             md = self._get(f"{BASE}/topic/{tid}.md")
         except Exception:
-            return "", ""
-        ext_m = EXT_SRC_RE.search(md)
-        ext = ext_m.group(1) if ext_m else ""
+            return "", "", ""
+        src_m = SOURCE_RE.search(md)
+        source_url = src_m.group(1) if src_m else ""
+        gh_m = GITHUB_RE.search(md)
+        github_url = _norm_gh(gh_m.group(0)) if gh_m else ""
         body = md
         meta = re.search(r"##\s*Metadata.*?(?=\n#{1,3}\s|\Z)", body, re.S)  # 메타 블록 제거
         if meta:
             body = body[: meta.start()] + body[meta.end():]
         body = re.sub(r"^>.*$", "", body, flags=re.M)      # 안내 인용줄 제거
         body = re.sub(r"\n{3,}", "\n\n", body).strip()
-        return body[:CONTENT_CAP], ext
+        return body[:CONTENT_CAP], source_url, github_url
 
     def _latest_id(self) -> Optional[str]:
         """/weekly 목록의 첫 번째(최신) 이슈 id (YYYYWW)."""
@@ -87,10 +113,11 @@ class GeekNewsWeeklyCollector:
         ]
         print(f"  ✅ Weekly {weekly_id}: {issue_title[:45]!r}, 주요 뉴스 {len(items)}개")
         # 각 항목: topic 원문(.md) 을 요약 소스로. 실패/짧으면 인라인 요약 fallback.
+        # 원문·GitHub 링크는 요약 말미에 붙이도록 links 로 보관.
         for it in items:
-            body, ext = self._topic_md(it["id"])
+            body, source_url, github_url = self._topic_md(it["id"])
             it["content"] = body if len(body) > len(it["inline"]) else it["inline"]
-            it["source_url"] = ext
+            it["links"] = _build_links(source_url, github_url)
         return {
             "weekly_id": weekly_id,
             "weekly_url": url,
