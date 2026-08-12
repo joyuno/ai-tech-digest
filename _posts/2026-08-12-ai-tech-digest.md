@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "` (A bit redundant, "에이전트들로 구성된 에이전시")"
+title: "agency-agents — 에이전트들로 구성된 에이전시"
 date: 2026-08-12
 categories: [AI, Tech]
 tags: [AI, LLM, 트렌드, 기술블로그]
