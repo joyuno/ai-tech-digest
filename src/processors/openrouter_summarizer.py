@@ -41,6 +41,40 @@ def korean_ratio(text: str) -> float:
     return len(HANGUL_RE.findall(text)) / len(text)
 
 
+_HL_META_RE = re.compile(r'(redundant|note\s*:|참고\s*[:：]|부연|설명\s*[:：])', re.I)
+
+
+def _clean_headline_line(line: str) -> str:
+    """헤드라인 한 줄 정제: 백틱/불릿/라벨 제거, 잡음+따옴표로 감싼 실제 헤드라인 추출."""
+    line = line.strip().lstrip("`*->#•· \t").strip()
+    line = re.sub(r'^(한국어\s*)?헤드라인\s*[:：]\s*', '', line)  # '헤드라인:' 라벨 제거
+    # 모델이 부연설명을 붙이고 진짜 헤드라인을 따옴표로 감싼 경우 → 안쪽만
+    m = re.search(r'["“]([^"”]{8,})["”]', line)
+    if m:
+        outside = line[:m.start()] + line[m.end():]
+        if re.search(r'[A-Za-z]{3,}|[`()]', outside):  # 밖이 영문 메타/괄호/백틱 잡음
+            line = m.group(1)
+    m2 = re.search(r'[가-힣0-9A-Za-z]', line)          # 첫 유효문자부터
+    if m2:
+        line = line[m2.start():]
+    return line.strip().strip('"\'`').rstrip(".·, ").strip()
+
+
+def clean_headline(text: str) -> str:
+    """모델 응답에서 백틱·괄호 코멘트·라벨·부연설명을 제거하고 헤드라인 한 줄만 추출.
+    여러 줄이면 메타가 아닌 첫 유효 후보를 고름(reasoning 누수 방지)."""
+    best = ""
+    for raw in text.splitlines():
+        c = _clean_headline_line(raw)
+        if not c or _HL_META_RE.search(c):
+            continue
+        if 10 <= len(c) <= 80 and korean_ratio(c) >= 0.2:
+            return c
+        if not best:
+            best = c
+    return best
+
+
 SOURCE_NAMES = {
     "arxiv": "arXiv 논문",
     "huggingface": "Hugging Face Blog",
@@ -153,7 +187,8 @@ class OpenRouterSummarizer:
             "   - `영어명/회사, 한국어 동작·결과`  (예: `Anthropic, 금융서비스 가이드라인 제공`)\n"
             "3. 한국어 단어 + 영어 키워드 자연스럽게 섞기 (예: `로봇의 real-world 행동추론`).\n"
             "4. 따옴표·이모지·말꼬리 종결(`~다`, `~음`) 금지.\n"
-            "5. 출력은 제목 한 줄만 (다른 설명 X).\n\n"
+            "5. 출력은 **제목 문장 한 줄만**. 백틱(`)·괄호 부연·자기평가(예: '(A bit redundant)')·"
+            "'헤드라인:' 같은 라벨 절대 붙이지 말 것.\n\n"
             "## 안 좋은 예 (절대 X)\n"
             "- `실세계 로` (너무 짧음, 어절 잘림)\n"
             "- `앤스로픽, 금융` (한국어 음역 + 짧음)\n"
@@ -196,9 +231,9 @@ class OpenRouterSummarizer:
                 text = (body["choices"][0]["message"]["content"] or "").strip()
                 if not text:
                     continue
-                line = text.splitlines()[0].strip().strip('"\'').rstrip(".· ")
-                # 강화: 너무 짧은 제목 거부 (15자 미만 = 어절 잘림 위험)
-                if 15 <= len(line) <= 80 and korean_ratio(line) >= 0.2:
+                line = clean_headline(text)  # 백틱·괄호코멘트·라벨·부연설명 제거
+                # 강화: 너무 짧은 제목 거부 (10자 미만 = 어절 잘림 위험)
+                if 10 <= len(line) <= 80 and korean_ratio(line) >= 0.2 and not _HL_META_RE.search(line):
                     print(f"  📰 헤드라인: {line}")
                     return line
                 else:
