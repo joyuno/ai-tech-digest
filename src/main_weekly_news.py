@@ -5,7 +5,7 @@
   1. GeekNews Weekly 최신호 자동 탐지 (/weekly → /weekly/YYYYWW)
   2. '이번 주 주요 뉴스' 각 항목(제목+요약) 추출
   3. 이미 발행한 이슈면 skip (중복 방지) — 갱신 안 됐을 때 재작성 X
-  4. deepseek-v4-flash 로 각 뉴스 5줄 핵심 요약 + 이번 주 흐름 intro
+  4. deepseek-v4.1-flash-1017 로 각 뉴스 5줄 핵심 요약 + 이번 주 흐름 intro
   5. 메인 블로그 _posts/ 에 발행
 
 cron: 매주 월요일 오후 (GeekNews Weekly 는 월요일 아침 발행)
@@ -90,7 +90,7 @@ def main(argv=None):
         return 0
 
     items = items[: args.max_items]
-    print(f"\n✍️ [2/3] 핵심 5줄 요약 생성 ({len(items)}건, deepseek-v4-flash)")
+    print(f"\n✍️ [2/3] 핵심 5줄 요약 생성 ({len(items)}건, deepseek-v4.1-flash-1017)")
     api_key = os.environ.get("OPENROUTER_API_KEY", "")
     if not api_key:
         print("❌ OPENROUTER_API_KEY 없음 — 종료")

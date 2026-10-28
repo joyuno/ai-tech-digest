@@ -1,4 +1,4 @@
-"""주간 기술뉴스 핵심요약기 (deepseek/deepseek-v4-flash, OpenRouter).
+"""주간 기술뉴스 핵심요약기 (deepseek/deepseek-v4.1-flash-1017, OpenRouter).
 
 각 뉴스의 제목+요약을 근거로 한국어 5줄 핵심 요약을 생성한다(핵심요약 기법: 요점 우선·중복 제거).
 큐레이션 매체명(GeekNews 등)은 결과에 넣지 않는다 — 개인 다이제스트 톤.
@@ -8,8 +8,9 @@ import time
 import urllib.request
 from typing import Any, Dict, List, Optional
 
-MODEL = "deepseek/deepseek-v4-flash"
-PROVIDER = {"order": ["deepseek"], "allow_fallbacks": True}
+MODEL = "deepseek/deepseek-v4.1-flash-1017"
+# 최저가 호스트, 단 fp4 양자화 호스트는 제외 (긴 출력 붕괴 위험)
+PROVIDER = {"sort": "price", "quantizations": ["fp8", "bf16", "fp16"]}
 HTTP_TIMEOUT = 90
 RETRY_BACKOFF = [5, 12]
 # deepseek-v4 는 reasoning 토큰이 max_tokens 를 함께 소모 → 700이면 5줄이 중간에 잘림.

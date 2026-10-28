@@ -1,4 +1,4 @@
-"""주간 AI/ML 논문 모음 요약기 (deepseek/deepseek-v4-flash 단일).
+"""주간 AI/ML 논문 모음 요약기 (deepseek/deepseek-v4.1-flash-1017 단일).
 
 arXiv abstract 만 근거로, 블로그 저자 1인칭 감상(느낀점) 톤의 한국어 해설을 생성한다.
 
@@ -20,8 +20,9 @@ import urllib.error
 from typing import Any, Dict, List, Optional
 
 
-MODEL = "deepseek/deepseek-v4-flash"
-PROVIDER = {"order": ["deepseek"], "allow_fallbacks": True}
+MODEL = "deepseek/deepseek-v4.1-flash-1017"
+# 최저가 호스트, 단 fp4 양자화 호스트는 제외 (긴 출력 붕괴 위험)
+PROVIDER = {"sort": "price", "quantizations": ["fp8", "bf16", "fp16"]}
 RETRY_BACKOFF = [10, 25, 60]
 HTTP_TIMEOUT = 180
 MAX_OUTPUT_TOKENS = 2200

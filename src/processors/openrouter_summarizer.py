@@ -211,6 +211,7 @@ class OpenRouterSummarizer:
             try:
                 payload = json.dumps({
                     "model": model,
+                    "provider": {"sort": "price"},
                     "messages": [{"role": "user", "content": prompt}],
                     # gemini-2.5-pro 등 reasoning 모델은 추론 토큰이 budget 을 먹어
                     # 120 으로는 헤드라인이 잘림(예: 'alibaba/zvec —') → 여유 확보
@@ -340,6 +341,7 @@ JSON 객체만 출력:"""
             try:
                 payload = json.dumps({
                     "model": model,
+                    "provider": {"sort": "price"},
                     "messages": [{"role": "user", "content": prompt}],
                     "max_tokens": MAX_OUTPUT_TOKENS,
                     "temperature": 0.4,

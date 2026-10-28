@@ -4,7 +4,7 @@
 흐름:
   1. GeekNews 에서 이번 주 글 자동 탐지 (또는 GEEKNEWS_TOPIC_ID 수동)
   2. 추출된 arXiv ID 로 정식 메타 fetch
-  3. deepseek/deepseek-v4-flash 단일 모델로 본문급 한국어 해설 생성
+  3. deepseek/deepseek-v4.1-flash-1017 단일 모델로 본문급 한국어 해설 생성
   4. gh-pages 브랜치 _posts/ 에 발행
 
 cron: 일요일 23:00 KST = 일요일 14:00 UTC (.github/workflows/weekly-papers.yml)
@@ -77,7 +77,7 @@ def main(argv=None):
         print(f"⚠️ arXiv 성공률 {success_ratio:.0%} — 30% 이상 실패, 진행은 하되 카카오 알림 권장")
 
     # 4) 본문급 한국어 해설 생성
-    print(f"\n✍️ [3/4] 본문급 해설 생성 (deepseek/deepseek-v4-flash)")
+    print(f"\n✍️ [3/4] 본문급 해설 생성 (deepseek/deepseek-v4.1-flash-1017)")
     api_key = os.environ.get("OPENROUTER_API_KEY", "")
     if not api_key:
         print("❌ OPENROUTER_API_KEY 환경변수 없음 — 종료")
