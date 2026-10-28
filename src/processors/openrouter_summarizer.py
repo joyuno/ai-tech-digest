@@ -368,6 +368,9 @@ JSON 객체만 출력:"""
                 # response_format을 모델이 거부하면 한 번만 안 붙이고 재시도
                 err_body = e.read().decode("utf-8", errors="ignore")[:200]
                 print(f"     ⚠️ {model} HTTP {e.code} (시도 {attempt}/{max_retries}): {err_body}")
+                # 모델명 오류·조건에 맞는 provider 없음 등 4xx 는 재시도해도 같다 → 바로 다음 모델
+                if 400 <= e.code < 500 and e.code not in (408, 429):
+                    return ""
             except Exception as e:
                 print(f"     ⚠️ {model} 실패 (시도 {attempt}/{max_retries}): {e}")
 

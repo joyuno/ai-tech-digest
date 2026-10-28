@@ -5,12 +5,15 @@
 """
 import json
 import time
+import urllib.error
 import urllib.request
 from typing import Any, Dict, List, Optional
 
 MODEL = "deepseek/deepseek-v4.1-flash-1017"
-# 최저가 호스트, 단 fp4 양자화 호스트는 제외 (긴 출력 붕괴 위험)
-PROVIDER = {"sort": "price", "quantizations": ["fp8", "bf16", "fp16"]}
+# 1순위가 모델명 오류·provider 없음(4xx)이거나 재시도를 다 써도 실패하면 순서대로 대체
+FALLBACK_MODELS = ["anthropic/claude-haiku-4-5", "google/gemini-2.5-flash"]
+# 전부 최저가 호스트, 단 deepseek 는 fp4 양자화 호스트 제외 (긴 출력 붕괴 위험)
+PROVIDERS = {MODEL: {"sort": "price", "quantizations": ["fp8", "bf16", "fp16"]}}
 HTTP_TIMEOUT = 90
 RETRY_BACKOFF = [5, 12]
 # deepseek-v4 는 reasoning 토큰이 max_tokens 를 함께 소모 → 700이면 5줄이 중간에 잘림.
@@ -62,18 +65,21 @@ class WeeklyNewsSummarizer:
     # ---------------- LLM 호출 ----------------
 
     def _call(self, prompt: str, label: str) -> Optional[str]:
-        for attempt in range(len(RETRY_BACKOFF) + 1):
-            text = self._call_openrouter(prompt, label, attempt + 1)
-            if text and len(text) > 10:
-                return text
-            if attempt < len(RETRY_BACKOFF):
-                time.sleep(RETRY_BACKOFF[attempt])
+        for model in [MODEL, *FALLBACK_MODELS]:
+            for attempt in range(len(RETRY_BACKOFF) + 1):
+                text = self._call_openrouter(prompt, label, attempt + 1, model)
+                if text is None:  # 4xx — 재시도해도 같다, 다음 모델
+                    break
+                if len(text) > 10:
+                    return text
+                if attempt < len(RETRY_BACKOFF):
+                    time.sleep(RETRY_BACKOFF[attempt])
         return None
 
-    def _call_openrouter(self, prompt: str, label: str, attempt: int) -> str:
+    def _call_openrouter(self, prompt: str, label: str, attempt: int, model: str = MODEL) -> Optional[str]:
         body = {
-            "model": MODEL,
-            "provider": PROVIDER,
+            "model": model,
+            "provider": PROVIDERS.get(model, {"sort": "price"}),
             "messages": [{"role": "user", "content": prompt}],
             "max_tokens": MAX_OUTPUT_TOKENS,
             "temperature": 0.5,
@@ -88,6 +94,9 @@ class WeeklyNewsSummarizer:
             with urllib.request.urlopen(req, timeout=HTTP_TIMEOUT) as resp:
                 data = json.loads(resp.read().decode("utf-8"))
             return (data["choices"][0]["message"]["content"] or "").strip()
+        except urllib.error.HTTPError as e:
+            print(f"     ⚠️ {model} HTTP {e.code} ({label}, 시도 {attempt}): {e.read()[:150]!r}")
+            return None if 400 <= e.code < 500 and e.code not in (408, 429) else ""
         except Exception as e:
-            print(f"     ⚠️ LLM 호출 실패 ({label}, 시도 {attempt}): {e}")
+            print(f"     ⚠️ {model} 호출 실패 ({label}, 시도 {attempt}): {e}")
             return ""

@@ -21,8 +21,10 @@ from typing import Any, Dict, List, Optional
 
 
 MODEL = "deepseek/deepseek-v4.1-flash-1017"
-# 최저가 호스트, 단 fp4 양자화 호스트는 제외 (긴 출력 붕괴 위험)
-PROVIDER = {"sort": "price", "quantizations": ["fp8", "bf16", "fp16"]}
+# 1순위가 모델명 오류·provider 없음(4xx)이거나 재시도를 다 써도 실패하면 순서대로 대체
+FALLBACK_MODELS = ["anthropic/claude-haiku-4-5", "google/gemini-2.5-flash"]
+# 전부 최저가 호스트, 단 deepseek 는 fp4 양자화 호스트 제외 (긴 출력 붕괴 위험)
+PROVIDERS = {MODEL: {"sort": "price", "quantizations": ["fp8", "bf16", "fp16"]}}
 RETRY_BACKOFF = [10, 25, 60]
 HTTP_TIMEOUT = 180
 MAX_OUTPUT_TOKENS = 2200
@@ -153,29 +155,32 @@ class PaperDigestSummarizer:
 
     def _call_with_retry(self, prompt: str, min_chars: int, label: str) -> Optional[str]:
         max_attempts = len(RETRY_BACKOFF) + 1
-        for attempt in range(1, max_attempts + 1):
-            text = self._call_openrouter(prompt, label=label, attempt=attempt)
-            if not text:
-                if attempt <= len(RETRY_BACKOFF):
-                    wait = RETRY_BACKOFF[attempt - 1]
-                    print(f"     ⏳ {wait}s 대기 후 재시도 ({attempt}/{max_attempts})")
-                    time.sleep(wait)
-                continue
-            # 품질 검증
-            ratio = korean_ratio(text)
-            if ratio < KOREAN_RATIO_MIN:
-                print(f"     ⚠️ 한국어 비율 미달 ({ratio:.2f}) — 재시도")
-                continue
-            if len(text) < min_chars:
-                print(f"     ⚠️ 본문 길이 미달 ({len(text)} < {min_chars}자) — 재시도")
-                continue
-            return text
+        for model in [MODEL, *FALLBACK_MODELS]:
+            for attempt in range(1, max_attempts + 1):
+                text = self._call_openrouter(prompt, label=label, attempt=attempt, model=model)
+                if text is None:  # 4xx — 재시도해도 같다, 다음 모델
+                    break
+                if not text:
+                    if attempt <= len(RETRY_BACKOFF):
+                        wait = RETRY_BACKOFF[attempt - 1]
+                        print(f"     ⏳ {wait}s 대기 후 재시도 ({attempt}/{max_attempts})")
+                        time.sleep(wait)
+                    continue
+                # 품질 검증
+                ratio = korean_ratio(text)
+                if ratio < KOREAN_RATIO_MIN:
+                    print(f"     ⚠️ 한국어 비율 미달 ({ratio:.2f}) — 재시도")
+                    continue
+                if len(text) < min_chars:
+                    print(f"     ⚠️ 본문 길이 미달 ({len(text)} < {min_chars}자) — 재시도")
+                    continue
+                return text
         return None
 
-    def _call_openrouter(self, prompt: str, label: str, attempt: int) -> str:
+    def _call_openrouter(self, prompt: str, label: str, attempt: int, model: str = MODEL) -> Optional[str]:
         body = {
-            "model": MODEL,
-            "provider": PROVIDER,
+            "model": model,
+            "provider": PROVIDERS.get(model, {"sort": "price"}),
             "messages": [{"role": "user", "content": prompt}],
             "max_tokens": MAX_OUTPUT_TOKENS,
             "temperature": 0.6,
@@ -200,7 +205,9 @@ class PaperDigestSummarizer:
             return text
         except urllib.error.HTTPError as e:
             body_preview = e.read()[:200] if hasattr(e, "read") else b""
-            print(f"     ⚠️ HTTP {e.code} ({label}, 시도 {attempt}): {body_preview!r}")
+            print(f"     ⚠️ {model} HTTP {e.code} ({label}, 시도 {attempt}): {body_preview!r}")
+            if 400 <= e.code < 500 and e.code not in (408, 429):
+                return None
         except Exception as e:
             print(f"     ⚠️ 호출 실패 ({label}, 시도 {attempt}): {e}")
         return ""
