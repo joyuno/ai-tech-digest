@@ -4,7 +4,7 @@
   - 35개 한 번에 batch → 부분 실패 시 전체 손실 → **소스별로 batch 분리**
   - max_output_tokens 미지정으로 잘림 → **8000으로 명시**
   - Gemini가 영어로 fallback → **한국어 비율 검증**으로 강제
-  - 모델 deprecated 시 즉시 중단 → **fallback chain** (gemini-flash → claude-haiku)
+  - 모델 deprecated 시 즉시 중단 → **fallback chain** (1순위 gemini → claude-haiku → gpt-luna, 벤더 분산)
 """
 
 import json
@@ -20,8 +20,8 @@ from .scoring import select_representative
 
 
 FALLBACK_MODEL_CHAIN = [
-    "google/gemini-2.5-flash",
-    "anthropic/claude-haiku-4-5",
+    "anthropic/claude-haiku-5.5",
+    "openai/gpt-6-luna",
 ]
 RETRY_BACKOFF = [10, 20, 40]
 HTTP_TIMEOUT = 180

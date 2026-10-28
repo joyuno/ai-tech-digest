@@ -22,7 +22,7 @@ from typing import Any, Dict, List, Optional
 
 MODEL = "deepseek/deepseek-v4.1-flash-1017"
 # 1순위가 모델명 오류·provider 없음(4xx)이거나 재시도를 다 써도 실패하면 순서대로 대체
-FALLBACK_MODELS = ["anthropic/claude-haiku-4-5", "google/gemini-2.5-flash"]
+FALLBACK_MODELS = ["anthropic/claude-haiku-5.5", "openai/gpt-6-luna"]
 # 전부 최저가 호스트, 단 deepseek 는 fp4 양자화 호스트 제외 (긴 출력 붕괴 위험)
 PROVIDERS = {MODEL: {"sort": "price", "quantizations": ["fp8", "bf16", "fp16"]}}
 RETRY_BACKOFF = [10, 25, 60]
